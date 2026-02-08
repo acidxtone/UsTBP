@@ -1,0 +1,68 @@
+[build]
+  publish = "dist"
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "18"
+  NPM_VERSION = "8"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[context.production]
+  command = "npm run build"
+
+[context.deploy-preview]
+  command = "npm run build"
+
+[context.branch-deploy]
+  command = "npm run build"
+
+# Environment variables (set these in Netlify dashboard)
+[context.production.environment]
+  VITE_SUPABASE_URL = "@supabase_url"
+  VITE_SUPABASE_ANON_KEY = "@supabase_anon_key"
+  VITE_ADSENSE_PUBLISHER_ID = "@adsense_publisher_id"
+  VITE_ADSENSE_ENABLED = "@adsense_enabled"
+
+[context.deploy-preview.environment]
+  VITE_SUPABASE_URL = "@supabase_url"
+  VITE_SUPABASE_ANON_KEY = "@supabase_anon_key"
+  VITE_ADSENSE_PUBLISHER_ID = "@adsense_publisher_id"
+  VITE_ADSENSE_ENABLED = "@adsense_enabled"
+
+# Headers for security and performance
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

@@ -18,7 +18,7 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: true,
-    // Optimize for Vercel deployment
+    // Optimize for Netlify deployment
     rollupOptions: {
       output: {
         manualChunks: {
@@ -28,9 +28,13 @@ export default defineConfig({
         },
       },
     },
+    // Netlify-specific optimizations
+    chunkSizeWarningLimit: 1000,
   },
   // Define global constants for build
   define: {
     __APP_VERSION__: JSON.stringify(process.env.npm_package_version),
   },
+  // Ensure proper environment variable handling for Netlify
+  envPrefix: 'VITE_',
 })
