@@ -6,8 +6,6 @@ export default defineConfig({
   plugins: [
     react(),
   ],
-  // Base path for Netlify deployment
-  base: './',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
