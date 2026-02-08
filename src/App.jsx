@@ -70,6 +70,12 @@ const AuthenticatedApp = () => {
           }
         />
       ))}
+      {/* Add explicit Dashboard route for /Dashboard path */}
+      <Route path="/Dashboard" element={
+        <LayoutWrapper currentPageName="Dashboard">
+          <Dashboard />
+        </LayoutWrapper>
+      } />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
