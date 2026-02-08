@@ -22,27 +22,42 @@ export default function YearSelection() {
   ];
 
   const handleContinue = async () => {
-    if (!selectedYear) return;
+    if (!selectedYear) {
+      console.log('🔧 YearSelection: No year selected');
+      return;
+    }
 
     setSaving(true);
     try {
-      // Try to save if user is authenticated, otherwise just navigate
-      if (user && user.id) {
-        console.log('🔧 Saving year for authenticated user:', user.id);
-        await updateMe({ selected_year: selectedYear });
-      } else {
-        console.log('🔧 User not authenticated, saving to localStorage');
-        // Store in localStorage for guest users or when auth fails
-        localStorage.setItem('selected_year', selectedYear.toString());
-      }
-      console.log('🔧 Navigating to Dashboard');
-      navigate(createPageUrl('Dashboard'));
-    } catch (error) {
-      console.error('Failed to save year selection:', error);
-      console.log('🔧 Fallback: saving to localStorage and navigating');
-      // Fallback to localStorage even if auth fails
+      console.log('🔧 YearSelection: Selected year:', selectedYear);
+      console.log('🔧 YearSelection: User object:', user);
+      
+      // Always save to localStorage first (immediate)
       localStorage.setItem('selected_year', selectedYear.toString());
-      navigate(createPageUrl('Dashboard'));
+      console.log('🔧 YearSelection: Saved to localStorage');
+      
+      // Then try to save to user object if authenticated
+      if (user && user.id) {
+        console.log('🔧 YearSelection: Saving year for authenticated user:', user.id);
+        await updateMe({ selected_year: selectedYear });
+        console.log('🔧 YearSelection: Saved to user object');
+      } else {
+        console.log('🔧 YearSelection: User not authenticated, using localStorage only');
+      }
+      
+      // Small delay to ensure localStorage is set before navigation
+      setTimeout(() => {
+        console.log('🔧 YearSelection: Navigating to Dashboard');
+        navigate(createPageUrl('Dashboard'));
+      }, 100);
+      
+    } catch (error) {
+      console.error('YearSelection: Failed to save year selection:', error);
+      console.log('🔧 YearSelection: Fallback - localStorage already set, navigating anyway');
+      // Even if auth fails, localStorage is already set, so navigate
+      setTimeout(() => {
+        navigate(createPageUrl('Dashboard'));
+      }, 100);
     } finally {
       setSaving(false);
     }

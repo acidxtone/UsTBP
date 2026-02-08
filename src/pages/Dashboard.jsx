@@ -26,8 +26,26 @@ export default function Dashboard() {
   const { user } = useAuth();
   const navigate = useNavigate();
 
-  // Get selected year from user or localStorage
-  const selectedYear = user?.selected_year || parseInt(localStorage.getItem('selected_year')) || null;
+  // Get selected year from user or localStorage with better fallback logic
+  const getSelectedYear = () => {
+    // Check user object first
+    if (user?.selected_year) {
+      console.log('🔧 Dashboard: Found year in user object:', user.selected_year);
+      return user.selected_year;
+    }
+    
+    // Check localStorage as fallback
+    const localStorageYear = localStorage.getItem('selected_year');
+    if (localStorageYear) {
+      console.log('🔧 Dashboard: Found year in localStorage:', localStorageYear);
+      return parseInt(localStorageYear);
+    }
+    
+    console.log('🔧 Dashboard: No year found');
+    return null;
+  };
+
+  const selectedYear = getSelectedYear();
 
   useEffect(() => {
     if (!selectedYear) {
