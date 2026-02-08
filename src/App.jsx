@@ -5,7 +5,7 @@ import NavigationTracker from '@/lib/NavigationTracker'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import PageNotFound from '@/lib/PageNotFound';
 import { AuthProvider, useAuth } from '@/lib/AuthContext';
-import { AdProvider, StickyHeaderAd, StickyFooterAd } from '@/components/ads/AdProvider';
+import { AdProvider, SideAd, StickyHeaderAd, StickyFooterAd } from '@/components/ads/AdProvider';
 import React from 'react';
 import { Navigate } from 'react-router-dom';
 import Dashboard from '@/pages/Dashboard';
@@ -114,8 +114,12 @@ function App() {
         <QueryClientProvider client={queryClientInstance}>
           <Router>
             <NavigationTracker />
+            <SideAd position="left" />
+            <SideAd position="right" />
             <StickyHeaderAd />
-            <AuthenticatedApp />
+            <div className="lg:mx-32"> {/* Add margin for side ads */}
+              <AuthenticatedApp />
+            </div>
             <StickyFooterAd />
           </Router>
           <Toaster />

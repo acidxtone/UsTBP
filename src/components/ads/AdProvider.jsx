@@ -66,7 +66,35 @@ export const useAds = () => {
   return context;
 };
 
-// Sticky Header Ad Component
+// Side Ad Component (Left and Right)
+export const SideAd = ({ position = 'left' }) => {
+  const { adsEnabled, isQuizMode } = useAds();
+
+  if (!adsEnabled || isQuizMode) {
+    return null;
+  }
+
+  const positionClasses = position === 'left' 
+    ? 'fixed left-0 top-0 h-full w-32' 
+    : 'fixed right-0 top-0 h-full w-32';
+
+  return (
+    <div className={`${positionClasses} bg-gray-50 border-r border-gray-200 z-30 hidden lg:block`}>
+      <div className="h-full flex items-center justify-center p-4">
+        <AdSenseAd
+          slot="1234567891" // Different slot for side ads
+          format="vertical"
+          width={120}
+          height={600}
+          className="w-full"
+          style={{ minHeight: '600px' }}
+        />
+      </div>
+    </div>
+  );
+};
+
+// Sticky Header Ad Component (now smaller and less intrusive)
 export const StickyHeaderAd = () => {
   const { adsEnabled, headerAdClosed, closeHeaderAd, isQuizMode } = useAds();
 
@@ -75,7 +103,7 @@ export const StickyHeaderAd = () => {
   }
 
   return (
-    <div className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+    <div className="sticky top-0 z-40 bg-white border-b border-gray-200 shadow-sm">
       <div className="relative">
         <button
           onClick={closeHeaderAd}
@@ -89,9 +117,9 @@ export const StickyHeaderAd = () => {
         <AdSenseAd
           slot="1234567890" // Replace with your actual ad slot
           format="horizontal"
-          height={90}
+          height={60} // Reduced height
           className="w-full"
-          style={{ maxHeight: '90px' }}
+          style={{ maxHeight: '60px' }}
         />
       </div>
     </div>
