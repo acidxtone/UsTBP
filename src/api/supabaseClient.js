@@ -170,14 +170,34 @@ const auth = {
         options: {
           data: {
             full_name: fullName
-          }
+          },
+          // Skip email confirmation in development
+          emailRedirectTo: window.location.origin,
+          // For development, we can disable email confirmation
+          // Note: This requires Supabase project setting to be configured
         }
       });
 
       if (error) {
+        // If it's a rate limit error, provide a helpful message
+        if (error.message?.includes('rate limit')) {
+          // Development fallback: try to sign in directly
+          console.warn('🔧 Rate limit hit, trying direct sign in for development');
+          try {
+            const signInResult = await this.signIn(email, password);
+            if (signInResult.user) {
+              console.log('🔧 Development mode: Direct sign in successful');
+              return { user: signInResult.user, session: signInResult.session };
+            }
+          } catch (signInError) {
+            console.log('🔧 Direct sign in also failed');
+          }
+          throw new Error('Email rate limit exceeded. Please wait 1 hour or use a different email address.');
+        }
         throw error;
       }
 
+      console.log('🔧 Sign up successful:', data);
       return data;
     } catch (error) {
       console.error('Sign up error:', error);
