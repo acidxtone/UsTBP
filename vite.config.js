@@ -6,6 +6,8 @@ export default defineConfig({
   plugins: [
     react(),
   ],
+  // Base path for Netlify deployment
+  base: './',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
@@ -30,6 +32,8 @@ export default defineConfig({
     },
     // Netlify-specific optimizations
     chunkSizeWarningLimit: 1000,
+    // Fix for Netlify deployment
+    assetsDir: 'assets',
   },
   // Define global constants for build
   define: {
