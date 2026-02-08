@@ -2,7 +2,6 @@ import { Toaster } from "@/components/ui/toaster"
 import { QueryClientProvider } from '@tanstack/react-query'
 import { queryClientInstance } from '@/lib/query-client'
 import NavigationTracker from '@/lib/NavigationTracker'
-import { pagesConfig } from './page.config'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import PageNotFound from '@/lib/PageNotFound';
 import { AuthProvider, useAuth } from '@/lib/AuthContext';
@@ -13,8 +12,13 @@ import Dashboard from '@/pages/Dashboard';
 import LandingPage from '@/pages/LandingPage';
 import AuthPage from '@/pages/AuthPage';
 import YearHeader from '@/components/YearHeader';
-
-const { Pages } = pagesConfig;
+// Import all pages directly
+import Study from '@/pages/Study';
+import Quiz from '@/pages/Quiz';
+import QuizSetup from '@/pages/QuizSetup';
+import Settings from '@/pages/Settings';
+import Curriculum from '@/pages/Curriculum';
+import YearSelection from '@/pages/YearSelection';
 
 const PAGES_WITHOUT_YEAR_HEADER = ['YearSelection'];
 
@@ -59,21 +63,41 @@ const AuthenticatedApp = () => {
           <Dashboard />
         </LayoutWrapper>
       } />
-      {Object.entries(Pages).filter(([path]) => path !== 'Dashboard').map(([path, Page]) => (
-        <Route
-          key={path}
-          path={`/${path}`}
-          element={
-            <LayoutWrapper currentPageName={path}>
-              <Page />
-            </LayoutWrapper>
-          }
-        />
-      ))}
       {/* Add explicit Dashboard route for /Dashboard path */}
       <Route path="/Dashboard" element={
         <LayoutWrapper currentPageName="Dashboard">
           <Dashboard />
+        </LayoutWrapper>
+      } />
+      {/* Add explicit routes for all pages */}
+      <Route path="/Study" element={
+        <LayoutWrapper currentPageName="Study">
+          <Study />
+        </LayoutWrapper>
+      } />
+      <Route path="/Quiz" element={
+        <LayoutWrapper currentPageName="Quiz">
+          <Quiz />
+        </LayoutWrapper>
+      } />
+      <Route path="/QuizSetup" element={
+        <LayoutWrapper currentPageName="QuizSetup">
+          <QuizSetup />
+        </LayoutWrapper>
+      } />
+      <Route path="/Settings" element={
+        <LayoutWrapper currentPageName="Settings">
+          <Settings />
+        </LayoutWrapper>
+      } />
+      <Route path="/Curriculum" element={
+        <LayoutWrapper currentPageName="Curriculum">
+          <Curriculum />
+        </LayoutWrapper>
+      } />
+      <Route path="/YearSelection" element={
+        <LayoutWrapper currentPageName="YearSelection">
+          <YearSelection />
         </LayoutWrapper>
       } />
       <Route path="*" element={<PageNotFound />} />
