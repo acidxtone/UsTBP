@@ -136,6 +136,12 @@ export const AuthProvider = ({ children }) => {
           ...prev,
           selected_year: updated.selected_year,
         }));
+        
+        // ADD THIS: Also update localStorage to persist the change
+        if (updated.selected_year) {
+          localStorage.setItem('selected_year', updated.selected_year.toString());
+        }
+        
         return { success: true };
       } else {
         return { success: false, message: 'Update failed' };
