@@ -164,6 +164,20 @@ const auth = {
 
   async signUp(email, password, fullName) {
     try {
+      // Development mode: Check if user already exists and sign them in
+      if (import.meta.env.DEV) {
+        console.log('🔧 Development mode: Checking if user exists...');
+        try {
+          const signInResult = await this.signIn(email, password);
+          if (signInResult.user) {
+            console.log('🔧 Development mode: User exists, signed in directly');
+            return { user: signInResult.user, session: signInResult.session };
+          }
+        } catch (signInError) {
+          console.log('🔧 Development mode: User does not exist, proceeding with signup');
+        }
+      }
+
       const { data, error } = await supabase.auth.signUp({
         email,
         password,
