@@ -53,12 +53,23 @@ async function loadStudyGuides() {
 const auth = {
   async me() {
     try {
-      const { data: { user }, error } = await supabase.auth.getUser();
+      console.log('🔍 Checking Supabase session...');
+      const { data: { session }, error: sessionError } = await supabase.auth.getSession();
       
-      if (error || !user) {
+      if (sessionError || !session) {
+        console.log('🔍 No active session found');
         throw new Error('User not authenticated');
       }
 
+      console.log('🔍 Session found, getting user...');
+      const { data: { user }, error } = await supabase.auth.getUser();
+      
+      if (error || !user) {
+        console.log('🔍 No user in session');
+        throw new Error('User not authenticated');
+      }
+
+      console.log('🔍 User authenticated:', user.id);
       // Get user profile data
       const { data: profile, error: profileError } = await supabase
         .from('profiles')

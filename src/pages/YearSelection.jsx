@@ -27,16 +27,21 @@ export default function YearSelection() {
     setSaving(true);
     try {
       // Try to save if user is authenticated, otherwise just navigate
-      if (user) {
+      if (user && user.id) {
+        console.log('🔧 Saving year for authenticated user:', user.id);
         await updateMe({ selected_year: selectedYear });
       } else {
-        // Store in localStorage for guest users
+        console.log('🔧 User not authenticated, saving to localStorage');
+        // Store in localStorage for guest users or when auth fails
         localStorage.setItem('selected_year', selectedYear.toString());
       }
+      console.log('🔧 Navigating to Dashboard');
       navigate(createPageUrl('Dashboard'));
     } catch (error) {
       console.error('Failed to save year selection:', error);
-      // Still navigate even if save fails
+      console.log('🔧 Fallback: saving to localStorage and navigating');
+      // Fallback to localStorage even if auth fails
+      localStorage.setItem('selected_year', selectedYear.toString());
       navigate(createPageUrl('Dashboard'));
     } finally {
       setSaving(false);
