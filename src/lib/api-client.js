@@ -25,6 +25,7 @@ export const auth = api.auth;
 export const entities = api.entities;
 export const appLogs = api.appLogs;
 export const studyGuides = api.studyGuides;
+export const userProgress = api.entities.UserProgress;
 
 // Helper to get current user info regardless of mode
 export const getCurrentUser = async () => {
