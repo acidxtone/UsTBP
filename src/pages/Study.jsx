@@ -261,28 +261,12 @@ export default function Study() {
                               {question.question_text || question.question}
                             </h3>
                             <div className="space-y-2">
-                              {question.options ? (
-                                Object.entries(question.options).map(([key, value], optIndex) => (
-                                  <div key={key} className="flex items-center gap-2 text-sm">
-                                    <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-medium ${
-                                      key === question.correct_answer 
-                                        ? 'bg-green-100 text-green-700' 
-                                        : 'bg-slate-100 text-slate-600'
-                                    }`}>
-                                      {key.toUpperCase()}
-                                    </span>
-                                    <span className={key === question.correct_answer ? 'font-medium text-green-700' : 'text-slate-600'}>
-                                      {value}
-                                    </span>
-                                  </div>
-                                ))
-                              ) : (
-                                [
-                                  { key: 'a', value: question.option_a },
-                                  { key: 'b', value: question.option_b },
-                                  { key: 'c', value: question.option_c },
-                                  { key: 'd', value: question.option_d }
-                                ].map((opt, optIndex) => opt.value && (
+                              {[
+                                { key: 'a', value: question.option_a },
+                                { key: 'b', value: question.option_b },
+                                { key: 'c', value: question.option_c },
+                                { key: 'd', value: question.option_d }
+                              ].map((opt, optIndex) => opt.value && (
                                   <div key={opt.key} className="flex items-center gap-2 text-sm">
                                     <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-medium ${
                                       opt.key === question.correct_answer 
