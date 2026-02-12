@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useAuth } from '@/lib/AuthContext';
-import { api } from '@/api/client';
+import { api } from '@/lib/api-client';  // ← FIXED: Use consistent import
 import { useQuery } from '@tanstack/react-query';
 import { Link, useNavigate } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
@@ -100,10 +100,17 @@ export default function QuizSetup() {
     enabled: !!user?.email && !!user?.selected_year
   });
 
+  // ← FIXED: Proper query configuration matching Study.jsx
   const { data: questions = [] } = useQuery({
     queryKey: ['questions', user?.selected_year],
-    queryFn: () => api.entities.Question.filter({ year: user?.selected_year || 1 }),
-    enabled: !!user
+    queryFn: async () => {
+      if (!user?.selected_year) return [];
+      console.log('QuizSetup - Fetching questions for year:', user?.selected_year, 'type:', typeof user?.selected_year);
+      const results = await api.entities.Question.filter({ year: user?.selected_year });
+      console.log('QuizSetup - Questions fetched:', results.length);
+      return results;
+    },
+    enabled: !!user?.selected_year  // ← CRITICAL FIX: Check for selected_year, not just user
   });
 
   const config = modeConfig[mode] || modeConfig.quick_quiz;
@@ -174,7 +181,7 @@ export default function QuizSetup() {
           <div className="flex items-center gap-4 mb-4">
             <div className={cn(
               "w-14 h-14 rounded-2xl flex items-center justify-center",
-              `bg-${config.color}-100`
+              `bg-${config.color}-100` 
             )}
             style={{
               backgroundColor: config.color === 'slate' ? '#f1f5f9' :
@@ -188,8 +195,8 @@ export default function QuizSetup() {
                 color: config.color === 'slate' ? '#475569' :
                        config.color === 'blue' ? '#2563eb' :
                        config.color === 'purple' ? '#9333ea' :
-                       config.color === 'emerald' ? '#059669' :
-                       config.color === 'amber' ? '#d97706' : '#e11d48'
+                       config.color === 'emerald' ? '#10b981' :
+                       config.color === 'amber' ? '#f59e0b' : '#f43f5e'
               }} />
             </div>
             <div>
@@ -199,13 +206,12 @@ export default function QuizSetup() {
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Settings */}
+        {/* Configuration */}
+        <div className="space-y-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="lg:col-span-2 space-y-6"
           >
             {/* Section Selection */}
             {config.showSectionSelect && (

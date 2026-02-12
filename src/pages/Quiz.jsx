@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useAuth } from '@/lib/AuthContext';
-import { api } from '@/lib/api-client';
+import { api } from '@/lib/api-client';  // ← FIXED: Use consistent import
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { useNavigate } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
@@ -48,10 +48,17 @@ export default function Quiz() {
   const [bookmarkedQuestions, setBookmarkedQuestions] = useState([]);
   const [quizQuestions, setQuizQuestions] = useState([]);
 
+  // ← FIXED: Proper query configuration matching Study.jsx
   const { data: allQuestions = [], isLoading } = useQuery({
     queryKey: ['questions', user?.selected_year],
-    queryFn: () => api.entities.Question.filter({ year: user?.selected_year || 1 }),
-    enabled: !!user
+    queryFn: async () => {
+      if (!user?.selected_year) return [];
+      console.log('Quiz - Fetching questions for year:', user?.selected_year, 'type:', typeof user?.selected_year);
+      const results = await api.entities.Question.filter({ year: user?.selected_year });
+      console.log('Quiz - Questions fetched:', results.length);
+      return results;
+    },
+    enabled: !!user?.selected_year  // ← CRITICAL FIX: Check for selected_year, not just user
   });
 
   const { data: progress } = useQuery({
