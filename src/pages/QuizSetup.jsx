@@ -105,8 +105,12 @@ export default function QuizSetup() {
     queryKey: ['questions', user?.selected_year],
     queryFn: async () => {
       if (!user?.selected_year) return [];
-      console.log('QuizSetup - Fetching questions for year:', user?.selected_year, 'type:', typeof user?.selected_year);
-      const results = await api.entities.Question.filter({ year: user?.selected_year });
+      
+      // Convert to INTEGER to match database schema (year INTEGER NOT NULL)
+      const yearAsInt = parseInt(user.selected_year, 10);
+      
+      console.log('QuizSetup - Fetching questions for year:', yearAsInt, 'type:', typeof yearAsInt);
+      const results = await api.entities.Question.filter({ year: yearAsInt });
       console.log('QuizSetup - Questions fetched:', results.length);
       return results;
     },
@@ -120,7 +124,7 @@ export default function QuizSetup() {
     if (mode === 'weak_areas') return progress?.weak_questions?.length || 0;
     if (mode === 'bookmarked') return progress?.bookmarked_questions?.length || 0;
     if (mode === 'calculations') return questions.filter(q => q.section === 5).length;
-    if (selectedSection !== 'all') return questions.filter(q => q.section === parseInt(selectedSection)).length;
+    if (selectedSection !== 'all') return questions.filter(q => q.section === parseInt(selectedSection, 10)).length;
     return questions.length;
   };
 
