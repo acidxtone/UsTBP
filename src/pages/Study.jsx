@@ -92,10 +92,18 @@ export default function Study() {
      guide.content.toLowerCase().includes(searchTerm.toLowerCase()))
   );
 
-  const filteredQuestions = questions.filter(question =>
-    question.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    question.section.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredQuestions = questions.filter(question => {
+    const search = searchTerm.toLowerCase();
+    
+    // Question text can be stored as either `question_text` or `question`
+    const questionText = (question.question_text || question.question || '').toLowerCase();
+    
+    // Section is stored as a NUMBER in the database (e.g. 1–5),
+    // so we must convert it to string before calling toLowerCase
+    const sectionText = String(question.section ?? '').toLowerCase();
+
+    return questionText.includes(search) || sectionText.includes(search);
+  });
 
   if (!user) {
     return (
