@@ -19,8 +19,9 @@ import QuizSetup from '@/pages/QuizSetup';
 import Settings from '@/pages/Settings';
 import Curriculum from '@/pages/Curriculum';
 import YearSelection from '@/pages/YearSelection';
+import DebugQuestions from '@/components/DebugQuestions';
 
-const PAGES_WITHOUT_YEAR_HEADER = ['YearSelection'];
+const PAGES_WITHOUT_YEAR_HEADER = ['YearSelection', 'debug'];
 
 const LayoutWrapper = ({ children, currentPageName }) => {
   const showYearHeader = !PAGES_WITHOUT_YEAR_HEADER.includes(currentPageName);
@@ -98,6 +99,11 @@ const AuthenticatedApp = () => {
       <Route path="/YearSelection" element={
         <LayoutWrapper currentPageName="YearSelection">
           <YearSelection />
+        </LayoutWrapper>
+      } />
+      <Route path="/debug" element={
+        <LayoutWrapper currentPageName="debug">
+          <DebugQuestions />
         </LayoutWrapper>
       } />
       <Route path="*" element={<PageNotFound />} />
