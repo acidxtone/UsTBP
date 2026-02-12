@@ -279,8 +279,7 @@ export default function Study() {
                                       {opt.value}
                                     </span>
                                   </div>
-                                ))
-                              )}
+                                ))}
                             </div>
                             {question.explanation && (
                               <div className="mt-4 p-3 bg-blue-50 rounded-lg">
