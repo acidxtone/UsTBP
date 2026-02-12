@@ -127,7 +127,7 @@ const AuthenticatedApp = () => {
               <SimpleDebug />
             </LayoutWrapper>
           } />
-          <Route path="/connection" element{
+          <Route path="/connection" element={
             <LayoutWrapper currentPageName="connection">
               <ConnectionTest />
             </LayoutWrapper>
