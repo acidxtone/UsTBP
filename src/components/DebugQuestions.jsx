@@ -4,7 +4,7 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import { loadQuestions } from '@/api/supabaseClient';
+import { api } from '@/api/supabaseClient';
 
 export default function DebugQuestions() {
   const [allQuestions, setAllQuestions] = useState([]);
@@ -23,7 +23,7 @@ export default function DebugQuestions() {
   async function loadAllQuestions() {
     try {
       console.log('🔍 Debug: Loading all questions...');
-      const questions = await loadQuestions();
+      const questions = await api.entities.Question.filter({});
       console.log('📊 Debug: All questions loaded:', questions.length);
       console.log('📋 Debug: Sample questions:', questions.slice(0, 3));
       setAllQuestions(questions);
