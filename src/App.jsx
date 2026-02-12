@@ -20,8 +20,9 @@ import Settings from '@/pages/Settings';
 import Curriculum from '@/pages/Curriculum';
 import YearSelection from '@/pages/YearSelection';
 import DebugQuestions from '@/components/DebugQuestions';
+import SimpleDebug from '@/components/SimpleDebug';
 
-const PAGES_WITHOUT_YEAR_HEADER = ['YearSelection', 'debug'];
+const PAGES_WITHOUT_YEAR_HEADER = ['YearSelection', 'debug', 'test'];
 
 const LayoutWrapper = ({ children, currentPageName }) => {
   const showYearHeader = !PAGES_WITHOUT_YEAR_HEADER.includes(currentPageName);
@@ -104,6 +105,11 @@ const AuthenticatedApp = () => {
       <Route path="/debug" element={
         <LayoutWrapper currentPageName="debug">
           <DebugQuestions />
+        </LayoutWrapper>
+      } />
+      <Route path="/test" element={
+        <LayoutWrapper currentPageName="test">
+          <SimpleDebug />
         </LayoutWrapper>
       } />
       <Route path="*" element={<PageNotFound />} />
