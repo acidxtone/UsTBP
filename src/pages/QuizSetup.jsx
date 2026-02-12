@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useAuth } from '@/lib/AuthContext';
-import { api } from '@/api/client';  // ← FIXED: Use same import as Study.jsx
+import { api } from '@/api/supabaseClient';  // ← Use Supabase directly like Study.jsx
 import { useQuery } from '@tanstack/react-query';
 import { Link, useNavigate } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
