@@ -421,14 +421,14 @@ const entities = {
         }
 
         // Transform response to match component expectations
-        const progressData = data.progress_data || {};
-        const statistics = data.statistics || {};
+        const responseProgressData = data.progress_data || {};
+        const responseStatistics = data.statistics || {};
         return {
           ...data,
-          ...progressData,
-          ...statistics,
-          bookmarked_questions: data.bookmarks || progressData.bookmarked_questions || [],
-          weak_questions: data.weak_areas || progressData.weak_questions || []
+          ...responseProgressData,
+          ...responseStatistics,
+          bookmarked_questions: data.bookmarks || responseProgressData.bookmarked_questions || [],
+          weak_questions: data.weak_areas || responseProgressData.weak_questions || []
         };
       } catch (error) {
         console.error('Error creating user progress:', error);
@@ -526,14 +526,14 @@ const entities = {
         }
 
         // Transform response to match component expectations
-        const progressData = data.progress_data || {};
-        const statistics = data.statistics || {};
+        const responseProgressData = data.progress_data || {};
+        const responseStatistics = data.statistics || {};
         return {
           ...data,
-          ...progressData,
-          ...statistics,
-          bookmarked_questions: data.bookmarks || progressData.bookmarked_questions || [],
-          weak_questions: data.weak_areas || progressData.weak_questions || []
+          ...responseProgressData,
+          ...responseStatistics,
+          bookmarked_questions: data.bookmarks || responseProgressData.bookmarked_questions || [],
+          weak_questions: data.weak_areas || responseProgressData.weak_questions || []
         };
       } catch (error) {
         console.error('Error updating user progress:', error);
