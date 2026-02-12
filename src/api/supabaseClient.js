@@ -252,8 +252,45 @@ const entities = {
           return [];
         }
         
-        console.log('supabaseClient.js - Questions returned:', data?.length || 0);
-        return data || [];
+        // Transform data to match expected format
+        // Supabase stores options as JSONB object {a: "...", b: "...", c: "...", d: "..."}
+        // Components expect option_a, option_b, option_c, option_d as separate fields
+        const transformedData = (data || []).map(q => {
+          // Handle section - convert to integer if it's stored as text/number
+          const sectionValue = typeof q.section === 'string' ? parseInt(q.section, 10) : q.section;
+          
+          return {
+            id: q.id,
+            year: q.year,
+            section: sectionValue || q.section,
+            section_name: q.section_name || q.section || sectionValue,
+            difficulty: q.difficulty,
+            question_text: q.question_text,
+            // Extract options from JSONB object
+            option_a: q.options?.a || q.option_a || '',
+            option_b: q.options?.b || q.option_b || '',
+            option_c: q.options?.c || q.option_c || '',
+            option_d: q.options?.d || q.option_d || '',
+            // Keep options object for backward compatibility
+            options: q.options || (q.option_a ? {
+              a: q.option_a,
+              b: q.option_b,
+              c: q.option_c,
+              d: q.option_d
+            } : null),
+            correct_answer: q.correct_answer,
+            explanation: q.explanation,
+            reference: q.reference || 'AIT Curriculum',
+            // Include any other fields that might exist
+            ...(q.question ? { question: q.question } : {}),
+            ...(q.wrong_explanations ? { wrong_explanations: q.wrong_explanations } : {}),
+            ...(q.formula ? { formula: q.formula } : {})
+          };
+        });
+        
+        console.log('supabaseClient.js - Questions returned:', transformedData?.length || 0);
+        console.log('supabaseClient.js - Sample transformed question:', transformedData?.[0]);
+        return transformedData;
       } catch (error) {
         console.error('Error filtering questions:', error);
         return [];
@@ -262,7 +299,7 @@ const entities = {
   },
 
   UserProgress: {
-    async filter({ created_by }) {
+    async filter({ created_by, year }) {
       try {
         const { data: user } = await supabase.auth.getUser();
         
@@ -270,18 +307,47 @@ const entities = {
           return [];
         }
 
-        const { data, error } = await supabase
+        let query = supabase
           .from('user_progress')
           .select('*')
-          .eq('user_id', user.user.id)
-          .single();
+          .eq('user_id', user.user.id);
+        
+        if (year != null) {
+          query = query.eq('year', year);
+        }
+        
+        const { data, error } = year != null 
+          ? await query.single()
+          : await query.maybeSingle();
 
         if (error && error.code !== 'PGRST116') {
           console.error('Error fetching user progress:', error);
           return [];
         }
 
-        return data ? [data] : [];
+        if (!data) {
+          return [];
+        }
+
+        // Transform data structure to match component expectations
+        // Supabase stores data in JSONB fields, but components expect flat structure
+        const progressData = data.progress_data || {};
+        const statistics = data.statistics || {};
+        
+        // Merge progress_data and statistics into the main object
+        const transformed = {
+          ...data,
+          ...progressData,
+          ...statistics,
+          // Ensure bookmarked_questions and weak_questions are arrays
+          bookmarked_questions: data.bookmarks || progressData.bookmarked_questions || [],
+          weak_questions: data.weak_areas || progressData.weak_questions || [],
+          // Keep original fields for reference
+          created_by: user.user.email,
+          year: data.year
+        };
+
+        return [transformed];
       } catch (error) {
         console.error('Error filtering user progress:', error);
         return [];
@@ -296,11 +362,55 @@ const entities = {
           throw new Error('User not authenticated');
         }
 
+        // Extract year from payload or _year
+        const year = payload.year || payload._year;
+        delete payload._year;
+
+        // Separate fields that go into JSONB vs direct columns
+        const {
+          bookmarked_questions,
+          weak_questions,
+          total_questions_answered,
+          total_correct,
+          quizzes_completed,
+          full_exams_completed,
+          section_stats,
+          best_score,
+          study_streak_days,
+          last_study_date,
+          ...restPayload
+        } = payload;
+
+        // Build progress_data JSONB object
+        const progressData = {
+          ...(total_questions_answered !== undefined && { total_questions_answered }),
+          ...(total_correct !== undefined && { total_correct }),
+          ...(quizzes_completed !== undefined && { quizzes_completed }),
+          ...(full_exams_completed !== undefined && { full_exams_completed }),
+          ...(section_stats && { section_stats }),
+          ...(best_score !== undefined && { best_score }),
+          ...(study_streak_days !== undefined && { study_streak_days }),
+          ...(last_study_date && { last_study_date }),
+          ...(bookmarked_questions && { bookmarked_questions }),
+          ...(weak_questions && { weak_questions })
+        };
+
         const { data, error } = await supabase
           .from('user_progress')
           .insert({
             user_id: user.user.id,
-            ...payload
+            year: year,
+            progress_data: progressData,
+            bookmarks: bookmarked_questions || [],
+            weak_areas: weak_questions || [],
+            statistics: {
+              total_questions_answered: total_questions_answered || 0,
+              total_correct: total_correct || 0,
+              quizzes_completed: quizzes_completed || 0,
+              full_exams_completed: full_exams_completed || 0,
+              best_score: best_score || 0
+            },
+            ...restPayload
           })
           .select()
           .single();
@@ -310,7 +420,16 @@ const entities = {
           throw error;
         }
 
-        return data;
+        // Transform response to match component expectations
+        const progressData = data.progress_data || {};
+        const statistics = data.statistics || {};
+        return {
+          ...data,
+          ...progressData,
+          ...statistics,
+          bookmarked_questions: data.bookmarks || progressData.bookmarked_questions || [],
+          weak_questions: data.weak_areas || progressData.weak_questions || []
+        };
       } catch (error) {
         console.error('Error creating user progress:', error);
         throw error;
@@ -325,12 +444,77 @@ const entities = {
           throw new Error('User not authenticated');
         }
 
+        // Extract year from payload or _year
+        const year = payload.year || payload._year;
+        delete payload._year;
+
+        // Get existing data to merge
+        const { data: existing } = await supabase
+          .from('user_progress')
+          .select('*')
+          .eq('id', id)
+          .eq('user_id', user.user.id)
+          .single();
+
+        if (!existing) {
+          throw new Error('Progress record not found');
+        }
+
+        // Separate fields that go into JSONB vs direct columns
+        const {
+          bookmarked_questions,
+          weak_questions,
+          total_questions_answered,
+          total_correct,
+          quizzes_completed,
+          full_exams_completed,
+          section_stats,
+          best_score,
+          study_streak_days,
+          last_study_date,
+          ...restPayload
+        } = payload;
+
+        // Merge with existing progress_data
+        const existingProgressData = existing.progress_data || {};
+        const existingStatistics = existing.statistics || {};
+        
+        const progressData = {
+          ...existingProgressData,
+          ...(total_questions_answered !== undefined && { total_questions_answered }),
+          ...(total_correct !== undefined && { total_correct }),
+          ...(quizzes_completed !== undefined && { quizzes_completed }),
+          ...(full_exams_completed !== undefined && { full_exams_completed }),
+          ...(section_stats && { section_stats }),
+          ...(best_score !== undefined && { best_score }),
+          ...(study_streak_days !== undefined && { study_streak_days }),
+          ...(last_study_date && { last_study_date }),
+          ...(bookmarked_questions && { bookmarked_questions }),
+          ...(weak_questions && { weak_questions })
+        };
+
+        const statistics = {
+          ...existingStatistics,
+          ...(total_questions_answered !== undefined && { total_questions_answered }),
+          ...(total_correct !== undefined && { total_correct }),
+          ...(quizzes_completed !== undefined && { quizzes_completed }),
+          ...(full_exams_completed !== undefined && { full_exams_completed }),
+          ...(best_score !== undefined && { best_score })
+        };
+
+        const updateData = {
+          ...(year && { year }),
+          progress_data: progressData,
+          ...(bookmarked_questions && { bookmarks: bookmarked_questions }),
+          ...(weak_questions && { weak_areas: weak_questions }),
+          statistics: statistics,
+          updated_at: new Date().toISOString(),
+          ...restPayload
+        };
+
         const { data, error } = await supabase
           .from('user_progress')
-          .update({
-            ...payload,
-            updated_at: new Date().toISOString()
-          })
+          .update(updateData)
           .eq('id', id)
           .eq('user_id', user.user.id)
           .select()
@@ -341,12 +525,22 @@ const entities = {
           throw error;
         }
 
-        return data;
+        // Transform response to match component expectations
+        const progressData = data.progress_data || {};
+        const statistics = data.statistics || {};
+        return {
+          ...data,
+          ...progressData,
+          ...statistics,
+          bookmarked_questions: data.bookmarks || progressData.bookmarked_questions || [],
+          weak_questions: data.weak_areas || progressData.weak_questions || []
+        };
       } catch (error) {
         console.error('Error updating user progress:', error);
         throw error;
       }
     },
+
 
     async delete() {
       try {
