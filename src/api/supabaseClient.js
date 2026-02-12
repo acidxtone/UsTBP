@@ -220,8 +220,8 @@ const auth = {
   },
 
   redirectToLogin() {
-    // This would typically redirect to a login page
-    window.location.href = '/login';
+    // Redirect to the unified auth page used by the app
+    window.location.href = '/auth';
   },
 
   onAuthStateChange(callback) {

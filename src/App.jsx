@@ -19,6 +19,8 @@ import QuizSetup from '@/pages/QuizSetup';
 import Settings from '@/pages/Settings';
 import Curriculum from '@/pages/Curriculum';
 import YearSelection from '@/pages/YearSelection';
+import Privacy from '@/pages/Privacy';
+import Terms from '@/pages/Terms';
 import DebugQuestions from '@/components/DebugQuestions';
 import SimpleDebug from '@/components/SimpleDebug';
 import ConnectionTest from '@/components/ConnectionTest';
@@ -98,26 +100,40 @@ const AuthenticatedApp = () => {
           <Curriculum />
         </LayoutWrapper>
       } />
+      <Route path="/Privacy" element={
+        <LayoutWrapper currentPageName="Privacy">
+          <Privacy />
+        </LayoutWrapper>
+      } />
+      <Route path="/Terms" element={
+        <LayoutWrapper currentPageName="Terms">
+          <Terms />
+        </LayoutWrapper>
+      } />
       <Route path="/YearSelection" element={
         <LayoutWrapper currentPageName="YearSelection">
           <YearSelection />
         </LayoutWrapper>
       } />
-      <Route path="/debug" element={
-        <LayoutWrapper currentPageName="debug">
-          <DebugQuestions />
-        </LayoutWrapper>
-      } />
-      <Route path="/test" element={
-        <LayoutWrapper currentPageName="test">
-          <SimpleDebug />
-        </LayoutWrapper>
-      } />
-      <Route path="/connection" element={
-        <LayoutWrapper currentPageName="connection">
-          <ConnectionTest />
-        </LayoutWrapper>
-      } />
+      {import.meta.env.DEV && (
+        <>
+          <Route path="/debug" element={
+            <LayoutWrapper currentPageName="debug">
+              <DebugQuestions />
+            </LayoutWrapper>
+          } />
+          <Route path="/test" element={
+            <LayoutWrapper currentPageName="test">
+              <SimpleDebug />
+            </LayoutWrapper>
+          } />
+          <Route path="/connection" element{
+            <LayoutWrapper currentPageName="connection">
+              <ConnectionTest />
+            </LayoutWrapper>
+          } />
+        </>
+      )}
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );

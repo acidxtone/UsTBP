@@ -1,6 +1,16 @@
 import React from 'react';
+import { useAuth } from '@/lib/AuthContext';
+import { Button } from "@/components/ui/button";
+import { LogOut } from "lucide-react";
 
 const UserNotRegisteredError = () => {
+  const { logout, navigateToLogin } = useAuth();
+
+  const handleLogout = async () => {
+    await logout();
+    navigateToLogin();
+  };
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-white to-slate-50">
       <div className="max-w-md w-full p-8 bg-white rounded-lg shadow-lg border border-slate-100">
@@ -14,13 +24,23 @@ const UserNotRegisteredError = () => {
           <p className="text-slate-600 mb-8">
             You are not registered to use this application. Please contact the app administrator to request access.
           </p>
-          <div className="p-4 bg-slate-50 rounded-md text-sm text-slate-600">
+          <div className="p-4 bg-slate-50 rounded-md text-sm text-slate-600 space-y-4">
             <p>If you believe this is an error, you can:</p>
             <ul className="list-disc list-inside mt-2 space-y-1">
               <li>Verify you are logged in with the correct account</li>
               <li>Contact the app administrator for access</li>
               <li>Try logging out and back in again</li>
             </ul>
+            <div className="pt-2">
+              <Button 
+                variant="outline" 
+                className="w-full justify-center"
+                onClick={handleLogout}
+              >
+                <LogOut className="h-4 w-4 mr-2" />
+                Log out and return to sign in
+              </Button>
+            </div>
           </div>
         </div>
       </div>

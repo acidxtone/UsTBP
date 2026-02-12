@@ -17,7 +17,8 @@ import {
   Settings,
   ChevronRight,
   Sparkles,
-  FileText
+  FileText,
+  FileText as FileIcon
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { BannerAd } from '@/components/ads/AdSense';
@@ -240,10 +241,21 @@ export default function Dashboard() {
                       </div>
                     </Button>
                   </Link>
-                  <div className="flex items-center gap-2 text-sm text-slate-400">
-                    <Clock className="h-4 w-4" />
-                    {questions.length} questions available
-                  </div>
+                  <Link to={createPageUrl('Curriculum')}>
+                    <Button variant="outline" className="w-full justify-start h-auto p-4">
+                      <div className="flex items-center justify-between w-full">
+                        <div className="text-left">
+                          <div className="font-medium">Curriculum Overview</div>
+                          <div className="text-sm text-slate-500">See exam sections and weighting</div>
+                        </div>
+                        <ChevronRight className="h-4 w-4" />
+                      </div>
+                    </Button>
+                  </Link>
+                </div>
+                <div className="mt-4 flex items-center gap-2 text-sm text-slate-400">
+                  <Clock className="h-4 w-4" />
+                  {questions.length} questions available across all modes
                 </div>
               </CardContent>
             </Card>

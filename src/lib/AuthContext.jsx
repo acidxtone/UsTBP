@@ -153,7 +153,10 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = signOut;
-  const navigateToLogin = () => {};
+  const navigateToLogin = () => {
+    // Centralized way for consumers to send the user to the auth screen
+    window.location.href = '/auth';
+  };
 
   return (
     <AuthContext.Provider value={{
