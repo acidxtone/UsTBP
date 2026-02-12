@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useAuth } from '@/lib/AuthContext';
-import { api } from '@/lib/api-client';  // ← FIXED: Use consistent import
+import { api } from '@/api/client';  // ← FIXED: Use same import as Study.jsx
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { useNavigate } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
