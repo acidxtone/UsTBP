@@ -1,0 +1,2306 @@
+{
+  "exam_info": {
+    "title": "Steamfitter/Pipefitter Period 3 Theory Practice Questions",
+    "total_questions": 126,
+    "pass_mark_percentage": 70,
+    "time_allowed_hours": 3,
+    "format": "Multiple Choice (A, B, C, D)"
+  },
+  "section_distribution": {
+    "section_1": {
+      "name": "Low Pressure Steam and Condensate Systems",
+      "questions": 28,
+      "percentage": 22
+    },
+    "section_2": {
+      "name": "Instrumentation and Trade Technologies",
+      "questions": 19,
+      "percentage": 15
+    },
+    "section_3": {
+      "name": "Welding Processes",
+      "questions": 30,
+      "percentage": 24
+    },
+    "section_4": {
+      "name": "Hoist Planning and Cranes",
+      "questions": 15,
+      "percentage": 12
+    },
+    "section_5": {
+      "name": "Process Diagrams and Mitre Elbow",
+      "questions": 34,
+      "percentage": 27
+    }
+  },
+  "questions": [
+    {
+      "id": 1,
+      "section": 1,
+      "subsection": "A",
+      "topic": "Low Pressure Steam Boilers",
+      "question": "What is considered 'low pressure steam'?",
+      "options": {
+        "A": "Steam at 100 psi or less",
+        "B": "Steam at 15 psig or less",
+        "C": "Steam at 250 psi or less",
+        "D": "Any steam pressure"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Low pressure steam is defined as steam at 15 psig (pounds per square inch gauge) or less. The ASME Boiler Code Section IV covers low pressure boilers. Corresponds to approximately 250°F saturation temperature. Most heating systems use low pressure steam (2-5 psig). Above 15 psig is considered high pressure requiring Section I boilers.",
+        "incorrect": "Incorrect. 100 psi and 250 psi are high pressure (require different codes and safety requirements). Low pressure steam is specifically 15 psig or less per ASME definitions. The correct answer is B."
+      }
+    },
+    {
+      "id": 2,
+      "section": 1,
+      "subsection": "A",
+      "topic": "Fire-tube vs Water-tube Boilers",
+      "question": "In a fire-tube boiler, where does the hot gas travel?",
+      "options": {
+        "A": "Through tubes surrounded by water",
+        "B": "Around the outside of the boiler only",
+        "C": "Through the water directly",
+        "D": "It doesn't travel anywhere"
+      },
+      "correct_answer": "A",
+      "explanation": {
+        "correct": "Correct! In fire-tube boilers, hot combustion gases travel through tubes that are surrounded by water. Heat transfers from hot gas through tube walls to water. Common in low-pressure heating and small industrial applications. Examples: Scotch marine, locomotive-type. Limited to lower pressures due to large water volume under pressure.",
+        "incorrect": "Incorrect. Hot gas must contact heat transfer surface (tubes). It doesn't travel outside only or through water directly. In fire-tube boilers, gas goes through tubes, water surrounds them. The correct answer is A."
+      }
+    },
+    {
+      "id": 3,
+      "section": 1,
+      "subsection": "A",
+      "topic": "Water-tube Boiler Advantages",
+      "question": "What is an advantage of water-tube boilers over fire-tube boilers?",
+      "options": {
+        "A": "Cheaper initial cost",
+        "B": "Can operate at higher pressures and respond faster to load changes",
+        "C": "Simpler construction",
+        "D": "Smaller footprint always"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Water-tube boilers have water inside tubes with hot gas around them. Advantages: (1) can handle much higher pressures (tubes under pressure have smaller diameter = stronger), (2) faster response to load changes (less water volume = faster heating), (3) higher efficiency potential, (4) easier to repair individual tubes. Used for high-pressure steam and large industrial applications.",
+        "incorrect": "Incorrect. Water-tube boilers typically cost MORE initially (more complex). Construction is more complex, not simpler. Size depends on capacity. The advantage is pressure capability and response speed. The correct answer is B."
+      }
+    },
+    {
+      "id": 4,
+      "section": 1,
+      "subsection": "A",
+      "topic": "Boiler Blowdown",
+      "question": "What is the purpose of boiler blowdown?",
+      "options": {
+        "A": "To add water to the boiler",
+        "B": "To remove concentrated dissolved solids and sediment from the boiler",
+        "C": "To increase steam pressure",
+        "D": "To cool the boiler"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Blowdown removes water containing concentrated dissolved solids (minerals, salts) and sediment/sludge from the boiler. As water evaporates to steam (pure), impurities concentrate in remaining water. Without blowdown, scale forms on heat transfer surfaces (reducing efficiency, causing overheating failures). Two types: bottom blowdown (sediment) and surface/continuous blowdown (dissolved solids).",
+        "incorrect": "Incorrect. Adding water is feedwater system's job. Blowdown doesn't increase pressure (it releases it). Cooling isn't the purpose. Blowdown specifically removes concentrated impurities to prevent scale formation. The correct answer is B."
+      }
+    },
+    {
+      "id": 5,
+      "section": 1,
+      "subsection": "A",
+      "topic": "Boiler Horsepower",
+      "question": "What does one boiler horsepower (BHP) equal?",
+      "options": {
+        "A": "10,000 BTU/hr",
+        "B": "33,475 BTU/hr",
+        "C": "50,000 BTU/hr",
+        "D": "100,000 BTU/hr"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! One boiler horsepower (BHP) = 33,475 BTU/hr output. Based on evaporating 34.5 pounds of water per hour from and at 212°F. Historical rating system still used for some boilers. Modern boilers often rated in BTU/hr input or lb/hr steam output. BHP is OUTPUT rating, input would be higher due to efficiency losses.",
+        "incorrect": "Incorrect. 10,000, 50,000, and 100,000 BTU/hr are incorrect values. The standard definition of one boiler horsepower is 33,475 BTU/hr. The correct answer is B."
+      }
+    },
+    {
+      "id": 6,
+      "section": 1,
+      "subsection": "B",
+      "topic": "One-Pipe vs Two-Pipe Steam Systems",
+      "question": "In a one-pipe steam system, how does condensate return?",
+      "options": {
+        "A": "Through a separate return pipe",
+        "B": "Through the same pipe that supplies steam",
+        "C": "Through a pump system",
+        "D": "It doesn't return"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! In one-pipe steam systems, steam and condensate use the SAME pipe - steam flows up/out, condensate drains back down the same pipe by gravity. Simple but: (1) pipe must be oversized, (2) must slope correctly, (3) can be noisy (water hammer), (4) slower condensate return. Common in old residential systems. Two-pipe systems have dedicated return piping (better performance).",
+        "incorrect": "Incorrect. Separate return pipe is two-pipe system. Pumps may be used but aren't defining feature. Condensate definitely returns (or system fails). One-pipe specifically means shared supply/return piping. The correct answer is B."
+      }
+    },
+    {
+      "id": 7,
+      "section": 1,
+      "subsection": "B",
+      "topic": "Steam Distribution Piping Slope",
+      "question": "How should steam supply mains be pitched/sloped?",
+      "options": {
+        "A": "Level (no slope)",
+        "B": "In the direction of steam flow to drain condensate",
+        "C": "Against the direction of steam flow",
+        "D": "Slope doesn't matter"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Steam mains must slope in the direction of steam flow (typically 1/4\" per 10 feet minimum) so condensate forming in the pipe drains forward with steam flow to drip legs and traps. Prevents water accumulation and water hammer. If piping must rise against steam flow, use drip traps at low points before rises. Proper pitch is critical for reliable operation.",
+        "incorrect": "Incorrect. Level piping allows water pooling (water hammer). Sloping against flow causes water accumulation and hammer. Slope definitely matters - it's critical for safety and operation. The correct answer is B."
+      }
+    },
+    {
+      "id": 8,
+      "section": 1,
+      "subsection": "B",
+      "topic": "Hartford Loop",
+      "question": "What is the purpose of a Hartford Loop in a steam boiler piping system?",
+      "options": {
+        "A": "To increase steam pressure",
+        "B": "To prevent water from draining out of boiler if wet return develops a leak",
+        "C": "To filter steam",
+        "D": "To add chemicals"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! The Hartford Loop is a safety configuration of the boiler equalizer pipe and wet return that prevents the boiler from draining below safe water level if the wet return piping develops a leak. The equalizer connection to the return is made close to (typically 2\" below) the normal water line. If return leaks, water can only drain to this level, maintaining minimum safe water level in boiler.",
+        "incorrect": "Incorrect. Hartford Loop doesn't increase pressure, filter steam, or add chemicals. It's specifically a piping arrangement that prevents dangerous low water level if returns leak. Named after Hartford Steam Boiler Insurance Company. The correct answer is B."
+      }
+    },
+    {
+      "id": 9,
+      "section": 1,
+      "subsection": "B",
+      "topic": "Dry Return vs Wet Return",
+      "question": "What is the difference between dry return and wet return in steam systems?",
+      "options": {
+        "A": "Dry returns are above water line, wet returns are below water line",
+        "B": "Dry returns are for summer, wet returns for winter",
+        "C": "No difference",
+        "D": "Dry returns are outdoors, wet returns indoors"
+      },
+      "correct_answer": "A",
+      "explanation": {
+        "correct": "Correct! Dry returns carry condensate at atmospheric pressure and run ABOVE the boiler water line - they contain steam/air, not filled with water. Wet returns run BELOW the boiler water line and are filled with water (hydrostatic pressure). Dry returns connect to wet returns at or below water line. Understanding this distinction is essential for proper system design and troubleshooting.",
+        "incorrect": "Incorrect. Not related to seasons, indoor/outdoor location, or identical. The distinction is based on relationship to boiler water line and whether pipes are filled with water. The correct answer is A."
+      }
+    },
+    {
+      "id": 10,
+      "section": 1,
+      "subsection": "B",
+      "topic": "Vacuum Steam Systems",
+      "question": "What is an advantage of vacuum steam heating systems?",
+      "options": {
+        "A": "Higher operating temperatures",
+        "B": "Lower steam temperature allowing faster response and fuel savings",
+        "C": "Simpler piping",
+        "D": "No condensate handling needed"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Vacuum systems operate below atmospheric pressure (partial vacuum), which lowers steam temperature below 212°F. Advantages: (1) faster response to thermostat (lower temperature = less thermal mass), (2) fuel savings (can use lower temperature steam), (3) smaller piping (vacuum pulls condensate back), (4) more even heat distribution. Requires vacuum pump to maintain vacuum.",
+        "incorrect": "Incorrect. Vacuum systems have LOWER temperatures (not higher). Piping may be more complex (vacuum pump system). Condensate still exists and must be handled. The advantage is temperature control and efficiency. The correct answer is B."
+      }
+    },
+    {
+      "id": 11,
+      "section": 1,
+      "subsection": "C",
+      "topic": "Latent Heat of Vaporization",
+      "question": "What is latent heat of vaporization?",
+      "options": {
+        "A": "Heat required to raise water temperature to boiling",
+        "B": "Heat required to change water at boiling point into steam at same temperature",
+        "C": "Heat lost to the atmosphere",
+        "D": "Heat in the boiler tubes"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Latent heat of vaporization is the energy required to change water at boiling point (212°F at atmospheric pressure) into steam at the same temperature without temperature change. For water: approximately 970 BTU/lb at atmospheric pressure. This 'hidden' heat is stored in the steam and released when steam condenses back to water - which is why steam heating is so effective.",
+        "incorrect": "Incorrect. Raising temperature to boiling is sensible heat. Heat lost to atmosphere is heat loss. Boiler tube heat is heat transfer. Latent heat specifically refers to phase change at constant temperature. The correct answer is B."
+      }
+    },
+    {
+      "id": 12,
+      "section": 1,
+      "subsection": "C",
+      "topic": "Steam Tables",
+      "question": "What information can you find in steam tables?",
+      "options": {
+        "A": "Only steam pressure",
+        "B": "Pressure, temperature, enthalpy, specific volume, and other steam properties",
+        "C": "Only pipe sizes",
+        "D": "Boiler manufacturer information"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Steam tables provide thermodynamic properties of water and steam at various conditions: saturation temperature for each pressure, enthalpy (heat content) of liquid and vapor, latent heat, specific volume, entropy, etc. Essential for: sizing equipment, calculating heat transfer, determining steam quality, and system design. Available as printed tables or software/apps.",
+        "incorrect": "Incorrect. Steam tables aren't limited to just pressure or just one property. They don't contain pipe sizes or manufacturer info (that's in other references). Steam tables are comprehensive thermodynamic property references. The correct answer is B."
+      }
+    },
+    {
+      "id": 13,
+      "section": 1,
+      "subsection": "D",
+      "topic": "Feedwater System",
+      "question": "What is the purpose of the feedwater system in a steam boiler?",
+      "options": {
+        "A": "To remove water from the boiler",
+        "B": "To supply makeup water to replace water lost as steam",
+        "C": "To cool the boiler",
+        "D": "To increase pressure"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! The feedwater system supplies treated water to the boiler to replace water that has been converted to steam and used in the system. Components include: water source, softener/treatment, storage tank, feedwater pump, and controls. Maintains proper boiler water level. Feedwater must be treated to prevent scale and corrosion.",
+        "incorrect": "Incorrect. Blowdown removes water. Feedwater doesn't cool boiler (it's heated by boiler). Pressure is controlled by other means. Feedwater specifically replaces water converted to steam. The correct answer is B."
+      }
+    },
+    {
+      "id": 14,
+      "section": 1,
+      "subsection": "D",
+      "topic": "Safety Valves",
+      "question": "How many safety valves are required on a steam boiler?",
+      "options": {
+        "A": "None required",
+        "B": "At least one, possibly more depending on boiler size and heating surface",
+        "C": "Always exactly two",
+        "D": "Only if the owner wants one"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! All steam boilers must have at least one ASME-rated safety valve. Large boilers (over certain heating surface area) require two or more safety valves. Valves must be sized to relieve all steam the boiler can generate. Set pressure typically at or below Maximum Allowable Working Pressure (MAWP). Safety valves are the most critical safety device - prevents catastrophic over-pressure explosions.",
+        "incorrect": "Incorrect. Safety valves are absolutely mandatory (not optional). Number depends on boiler capacity - not always exactly two. Code requirements are specific and must be followed. The correct answer is B."
+      }
+    },
+    {
+      "id": 15,
+      "section": 1,
+      "subsection": "D",
+      "topic": "Try Cocks",
+      "question": "What are try cocks on a steam boiler used for?",
+      "options": {
+        "A": "To release pressure",
+        "B": "To manually check water level",
+        "C": "To add chemicals",
+        "D": "To drain the boiler"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Try cocks are small manually-operated valves (typically three) mounted at different elevations on the boiler water column to manually verify water level. Open each valve in sequence: top shows steam (dry), middle shows steam/water mix (water level), bottom shows water (wet). Used to verify gauge glass accuracy and if gauge glass fails. Required by code on some boilers.",
+        "incorrect": "Incorrect. Safety valves release pressure. Chemical feeders add chemicals. Blowdown drains the boiler. Try cocks specifically allow manual water level verification. The correct answer is B."
+      }
+    },
+    {
+      "id": 16,
+      "section": 1,
+      "subsection": "D",
+      "topic": "Steam Pressure Gauge",
+      "question": "Why must steam pressure gauges have a pigtail or siphon?",
+      "options": {
+        "A": "To make installation easier",
+        "B": "To protect gauge from direct steam heat by keeping water in the tube",
+        "C": "To increase pressure reading",
+        "D": "To filter steam"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Pigtail siphons (coiled tubing) or vertical siphons trap water between the steam pressure and gauge mechanism. This water cushion protects the gauge's internal mechanism from direct high-temperature steam which would damage it. Condensate fills the loop and remains there. Essential for gauge longevity and accuracy. Gauge must be mounted above siphon.",
+        "incorrect": "Incorrect. Pigtails aren't for installation ease, increasing readings, or filtering. They specifically protect delicate gauge mechanisms from heat damage by maintaining water barrier. The correct answer is B."
+      }
+    },
+    {
+      "id": 17,
+      "section": 1,
+      "subsection": "D",
+      "topic": "Water Column",
+      "question": "What is the purpose of a water column on a steam boiler?",
+      "options": {
+        "A": "To store extra water",
+        "B": "To provide a stable location for water level controls and gauge glass",
+        "C": "To heat the water",
+        "D": "To filter water"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! A water column is a separate vessel connected to steam and water spaces of the boiler, providing a stable, quiet location for mounting: gauge glass, try cocks, low water cutoff, and level controls. The column dampens water level fluctuations from boiling, allowing accurate readings and control operation. Essential component of boiler trim.",
+        "incorrect": "Incorrect. Water columns don't store extra water (that's expansion tanks), heat water (that's the boiler), or filter (that's strainers). They specifically provide stable mounting for level indicating and control devices. The correct answer is B."
+      }
+    },
+    {
+      "id": 18,
+      "section": 1,
+      "subsection": "D",
+      "topic": "Gauge Glass Blowdown",
+      "question": "Why should gauge glasses be blown down periodically?",
+      "options": {
+        "A": "To increase water level",
+        "B": "To remove sediment and verify gauge glass is functioning",
+        "C": "To cool the boiler",
+        "D": "To test the pressure relief valve"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Gauge glass blowdown removes sediment that could clog connections and prevent accurate water level indication. Procedure: (1) close top valve, open drain - verify water level drops (confirms top valve holds), (2) close bottom valve, open top - verify level rises (confirms bottom valve holds), (3) reopen both - level should stabilize at true level. Daily operation on many boilers.",
+        "incorrect": "Incorrect. Blowdown doesn't change actual water level, cool boiler, or test relief valve (those are separate). It verifies gauge glass is clear and functioning. Critical safety procedure. The correct answer is B."
+      }
+    },
+    {
+      "id": 19,
+      "section": 1,
+      "subsection": "E",
+      "topic": "Steam Trap Purpose",
+      "question": "What is the primary purpose of a steam trap?",
+      "options": {
+        "A": "To trap steam and prevent it from flowing",
+        "B": "To automatically discharge condensate while preventing live steam loss",
+        "C": "To reduce steam pressure",
+        "D": "To filter steam"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Steam traps automatically distinguish between steam and condensate, discharging condensate and non-condensable gases while preventing live steam from escaping. Essential for: (1) removing condensate to prevent water hammer, (2) maintaining heat transfer efficiency, (3) preventing equipment damage, (4) conserving energy by not wasting steam. Three main types: mechanical, thermostatic, and thermodynamic.",
+        "incorrect": "Incorrect. Traps don't prevent steam flow (they allow it while removing condensate). Pressure reduction is done by reducing valves. Filtering is done by strainers. Traps specifically separate and remove condensate. The correct answer is B."
+      }
+    },
+    {
+      "id": 20,
+      "section": 1,
+      "subsection": "E",
+      "topic": "Float & Thermostatic Trap",
+      "question": "How does a float and thermostatic (F&T) steam trap work?",
+      "options": {
+        "A": "Float opens valve when condensate level rises; thermostatic element vents air",
+        "B": "It never opens",
+        "C": "It stays open all the time",
+        "D": "Temperature only controls it"
+      },
+      "correct_answer": "A",
+      "explanation": {
+        "correct": "Correct! F&T traps use a float mechanism to discharge condensate continuously as it arrives (float rises with condensate level, opening valve). A separate thermostatic element near the top vents air and CO₂ during startup and operation. Advantages: continuous condensate removal, handles varying loads well. Used on process equipment, drip stations, and heat exchangers. Can handle high capacities.",
+        "incorrect": "Incorrect. F&T traps modulate open/closed based on condensate level (not never or always open). Temperature element is secondary (for air venting) - float is primary condensate control. The correct answer is A."
+      }
+    },
+    {
+      "id": 21,
+      "section": 1,
+      "subsection": "E",
+      "topic": "Thermodynamic Trap",
+      "question": "What type of steam trap uses flash steam to close the disc?",
+      "options": {
+        "A": "Float trap",
+        "B": "Thermodynamic disc trap",
+        "C": "Bucket trap",
+        "D": "Bellows trap"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Thermodynamic (TD) disc traps use the difference in velocity between condensate and flash steam. When hot condensate flashes to steam in the chamber above the disc, the high-velocity steam creates low pressure (Bernoulli effect), pulling disc closed. Compact, robust, handles superheat and water hammer. Common in steam mains and tracing. Can be noisy and cycle frequently.",
+        "incorrect": "Incorrect. Float traps use buoyancy. Bucket traps use bucket weight/buoyancy. Bellows traps use temperature. Thermodynamic traps specifically use flash steam velocity/pressure effects. The correct answer is B."
+      }
+    },
+    {
+      "id": 22,
+      "section": 1,
+      "subsection": "F",
+      "topic": "Boiler Water Treatment",
+      "question": "Why is boiler feedwater treatment necessary?",
+      "options": {
+        "A": "To make water taste better",
+        "B": "To prevent scale formation, corrosion, and carryover",
+        "C": "To increase steam pressure",
+        "D": "It's not necessary"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Feedwater treatment prevents three main problems: (1) Scale formation from hardness minerals (calcium, magnesium) - insulates tubes causing overheating and failure, (2) Corrosion from dissolved oxygen and low pH - causes leaks and failures, (3) Carryover of water into steam lines from foaming/high solids. Treatment includes: softening, deaeration, chemical treatment, and blowdown control.",
+        "incorrect": "Incorrect. Treatment isn't for taste or pressure increase. It's absolutely necessary - untreated water destroys boilers rapidly through scale and corrosion. Treatment is essential for safety, efficiency, and longevity. The correct answer is B."
+      }
+    },
+    {
+      "id": 23,
+      "section": 1,
+      "subsection": "F",
+      "topic": "Water Softening",
+      "question": "What does a water softener remove from feedwater?",
+      "options": {
+        "A": "All dissolved solids",
+        "B": "Hardness minerals (calcium and magnesium)",
+        "C": "Oxygen",
+        "D": "Steam"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Water softeners use ion exchange resin to remove hardness minerals (primarily calcium and magnesium) by exchanging them for sodium ions. Prevents hard scale formation in boilers. Resin is regenerated with salt brine. Softening doesn't remove all dissolved solids (TDS stays same), doesn't remove oxygen (needs deaerator), and doesn't affect steam. Essential first step in most boiler water treatment programs.",
+        "incorrect": "Incorrect. Softeners don't remove all solids (sodium replaces calcium/magnesium - TDS unchanged). Deaerators remove oxygen. Steam isn't in feedwater. Softeners specifically remove hardness. The correct answer is B."
+      }
+    },
+    {
+      "id": 24,
+      "section": 1,
+      "subsection": "F",
+      "topic": "Deaeration",
+      "question": "What does a deaerator remove from boiler feedwater?",
+      "options": {
+        "A": "Hardness minerals",
+        "B": "Dissolved oxygen and other gases",
+        "C": "All impurities",
+        "D": "Condensate"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Deaerators remove dissolved oxygen (O₂) and other non-condensable gases (CO₂, N₂) from feedwater by heating water to saturation temperature with steam, releasing dissolved gases which are then vented. Oxygen removal is critical - dissolved oxygen causes severe boiler corrosion. Deaerators also preheat feedwater, improving efficiency. Used on medium and large boiler systems.",
+        "incorrect": "Incorrect. Softeners remove hardness. Deaerators don't remove all impurities (just gases). Condensate is returned, not removed. Deaerators specifically remove dissolved oxygen and gases. The correct answer is B."
+      }
+    },
+    {
+      "id": 25,
+      "section": 1,
+      "subsection": "G",
+      "topic": "Flash Tank",
+      "question": "What is the purpose of a flash tank in a steam system?",
+      "options": {
+        "A": "To store water",
+        "B": "To recover flash steam from high-pressure condensate for use at lower pressure",
+        "C": "To cool condensate",
+        "D": "To filter condensate"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Flash tanks receive high-pressure condensate and separate flash steam (steam that forms when pressure drops) from liquid condensate. The flash steam can be used for low-pressure heating. Example: 150 psi condensate flashed to 15 psi produces about 10% flash steam. Recovers energy that would otherwise be wasted. Improves overall system efficiency.",
+        "incorrect": "Incorrect. Flash tanks don't primarily store water (that's storage tanks), cool (they may actually be hot), or filter. They specifically separate and recover flash steam for reuse. The correct answer is B."
+      }
+    },
+    {
+      "id": 26,
+      "section": 1,
+      "subsection": "G",
+      "topic": "Condensate Pump",
+      "question": "When is a condensate pump necessary in a steam system?",
+      "options": {
+        "A": "Always required",
+        "B": "When condensate must be lifted above boiler water line or gravity return is insufficient",
+        "C": "Never necessary",
+        "D": "Only in vacuum systems"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Condensate pumps are required when: (1) condensate return piping is above boiler water line (can't return by gravity), (2) system has insufficient elevation difference for gravity return, (3) long horizontal return runs with inadequate slope. Types: simplex/duplex receiver pumps, mechanical pumps, condensate return units. Must handle high-temperature water and varying loads.",
+        "incorrect": "Incorrect. Not always required (gravity systems exist). Sometimes necessary (not never). Used in various systems, not just vacuum. Pumps are needed when gravity return is inadequate. The correct answer is B."
+      }
+    },
+    {
+      "id": 27,
+      "section": 1,
+      "subsection": "B",
+      "topic": "Drip Legs",
+      "question": "What is a drip leg in steam piping?",
+      "options": {
+        "A": "A leak in the pipe",
+        "B": "A pocket at low points to collect condensate for removal by steam trap",
+        "C": "A valve",
+        "D": "A pressure gauge"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Drip legs (drip pockets, drip traps) are vertical pockets installed at low points in steam lines to collect condensate that forms or accumulates. Typically sized 2x main pipe diameter and extends down 12-18\". Steam trap and strainer installed on drip leg outlet remove collected condensate. Required at: low points, before risers, ahead of control valves, at end of mains.",
+        "incorrect": "Incorrect. Drip legs aren't leaks (they're intentional), valves, or gauges. They're specifically designed collection pockets for condensate drainage. The correct answer is B."
+      }
+    },
+    {
+      "id": 28,
+      "section": 1,
+      "subsection": "C",
+      "topic": "Saturated vs Superheated Steam",
+      "question": "What is the difference between saturated steam and superheated steam?",
+      "options": {
+        "A": "No difference",
+        "B": "Saturated steam is at boiling temperature for its pressure; superheated steam is heated above saturation temperature",
+        "C": "Saturated steam is wet, superheated is dry",
+        "D": "Saturated steam is low pressure, superheated is high pressure"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Saturated steam is at the exact temperature corresponding to its pressure (e.g., 212°F at 0 psig, 240°F at 10 psig per steam tables). Superheated steam is heated ABOVE saturation temperature at the same pressure (e.g., 400°F at 10 psig). Superheated steam contains no moisture, won't condense until cooled to saturation temperature. Used in power generation and some process applications.",
+        "incorrect": "Incorrect. They're different. Both can be at various pressures. While saturated steam may contain moisture droplets, that's not the defining difference. The key is temperature relative to saturation temperature at that pressure. The correct answer is B."
+      }
+    },
+    {
+      "id": 29,
+      "section": 2,
+      "subsection": "A",
+      "topic": "Pneumatic Controls",
+      "question": "What is the typical operating pressure for pneumatic control systems?",
+      "options": {
+        "A": "3-15 psi",
+        "B": "100-150 psi",
+        "C": "250-300 psi",
+        "D": "500 psi"
+      },
+      "correct_answer": "A",
+      "explanation": {
+        "correct": "Correct! Pneumatic controls typically operate on 3-15 psi air pressure signals (or 6-30 psi in some systems). Controllers output air pressure proportional to measured variable and setpoint. This pressure signal positions valve actuators, dampers, etc. Advantages: intrinsically safe (no electricity), simple, reliable. Disadvantages: slower response than electronic, requires clean dry air, limited transmission distance.",
+        "incorrect": "Incorrect. 100-150 psi is instrument air supply pressure (reduced to 3-15 for controls). 250-300 and 500 psi are too high for control signals. Standard pneumatic control signal is 3-15 psi. The correct answer is A."
+      }
+    },
+    {
+      "id": 30,
+      "section": 2,
+      "subsection": "A",
+      "topic": "Electronic Controls",
+      "question": "What is a common electronic control signal in industrial systems?",
+      "options": {
+        "A": "3-15 psi",
+        "B": "4-20 mA (milliamperes)",
+        "C": "0-1000 volts",
+        "D": "No standard exists"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! 4-20 mA is the industry standard for electronic control signals. Current loop provides: (1) immunity to voltage drops in long wire runs, (2) easy fault detection (0 mA = wire break, <4 mA = fault), (3) simple two-wire installation. 4 mA represents 0%, 20 mA represents 100% of range. Used for transmitters, controllers, and valve positioners worldwide.",
+        "incorrect": "Incorrect. 3-15 psi is pneumatic. 0-1000V would be dangerous and non-standard. Electronic controls definitely have standards. 4-20 mA current loop is the universal standard. The correct answer is B."
+      }
+    },
+    {
+      "id": 31,
+      "section": 2,
+      "subsection": "A",
+      "topic": "Thermostats",
+      "question": "How does a basic bimetallic thermostat work?",
+      "options": {
+        "A": "Uses electronic sensors",
+        "B": "Two metals with different expansion rates bend with temperature change, operating a switch",
+        "C": "Measures light levels",
+        "D": "Uses water expansion"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Bimetallic thermostats use a strip or coil made of two different metals bonded together. Metals have different thermal expansion coefficients, so when temperature changes, the strip bends. This bending motion operates an electrical switch or mechanical linkage. Simple, reliable, no external power needed. Common in residential heating and small commercial systems.",
+        "incorrect": "Incorrect. Electronic sensors are different type. Light levels are for photocells. Water expansion is used in some thermostats but not bimetallic. Bimetallic specifically uses differential metal expansion. The correct answer is B."
+      }
+    },
+    {
+      "id": 32,
+      "section": 2,
+      "subsection": "A",
+      "topic": "Proportional Control",
+      "question": "What is proportional control?",
+      "options": {
+        "A": "On/off control only",
+        "B": "Control output varies proportionally to the error between setpoint and measured value",
+        "C": "Random control",
+        "D": "Manual control only"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Proportional (P) control varies the output signal proportionally to the error (difference between setpoint and actual value). Larger error = larger control action. Provides smooth, gradual control (unlike on/off). Has 'offset' - doesn't achieve exact setpoint. Gain or proportional band determines sensitivity. Often combined with Integral and Derivative control (PID) for better performance.",
+        "incorrect": "Incorrect. On/off is different (two-position control). Not random or manual-only. Proportional specifically means output proportional to error signal. The correct answer is B."
+      }
+    },
+    {
+      "id": 33,
+      "section": 2,
+      "subsection": "A",
+      "topic": "PID Control",
+      "question": "What do the letters PID stand for in PID control?",
+      "options": {
+        "A": "Pressure, Indicator, Differential",
+        "B": "Proportional, Integral, Derivative",
+        "C": "Pipe, Insulation, Diameter",
+        "D": "Primary, Immediate, Delayed"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! PID = Proportional, Integral, Derivative. P (proportional to error), I (eliminates offset by integrating error over time), D (responds to rate of error change - derivative). PID controllers provide precise control for complex processes. Requires tuning (adjusting P, I, D parameters) for optimal performance. Most industrial process controllers use PID algorithms.",
+        "incorrect": "Incorrect. The other options are made up. PID specifically stands for Proportional, Integral, Derivative - three mathematical control functions working together. The correct answer is B."
+      }
+    },
+    {
+      "id": 34,
+      "section": 2,
+      "subsection": "A",
+      "topic": "Control Valves",
+      "question": "What does 'fail-safe' mean for a control valve?",
+      "options": {
+        "A": "The valve never fails",
+        "B": "The valve moves to a predetermined safe position (open or closed) if power/signal is lost",
+        "C": "The valve stays in current position",
+        "D": "The valve is painted yellow"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Fail-safe design ensures the valve moves to a predetermined position if control signal or power fails. Fail-open (FO) or fail-closed (FC) depends on process safety requirements. Example: steam valve might fail-closed to prevent overheating; cooling water valve might fail-open to prevent overheating. Achieved through spring return actuators. Critical safety consideration in process design.",
+        "incorrect": "Incorrect. All valves can fail mechanically. 'Fail-safe' refers to position on power loss, not color or staying put. It's about predictable safe behavior during failure. The correct answer is B."
+      }
+    },
+    {
+      "id": 35,
+      "section": 2,
+      "subsection": "A",
+      "topic": "Temperature Sensors",
+      "question": "What type of temperature sensor uses electrical resistance change with temperature?",
+      "options": {
+        "A": "Thermocouple",
+        "B": "RTD (Resistance Temperature Detector)",
+        "C": "Bimetallic",
+        "D": "Mercury thermometer"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! RTDs (Resistance Temperature Detectors) use the principle that metal electrical resistance increases with temperature. Common types: Pt100 (platinum, 100 ohms at 0°C), Pt1000. Very accurate, stable, linear. Used for precision temperature measurement in industrial processes. Requires 2, 3, or 4-wire connection to compensate for lead wire resistance.",
+        "incorrect": "Incorrect. Thermocouples use dissimilar metal voltage generation. Bimetallic uses physical bending. Mercury thermometers use liquid expansion. RTDs specifically use resistance change. The correct answer is B."
+      }
+    },
+    {
+      "id": 36,
+      "section": 2,
+      "subsection": "A",
+      "topic": "Pressure Transmitters",
+      "question": "What does a pressure transmitter do?",
+      "options": {
+        "A": "Converts pressure to a standard electrical signal (e.g., 4-20 mA)",
+        "B": "Increases pressure",
+        "C": "Stores pressure",
+        "D": "Measures only temperature"
+      },
+      "correct_answer": "A",
+      "explanation": {
+        "correct": "Correct! Pressure transmitters sense pressure and convert it to a standard electrical output signal (typically 4-20 mA, or digital protocol). This signal can be transmitted long distances to controllers, PLCs, and monitoring systems without signal degradation. Modern transmitters offer high accuracy, digital communication (HART, Profibus, etc.), and diagnostics. Essential for process monitoring and control.",
+        "incorrect": "Incorrect. Transmitters measure and signal, they don't increase (that's pumps/compressors) or store pressure. They measure pressure, not temperature (separate sensors). The correct answer is A."
+      }
+    },
+    {
+      "id": 37,
+      "section": 2,
+      "subsection": "A",
+      "topic": "Level Controls",
+      "question": "What is a displacer-type level control?",
+      "options": {
+        "A": "Uses a float on the surface",
+        "B": "Uses a heavy displacer submerged in liquid - buoyancy changes with level",
+        "C": "Uses ultrasonic waves",
+        "D": "Uses radar"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Displacer level controls use a heavy cylindrical displacer (heavier than liquid) suspended in the vessel. As liquid level changes, buoyancy on the displacer changes, changing apparent weight detected by a torque tube or force sensor. More stable than float (less affected by turbulence), works with high temperatures and pressures. Common in boiler drums and process vessels.",
+        "incorrect": "Incorrect. Surface floats are different design. Ultrasonic and radar are non-contact level measurement. Displacers specifically use buoyancy change of submerged weight. The correct answer is B."
+      }
+    },
+    {
+      "id": 38,
+      "section": 2,
+      "subsection": "A",
+      "topic": "Flow Measurement",
+      "question": "What does an orifice plate measure?",
+      "options": {
+        "A": "Temperature",
+        "B": "Pressure",
+        "C": "Flow rate (by measuring pressure drop across restriction)",
+        "D": "Level"
+      },
+      "correct_answer": "C",
+      "explanation": {
+        "correct": "Correct! Orifice plates are thin plates with a precisely sized hole installed in piping to create a restriction. Flow rate is proportional to square root of pressure drop across the orifice (measured with differential pressure transmitter). Inexpensive, no moving parts, reliable. Used extensively for steam, gas, and liquid flow measurement. Requires straight pipe runs upstream/downstream.",
+        "incorrect": "Incorrect. Orifice plates don't measure temperature (thermometers/RTDs do), single pressure point (gauges do that), or level (level instruments do). They specifically measure flow via differential pressure. The correct answer is C."
+      }
+    },
+    {
+      "id": 39,
+      "section": 2,
+      "subsection": "A",
+      "topic": "Solenoid Valves",
+      "question": "How does a solenoid valve work?",
+      "options": {
+        "A": "Manual operation only",
+        "B": "Electromagnetic coil pulls plunger to open or close valve when energized",
+        "C": "Thermal expansion operates it",
+        "D": "Pressure difference operates it"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Solenoid valves use an electromagnetic coil (solenoid) that, when energized with electric current, creates a magnetic field pulling a ferromagnetic plunger or armature. This plunger movement opens or closes the valve. Fast acting, reliable for on/off control. Common in: fuel valves, refrigeration, compressed air, water systems. Not suitable for flow modulation (use control valves).",
+        "incorrect": "Incorrect. Solenoids are electrically operated, not manual, thermal, or pressure-differential. The defining feature is electromagnetic actuation. The correct answer is B."
+      }
+    },
+    {
+      "id": 40,
+      "section": 2,
+      "subsection": "A",
+      "topic": "PLCs",
+      "question": "What is a PLC in industrial control?",
+      "options": {
+        "A": "Programmable Logic Controller - industrial computer for automation",
+        "B": "Pipe Line Connection",
+        "C": "Pressure Level Calculator",
+        "D": "Primary Lighting Control"
+      },
+      "correct_answer": "A",
+      "explanation": {
+        "correct": "Correct! PLC = Programmable Logic Controller. Industrial-grade computer designed for reliable control in harsh environments. Accepts inputs from sensors, executes logic programs (ladder logic, function blocks, etc.), and controls outputs (valves, motors, etc.). Advantages: flexible, programmable, fast, reliable. Used extensively in modern industrial automation replacing relay logic.",
+        "incorrect": "Incorrect. The other options are made up. PLC specifically means Programmable Logic Controller - the backbone of modern industrial automation. The correct answer is A."
+      }
+    },
+    {
+      "id": 41,
+      "section": 2,
+      "subsection": "A",
+      "topic": "SCADA Systems",
+      "question": "What does SCADA stand for?",
+      "options": {
+        "A": "Steam Control And Drainage Automation",
+        "B": "Supervisory Control And Data Acquisition",
+        "C": "System Configuration And Design Application",
+        "D": "Safety Controlled Automatic Device Assembly"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! SCADA = Supervisory Control And Data Acquisition. Computer system that monitors and controls industrial processes across multiple locations. Provides: centralized monitoring displays (HMI - Human Machine Interface), data logging/trending, alarms, remote control, and reporting. Used in: utilities, water treatment, oil & gas, manufacturing. Interfaces with PLCs, RTUs, and field devices.",
+        "incorrect": "Incorrect. The other options are made up. SCADA specifically stands for Supervisory Control And Data Acquisition - enterprise-level process monitoring and control. The correct answer is B."
+      }
+    },
+    {
+      "id": 42,
+      "section": 2,
+      "subsection": "B",
+      "topic": "Computer-Aided Design (CAD)",
+      "question": "What is CAD software used for in the pipe trades?",
+      "options": {
+        "A": "Only for making pretty pictures",
+        "B": "Creating technical drawings, 3D models, and generating fabrication details",
+        "C": "Playing games",
+        "D": "Only for accounting"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! CAD (Computer-Aided Design) software creates: (1) 2D drawings (plans, elevations, isometrics), (2) 3D models for visualization and clash detection, (3) fabrication details and spools, (4) material takeoffs and bills of materials. Common programs: AutoCAD, Revit, CADWorx, SolidWorks. Improves accuracy, speed, and coordination. Industry standard for modern piping design and fabrication.",
+        "incorrect": "Incorrect. CAD is professional design software, not for pictures only, games, or accounting. It's a critical production tool for technical documentation. The correct answer is B."
+      }
+    },
+    {
+      "id": 43,
+      "section": 2,
+      "subsection": "B",
+      "topic": "Building Information Modeling (BIM)",
+      "question": "What is BIM in construction?",
+      "options": {
+        "A": "Basic Installation Manual",
+        "B": "Building Information Modeling - 3D model containing geometry and data",
+        "C": "Boiler Inspection Method",
+        "D": "Budget Information Manager"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! BIM = Building Information Modeling. 3D digital model of building containing not just geometry, but also data: materials, specifications, costs, schedules, maintenance info. Enables: clash detection (finding conflicts before construction), coordination between trades, quantity takeoffs, as-built documentation. Software: Revit, Navisworks, etc. Becoming industry standard for large projects.",
+        "incorrect": "Incorrect. The other options are made up. BIM specifically means Building Information Modeling - intelligent 3D modeling for construction coordination and lifecycle management. The correct answer is B."
+      }
+    },
+    {
+      "id": 44,
+      "section": 2,
+      "subsection": "B",
+      "topic": "Laser Measurement Tools",
+      "question": "What advantage do laser distance meters provide?",
+      "options": {
+        "A": "No advantage over tape measures",
+        "B": "Fast, accurate distance measurement without physical contact, especially for long/difficult distances",
+        "C": "They're just more expensive",
+        "D": "Only work in the dark"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Laser distance meters measure by timing laser light reflection. Advantages: (1) one-person operation, (2) measure long distances (100+ feet) accurately, (3) measure difficult locations (high ceilings, across obstacles), (4) calculate area and volume, (5) fast and accurate (±1/16\"). Disadvantages: cost, requires target surface, affected by bright sun. Essential tool for modern layout and as-built documentation.",
+        "incorrect": "Incorrect. Laser meters have significant advantages (not none, not just cost). They work better in normal/dim light (not only dark). The correct answer is B."
+      }
+    },
+    {
+      "id": 45,
+      "section": 2,
+      "subsection": "B",
+      "topic": "Digital Levels",
+      "question": "What is an advantage of a digital level over traditional spirit levels?",
+      "options": {
+        "A": "Cheaper",
+        "B": "Displays angle in degrees/percent and can transfer measurements electronically",
+        "C": "Lighter weight always",
+        "D": "No batteries needed"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Digital levels use electronic sensors (accelerometers) to measure angle. Advantages: (1) precise numerical angle display (degrees, percent, or ratio), (2) ability to transfer measurements to phone/tablet via Bluetooth, (3) can set reference angles, (4) audio alerts, (5) backlit displays. Useful for precise slopes, layouts, and documentation. Disadvantage: requires batteries, more expensive.",
+        "incorrect": "Incorrect. Digital levels typically cost MORE (not less), may be same weight, and DO need batteries. The advantage is precision numerical display and data transfer. The correct answer is B."
+      }
+    },
+    {
+      "id": 46,
+      "section": 2,
+      "subsection": "B",
+      "topic": "Total Stations",
+      "question": "What is a total station used for in construction?",
+      "options": {
+        "A": "Cooking lunch",
+        "B": "Precise surveying combining distance measurement, angle measurement, and data collection",
+        "C": "Welding",
+        "D": "Painting"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Total stations combine electronic distance measurement (EDM) and theodolite (angle measurement) in one instrument. Used for: precise 3D positioning, layout of building corners and elevations, as-built surveys, setting control points. Accuracy to millimeters over hundreds of feet. Data downloads to CAD software. Essential for large projects requiring high accuracy. Operated by surveyors and specialized technicians.",
+        "incorrect": "Incorrect. Total stations are precision surveying instruments, not for cooking, welding, or painting. They're high-tech measurement tools. The correct answer is B."
+      }
+    },
+    {
+      "id": 47,
+      "section": 3,
+      "subsection": "A",
+      "topic": "SMAW Power Sources",
+      "question": "What type of welding current can SMAW (stick) welders typically provide?",
+      "options": {
+        "A": "AC only",
+        "B": "DC only",
+        "C": "AC, DC, or both depending on machine type",
+        "D": "No current - SMAW doesn't use electricity"
+      },
+      "correct_answer": "C",
+      "explanation": {
+        "correct": "Correct! SMAW power sources come in three types: (1) AC-only machines (transformer type, economical), (2) DC-only machines (motor-generator or rectifier), (3) AC/DC combination machines (most versatile). Different electrodes require different polarities: some AC, some DCEP (DC electrode positive), some DCEN (DC electrode negative). Combination machines provide maximum flexibility for different electrodes and applications.",
+        "incorrect": "Incorrect. SMAW definitely uses electricity (arc welding). Not limited to just AC or just DC - machines are available in all configurations. The correct answer is C."
+      }
+    },
+    {
+      "id": 48,
+      "section": 3,
+      "subsection": "A",
+      "topic": "Duty Cycle",
+      "question": "What does 'duty cycle' mean for a welding machine?",
+      "options": {
+        "A": "The color of the machine",
+        "B": "Percentage of 10-minute period the machine can operate at rated output without overheating",
+        "C": "The weight of the machine",
+        "D": "How often to service the machine"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Duty cycle is the percentage of a 10-minute period the welder can operate at its rated amperage without overheating. Example: 60% duty cycle at 200A means it can weld at 200A for 6 minutes, then must cool for 4 minutes. Higher duty cycle = more continuous welding possible. Industrial machines: 60-100% duty cycle. Light-duty: 20-40%. Exceeding duty cycle triggers thermal overload protection.",
+        "incorrect": "Incorrect. Duty cycle isn't about color, weight, or service intervals. It's specifically about operational time before overheating. Critical for selecting machines for production welding. The correct answer is B."
+      }
+    },
+    {
+      "id": 49,
+      "section": 3,
+      "subsection": "A",
+      "topic": "Electrode Holders",
+      "question": "What safety feature must SMAW electrode holders have?",
+      "options": {
+        "A": "Bright colors",
+        "B": "Fully insulated handle and jaws to prevent shock",
+        "C": "Built-in light",
+        "D": "No safety features needed"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Electrode holders (stingers) must be fully insulated except for the electrode-gripping jaws to prevent electric shock. Handle and all electrical components must be covered. Must be properly sized for amperage (oversize holder overheats, undersize won't grip). Must grip electrode securely. Damaged insulation must be repaired immediately - exposed metal can cause severe shock.",
+        "incorrect": "Incorrect. Color, lights aren't safety features. Safety features are absolutely required. Full insulation is mandatory to prevent potentially fatal electric shock. The correct answer is B."
+      }
+    },
+    {
+      "id": 50,
+      "section": 3,
+      "subsection": "A",
+      "topic": "Ground Clamp",
+      "question": "Why must the work (ground) clamp have a good connection?",
+      "options": {
+        "A": "For aesthetics only",
+        "B": "Poor connection causes voltage drop, arc instability, and overheating",
+        "C": "It doesn't matter",
+        "D": "Only to prevent rust"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! The ground clamp completes the welding circuit. Poor connection causes: (1) voltage drop reducing arc power, (2) arc instability and poor weld quality, (3) overheating at connection point (fire hazard), (4) difficulty striking and maintaining arc. Must have: clean contact surfaces (remove paint, rust, scale), tight mechanical connection, adequate size for amperage, short cable path.",
+        "incorrect": "Incorrect. Ground connection is critical for electrical function and safety, not aesthetics, rust prevention, or unimportant. Poor grounding causes serious welding problems and hazards. The correct answer is B."
+      }
+    },
+    {
+      "id": 51,
+      "section": 3,
+      "subsection": "A",
+      "topic": "Welding Cable Sizing",
+      "question": "What happens if welding cables are too small for the amperage?",
+      "options": {
+        "A": "Nothing - size doesn't matter",
+        "B": "Cables overheat, voltage drop reduces welding performance, and fire hazard exists",
+        "C": "Welds are stronger",
+        "D": "Arc is brighter"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Undersized cables cause: (1) excessive voltage drop (reduces voltage at arc = poor welding), (2) cable overheating (insulation damage, fire hazard), (3) energy waste as heat in cables. Cable size must match: amperage, length (longer = larger needed), and duty cycle. Copper cables carry more current than aluminum same size. Use manufacturer charts for proper sizing.",
+        "incorrect": "Incorrect. Cable size is critical (not irrelevant). Undersized cables cause problems, not improvements. Arc brightness and weld strength aren't improved - they're degraded. The correct answer is B."
+      }
+    },
+    {
+      "id": 52,
+      "section": 3,
+      "subsection": "A",
+      "topic": "Constant Current vs Constant Voltage",
+      "question": "What type of power source characteristic does SMAW use?",
+      "options": {
+        "A": "Constant voltage (CV)",
+        "B": "Constant current (CC) - also called drooping or 'drooper'",
+        "C": "Variable voltage and current",
+        "D": "No specific characteristic"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! SMAW uses constant current (CC) power sources with a drooping volt-amp curve. As arc length changes slightly, current stays relatively constant while voltage varies. This is essential for manual welding where the welder controls arc length. Voltage changes self-regulate to maintain stable arc despite hand movement. Also called 'drooper' due to volt-amp curve shape. GMAW/MIG uses constant voltage.",
+        "incorrect": "Incorrect. Constant voltage (CV) is for wire feed welding (GMAW, FCAW). Characteristic is very specific and important. SMAW specifically requires constant current for stable manual arc control. The correct answer is B."
+      }
+    },
+    {
+      "id": 53,
+      "section": 3,
+      "subsection": "A",
+      "topic": "Inverter vs Transformer Welders",
+      "question": "What is an advantage of inverter-based welding machines?",
+      "options": {
+        "A": "Heavier and more durable",
+        "B": "Lighter weight, more efficient, and better arc control",
+        "C": "Cheaper always",
+        "D": "Simpler repair"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Inverter welders use high-frequency switching to create welding power. Advantages: (1) 50-70% lighter than transformer machines same output, (2) higher efficiency (less power consumption), (3) precise current control and arc characteristics, (4) often multi-process capable. Disadvantages: more complex electronics (harder to repair), higher initial cost. Becoming industry standard due to performance and portability.",
+        "incorrect": "Incorrect. Inverters are LIGHTER (not heavier). Usually cost more initially (not cheaper). More complex internally (not simpler). The advantages are weight, efficiency, and control. The correct answer is B."
+      }
+    },
+    {
+      "id": 54,
+      "section": 3,
+      "subsection": "A",
+      "topic": "Remote Amperage Control",
+      "question": "What is the purpose of a remote amperage control (amptrol, foot pedal)?",
+      "options": {
+        "A": "To turn the machine on and off",
+        "B": "To adjust welding amperage while welding without stopping",
+        "C": "To measure voltage",
+        "D": "To cool the machine"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Remote controls (hand amptrol or foot pedal) allow the welder to adjust amperage during welding. Especially useful for: (1) GTAW/TIG - start low to establish puddle, increase for fill, decrease to crater fill, (2) varying thickness materials, (3) out-of-position welding. Provides real-time heat control without stopping arc. Common on TIG machines, optional on some stick machines.",
+        "incorrect": "Incorrect. On/off is a separate function. Not for measuring voltage or cooling. Remote control specifically provides variable amperage adjustment during welding. The correct answer is B."
+      }
+    },
+    {
+      "id": 55,
+      "section": 3,
+      "subsection": "B",
+      "topic": "Porosity",
+      "question": "What causes porosity in welds?",
+      "options": {
+        "A": "Too slow travel speed",
+        "B": "Gas entrapment from contamination, moisture, or inadequate shielding",
+        "C": "Excessive amperage only",
+        "D": "Using the wrong color electrode"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Porosity (gas pockets, wormholes) is caused by gases trapped in solidifying weld metal. Sources: (1) base metal contamination (oil, grease, paint, rust, moisture), (2) wet electrodes, (3) inadequate shielding gas coverage (drafts, wrong gas, low flow), (4) base metal outgassing, (5) improper technique. Weakens weld and is a serious defect. Prevention requires cleanliness and proper procedures.",
+        "incorrect": "Incorrect. Travel speed affects other defects. Amperage alone doesn't cause porosity. Electrode color is irrelevant. Gas entrapment from various contamination sources causes porosity. The correct answer is B."
+      }
+    },
+    {
+      "id": 56,
+      "section": 3,
+      "subsection": "B",
+      "topic": "Lack of Fusion",
+      "question": "What causes lack of fusion in welds?",
+      "options": {
+        "A": "Too much heat",
+        "B": "Insufficient heat, wrong angle, too fast travel, or improper joint preparation",
+        "C": "Too slow travel",
+        "D": "Using protective gas"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Lack of fusion occurs when weld metal doesn't bond with base metal or previous weld passes. Causes: (1) insufficient heat (amperage too low), (2) wrong electrode angle (not directing heat into joint), (3) too fast travel speed (insufficient heating time), (4) improper joint prep (surfaces not clean, gap wrong), (5) large electrode in narrow groove. Critical defect - creates crack initiation sites.",
+        "incorrect": "Incorrect. Too much heat causes other defects like burn-through. Too slow travel doesn't prevent fusion. Shielding gas is necessary, not a problem. Insufficient heat and poor technique cause lack of fusion. The correct answer is B."
+      }
+    },
+    {
+      "id": 57,
+      "section": 3,
+      "subsection": "C",
+      "topic": "Electrode Classification",
+      "question": "In the electrode classification E7018, what does the '70' represent?",
+      "options": {
+        "A": "The length in inches",
+        "B": "Minimum tensile strength in thousands of psi (70,000 psi)",
+        "C": "The diameter",
+        "D": "The color"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! In AWS electrode classification E7018: E = electrode, 70 = minimum 70,000 psi tensile strength of deposited weld metal, 1 = all-position capable, 8 = coating type (low hydrogen, iron powder) and current type (AC or DC+). The first two digits always indicate tensile strength: E60xx = 60,000 psi, E70xx = 70,000 psi, E100xx = 100,000 psi, etc.",
+        "incorrect": "Incorrect. Length and diameter are separate specifications. Color is irrelevant to classification. The 70 specifically indicates minimum tensile strength in ksi (thousand psi). The correct answer is B."
+      }
+    },
+    {
+      "id": 58,
+      "section": 3,
+      "subsection": "C",
+      "topic": "Low Hydrogen Electrodes",
+      "question": "Why must low-hydrogen electrodes (E7018, E7016) be kept dry?",
+      "options": {
+        "A": "They work better wet",
+        "B": "Moisture causes hydrogen porosity and cracking in welds",
+        "C": "Just a suggestion, not required",
+        "D": "To make them heavier"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Low-hydrogen electrodes have moisture-sensitive coatings. If exposed to moisture: (1) hydrogen from water enters weld metal, (2) hydrogen causes porosity and hydrogen-induced cracking (HIC) in welds, especially in high-strength steels and thick sections. Must be stored in heated rod ovens (250-300°F for E7018). Electrodes exposed to moisture must be re-dried or discarded. Critical for code welding.",
+        "incorrect": "Incorrect. Moisture is extremely detrimental (not beneficial). Storage requirements are mandatory (not suggestions). Weight isn't the concern. Moisture control prevents hydrogen cracking. The correct answer is B."
+      }
+    },
+    {
+      "id": 59,
+      "section": 3,
+      "subsection": "D",
+      "topic": "Plasma Arc Cutting",
+      "question": "How does plasma arc cutting work?",
+      "options": {
+        "A": "Mechanical sawing",
+        "B": "Superheated ionized gas (plasma) melts metal while high-velocity gas blows it away",
+        "C": "Chemical reaction only",
+        "D": "Water pressure cuts the metal"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Plasma cutting uses electrical arc to create plasma (ionized gas at 30,000°F+) that melts metal. High-velocity plasma gas jet blows molten metal away, creating cut. Advantages: cuts all conductive metals (steel, stainless, aluminum, copper), faster than oxy-fuel on thin material, good quality, doesn't require preheat. Can cut up to 2\"+ with high-powered systems. Requires compressed air or inert gas.",
+        "incorrect": "Incorrect. Plasma cutting uses thermal/plasma process, not mechanical sawing, simple chemical reaction, or water pressure (that's waterjet cutting). The correct answer is B."
+      }
+    },
+    {
+      "id": 60,
+      "section": 3,
+      "subsection": "D",
+      "topic": "Plasma Consumables",
+      "question": "What are consumable parts on a plasma torch?",
+      "options": {
+        "A": "Parts that last forever",
+        "B": "Electrode, nozzle, and swirl ring that wear and require regular replacement",
+        "C": "The power cable",
+        "D": "The case"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Plasma torch consumables include: (1) electrode (copper with hafnium or tungsten insert) - erodes from arc, (2) nozzle (copper with orifice) - erodes from plasma flow, (3) swirl ring/gas distributor, (4) retaining cap, (5) shield (on some torches). These parts wear during cutting and must be replaced regularly for good cut quality. Proper technique extends consumable life. Major operating cost.",
+        "incorrect": "Incorrect. Consumables are specifically parts that wear out (not last forever). Power cables and case are durable parts. Electrode, nozzle, and swirl ring are the key consumables. The correct answer is B."
+      }
+    },
+    {
+      "id": 61,
+      "section": 3,
+      "subsection": "E",
+      "topic": "Shielding Gases for Steel",
+      "question": "What shielding gas is commonly used for GMAW (MIG) welding of mild steel?",
+      "options": {
+        "A": "Pure argon",
+        "B": "75% argon / 25% CO2 or pure CO2",
+        "C": "Pure helium",
+        "D": "Nitrogen"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Mild steel GMAW uses: (1) 75% Ar / 25% CO₂ (C25) - most common, good spray transfer, low spatter, good bead appearance, or (2) pure CO₂ - economical, deeper penetration, more spatter, short-circuit transfer only. Pure argon gives poor penetration and arc instability on steel. Stainless steel uses 90-98% Ar with 2-10% CO₂. Aluminum uses pure argon or argon/helium.",
+        "incorrect": "Incorrect. Pure argon is for aluminum/stainless (not mild steel). Helium is for aluminum and special applications. Nitrogen isn't used for shielding. C25 mix or CO₂ are correct for steel. The correct answer is B."
+      }
+    },
+    {
+      "id": 62,
+      "section": 3,
+      "subsection": "E",
+      "topic": "GTAW Filler Metals",
+      "question": "When GTAW (TIG) welding, when might you not use filler metal?",
+      "options": {
+        "A": "Never - filler is always required",
+        "B": "On thin materials or autogenous welds where edges are fused without filler addition",
+        "C": "Only on aluminum",
+        "D": "Only on Fridays"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! GTAW can be performed without filler metal (autogenous welding) when: (1) welding thin sheet (edges melt and fuse together), (2) seal welds or cosmetic welds, (3) joining components where no gap exists. Most structural GTAW uses filler rod for strength and gap filling. Filler metal selection matches base metal. Non-consumable tungsten provides arc only - doesn't become part of weld.",
+        "incorrect": "Incorrect. Filler isn't always required (autogenous welding exists). Not limited to specific metals or days. Thin materials can be welded without filler. The correct answer is B."
+      }
+    },
+    {
+      "id": 63,
+      "section": 3,
+      "subsection": "F",
+      "topic": "GMAW Transfer Modes",
+      "question": "What are the three main metal transfer modes in GMAW (MIG)?",
+      "options": {
+        "A": "Red, green, and blue",
+        "B": "Short circuit, globular, and spray",
+        "C": "Fast, medium, and slow",
+        "D": "Hot, warm, and cold"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! GMAW transfer modes: (1) Short-circuit - wire touches puddle, shorts, melts off in droplets - low heat, all positions, thin material; (2) Globular - large molten drops transferred across arc - medium heat, spatter, flat/horizontal only; (3) Spray - fine metal spray transferred axially - high heat, low spatter, flat/horizontal only, requires argon-rich gas. Pulsed spray is fourth mode (controlled spray in all positions).",
+        "incorrect": "Incorrect. Transfer modes aren't colors, general speed terms, or temperatures. They're specific physical transfer mechanisms with distinct characteristics. The correct answer is B."
+      }
+    },
+    {
+      "id": 64,
+      "section": 3,
+      "subsection": "F",
+      "topic": "Wire Feed Speed",
+      "question": "In GMAW, what happens if wire feed speed is too fast for the amperage?",
+      "options": {
+        "A": "Perfect welds",
+        "B": "Wire stubs into work (won't melt fast enough), causing erratic arc",
+        "C": "Wire burns back to contact tip",
+        "D": "Nothing - any speed works"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Wire feed speed must match amperage (melt rate). Too fast = wire feeds faster than it melts, stubbing into work causing arc outages and poor welds. Too slow = wire melts faster than fed, burning back to contact tip. Constant voltage power source balances this: wire touches work, shorts, reducing voltage, reducing melt rate until wire pulls back, re-establishing arc. Proper settings create stable self-regulation.",
+        "incorrect": "Incorrect. Perfect welds require balanced parameters. Burnback is from too-slow feed or too-high voltage. Speed definitely matters - improper speed causes major problems. The correct answer is B."
+      }
+    },
+    {
+      "id": 65,
+      "section": 3,
+      "subsection": "F",
+      "topic": "Contact Tip Maintenance",
+      "question": "Why must MIG contact tips be replaced regularly?",
+      "options": {
+        "A": "They're decorative",
+        "B": "Worn tips cause erratic wire feed, arc instability, and poor electrical contact",
+        "C": "It's a conspiracy by manufacturers",
+        "D": "They never need replacement"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Contact tips transfer welding current to wire and guide it. Worn/damaged tips cause: (1) poor electrical contact (arc instability), (2) erratic wire feeding (wire binding in enlarged hole), (3) arc wander, (4) porosity from poor shielding gas coverage. Tips wear from: electrical arcing, mechanical abrasion, heat. Replace when hole is visibly enlarged or arc becomes unstable. Consumable item.",
+        "incorrect": "Incorrect. Contact tips are functional, not decorative. Wear is real, not conspiracy. They definitely need periodic replacement (consumable parts). Worn tips cause serious weld quality problems. The correct answer is B."
+      }
+    },
+    {
+      "id": 66,
+      "section": 3,
+      "subsection": "F",
+      "topic": "Gun Angle",
+      "question": "What is the recommended gun angle for flat position GMAW?",
+      "options": {
+        "A": "Perpendicular (90°) to work",
+        "B": "Push angle: 5-15° from perpendicular in direction of travel",
+        "C": "45° angle",
+        "D": "Pointing backwards"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! For flat position GMAW: Use 5-15° push angle (lean slightly forward in travel direction). Push angle provides: (1) better gas coverage, (2) flatter bead profile, (3) less penetration, (4) cleaner appearance. Drag angle (pulling back) gives: deeper penetration, more convex bead, potentially reduced gas coverage. Work angle (side-to-side) is typically 45° for fillet welds, 90° for groove welds.",
+        "incorrect": "Incorrect. Perpendicular works but isn't optimal. 45° is work angle (for fillets), not travel angle. Pointing backwards is drag technique (different effects). Slight push angle is recommended for most applications. The correct answer is B."
+      }
+    },
+    {
+      "id": 67,
+      "section": 3,
+      "subsection": "F",
+      "topic": "Solid vs Flux-Cored Wire",
+      "question": "What is the difference between solid MIG wire and flux-cored wire?",
+      "options": {
+        "A": "No difference",
+        "B": "Flux-cored has flux inside tubular wire; can be used with or without shielding gas depending on type",
+        "C": "Solid wire is hollow",
+        "D": "Flux-cored is only for aluminum"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Solid wire is solid metal throughout - requires external shielding gas. Flux-cored (FCAW) has tubular wire with flux/deoxidizers inside. Two types: (1) Gas-shielded FCAW - uses external shielding gas plus internal flux (higher deposition rates), (2) Self-shielded FCAW - flux generates protective gas, no external gas needed (good for outdoors/windy conditions). FCAW generally has higher deposition rates and better out-of-position capability than solid wire.",
+        "incorrect": "Incorrect. They're definitely different. Solid wire is solid (not hollow). FCAW exists for steel primarily (aluminum uses solid wire). The tubular design with internal flux is the key difference. The correct answer is B."
+      }
+    },
+    {
+      "id": 68,
+      "section": 3,
+      "subsection": "F",
+      "topic": "Voltage Effect",
+      "question": "In GMAW constant voltage systems, what does increasing voltage do?",
+      "options": {
+        "A": "Decreases arc length and penetration",
+        "B": "Increases arc length, width, and heat input",
+        "C": "Has no effect",
+        "D": "Only changes wire feed speed"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! In CV (constant voltage) GMAW systems, voltage controls arc length. Higher voltage = longer arc, wider bead, more heat input, flatter bead. Lower voltage = shorter arc, narrower bead, more convex bead. The self-regulating CV system maintains set voltage by varying current as wire feed rate varies. Arc length directly relates to voltage. Amperage is result of wire feed speed and voltage interaction.",
+        "incorrect": "Incorrect. Higher voltage increases arc (not decreases). It definitely has effects. Voltage doesn't change wire feed speed (that's a separate control). Voltage primarily controls arc length and bead width. The correct answer is B."
+      }
+    },
+    {
+      "id": 69,
+      "section": 3,
+      "subsection": "F",
+      "topic": "Stick-out / CTWD",
+      "question": "What is stick-out (CTWD - Contact Tip to Work Distance) in GMAW?",
+      "options": {
+        "A": "How far the gun sticks out from your hand",
+        "B": "Distance from contact tip to workpiece, affecting heat input and deposition",
+        "C": "How long the cable is",
+        "D": "The brand of wire"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Stick-out (CTWD) is the distance from contact tip to work surface. Typical: 3/8\" to 3/4\" for short-circuit, 1/2\" to 1\" for spray. Longer stick-out = more resistance heating of wire (preheating before arc), less penetration, higher deposition rate. Shorter stick-out = less preheating, deeper penetration. Must be consistent for consistent results. Too long = poor gas coverage, weld defects.",
+        "incorrect": "Incorrect. Not about hand position, cable length, or wire brand. Stick-out is a measurable welding parameter affecting weld characteristics. The correct answer is B."
+      }
+    },
+    {
+      "id": 70,
+      "section": 3,
+      "subsection": "F",
+      "topic": "Pulsed GMAW",
+      "question": "What is pulsed spray transfer in GMAW?",
+      "options": {
+        "A": "Welding in pulses only",
+        "B": "Power source alternates between high peak current (spray transfer) and low background current",
+        "C": "Turning the machine on and off",
+        "D": "Using your finger to pulse the trigger"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Pulsed spray alternates between: (1) High peak current - creates spray transfer detaching one droplet per pulse, (2) Low background current - maintains arc, prevents wire stubbing, cools puddle. Benefits: spray transfer in all positions (even vertical/overhead), reduced heat input (good for thin material), reduced spatter. Requires synergic power source that automatically sets pulse parameters. Advanced GMAW process.",
+        "incorrect": "Incorrect. Pulsing is continuous electronic current modulation, not intermittent welding, on/off switching, or manual trigger pulsing. It's a sophisticated power source feature. The correct answer is B."
+      }
+    },
+    {
+      "id": 71,
+      "section": 3,
+      "subsection": "F",
+      "topic": "Liner Maintenance",
+      "question": "What is the purpose of the liner in a GMAW gun cable?",
+      "options": {
+        "A": "To carry shielding gas",
+        "B": "To guide wire smoothly through cable from feeder to contact tip",
+        "C": "To insulate electrically",
+        "D": "Decoration"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! The liner is a spiral-wound wire or Teflon tube inside the cable that guides the wire smoothly. Must be: correct size for wire (too large = wire wanders, too small = wire jams), clean and undamaged, proper length (trimmed to match cable). Liner problems cause erratic wire feeding. Steel wire uses steel liner, aluminum uses Teflon or nylon (aluminum galls steel). Replace liner if damaged or feeding becomes erratic.",
+        "incorrect": "Incorrect. Gas flows through outer cable/hose (not liner). Electrical insulation is cable jacket. Decoration is irrelevant. Liner specifically provides smooth wire path. The correct answer is B."
+      }
+    },
+    {
+      "id": 72,
+      "section": 3,
+      "subsection": "G",
+      "topic": "GTAW Tungsten Types",
+      "question": "What color coding indicates 2% thoriated tungsten?",
+      "options": {
+        "A": "Green",
+        "B": "Red",
+        "C": "Blue",
+        "D": "Yellow"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Tungsten color codes: Red = 2% thoriated (thorium dioxide), most common for steel DC welding, radioactive (low level). Other codes: Green = pure tungsten (AC aluminum), Gold = 1.5% lanthanated (alternative to thoriated), Gray = cerium, Teal = rare earth. Color coding is on one end. Type selection depends on material and current type (AC or DC). Thoriated being phased out due to radioactivity.",
+        "incorrect": "Incorrect. Green is pure tungsten. Blue and yellow aren't common for 2% thoriated. Industry standard color code for 2% thoriated is red. The correct answer is B."
+      }
+    },
+    {
+      "id": 73,
+      "section": 3,
+      "subsection": "G",
+      "topic": "Tungsten Grinding",
+      "question": "How should tungsten be ground for GTAW DC welding?",
+      "options": {
+        "A": "Random direction",
+        "B": "Lengthwise along the electrode to create pointed tip with longitudinal grinding marks",
+        "C": "Blunt flat end",
+        "D": "Tungsten doesn't need grinding"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! For GTAW DC (steel, stainless), grind tungsten lengthwise with grinding marks parallel to electrode axis, creating pointed cone (typically 30-60° included angle). Longitudinal marks direct arc straight and stable. Never grind circumferentially (arc wanders). Use dedicated tungsten grinder or grinding wheel (don't contaminate tungsten with other metals). For AC (aluminum), use ball end formed by arc.",
+        "incorrect": "Incorrect. Random/circumferential grinding causes arc wander. Blunt end is for AC after balling. Tungsten definitely needs proper preparation. Longitudinal pointed grinding is correct for DC. The correct answer is B."
+      }
+    },
+    {
+      "id": 74,
+      "section": 3,
+      "subsection": "G",
+      "topic": "GTAW Shielding Gas",
+      "question": "What shielding gas is used for GTAW welding of steel and stainless steel?",
+      "options": {
+        "A": "CO2",
+        "B": "Pure argon or argon/helium mixtures",
+        "C": "Nitrogen",
+        "D": "Oxygen"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! GTAW uses inert gases: Pure argon (most common - good arc starting, stable arc, economical) or argon/helium mixtures (helium adds heat, good for thick materials and aluminum). Argon is heavier, provides better coverage. Helium requires higher flow rates. Never use reactive gases (CO₂, O₂, N₂) - they contaminate tungsten and weld. GTAW requires inert gas protection.",
+        "incorrect": "Incorrect. CO₂ is for GMAW steel. Nitrogen and oxygen are reactive (cause contamination in GTAW). Inert argon or argon/helium are required for GTAW. The correct answer is B."
+      }
+    },
+    {
+      "id": 75,
+      "section": 4,
+      "subsection": "A",
+      "topic": "Critical Lifts",
+      "question": "What defines a 'critical lift'?",
+      "options": {
+        "A": "Any lift over 100 pounds",
+        "B": "Lifts with potential for serious consequences if failure occurs - requires detailed planning",
+        "C": "Only lifts using cranes",
+        "D": "Lifts on Fridays"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Critical lifts have potential for: death, serious injury, major property damage, or environmental consequences if something goes wrong. Examples: lifts over personnel, near power lines, of hazardous materials, in confined spaces, multiple cranes, near maximum capacity. Require: detailed lift plan, competent person supervision, job hazard analysis, permits, and specialized rigging/equipment. Safety is paramount.",
+        "incorrect": "Incorrect. Not simply about weight, equipment type, or day of week. 'Critical' refers to potential consequences and hazard level requiring extra planning and precautions. The correct answer is B."
+      }
+    },
+    {
+      "id": 76,
+      "section": 4,
+      "subsection": "A",
+      "topic": "Pre-lift Meetings",
+      "question": "What should be covered in a pre-lift meeting?",
+      "options": {
+        "A": "Only the weather",
+        "B": "Lift plan review, hazards, roles/responsibilities, communication methods, and emergency procedures",
+        "C": "Lunch plans",
+        "D": "Sports scores"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Pre-lift meetings cover: (1) lift plan review (load, rigging, sequence), (2) identified hazards and controls, (3) roles and responsibilities (signal person, riggers, operator), (4) communication methods (hand signals, radios), (5) emergency stop procedures, (6) weather/environmental factors, (7) questions and concerns. Ensures everyone understands the plan. Mandatory for critical lifts.",
+        "incorrect": "Incorrect. Weather is one factor but not the only topic. Lunch and sports aren't relevant. Pre-lift meetings are serious safety briefings covering all lift aspects. The correct answer is B."
+      }
+    },
+    {
+      "id": 77,
+      "section": 4,
+      "subsection": "A",
+      "topic": "Barricading",
+      "question": "Why are lift areas barricaded during hoisting operations?",
+      "options": {
+        "A": "To look official",
+        "B": "To prevent unauthorized personnel from entering the danger zone beneath or near the load",
+        "C": "To mark property lines",
+        "D": "Because regulations say so without reason"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Barricades (barriers, caution tape, cones) keep unauthorized personnel out of the fall zone. If rigging fails, load falls within a radius equal to lift height plus load length. This area must be clear of personnel not involved in the lift. Barricades provide visible boundary, prevent inadvertent entry. Overhead lifts require barricades. Critical safety measure - falling loads kill.",
+        "incorrect": "Incorrect. Barricades serve a critical safety function (not appearance, property marking, or blind rule-following). They prevent deaths from falling loads. The correct answer is B."
+      }
+    },
+    {
+      "id": 78,
+      "section": 4,
+      "subsection": "B",
+      "topic": "Chain Falls",
+      "question": "What is a chain fall (chain hoist)?",
+      "options": {
+        "A": "When a chain breaks",
+        "B": "Hand-operated or electric hoist using chain for lifting",
+        "C": "A safety device only",
+        "D": "A type of crane"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Chain falls (chain hoists, chain blocks) lift loads using chain. Two types: (1) Hand chain hoists - operator pulls hand chain through gears to lift load chain (mechanical advantage 20:1 to 100:1), (2) Electric chain hoists - motor drives lift. Capacities: 1/4 ton to 50+ tons. Advantages: portable, precise positioning, self-locking (load won't drop if released). Must be inspected before use.",
+        "incorrect": "Incorrect. Chain fall isn't a failure mode, safety device only, or crane. It's specifically a type of hoist for lifting. Very common on construction sites. The correct answer is B."
+      }
+    },
+    {
+      "id": 79,
+      "section": 4,
+      "subsection": "B",
+      "topic": "Come-Along Safety",
+      "question": "What is a critical safety rule when using come-alongs (cable pullers)?",
+      "options": {
+        "A": "Stand in line with cable under tension",
+        "B": "Never exceed rated capacity and never use for overhead lifting",
+        "C": "Remove all guards for better visibility",
+        "D": "Use damaged cables to save money"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Come-along safety: (1) NEVER use for overhead lifting - designed for pulling only (horizontal/angular), if used overhead and ratchet fails, load drops, (2) never exceed WLL, (3) inspect cable/hooks before use, (4) stand clear of cable under tension (if breaks, will whip), (5) ensure secure anchor points. Designed for pulling into position, not as hoists. Using overhead is common cause of accidents.",
+        "incorrect": "Incorrect. Never stand in line with tensioned cable (lethal if breaks). Never remove guards (increase danger). Never use damaged equipment. Overhead lifting prohibition is critical safety rule. The correct answer is B."
+      }
+    },
+    {
+      "id": 80,
+      "section": 4,
+      "subsection": "B",
+      "topic": "Beam Clamps",
+      "question": "What is a beam clamp used for?",
+      "options": {
+        "A": "Measuring beams",
+        "B": "Attaching hoists or rigging to overhead beams and structural steel",
+        "C": "Cutting beams",
+        "D": "Painting beams"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Beam clamps attach to beam flanges to provide lifting or suspension points. Types: screw-adjust clamps (adjust to beam width), fixed clamps (specific beam sizes), trolley-type clamps (allow movement along beam). Used for: hanging chain hoists, suspending loads, temporary rigging points. Must be rated for load, properly installed (seated on flange, not web), and beam must be adequate for load.",
+        "incorrect": "Incorrect. Beam clamps don't measure, cut, or paint. They're rigging hardware for attachment to beams. The correct answer is B."
+      }
+    },
+    {
+      "id": 81,
+      "section": 4,
+      "subsection": "B",
+      "topic": "Plate Clamps",
+      "question": "When are vertical plate clamps appropriate?",
+      "options": {
+        "A": "For any orientation",
+        "B": "Only for vertical lifts of plate material - must not be used horizontally",
+        "C": "Never appropriate",
+        "D": "Only for round objects"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Vertical plate clamps grip plate edges and are designed ONLY for vertical lifts (plate hanging vertically). If used horizontally or at angles, the cam mechanism doesn't engage properly and plate can slip out. For horizontal plate lifts, use different rigging (beam-type plate clamps, spreader beams with multiple lifts, or slings). Always check orientation marking on clamps. Using wrong orientation causes drops.",
+        "incorrect": "Incorrect. Plate clamps are definitely appropriate when used correctly. Not for any orientation (vertical only) or round objects (different grippers needed). Vertical orientation limitation is critical safety requirement. The correct answer is B."
+      }
+    },
+    {
+      "id": 82,
+      "section": 4,
+      "subsection": "B",
+      "topic": "Sling Hitches",
+      "question": "What is a basket hitch?",
+      "options": {
+        "A": "Using a sling to carry lunch",
+        "B": "Sling goes under load with both ends connected to hook - creates U-shape supporting load",
+        "C": "Wrapping sling around a basket",
+        "D": "A type of knot"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Basket hitch: sling passes under the load with both ends attached to the lifting hook, creating a U-shape that supports the load from underneath. Capacity: double the vertical capacity (both legs support load). Load must be balanced between legs. Used for: pipes, beams, bundles. Advantage: high capacity, stable. Important: sling angle affects capacity (use angle factor).",
+        "incorrect": "Incorrect. Basket hitch is a rigging configuration, not for lunch, wrapping baskets, or a knot. It's a fundamental sling configuration doubling capacity. The correct answer is B."
+      }
+    },
+    {
+      "id": 83,
+      "section": 4,
+      "subsection": "C",
+      "topic": "Mobile Crane Types",
+      "question": "What is the difference between a boom truck and a hydraulic crane?",
+      "options": {
+        "A": "No difference",
+        "B": "Boom trucks are truck-mounted with crane behind cab; hydraulic cranes have rotating superstructure",
+        "C": "Boom trucks are always larger",
+        "D": "One uses diesel, the other gasoline"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Boom trucks (articulating cranes, knuckle booms) have hydraulic crane mounted behind truck cab, often with articulating (folding) boom. Used for: service trucks, utility work, material handling. Limited swing radius and capacity. Hydraulic truck cranes have full rotating superstructure, telescopic boom, 360° rotation. Higher capacity, longer reach. Each has appropriate applications.",
+        "incorrect": "Incorrect. They're definitely different in design and capability. Size and fuel type aren't the distinctions. Design and functionality differences define them. The correct answer is B."
+      }
+    },
+    {
+      "id": 84,
+      "section": 4,
+      "subsection": "C",
+      "topic": "Crane Load Charts",
+      "question": "What information must you know to use a crane load chart?",
+      "options": {
+        "A": "Only the load weight",
+        "B": "Boom length, boom angle, and load radius to determine maximum capacity",
+        "C": "Only the weather",
+        "D": "The crane color"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Load charts require: (1) boom configuration (main boom length, jib if used), (2) operating radius (horizontal distance from centerline of rotation to load), or boom angle, (3) other factors: counterweight, outrigger position, on-rubber vs on-outriggers. Chart shows maximum capacity for each configuration. Capacity decreases as radius increases or boom extends. Never exceed chart capacity.",
+        "incorrect": "Incorrect. Load weight alone doesn't determine if lift is safe. Weather matters but isn't a chart input. Color is irrelevant. Boom geometry and radius are essential for chart use. The correct answer is B."
+      }
+    },
+    {
+      "id": 85,
+      "section": 4,
+      "subsection": "C",
+      "topic": "Outriggers",
+      "question": "Why do cranes use outriggers?",
+      "options": {
+        "A": "For decoration",
+        "B": "To increase stability and lifting capacity by widening base of support",
+        "C": "To make crane taller",
+        "D": "To store tools"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Outriggers extend horizontally from crane, then vertical jacks lift crane off tires/tracks, creating wider, more stable base. This allows: (1) higher capacity (stability limits capacity more than structural strength), (2) operation over sides and rear (not possible on tires), (3) level operation on slopes. Must use: rated capacity for outrigger position, mats under pads (distribute load), full extension. Critical for safety.",
+        "incorrect": "Incorrect. Outriggers aren't decorative, for height, or tool storage. They specifically increase stability and capacity by widening the base. The correct answer is B."
+      }
+    },
+    {
+      "id": 86,
+      "section": 4,
+      "subsection": "C",
+      "topic": "Anti-Two-Block Device",
+      "question": "What does an anti-two-block device prevent?",
+      "options": {
+        "A": "Using two blocks of wood",
+        "B": "Hook block from being pulled into boom tip, potentially causing boom collapse",
+        "C": "Lifting two loads at once",
+        "D": "Operating on city blocks"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Anti-two-block (A2B) prevents 'two-blocking' - when load block or ball is hoisted until it contacts boom tip (sheaves). This can: overload hoist system, damage boom, cause boom collapse. A2B device (weight, limit switch, or laser) detects when block approaches boom tip and stops hoist motion or alarms. Required safety device on most modern cranes. Bypass only for specific maintenance operations.",
+        "incorrect": "Incorrect. Not about wood blocks, multiple loads, or location. Two-blocking is dangerous condition of hook-to-tip contact. A2B prevents catastrophic failures. The correct answer is B."
+      }
+    },
+    {
+      "id": 87,
+      "section": 4,
+      "subsection": "C",
+      "topic": "Crane Inspections",
+      "question": "How often must cranes be inspected?",
+      "options": {
+        "A": "Never",
+        "B": "Daily before use, periodic (monthly), and annual comprehensive inspections",
+        "C": "Only when purchased",
+        "D": "Only if they look damaged"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Crane inspection requirements (per ASME B30.5): (1) Daily/shift inspection before use (visual check of critical items), (2) Monthly periodic inspection (more detailed by designated person), (3) Annual comprehensive inspection (detailed by qualified person, documented). Inspections cover: structure, ropes, hydraulics, safeties, controls, etc. Deficiencies must be corrected before operation. Required by law and safety.",
+        "incorrect": "Incorrect. Cranes definitely require inspection (not never or only at purchase). Can't wait for visible damage (failures are sudden). Multi-level inspection schedule is mandatory. The correct answer is B."
+      }
+    },
+    {
+      "id": 88,
+      "section": 4,
+      "subsection": "C",
+      "topic": "Load Moment Indicator",
+      "question": "What is a Load Moment Indicator (LMI) on a crane?",
+      "options": {
+        "A": "A clock",
+        "B": "Electronic system that calculates load vs. capacity and warns of approaching overload",
+        "C": "A type of light",
+        "D": "The operator's logbook"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! LMI (Load Moment Indicator) is an electronic system that: (1) measures boom angle, length, and radius, (2) senses load on hook, (3) compares actual load moment to capacity for current configuration, (4) provides visual display of % capacity, (5) alarms at 90-100% capacity, (6) may prevent overload motions. Assists operator but doesn't replace judgment. Not a substitute for load charts. Required on most modern cranes.",
+        "incorrect": "Incorrect. LMI is sophisticated electronic safety system, not a clock, light, or logbook. It actively monitors crane loading and warns of dangerous conditions. The correct answer is B."
+      }
+    },
+    {
+      "id": 89,
+      "section": 4,
+      "subsection": "C",
+      "topic": "Tag Lines",
+      "question": "What is the purpose of tag lines during crane lifts?",
+      "options": {
+        "A": "To increase lifting capacity",
+        "B": "To control load rotation and prevent swinging without personnel touching load",
+        "C": "To replace rigging",
+        "D": "To mark the load color"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Tag lines (guide ropes, pull ropes) are ropes attached to load to allow ground personnel to control: (1) load rotation and orientation, (2) prevent uncontrolled swinging, (3) guide load into position without touching it (staying clear). Critical for: loads over personnel/equipment, in confined spaces, near power lines, wind conditions. Must be non-conductive near electrical hazards. Don't wrap around body.",
+        "incorrect": "Incorrect. Tag lines don't increase capacity (they're not structural), replace rigging, or mark color. They specifically provide safe load control from ground. The correct answer is B."
+      }
+    },
+    {
+      "id": 90,
+      "section": 5,
+      "subsection": "A",
+      "topic": "P&ID Symbols",
+      "question": "What is a P&ID?",
+      "options": {
+        "A": "Personal Identification Document",
+        "B": "Piping and Instrumentation Diagram showing process equipment, piping, and control systems",
+        "C": "Painting and Interior Design",
+        "D": "Pressure Increase Device"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! P&ID (Piping and Instrumentation Diagram, also called P&I Diagram) is a schematic diagram showing: process equipment, piping connections, instrumentation, control systems, and process flow. Uses standardized symbols (ISA standards). Essential for: understanding process operation, troubleshooting, maintenance, design. More detailed than PFD (Process Flow Diagram). Shows all components but not physical layout.",
+        "incorrect": "Incorrect. The other options are made up. P&ID is the standard industrial drawing showing complete process systems with instrumentation. The correct answer is B."
+      }
+    },
+    {
+      "id": 91,
+      "section": 5,
+      "subsection": "A",
+      "topic": "Instrument Identification",
+      "question": "In a P&ID instrument tag 'TIC-101', what does TIC indicate?",
+      "options": {
+        "A": "Temperature Indicating Controller",
+        "B": "Total Iron Content",
+        "C": "Time In Control",
+        "D": "Typical Industrial Component"
+      },
+      "correct_answer": "A",
+      "explanation": {
+        "correct": "Correct! ISA instrument identification uses letter codes: First letter = measured variable (T = Temperature, P = Pressure, F = Flow, L = Level). Subsequent letters = functions (I = Indicator, C = Controller, T = Transmitter, A = Alarm). So TIC = Temperature Indicating Controller. Number (101) uniquely identifies this specific instrument. Other examples: PT = Pressure Transmitter, FIC = Flow Indicating Controller, LT = Level Transmitter.",
+        "incorrect": "Incorrect. The other options are made up. TIC follows ISA 5.1 standard: Temperature Indicating Controller. Learning these codes is essential for reading P&IDs. The correct answer is A."
+      }
+    },
+    {
+      "id": 92,
+      "section": 5,
+      "subsection": "A",
+      "topic": "Control Valve Symbols",
+      "question": "On a P&ID, what symbol represents a control valve?",
+      "options": {
+        "A": "Triangle",
+        "B": "Circle",
+        "C": "Valve body symbol with actuator shown on top (often as circle or rectangle)",
+        "D": "Square"
+      },
+      "correct_answer": "C",
+      "explanation": {
+        "correct": "Correct! Control valves on P&IDs show: valve body (drawn similar to manual valve but with automation indicators), actuator on top (spring-and-diaphragm shown as circle, motor shown as rectangle/circle with M, cylinder shown as rectangle). Fail-safe mode indicated by arrows or notation (FC = fail closed, FO = fail open). Control signal shown as dashed or dotted line from controller.",
+        "incorrect": "Incorrect. Simple shapes don't represent control valves - they need actuator indication. Valve with actuator symbol distinguishes it from manual valves. The correct answer is C."
+      }
+    },
+    {
+      "id": 93,
+      "section": 5,
+      "subsection": "A",
+      "topic": "PFD vs P&ID",
+      "question": "What is the main difference between a PFD and a P&ID?",
+      "options": {
+        "A": "No difference",
+        "B": "PFD shows simplified process flow; P&ID shows detailed equipment, piping, and instrumentation",
+        "C": "PFD is in color, P&ID is black and white",
+        "D": "PFD is for managers, P&ID is for janitors"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! PFD (Process Flow Diagram): simplified diagram showing major equipment, primary flows, operating conditions (temperatures, pressures, flow rates). Used for: understanding process concept, mass/energy balances. P&ID (Piping & Instrumentation Diagram): detailed diagram showing all equipment, all piping, all instrumentation, valve types, line sizes, control systems. Used for: design, construction, operation, maintenance. P&ID is much more detailed.",
+        "incorrect": "Incorrect. They're definitely different in detail level. Color isn't the distinction (both can be color or B&W). Both are for technical staff. PFD is conceptual, P&ID is detailed. The correct answer is B."
+      }
+    },
+    {
+      "id": 94,
+      "section": 5,
+      "subsection": "A",
+      "topic": "Line Breaks",
+      "question": "What does a line break on a P&ID indicate?",
+      "options": {
+        "A": "The pipe is broken",
+        "B": "Line continues on another drawing or to distant location",
+        "C": "A leak in the system",
+        "D": "Time for a coffee break"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Line breaks (usually shown as two parallel lines cutting across the pipe) indicate the piping continues beyond the current drawing. The continuation is marked with: matching symbols/tags, reference to drawing number where line continues, and sometimes elevation or destination. Allows large systems to be shown on multiple manageable drawings while maintaining clarity about connections.",
+        "incorrect": "Incorrect. Line breaks are drafting convention, not physical damage, leaks, or humor. They show documentation boundaries, not system problems. The correct answer is B."
+      }
+    },
+    {
+      "id": 95,
+      "section": 5,
+      "subsection": "A",
+      "topic": "Equipment Numbering",
+      "question": "Why are equipment items numbered (e.g., P-101, V-203, E-301) on P&IDs?",
+      "options": {
+        "A": "Random assignment",
+        "B": "Unique identification for specifications, procurement, and documentation",
+        "C": "To make drawings look complex",
+        "D": "Required by color code"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Equipment numbering provides unique identification for each item. Prefix indicates type (P=Pump, V=Vessel, E=Heat Exchanger, T=Tank, C=Compressor, etc.). Number uniquely identifies that specific unit. Allows: cross-referencing to equipment lists, specifications, datasheets, P.O.s, maintenance records. Systematic numbering may indicate area, system, or sequence. Essential for documentation and communication.",
+        "incorrect": "Incorrect. Numbering is systematic (not random), functional (not for complexity), and standard practice (not color-related). It's fundamental to engineering documentation. The correct answer is B."
+      }
+    },
+    {
+      "id": 96,
+      "section": 5,
+      "subsection": "A",
+      "topic": "Process Arrows",
+      "question": "What do arrows on P&ID piping lines indicate?",
+      "options": {
+        "A": "Pipe size",
+        "B": "Normal flow direction",
+        "C": "Pipe color",
+        "D": "Installation sequence"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Arrows on P&ID lines show normal process flow direction. Critical for: understanding process, check valve orientation, control valve selection (fail-safe position depends on flow direction), pump operation. Some lines have bidirectional flow (shown with arrows both directions). Essential information for operators and designers.",
+        "incorrect": "Incorrect. Arrows don't indicate size (shown by line designation), color (shown by labels or not at all), or sequence (shown in procedures). They specifically show flow direction. The correct answer is B."
+      }
+    },
+    {
+      "id": 97,
+      "section": 5,
+      "subsection": "A",
+      "topic": "Utility Lines",
+      "question": "How are utility lines (steam, air, water) typically shown on P&IDs?",
+      "options": {
+        "A": "Not shown at all",
+        "B": "Shown with specific line designations or abbreviations (e.g., IA = Instrument Air, STM = Steam)",
+        "C": "Always shown in red",
+        "D": "With pictures of steam clouds"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Utility lines shown on P&IDs have designation abbreviations: IA (Instrument Air), PA (Plant/Process Air), STM (Steam), CW (Cooling Water), DW (Drinking/Potable Water), N₂ (Nitrogen), etc. May include pressure level (LS = Low-pressure Steam, HS = High-pressure Steam). Usually shown only where they connect to process equipment (headers simplified or not shown). Helps distinguish from process piping.",
+        "incorrect": "Incorrect. Utilities are definitely shown where relevant. Color coding varies (not always red). Pictures aren't used. Standard abbreviations identify utilities. The correct answer is B."
+      }
+    },
+    {
+      "id": 98,
+      "section": 5,
+      "subsection": "A",
+      "topic": "Heat Exchanger Symbols",
+      "question": "How is a shell-and-tube heat exchanger typically represented on a P&ID?",
+      "options": {
+        "A": "Simple circle",
+        "B": "Rectangle or circle with internal tube indication showing two fluid paths",
+        "C": "Triangle",
+        "D": "Diamond"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Shell-and-tube heat exchangers shown on P&IDs as: elongated shape (rectangle or oval) with internal lines/hatching indicating tube bundle. Shows: shell-side connections (nozzles on body), tube-side connections (on heads), sometimes number of passes. Allows seeing two fluid paths - one through shell, one through tubes - meeting at heat exchanger. Equipment number identifies specific unit (e.g., E-101).",
+        "incorrect": "Incorrect. Simple circles usually represent vessels or tanks. Triangles and diamonds represent other equipment. Shell-and-tube exchangers need indication of two flow paths. The correct answer is B."
+      }
+    },
+    {
+      "id": 99,
+      "section": 5,
+      "subsection": "A",
+      "topic": "ISA Standards",
+      "question": "What organization publishes standards for P&ID symbols and instrument identification?",
+      "options": {
+        "A": "NASA",
+        "B": "ISA (International Society of Automation)",
+        "C": "NFL",
+        "D": "Local hardware store"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! ISA (International Society of Automation, formerly Instrument Society of America) publishes ISA-5.1 standard for instrumentation symbols and identification. This standard defines: letter codes for measurements and functions, instrument symbol conventions, control system representation. Universally used in process industries worldwide. Ensures consistent communication across companies, countries, and decades.",
+        "incorrect": "Incorrect. NASA is space agency, NFL is football, hardware stores aren't standards bodies. ISA is the recognized authority for instrumentation and automation standards. The correct answer is B."
+      }
+    },
+    {
+      "id": 100,
+      "section": 5,
+      "subsection": "A",
+      "topic": "Interlocks",
+      "question": "What is an interlock on a P&ID?",
+      "options": {
+        "A": "A mechanical connection",
+        "B": "Automatic safety logic that prevents operation under unsafe conditions",
+        "C": "A type of valve",
+        "D": "A door lock"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Interlocks are automatic safety controls that prevent unsafe operations. Example: pump interlock prevents pump start if discharge valve closed (prevent deadhead). Shown on P&IDs with logic notation or special symbols. Types: permissive interlocks (must satisfy conditions to start), protective interlocks (shut down on dangerous condition). Critical safety systems - prevent equipment damage, process upsets, and hazards.",
+        "incorrect": "Incorrect. Interlocks aren't mechanical connections, specific valves, or door hardware. They're automated safety logic in control systems preventing dangerous conditions. The correct answer is B."
+      }
+    },
+    {
+      "id": 101,
+      "section": 5,
+      "subsection": "A",
+      "topic": "Tie-in Points",
+      "question": "What does a tie-in point represent on a P&ID?",
+      "options": {
+        "A": "Where pipes are painted",
+        "B": "Connection point to existing system or future expansion",
+        "C": "Employee break room",
+        "D": "Where to tie safety ropes"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Tie-in points show where new piping connects to existing systems or where future connections are planned. Usually marked with special symbol or note. Important for: phased construction, modifications, maintenance planning. May be capped/plugged until needed. Tie-ins require careful planning - often require shutdowns, hot work permits, pressure testing.",
+        "incorrect": "Incorrect. Tie-ins are piping connection points, not about painting, break rooms, or safety equipment. They specifically show system interface points. The correct answer is B."
+      }
+    },
+    {
+      "id": 102,
+      "section": 5,
+      "subsection": "A",
+      "topic": "Relief Valve Piping",
+      "question": "How should relief valve discharge be shown on a P&ID?",
+      "options": {
+        "A": "Not shown",
+        "B": "Shown discharging to safe location (vent stack, collection system, or flare)",
+        "C": "Shown discharging to floor drain",
+        "D": "Shown discharging to drinking fountain"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Relief valve discharge must go to safe location shown on P&ID: (1) vent stack (for gases) to atmosphere at safe height, (2) closed collection system (for liquids or toxic gases), (3) flare system (for combustible gases), (4) knockout drum/separator (to separate liquid from gas). Never discharged to: floor drains (overpressure/hazard), occupied spaces, or random locations. Discharge routing is critical safety consideration.",
+        "incorrect": "Incorrect. Relief discharge must be shown and properly routed (not omitted or unsafe). Floor drains and drinking fountains are completely inappropriate - dangerous. Discharge must go to engineered safe location. The correct answer is B."
+      }
+    },
+    {
+      "id": 103,
+      "section": 5,
+      "subsection": "A",
+      "topic": "Control Loops",
+      "question": "What is a control loop in process instrumentation?",
+      "options": {
+        "A": "A circular pipe",
+        "B": "Complete system: sensor, transmitter, controller, and final control element (valve/damper)",
+        "C": "A feedback form",
+        "D": "A type of rope"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! A control loop consists of: (1) Sensor/transmitter measuring process variable (temperature, pressure, flow, level), (2) Controller comparing measured value to setpoint and calculating output, (3) Final control element (control valve, variable speed drive) adjusting process, (4) Feedback to sensor completing loop. Can be shown on P&ID with dashed lines connecting components. Understanding loops is essential for troubleshooting.",
+        "incorrect": "Incorrect. Control loops are instrumentation systems, not pipes, forms, or ropes. They're complete feedback control systems. The correct answer is B."
+      }
+    },
+    {
+      "id": 104,
+      "section": 5,
+      "subsection": "A",
+      "topic": "Sample Points",
+      "question": "Why are sample points shown on P&IDs?",
+      "options": {
+        "A": "To provide free samples",
+        "B": "To indicate locations where process samples can be taken for analysis",
+        "C": "To mark test question locations",
+        "D": "To show sampling music"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Sample points (sample connections) allow taking process fluid samples for laboratory analysis or field testing. Shown on P&IDs with special symbol, usually small valved connection. Important for: quality control, process monitoring, troubleshooting, environmental compliance. Must be located properly (representative sample), include isolation valves, and have provisions for safe sampling (no releases, burns, etc.).",
+        "incorrect": "Incorrect. Sample points are for process analysis, not free products, test questions, or music. They're functional piping components for quality/process control. The correct answer is B."
+      }
+    },
+    {
+      "id": 105,
+      "section": 5,
+      "subsection": "A",
+      "topic": "Bypass Piping",
+      "question": "What is the purpose of bypass piping around a control valve?",
+      "options": {
+        "A": "Decoration",
+        "B": "Allow manual flow control if valve fails, or for startup/maintenance",
+        "C": "To confuse operators",
+        "D": "To increase cost"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Bypass piping provides alternate flow path around control valves or equipment for: (1) valve maintenance/repair without system shutdown, (2) manual control if valve/automation fails, (3) startup/commissioning, (4) emergency operation. Includes manual isolation valves. Critical systems (safety, essential services) typically have bypasses. Must be sized adequately and marked clearly.",
+        "incorrect": "Incorrect. Bypasses serve critical operational functions, not decoration, confusion, or unnecessary cost. They provide operational flexibility and redundancy. The correct answer is B."
+      }
+    },
+    {
+      "id": 106,
+      "section": 5,
+      "subsection": "B",
+      "topic": "Mitre Cutting",
+      "question": "What is a mitre cut in pipe fabrication?",
+      "options": {
+        "A": "Cutting pipe to exact length only",
+        "B": "Cutting pipe at an angle to create elbow or offset when welded together",
+        "C": "Drilling holes in pipe",
+        "D": "Cutting threads on pipe"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Mitre cuts are angled cuts across pipe that, when welded to other mitred sections, create elbows or offsets. Used when: standard fittings unavailable, large diameter, custom angles needed. Requires accurate cutting and fit-up. Multiple mitres create smooth bends (5-mitre = smoother than 3-mitre). Must follow code requirements for number of cuts, angles, and welding procedures.",
+        "incorrect": "Incorrect. Straight cuts are for length. Drilling and threading are different operations. Mitre specifically means angled cut to create directional changes. The correct answer is B."
+      }
+    },
+    {
+      "id": 107,
+      "section": 5,
+      "subsection": "B",
+      "topic": "Compound Mitre",
+      "question": "What is a compound mitre?",
+      "options": {
+        "A": "A simple straight cut",
+        "B": "Cut requiring angles in two planes to create offset in different direction than pipe axis",
+        "C": "Multiple pipes welded together",
+        "D": "A type of fitting"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Compound mitres have angles in two planes (not just simple 90° elbow). Used for: rolling offsets, diagonal connections, skewed intersections. Calculation requires trigonometry considering both angles. More complex than simple mitres. Often requires template development and careful layout. Common in complex piping installations where standard fittings won't work.",
+        "incorrect": "Incorrect. Straight cuts are simple (not compound). Multiple pipes and standard fittings are different. Compound specifically means two-plane angled cutting. The correct answer is B."
+      }
+    },
+    {
+      "id": 108,
+      "section": 5,
+      "subsection": "B",
+      "topic": "Pattern Development",
+      "question": "What is pattern development in pipe fitting?",
+      "options": {
+        "A": "Developing career patterns",
+        "B": "Creating flat templates to mark complex cuts on pipe before cutting",
+        "C": "Decorative patterns on pipe",
+        "D": "Weather patterns"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Pattern development creates 2D templates (patterns) of 3D shapes to be cut from pipe. Used for: mitre cuts, branch connections, transitions. Methods: parallel line development, radial line development, triangulation. Pattern is laid out on pipe using wrap-around or transferred to pipe surface, then cut line is marked and cut. Essential skill for complex fabrication. Also called 'development' or 'pattern layout'.",
+        "incorrect": "Incorrect. Pattern development is technical pipe fabrication, not careers, decoration, or weather. It's the geometric process of creating cutting templates. The correct answer is B."
+      }
+    },
+    {
+      "id": 109,
+      "section": 5,
+      "subsection": "B",
+      "topic": "Heel and Throat",
+      "question": "In a mitre elbow, what are the 'heel' and 'throat'?",
+      "options": {
+        "A": "Two types of pipe",
+        "B": "Heel is the long outside edge; throat is the short inside edge of the cut",
+        "C": "Parts of the welder",
+        "D": "Types of welds"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! In mitre elbows: Heel is the long (outside) edge where pipe circumference is cut at acute angle (longest arc length). Throat is the short (inside) edge where circumference is cut at obtuse angle (shortest arc length). Understanding these terms is essential for: pattern development, fit-up, and welding sequence. Heel-to-heel and throat-to-throat measurements verify correct mitre angles.",
+        "incorrect": "Incorrect. Heel and throat aren't pipe types, body parts, or weld types. They're specific geometric features of mitre cuts. The correct answer is B."
+      }
+    },
+    {
+      "id": 110,
+      "section": 5,
+      "subsection": "B",
+      "topic": "Mitre Angle Calculation",
+      "question": "For a simple 90° elbow using two equal mitre cuts, what angle should each cut be?",
+      "options": {
+        "A": "90° each",
+        "B": "45° each (half the total deflection)",
+        "C": "30° each",
+        "D": "60° each"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! For equal mitre two-piece 90° elbow: each cut is 45° (half of 90° total deflection). General rule: cut angle = total deflection ÷ 2 for two-piece. For 3-piece: cuts = total ÷ 3, etc. Formula: Cut angle = Total deflection ÷ Number of pieces. This creates symmetrical elbow. Note: Cut angle is measured from perpendicular to pipe axis.",
+        "incorrect": "Incorrect. 90° would be perpendicular cut (no elbow). 30° and 60° are incorrect for 90° elbow. The mathematical relationship is: cut angle = deflection ÷ number of pieces. The correct answer is B."
+      }
+    },
+    {
+      "id": 111,
+      "section": 5,
+      "subsection": "C",
+      "topic": "Isometric Scales",
+      "question": "Are measurements on isometric piping drawings to scale?",
+      "options": {
+        "A": "No, isometric is only pictorial",
+        "B": "Yes, measurements along the three isometric axes are to scale",
+        "C": "Only vertical measurements are to scale",
+        "D": "Nothing is to scale"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Isometric piping drawings are drawn to scale along the three isometric axes (vertical and the two 30° axes). You can measure pipe lengths, fitting-to-fitting dimensions, and elevations directly with a scale. Diagonals and angles NOT along these axes cannot be measured directly (use calculations). This is key advantage of isometric over perspective drawings (which distort all measurements).",
+        "incorrect": "Incorrect. Isometrics are both pictorial AND to-scale (double benefit). Not limited to vertical only. Measurements along all three axes are scalable. The correct answer is B."
+      }
+    },
+    {
+      "id": 112,
+      "section": 5,
+      "subsection": "C",
+      "topic": "Coordinate Dimensions",
+      "question": "What are coordinate dimensions on piping isometrics?",
+      "options": {
+        "A": "GPS coordinates",
+        "B": "Dimensions measured from a reference point using N-S, E-W, and elevation",
+        "C": "Dimensions to coordinate clothing colors",
+        "D": "Random measurements"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Coordinate dimensions locate points using: North-South distance, East-West distance, and Elevation (up-down) from established reference point (usually column gridline intersection at finish floor or grade). Example: N 12'-6\", E 8'-3\", EL 10'-0\" locates a point in 3D space. Used for: accurate field location, tying into existing systems, coordination with structural/architectural. Appears on isometrics and orthographic drawings.",
+        "incorrect": "Incorrect. Not GPS, clothing, or random. Coordinate dimensions are precise 3D positioning using orthogonal measurements from datum. The correct answer is B."
+      }
+    },
+    {
+      "id": 113,
+      "section": 5,
+      "subsection": "C",
+      "topic": "Spool Drawings",
+      "question": "What information is shown on a spool drawing?",
+      "options": {
+        "A": "Only the color",
+        "B": "Detailed dimensions, materials, welding specs, and assembly sequence for prefabricated section",
+        "C": "Fishing equipment specs",
+        "D": "Thread specifications only"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Spool drawings show: (1) detailed dimensions (cut lengths, overall dimensions), (2) material specifications (pipe schedule, material grade), (3) fitting types and orientations, (4) weld locations and procedures, (5) special requirements (NDT, heat treat, pressure test), (6) bill of materials. Used for shop fabrication of spools before field installation. Must be accurate - errors are expensive to fix in field.",
+        "incorrect": "Incorrect. Spool drawings aren't about color, fishing, or just threads. They're comprehensive fabrication drawings with all information needed to build the assembly. The correct answer is B."
+      }
+    },
+    {
+      "id": 114,
+      "section": 5,
+      "subsection": "C",
+      "topic": "Field Fit Dimensions",
+      "question": "What does 'field fit' or 'field verify' mean on a drawing?",
+      "options": {
+        "A": "Measure in the field and fit accordingly - dimension not predetermined",
+        "B": "Only install in outdoor fields",
+        "C": "Dimension is guaranteed accurate",
+        "D": "No measurement needed"
+      },
+      "correct_answer": "A",
+      "explanation": {
+        "correct": "Correct! 'Field fit' or 'field verify' means the dimension cannot be predetermined accurately due to: existing conditions, tolerance stack-up, as-built variations, or transitions between systems. Fitter must: measure actual as-built conditions, fabricate piece to fit measured dimensions, verify fit before final installation. Common at: tie-ins to existing systems, between concrete/structural and piping, closing pieces.",
+        "incorrect": "Incorrect. Field fit doesn't mean location type (outdoor), guaranteed dimensions, or no measurement. It specifically means measure and fit on-site due to unpredictable conditions. The correct answer is A."
+      }
+    },
+    {
+      "id": 115,
+      "section": 5,
+      "subsection": "C",
+      "topic": "Weld Symbols",
+      "question": "Where is the weld symbol placed relative to the reference line on a welding symbol?",
+      "options": {
+        "A": "Randomly",
+        "B": "Arrow side (below line) or other side (above line) depending on which side gets welded",
+        "C": "Always on top",
+        "D": "Never shown"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! AWS welding symbols use reference line with arrow pointing to joint. Weld symbol on ARROW SIDE of reference line means weld on same side as arrow points. Symbol on OTHER SIDE means weld on opposite side from arrow. Symbol on BOTH SIDES means weld both sides. Tail contains notes. This system communicates exactly where and how to weld.",
+        "incorrect": "Incorrect. Placement isn't random or always the same. Symbols are definitely shown (essential communication). Position indicates weld location per AWS A2.4 standard. The correct answer is B."
+      }
+    },
+    {
+      "id": 116,
+      "section": 5,
+      "subsection": "D",
+      "topic": "Builder's Level",
+      "question": "What is a builder's level used for?",
+      "options": {
+        "A": "Checking if builders are level-headed",
+        "B": "Establishing level lines of sight for elevation and grade work",
+        "C": "Leveling floors with concrete",
+        "D": "Measuring distances only"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Builder's level (also called dumpy level, automatic level) is optical surveying instrument that provides level (horizontal) line of sight. Used for: establishing elevations, checking grade slopes, setting form heights, transferring elevations across site. Has built-in compensator or must be manually leveled. Used with measuring rod (leveling rod). Essential for site layout and construction control.",
+        "incorrect": "Incorrect. Builder's level is precision surveying instrument, not for checking people, placing concrete, or only measuring distance. It establishes level reference planes. The correct answer is B."
+      }
+    },
+    {
+      "id": 117,
+      "section": 5,
+      "subsection": "D",
+      "topic": "Leveling Rod",
+      "question": "How is a leveling rod used with a builder's level?",
+      "options": {
+        "A": "To hit stakes into ground",
+        "B": "Rod is held vertically at point being measured; instrument reads height on rod to determine elevation",
+        "C": "To prop up the level",
+        "D": "To mark paint lines"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Leveling rod procedure: (1) Set up and level instrument at convenient location, (2) Hold rod vertically at point of known elevation (benchmark), read height on rod through level, (3) Calculate height of instrument (HI = benchmark elevation + rod reading), (4) Hold rod at unknown point, read rod, (5) Calculate elevation (Elevation = HI - rod reading). Rod typically graduated in feet-inches-eighths or metric.",
+        "incorrect": "Incorrect. Leveling rod is measuring tool, not for striking, propping, or marking. It's precisely graduated rod read through level's optics. The correct answer is B."
+      }
+    },
+    {
+      "id": 118,
+      "section": 5,
+      "subsection": "E",
+      "topic": "Dummy Leg Definition",
+      "question": "What is a dummy leg in steam piping?",
+      "options": {
+        "A": "A fake pipe that doesn't carry steam",
+        "B": "Vertical section of steam piping rising from main to radiator inlet for pressure equalization",
+        "C": "A wooden support",
+        "D": "A broken pipe section"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! In one-pipe steam systems, dummy legs (also called steam risers) are vertical pipes rising from the steam main to radiator inlet. Purpose: (1) allows steam to rise to radiator, (2) provides height for condensate to drain back down against rising steam, (3) helps equalize pressure. Minimum height depends on system pressure. Too short = condensate can't drain (water hammer, noise).",
+        "incorrect": "Incorrect. Dummy legs are real, functional piping (not fake, not supports, not broken). They're essential for one-pipe steam system operation. The correct answer is B."
+      }
+    },
+    {
+      "id": 119,
+      "section": 5,
+      "subsection": "E",
+      "topic": "Dummy Leg Height",
+      "question": "Why does a dummy leg need to be a certain minimum height?",
+      "options": {
+        "A": "For appearance only",
+        "B": "To provide sufficient pressure to force condensate back down against steam pressure",
+        "C": "To reach the ceiling",
+        "D": "Random requirement"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Dummy leg height creates water column pressure (hydrostatic head) to overcome steam pressure and push condensate back into the main. Formula: Height (feet) ≈ (Steam pressure in psi) × 2 + safety margin. Example: 2 psi steam needs ~5-6 feet dummy leg. Insufficient height = condensate can't drain, pools in radiator, causes water hammer and poor heating. Height is calculated, not arbitrary.",
+        "incorrect": "Incorrect. Dummy leg height serves critical hydraulic function (not aesthetics, not ceiling height, not random). It must overcome steam pressure with water weight. The correct answer is B."
+      }
+    },
+    {
+      "id": 120,
+      "section": 5,
+      "subsection": "E",
+      "topic": "Condensate Seal",
+      "question": "What is a condensate seal in steam piping?",
+      "options": {
+        "A": "A mechanical gasket",
+        "B": "Water column in piping that prevents steam from bypassing through return lines",
+        "C": "A type of valve",
+        "D": "An animal that lives near condensate"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Condensate seal (water seal, vapor seal) is a column of water in return piping that prevents steam from short-circuiting through return lines instead of going to radiation. Created by: vertical drop in return line below water line (trap leg), minimum depth based on pressure. Without adequate seal, steam bypasses radiators (poor heating). Common issue when returns are modified incorrectly.",
+        "incorrect": "Incorrect. Condensate seal is hydraulic principle using water column, not mechanical device, valve, or animal. It's essential for proper steam system operation. The correct answer is B."
+      }
+    },
+    {
+      "id": 121,
+      "section": 5,
+      "subsection": "B",
+      "topic": "Miter Elbow Fabrication",
+      "question": "What is the advantage of using a 5-piece mitre elbow over a 3-piece?",
+      "options": {
+        "A": "Cheaper material cost",
+        "B": "Smoother flow with less turbulence and pressure drop",
+        "C": "Easier to fabricate",
+        "D": "No advantage"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! More pieces = smoother curve. 5-piece mitre elbow has smaller deflection per joint (90°÷4 joints = 22.5° each) creating smoother bend approximating standard elbow. Benefits: (1) less flow turbulence, (2) lower pressure drop, (3) less erosion, (4) better for sizing/metering. Drawbacks: (5) more cuts and welds (labor cost), (6) more potential leak points. For critical services or large diameter, 5-piece justified.",
+        "incorrect": "Incorrect. 5-piece costs more (more labor) and is harder to fabricate (more cuts/welds). There definitely is advantage - smoother flow. The correct answer is B."
+      }
+    },
+    {
+      "id": 122,
+      "section": 3,
+      "subsection": "A",
+      "topic": "SMAW Power Source Selection",
+      "question": "What amperage range should be selected for welding 1/4\" plate with E7018 electrode?",
+      "options": {
+        "A": "10-20 amps",
+        "B": "150-200 amps typically, depending on electrode diameter",
+        "C": "500-600 amps",
+        "D": "No amperage needed"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! For 1/4\" plate: use 3/32\" or 1/8\" E7018 electrode at 90-125 amps (3/32\") or 115-165 amps (1/8\"). Exact amperage depends on: position, joint type, electrode diameter, base metal. Too low = lack of fusion, poor penetration. Too high = burn-through, excessive spatter, convex bead. Use electrode manufacturer recommendations as starting point, adjust for conditions.",
+        "incorrect": "Incorrect. 10-20 amps is far too low (won't melt). 500-600 is way too high (for very large electrodes/thick plate). Electricity is definitely needed. Typical range for 1/4\" plate is 150-200 amps. The correct answer is B."
+      }
+    },
+    {
+      "id": 123,
+      "section": 2,
+      "subsection": "A",
+      "topic": "Thermocouple Principle",
+      "question": "How does a thermocouple generate voltage?",
+      "options": {
+        "A": "Battery inside",
+        "B": "Seebeck effect - voltage generated when junction of dissimilar metals is heated",
+        "C": "Photovoltaic cells",
+        "D": "Magnetic fields"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Thermocouples use the Seebeck effect: when junction of two dissimilar metals is heated, small voltage (millivolts) is generated proportional to temperature difference between hot junction and cold (reference) junction. Common types: Type K (Chromel-Alumel, up to 2300°F), Type J (Iron-Constantan, up to 1400°F), Type T (Copper-Constantan, up to 700°F). Rugged, inexpensive, wide range.",
+        "incorrect": "Incorrect. Thermocouples have no batteries, solar cells, or magnets. They generate voltage directly from heat through Seebeck effect - fundamental thermoelectric principle. The correct answer is B."
+      }
+    },
+    {
+      "id": 124,
+      "section": 1,
+      "subsection": "D",
+      "topic": "Boiler Trim Assembly",
+      "question": "What components are typically included in boiler trim?",
+      "options": {
+        "A": "Only the pressure gauge",
+        "B": "Safety valve, pressure gauge, water column, low water cutoff, feedwater connections, and blowdown",
+        "C": "Decorative covers only",
+        "D": "Just the burner"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Boiler trim includes all controls, safeties, and connections: (1) safety/relief valves (overpressure protection), (2) pressure gauge with siphon, (3) water column with gauge glass and try cocks, (4) low water cutoff (LWCO), (5) feedwater connections, (6) blowdown valves and piping, (7) sometimes: pressure controls, temperature gauge, level controls. Complete package for safe boiler operation.",
+        "incorrect": "Incorrect. Trim is much more than just pressure gauge or burner. Decorative covers aren't trim. Boiler trim is the complete set of required controls and safeties. The correct answer is B."
+      }
+    },
+    {
+      "id": 125,
+      "section": 4,
+      "subsection": "B",
+      "topic": "Tugger Hoists",
+      "question": "What is a tugger hoist used for?",
+      "options": {
+        "A": "Towing boats",
+        "B": "Horizontal pulling and dragging of loads in industrial settings",
+        "C": "Vertical lifting only",
+        "D": "Measuring distances"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Tugger hoists (also called power pullers or cable pullers) are motorized winches for horizontal pulling. Applications: (1) dragging structural steel into position, (2) pulling cable through conduit, (3) tensioning guy wires, (4) positioning heavy equipment. Usually air or electric powered. Higher pulling capacity than come-alongs. Can pull at angles but primarily for horizontal work. Not rated for overhead lifting.",
+        "incorrect": "Incorrect. Tugger hoists are industrial pulling equipment, not for boats, vertical lifting (different equipment), or measuring. They specifically excel at horizontal pulling. The correct answer is B."
+      }
+    },
+    {
+      "id": 126,
+      "section": 5,
+      "subsection": "E",
+      "topic": "Pigtail Loops",
+      "question": "Why are condensate return lines sometimes routed in loops before returning to boiler?",
+      "options": {
+        "A": "To look decorative",
+        "B": "To create water seal preventing steam from backing through return lines",
+        "C": "To increase pipe sales",
+        "D": "To confuse installers"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Pigtail loops (Hartford loops, seal loops) in condensate returns create water seal that prevents steam from short-circuiting through return piping. The loop extends below boiler water line, fills with water, creating hydraulic seal. Height of water column must overcome steam pressure. Essential in one-pipe and some two-pipe systems. Prevents steam from bypassing radiation (causes poor heating, wastes fuel).",
+        "incorrect": "Incorrect. Pigtail loops serve critical hydraulic function (not decoration, sales, or confusion). They create necessary water seals for proper system operation. The correct answer is B."
+      }
+    }
+  ]
+}

@@ -1,0 +1,2260 @@
+{
+  "exam_info": {
+    "title": "Steamfitter/Pipefitter Period 4 Theory Practice Questions",
+    "total_questions": 126,
+    "pass_mark_percentage": 70,
+    "time_allowed_hours": 3,
+    "format": "Multiple Choice (A, B, C, D)"
+  },
+  "section_distribution": {
+    "section_1": {
+      "name": "High Pressure Steam and Condensate Systems",
+      "questions": 24,
+      "percentage": 19
+    },
+    "section_2": {
+      "name": "Process Piping Systems",
+      "questions": 19,
+      "percentage": 15
+    },
+    "section_3": {
+      "name": "Job Planning and Critical Lifts",
+      "questions": 35,
+      "percentage": 28
+    },
+    "section_4": {
+      "name": "Revised Drawings and Projects",
+      "questions": 48,
+      "percentage": 38
+    }
+  },
+  "questions": [
+    {
+      "id": 1,
+      "section": 1,
+      "subsection": "A",
+      "topic": "High Pressure Steam Definition",
+      "question": "What pressure defines high pressure steam according to ASME Boiler Code?",
+      "options": {
+        "A": "Above 5 psig",
+        "B": "Above 15 psig",
+        "C": "Above 50 psig",
+        "D": "Above 100 psig"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! High pressure steam is defined as steam above 15 psig per ASME Boiler and Pressure Vessel Code Section I. Above this pressure, different design, construction, inspection, and operating requirements apply. High pressure boilers require Section I construction vs. Section IV for low pressure. Operating personnel need different licensing/certification for high vs. low pressure systems.",
+        "incorrect": "Incorrect. 5 psig is well within low pressure range. 50 and 100 psig are both high pressure but not the defining threshold. The division between low and high pressure steam is specifically 15 psig. The correct answer is B."
+      }
+    },
+    {
+      "id": 2,
+      "section": 1,
+      "subsection": "A",
+      "topic": "Water-tube Boiler Design",
+      "question": "Why are water-tube boilers preferred for high pressure steam generation?",
+      "options": {
+        "A": "They are cheaper",
+        "B": "Smaller diameter tubes under pressure are inherently stronger and safer at high pressures",
+        "C": "They are smaller overall",
+        "D": "They require less maintenance"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Water-tube boilers have water inside small-diameter tubes with hot gases outside. Smaller diameter = higher strength per wall thickness. Can safely operate at much higher pressures (up to 3000+ psi) than fire-tube boilers (limited to ~250 psi typically). Also faster response to load changes due to less water volume. Essential for power generation and high-pressure process steam.",
+        "incorrect": "Incorrect. Water-tube boilers typically cost MORE initially due to complexity. Size depends on capacity. Maintenance can be similar or more complex. The key advantage is pressure capability due to small tube diameter and strength. The correct answer is B."
+      }
+    },
+    {
+      "id": 3,
+      "section": 1,
+      "subsection": "A",
+      "topic": "Superheater Function",
+      "question": "What is the purpose of a superheater in a high pressure steam boiler?",
+      "options": {
+        "A": "To cool the steam",
+        "B": "To heat steam above its saturation temperature, removing moisture and increasing energy content",
+        "C": "To reduce pressure",
+        "D": "To filter steam"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Superheaters add additional heat to saturated steam, raising temperature above saturation point at that pressure without changing pressure. Benefits: (1) dry steam (no damaging moisture) for turbines, (2) increased thermal efficiency, (3) higher energy content per pound, (4) reduced heat losses in distribution. Superheater tubes are located in hottest part of boiler (radiant or convection sections). Critical in power plants.",
+        "incorrect": "Incorrect. Superheaters ADD heat (not cool), maintain pressure (not reduce), and don't filter. They specifically convert saturated steam to superheated steam for efficiency and equipment protection. The correct answer is B."
+      }
+    },
+    {
+      "id": 4,
+      "section": 1,
+      "subsection": "B",
+      "topic": "Steam Distribution Headers",
+      "question": "What is the purpose of a steam distribution header?",
+      "options": {
+        "A": "To store steam",
+        "B": "To collect steam from multiple boilers and distribute to multiple users at consistent pressure",
+        "C": "To generate steam",
+        "D": "To condense steam"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Steam headers are large-diameter pipes that: (1) collect steam from multiple boilers, (2) distribute to multiple takeoff points/users, (3) help equalize pressure and temperature, (4) provide buffer volume for load swings. Sized for minimum pressure drop and velocity (typically <6000 fpm). Must have proper drains, pressure/temperature monitoring, and support for thermal expansion.",
+        "incorrect": "Incorrect. Headers aren't storage vessels (that's accumulators), don't generate steam (boilers do), and don't condense (that's condensers). They're distribution piping collecting and distributing steam. The correct answer is B."
+      }
+    },
+    {
+      "id": 5,
+      "section": 1,
+      "subsection": "B",
+      "topic": "Steam Velocity Limits",
+      "question": "Why is there a maximum velocity limit for steam in piping?",
+      "options": {
+        "A": "Aesthetics",
+        "B": "Excessive velocity causes noise, erosion, and high pressure drop",
+        "C": "To use more pipe",
+        "D": "No limit exists"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! High steam velocity causes: (1) noise (whistling, flow noise >6000 fpm), (2) erosion at fittings and valves (especially with moisture), (3) excessive pressure drop (wasted energy), (4) water hammer if condensate present. Typical limits: 6000 fpm saturated steam in distribution, 10,000-15,000 fpm superheated steam in mains. Proper sizing is essential for quiet, efficient, long-lasting systems.",
+        "incorrect": "Incorrect. Velocity limits serve functional purposes (not aesthetics or sales). Using more pipe would be wasteful. Definite velocity limits exist based on physics and experience. The correct answer is B."
+      }
+    },
+    {
+      "id": 6,
+      "section": 1,
+      "subsection": "B",
+      "topic": "Steam Separators",
+      "question": "What is the purpose of a steam separator?",
+      "options": {
+        "A": "To separate steam from condensate and entrained moisture, providing dry steam",
+        "B": "To reduce pressure",
+        "C": "To generate steam",
+        "D": "To add water to steam"
+      },
+      "correct_answer": "A",
+      "explanation": {
+        "correct": "Correct! Steam separators remove entrained liquid droplets from steam using: centrifugal action, baffles, or wire mesh elements. Provides dry steam for: turbines (moisture causes blade erosion), process equipment requiring dry steam, reducing heat transfer equipment (dryer steam = better heat transfer). Drain must have steam trap. Common after pressure reducing stations where flashing can create moisture.",
+        "incorrect": "Incorrect. Separators don't reduce pressure (PRVs do), generate steam (boilers do), or add water (that would defeat purpose). They specifically remove moisture for dry steam. The correct answer is A."
+      }
+    },
+    {
+      "id": 7,
+      "section": 1,
+      "subsection": "C",
+      "topic": "Surface Condensers",
+      "question": "How does a surface condenser work?",
+      "options": {
+        "A": "Mixes steam with cooling water",
+        "B": "Steam condenses on outside of tubes carrying cooling water; steam and cooling water never mix",
+        "C": "Stores condensate only",
+        "D": "Generates vacuum by mechanical pump only"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Surface condensers condense exhaust steam from turbines by passing it over tubes containing cooling water. Steam and water NEVER mix - keeps condensate pure for boiler reuse. Creates vacuum (sub-atmospheric pressure) improving turbine efficiency. Cooling water flows through tubes, steam around tubes. Non-condensables vented by air ejectors or vacuum pumps. Critical in power plants for efficiency and water conservation.",
+        "incorrect": "Incorrect. Mixing steam and cooling water would contaminate condensate (that's barometric/contact condensers). Not just storage or vacuum pump. Surface condensers maintain separation while condensing steam. The correct answer is B."
+      }
+    },
+    {
+      "id": 8,
+      "section": 1,
+      "subsection": "C",
+      "topic": "Condensate Recovery Benefits",
+      "question": "Why is condensate recovery important in steam systems?",
+      "options": {
+        "A": "It's not important",
+        "B": "Recovers heat energy and treated water, saving fuel and water treatment costs",
+        "C": "Only to reduce noise",
+        "D": "To increase system complexity"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Condensate recovery provides: (1) energy savings - condensate is hot (180-210°F), contains ~15-20% of steam's original heat, (2) water savings - treated water is expensive, condensate is already treated and pure, (3) chemical savings - less makeup water = less treatment chemicals, (4) improved boiler efficiency - hot feedwater requires less fuel. Return systems pay for themselves quickly. Essential for efficient operation.",
+        "incorrect": "Incorrect. Condensate recovery is extremely important economically and environmentally. While it may reduce noise, that's not the primary purpose. Complexity is justified by huge savings. The correct answer is B."
+      }
+    },
+    {
+      "id": 9,
+      "section": 1,
+      "subsection": "C",
+      "topic": "Vacuum Condensing",
+      "question": "What is the advantage of vacuum condensing in steam systems?",
+      "options": {
+        "A": "No advantages",
+        "B": "Increases turbine efficiency by lowering backpressure, and recovers low-grade heat",
+        "C": "Makes system more expensive only",
+        "D": "Only for cleaning purposes"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Vacuum condensing maintains sub-atmospheric pressure in condenser (typically 1-2\" HgA vs. 29.92\" atmospheric). Benefits: (1) turbines more efficient with lower exhaust pressure (more pressure drop = more work), (2) can condense very low pressure exhaust (0.5-1 psia), (3) maximum heat recovery from steam. Common in power generation. Requires vacuum pumps or steam jet ejectors to remove air/non-condensables.",
+        "incorrect": "Incorrect. Vacuum condensing has major efficiency advantages. While more complex/expensive, benefits justify cost in large systems. Not for cleaning. It's specifically for efficiency and low-pressure condensing. The correct answer is B."
+      }
+    },
+    {
+      "id": 10,
+      "section": 1,
+      "subsection": "C",
+      "topic": "Hotwell",
+      "question": "What is a hotwell in a condensing system?",
+      "options": {
+        "A": "A well drilled for geothermal energy",
+        "B": "Storage tank at bottom of condenser that collects condensate before returning to boiler",
+        "C": "A type of boiler",
+        "D": "A safety valve"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Hotwell is the condensate collection tank/chamber at the bottom of a surface condenser or below the condenser. Functions: (1) collects condensate draining from condenser, (2) provides storage capacity and surge volume, (3) provides positive suction head for condensate pumps, (4) typically operates at vacuum (same as condenser). Condensate pumps take suction from hotwell, returning water to deaerator or boiler.",
+        "incorrect": "Incorrect. Hotwell isn't geothermal well, boiler, or safety device. It's specifically the condensate collection chamber in steam condensing systems. The correct answer is B."
+      }
+    },
+    {
+      "id": 11,
+      "section": 1,
+      "subsection": "D",
+      "topic": "Exhaust Steam Systems",
+      "question": "What is exhaust steam?",
+      "options": {
+        "A": "Steam that is exhausted to atmosphere and wasted",
+        "B": "Low pressure steam discharged from steam engines, turbines, or process equipment",
+        "C": "Steam from car exhaust",
+        "D": "High pressure steam only"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Exhaust steam is low-pressure steam (typically 0-15 psig or vacuum) discharged from: steam turbines (back-pressure or extraction turbines), reciprocating steam engines, or some process equipment. Can be: (1) condensed and returned as condensate, (2) used for low-pressure heating, (3) cascaded to lower pressure processes. Efficiently utilizes steam energy multiple times before condensing.",
+        "incorrect": "Incorrect. Exhaust steam is often recovered and used (not wasted to atmosphere). Not from vehicles. Specifically low-pressure, not high. It's the steam after doing work in engines/turbines. The correct answer is B."
+      }
+    },
+    {
+      "id": 12,
+      "section": 1,
+      "subsection": "D",
+      "topic": "Cascading Steam Systems",
+      "question": "What is cascading in steam systems?",
+      "options": {
+        "A": "Water flowing like a waterfall",
+        "B": "Using steam at progressively lower pressures for different processes",
+        "C": "A type of valve",
+        "D": "A safety procedure only"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Cascading uses steam in multiple stages at progressively lower pressures to maximize energy utilization: (1) High pressure steam for process requiring high temperature, (2) Exhaust/letdown to medium pressure for next process, (3) Further letdown to low pressure for heating, (4) Finally condense and recover heat. Each stage extracts useful energy. Common in refineries, chemical plants, and industrial facilities. Improves overall system efficiency significantly.",
+        "incorrect": "Incorrect. Cascading is energy utilization strategy (not waterfalls, valves, or just safety). It's about using steam at multiple pressure levels sequentially. The correct answer is B."
+      }
+    },
+    {
+      "id": 13,
+      "section": 1,
+      "subsection": "E",
+      "topic": "Safety Valve Sizing",
+      "question": "How are safety valves sized for high pressure boilers?",
+      "options": {
+        "A": "Randomly chosen",
+        "B": "Must relieve all steam the boiler can generate without exceeding allowable pressure rise",
+        "C": "Always 1/2 inch regardless of boiler",
+        "D": "Safety valves aren't required"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! ASME Code requires safety valves sized to discharge all the steam the boiler can generate at maximum firing rate without pressure exceeding: MAWP + 3% (single valve) or MAWP + 6% (multiple valves). Sizing calculations account for: steam flow capacity, set pressure, back pressure, valve type. Certified by National Board or manufacturers. Undersized valves = catastrophic failure risk. Critical safety requirement.",
+        "incorrect": "Incorrect. Sizing is precisely calculated per ASME Code (not random or arbitrary). Size varies with boiler capacity. Safety valves are absolutely mandatory on all boilers. Proper sizing is life-safety critical. The correct answer is B."
+      }
+    },
+    {
+      "id": 14,
+      "section": 1,
+      "subsection": "E",
+      "topic": "Main Steam Stop Valve",
+      "question": "What is the purpose of the main steam stop valve?",
+      "options": {
+        "A": "To control steam pressure",
+        "B": "To isolate boiler from steam system for maintenance or emergency shutdown",
+        "C": "To reduce pressure",
+        "D": "To filter steam"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Main steam stop valve (MSSV or MSV) is isolation valve on boiler outlet that: (1) allows isolating boiler for maintenance without draining entire steam system, (2) provides emergency isolation if boiler problems occur, (3) typically full-port gate or ball valve for minimum pressure drop, (4) located close to boiler outlet. Must be fully open during operation (not for pressure control - use PRVs for that).",
+        "incorrect": "Incorrect. Stop valves don't control pressure (use pressure control valves), reduce pressure (use PRVs), or filter (use separators/strainers). They specifically provide on/off isolation. The correct answer is B."
+      }
+    },
+    {
+      "id": 15,
+      "section": 1,
+      "subsection": "E",
+      "topic": "Non-return Valves",
+      "question": "Why are non-return (check) valves installed on boiler steam outlets in multi-boiler installations?",
+      "options": {
+        "A": "To increase pressure",
+        "B": "To prevent backflow of steam into idle boiler when others are operating",
+        "C": "To reduce noise only",
+        "D": "They're not needed"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Non-return valves prevent reverse flow into an offline boiler when other boilers are online and pressurized. Without check valve: steam from operating boilers would flow backward into idle boiler, causing safety issues, water level problems, and thermal shock. Usually swing check or lift check rated for steam service. Located between main stop valve and header connection.",
+        "incorrect": "Incorrect. Check valves don't increase pressure or primarily reduce noise. They're absolutely necessary in multi-boiler plants for safety. They specifically prevent dangerous backflow. The correct answer is B."
+      }
+    },
+    {
+      "id": 16,
+      "section": 1,
+      "subsection": "F",
+      "topic": "Deaerators",
+      "question": "What is the primary purpose of a deaerator?",
+      "options": {
+        "A": "To add air to feedwater",
+        "B": "To remove dissolved oxygen and other gases from boiler feedwater to prevent corrosion",
+        "C": "To cool feedwater",
+        "D": "To filter feedwater"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Deaerators remove dissolved oxygen (O₂) and CO₂ from feedwater by: (1) heating water to saturation temperature with steam, (2) spraying water to increase surface area, (3) releasing dissolved gases which are vented. Oxygen removal is critical - even small amounts (ppm) cause severe boiler corrosion. Also preheats feedwater (improves efficiency). Two types: spray-type and tray-type. Essential for medium/large boiler systems.",
+        "incorrect": "Incorrect. Deaerators REMOVE air (not add). They heat water (not cool). Primary function is gas removal for corrosion prevention (not filtration). The correct answer is B."
+      }
+    },
+    {
+      "id": 17,
+      "section": 1,
+      "subsection": "F",
+      "topic": "Economizers",
+      "question": "What is an economizer in a boiler system?",
+      "options": {
+        "A": "A cost-tracking system",
+        "B": "Heat exchanger recovering heat from flue gas to preheat feedwater",
+        "C": "A fuel control valve",
+        "D": "A water softener"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Economizer is a heat exchanger in boiler flue gas stream that preheats feedwater before it enters the boiler. Recovers waste heat from hot flue gases (300-600°F) that would otherwise be lost up the stack. Can improve boiler efficiency 3-5%. Types: non-condensing (prevent acid condensation) or condensing (maximum heat recovery). Located in flue gas path after boiler, before stack. Common in large industrial and power boilers.",
+        "incorrect": "Incorrect. Economizer isn't cost tracking, fuel control, or water treatment. It's specifically a waste heat recovery device for feedwater preheating. Named because it's economical - saves fuel. The correct answer is B."
+      }
+    },
+    {
+      "id": 18,
+      "section": 1,
+      "subsection": "G",
+      "topic": "Pressure Vessel Code Requirements",
+      "question": "What ASME Code section covers unfired pressure vessels?",
+      "options": {
+        "A": "Section I (boilers)",
+        "B": "Section VIII (pressure vessels)",
+        "C": "Section IX (welding)",
+        "D": "Section II (materials)"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! ASME Boiler and Pressure Vessel Code Section VIII covers construction of unfired pressure vessels: storage tanks, receivers, heat exchangers, flash tanks, etc. Division 1 (most common - pressures to ~3000 psi), Division 2 (alternative rules), Division 3 (high pressure). Vessels must be: designed per code, fabricated by certified manufacturer, inspected, stamped with U-stamp. Section I covers fired pressure vessels (boilers).",
+        "incorrect": "Incorrect. Section I is for fired vessels (boilers). Section IX covers welding qualifications. Section II covers materials. Unfired pressure vessels specifically fall under Section VIII. The correct answer is B."
+      }
+    },
+    {
+      "id": 19,
+      "section": 1,
+      "subsection": "G",
+      "topic": "Pressure Vessel Inspection",
+      "question": "What is a hydrostatic test on a pressure vessel?",
+      "options": {
+        "A": "Testing for leaks with air",
+        "B": "Testing vessel integrity by filling with water and pressurizing to test pressure (typically 1.5x MAWP)",
+        "C": "Measuring water level only",
+        "D": "Draining the vessel"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Hydrostatic testing verifies pressure vessel integrity by: (1) filling with water (incompressible - safer than air), (2) pressurizing to test pressure (1.3-1.5× Maximum Allowable Working Pressure per code), (3) holding pressure for specified time (typically 30-60 minutes), (4) inspecting for leaks, deformation, or failure. Required: after fabrication, after repairs/modifications, periodically in service. Water used because failure releases liquid (not explosive gas).",
+        "incorrect": "Incorrect. Air testing is pneumatic testing (more dangerous). Not just level measurement or draining. Hydrostatic specifically means pressurized water testing for integrity verification. The correct answer is B."
+      }
+    },
+    {
+      "id": 20,
+      "section": 1,
+      "subsection": "H",
+      "topic": "High Temperature Hot Water Systems",
+      "question": "What defines a high temperature hot water (HTHW) system?",
+      "options": {
+        "A": "Any water over 100°F",
+        "B": "Water heated above 250°F operating under pressure to prevent boiling",
+        "C": "Only steam systems",
+        "D": "Swimming pool heaters"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! HTHW systems operate at temperatures above 250°F (sometimes to 400°F+) under sufficient pressure to prevent boiling. Advantages over steam: (1) no condensate return required, (2) better temperature control, (3) lower heat losses, (4) reduced piping sizes (higher heat capacity per pound). Used for: large building heating, district heating, industrial processes. Requires special design: expansion control, pressure maintenance, overpressure protection.",
+        "incorrect": "Incorrect. 100°F is low-temperature hot water. Steam is different medium. HTHW isn't for pools (those are low-temp). HTHW specifically means high-temperature liquid water under pressure. The correct answer is B."
+      }
+    },
+    {
+      "id": 21,
+      "section": 1,
+      "subsection": "H",
+      "topic": "HTHW vs Steam",
+      "question": "What is an advantage of HTHW over steam for heating?",
+      "options": {
+        "A": "Lower installation cost always",
+        "B": "No condensate return system needed, and better temperature control",
+        "C": "Faster response time",
+        "D": "Lower temperatures"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! HTHW advantages over steam: (1) closed loop - no makeup water or condensate return piping needed, (2) variable temperature control - can modulate supply temperature for outdoor reset, (3) lower distribution losses - insulated liquid vs. steam/condensate, (4) quiet operation - no steam/condensate noise, (5) better zone control. Disadvantages: higher pressure, more complex expansion control, can't use pressure-driven flow like steam.",
+        "incorrect": "Incorrect. HTHW may cost more initially (high pressure equipment). Steam often has faster response. HTHW uses HIGHER temperatures than low-pressure steam. The no-condensate and control advantages are key. The correct answer is B."
+      }
+    },
+    {
+      "id": 22,
+      "section": 1,
+      "subsection": "I",
+      "topic": "Cooling Tower Purpose",
+      "question": "What is the purpose of a cooling tower?",
+      "options": {
+        "A": "To heat water",
+        "B": "To reject waste heat from industrial processes by evaporative cooling of water",
+        "C": "To store water",
+        "D": "To generate power"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Cooling towers reject heat to atmosphere by evaporative cooling: (1) hot water from condensers/process is sprayed over fill material, (2) air flows through tower (natural or forced draft), (3) small portion evaporates, removing heat (latent heat of vaporization), (4) cooled water collects in basin, recirculates. Evaporates 1-2% of circulation per 10°F cooling. Used in: HVAC systems, power plants, refineries. Requires makeup water and blowdown to control dissolved solids.",
+        "incorrect": "Incorrect. Cooling towers cool (not heat), don't store water (though basin holds some), and don't generate power (they support power generation by cooling condenser water). The correct answer is B."
+      }
+    },
+    {
+      "id": 23,
+      "section": 1,
+      "subsection": "I",
+      "topic": "Heat Exchanger Approach Temperature",
+      "question": "What is 'approach temperature' in a heat exchanger?",
+      "options": {
+        "A": "The outdoor temperature",
+        "B": "The difference between outlet temperature of heated fluid and inlet temperature of heating fluid",
+        "C": "The boiling point",
+        "D": "Random temperature"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Approach temperature measures heat exchanger effectiveness: how close the cold fluid outlet temperature approaches the hot fluid inlet temperature. Example: Hot fluid in 200°F, cold fluid out 180°F = 20°F approach. Smaller approach = more effective (larger/better heat exchanger), but diminishing returns. Typical approaches: 5-20°F depending on application and economics. Used to evaluate performance and size heat exchangers.",
+        "incorrect": "Incorrect. Approach isn't outdoor temperature, boiling point, or random. It's a specific heat exchanger performance parameter comparing outlet cold to inlet hot temperatures. The correct answer is B."
+      }
+    },
+    {
+      "id": 24,
+      "section": 1,
+      "subsection": "I",
+      "topic": "Plate Heat Exchangers",
+      "question": "What is an advantage of plate heat exchangers over shell-and-tube?",
+      "options": {
+        "A": "Lower heat transfer efficiency",
+        "B": "Compact size with high heat transfer efficiency and easy cleaning/maintenance",
+        "C": "More expensive always",
+        "D": "Larger footprint required"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Plate heat exchangers use thin corrugated metal plates stacked together creating flow channels. Advantages: (1) very compact - 5× smaller than shell-tube same duty, (2) high efficiency due to turbulence and large surface area, (3) easy to clean - can disassemble plates, (4) capacity easily increased by adding plates, (5) true counterflow. Disadvantages: limited to lower pressures/temperatures, can clog with dirty fluids. Common in HVAC, food/beverage.",
+        "incorrect": "Incorrect. Plate exchangers have HIGHER efficiency (not lower), SMALLER footprint (not larger). While potentially more expensive initially, compact size often justifies cost. The correct answer is B."
+      }
+    },
+    {
+      "id": 25,
+      "section": 2,
+      "subsection": "A",
+      "topic": "Wet Pipe Sprinkler Systems",
+      "question": "How does a wet pipe fire sprinkler system work?",
+      "options": {
+        "A": "Pipes are empty until fire detected",
+        "B": "Pipes are filled with water under pressure; heat opens sprinklers allowing water to flow",
+        "C": "Uses foam only",
+        "D": "Manual operation only"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Wet pipe systems have piping constantly filled with pressurized water. When fire heat opens sprinkler head (fusible link melts at rated temperature, typically 165-286°F), water immediately discharges. Advantages: (1) simple, reliable, (2) immediate water discharge, (3) low maintenance. Disadvantage: can freeze in unheated areas. Most common sprinkler system type. Each head operates independently when heated.",
+        "incorrect": "Incorrect. Wet pipe systems are always full of water (not empty). Use water (foam is special systems). Automatic operation (individual sprinklers open when heated). The correct answer is B."
+      }
+    },
+    {
+      "id": 26,
+      "section": 2,
+      "subsection": "A",
+      "topic": "Dry Pipe Sprinkler Systems",
+      "question": "When would a dry pipe sprinkler system be used instead of wet pipe?",
+      "options": {
+        "A": "Always - they're better",
+        "B": "In areas subject to freezing where water-filled pipes could freeze and burst",
+        "C": "In humid climates only",
+        "D": "For decorative purposes"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Dry pipe systems use compressed air/nitrogen to hold water back at dry pipe valve. Used in: unheated warehouses, parking garages, outdoor loading docks, cold storage - anywhere pipes could freeze. When fire opens sprinkler, air releases, pressure drops, dry pipe valve opens, water flows. Disadvantages: delayed water discharge (air must vent first), more complex, higher maintenance, corrosion issues. Only use where freezing is concern.",
+        "incorrect": "Incorrect. Wet pipe is simpler and preferred where freezing isn't an issue. Humidity isn't the factor (freezing is). Not decorative - functional for freeze protection. The correct answer is B."
+      }
+    },
+    {
+      "id": 27,
+      "section": 2,
+      "subsection": "B",
+      "topic": "Four-Pipe HVAC Systems",
+      "question": "What is a four-pipe HVAC system?",
+      "options": {
+        "A": "Four supply pipes only",
+        "B": "Separate piping for hot water supply/return and chilled water supply/return allowing simultaneous heating and cooling",
+        "C": "Four drainage pipes",
+        "D": "A ventilation system only"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Four-pipe systems have: (1) hot water supply and return (2 pipes), (2) chilled water supply and return (2 pipes) = 4 pipes total to each zone. Advantage: simultaneous heating and cooling in different zones (perimeter needs heat, core needs cooling). Can switch between heating/cooling instantly. Disadvantage: double piping cost. Used in quality commercial buildings needing precise comfort control and flexibility.",
+        "incorrect": "Incorrect. Not four supply-only, four drains, or ventilation. Four-pipe specifically means independent hot and chilled water distribution allowing simultaneous heating/cooling. The correct answer is B."
+      }
+    },
+    {
+      "id": 28,
+      "section": 2,
+      "subsection": "B",
+      "topic": "Chilled Water Systems",
+      "question": "What is the typical supply temperature for chilled water in HVAC systems?",
+      "options": {
+        "A": "32°F (freezing)",
+        "B": "42-45°F",
+        "C": "70°F",
+        "D": "55-60°F"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Standard chilled water supply: 42-45°F, return 54-58°F (10-12°F ΔT). This avoids freezing while providing adequate cooling. Lower temperatures risk freezing, increase pumping costs (higher ΔT = less flow needed). Some systems use 55°F supply for lower humidity climates. Ice storage systems may use 34-36°F. Glycol added if supply below 40°F or piping exposed to freezing.",
+        "incorrect": "Incorrect. 32°F would freeze (ice forms). 70°F too warm for cooling. 55-60°F is typical return temperature. Supply is 42-45°F for most systems. The correct answer is B."
+      }
+    },
+    {
+      "id": 29,
+      "section": 2,
+      "subsection": "B",
+      "topic": "Refrigerant Piping",
+      "question": "Why must refrigerant suction lines be insulated?",
+      "options": {
+        "A": "To look professional",
+        "B": "To prevent condensation and heat gain to the low-temperature refrigerant",
+        "C": "To add color",
+        "D": "Insulation isn't required"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Suction lines carry cold, low-pressure refrigerant vapor from evaporator to compressor. Uninsulated suction lines: (1) sweat/drip from condensation (cold pipe, humid air), (2) gain heat from ambient (reduces system capacity, increases compressor work), (3) can cause liquid refrigerant formation (flooding compressor). Insulation prevents both problems. Hot gas and liquid lines typically not insulated (unless heat loss is concern).",
+        "incorrect": "Incorrect. Insulation serves critical functional purposes (not appearance or color). It's definitely required on suction lines. Prevents condensation and heat gain. The correct answer is B."
+      }
+    },
+    {
+      "id": 30,
+      "section": 2,
+      "subsection": "B",
+      "topic": "Variable Refrigerant Flow (VRF)",
+      "question": "What is VRF (Variable Refrigerant Flow) in HVAC?",
+      "options": {
+        "A": "A manual damper system",
+        "B": "System using refrigerant piping to multiple indoor units with individual control and heat recovery",
+        "C": "A type of filter",
+        "D": "A ventilation fan"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! VRF systems use: (1) one or more outdoor units, (2) refrigerant piping to multiple indoor units (up to 64), (3) individual zone control (each indoor unit independently controlled), (4) variable capacity compressors, (5) heat recovery option (simultaneous heating and cooling). Advantages: high efficiency, flexibility, small piping vs. ductwork. Common in commercial buildings. Also called VRV (Daikin trademark).",
+        "incorrect": "Incorrect. VRF isn't dampers, filters, or fans. It's a sophisticated multi-zone refrigerant-based HVAC system. The correct answer is B."
+      }
+    },
+    {
+      "id": 31,
+      "section": 2,
+      "subsection": "C",
+      "topic": "Hydraulic System Pressure",
+      "question": "What typical pressures do industrial hydraulic systems operate at?",
+      "options": {
+        "A": "5-10 psi (very low)",
+        "B": "500-5000 psi (high pressure)",
+        "C": "Atmospheric pressure only",
+        "D": "100,000 psi"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Industrial hydraulic systems typically operate 500-5000 psi: mobile equipment 2000-3000 psi, industrial machines 1000-3000 psi, high-force presses up to 5000-10,000 psi. High pressure allows: (1) high force from small cylinders, (2) compact components, (3) precise control. Requires: high-pressure hose/tubing, special fittings, proper training. Safety critical due to high pressure (injection injuries, hose whip).",
+        "incorrect": "Incorrect. 5-10 psi too low for hydraulics (that's HVAC pressures). Atmospheric won't provide power. 100,000 psi is extreme (specialized applications only). Typical industrial hydraulics are 500-5000 psi. The correct answer is B."
+      }
+    },
+    {
+      "id": 32,
+      "section": 2,
+      "subsection": "C",
+      "topic": "Hydraulic Fluid Types",
+      "question": "What is the most common hydraulic fluid in industrial systems?",
+      "options": {
+        "A": "Water",
+        "B": "Petroleum-based hydraulic oil",
+        "C": "Gasoline",
+        "D": "Antifreeze"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Petroleum-based hydraulic oils (ISO VG 32, 46, 68) are most common due to: good lubrication properties, wide temperature range, availability, cost-effectiveness. Alternatives: (1) fire-resistant fluids (water-glycol, phosphate ester) for high fire hazard areas, (2) biodegradable fluids (vegetable-based) for environmental sensitivity, (3) synthetic fluids for extreme temperatures. Selection based on: application, temperature, environment, fire risk.",
+        "incorrect": "Incorrect. Water lacks lubrication (though used in some specialized systems). Gasoline and antifreeze aren't hydraulic fluids. Petroleum hydraulic oil is the standard. The correct answer is B."
+      }
+    },
+    {
+      "id": 33,
+      "section": 2,
+      "subsection": "D",
+      "topic": "Fuel Oil Storage",
+      "question": "What is secondary containment for fuel oil storage tanks?",
+      "options": {
+        "A": "A second tank for backup",
+        "B": "Dike, liner, or double-wall system to contain spills if primary tank leaks",
+        "C": "A type of valve",
+        "D": "Not required"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Secondary containment prevents environmental contamination if primary tank fails. Methods: (1) dike or berm around tank (holds 110% of largest tank volume), (2) double-wall tanks (inner and outer walls with interstitial monitoring), (3) concrete vaults with liners. Required by environmental regulations for most installations. Must be: liquid-tight, corrosion-resistant, sized properly. Regular inspection mandatory.",
+        "incorrect": "Incorrect. Secondary containment isn't backup capacity or valves. It's absolutely required for environmental protection. It specifically provides spill containment if primary fails. The correct answer is B."
+      }
+    },
+    {
+      "id": 34,
+      "section": 2,
+      "subsection": "D",
+      "topic": "Fuel Oil Pumps",
+      "question": "Why are fuel oil pumps often equipped with pressure relief valves?",
+      "options": {
+        "A": "To increase pressure",
+        "B": "To protect pump and system from overpressure if discharge blocked",
+        "C": "To cool the oil",
+        "D": "They don't need relief valves"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Fuel oil pumps (positive displacement type - gear, vane, or piston) can develop very high pressure if discharge is blocked. Internal pressure relief valve: (1) protects pump from damage, (2) prevents hose/pipe rupture, (3) bypasses oil back to suction or tank when pressure exceeds setpoint. Set at 20-50% above normal operating pressure. Essential safety device - blocked discharge + no relief = catastrophic failure.",
+        "incorrect": "Incorrect. Relief valves limit pressure (not increase). Not for cooling. They're absolutely necessary on positive displacement pumps. Prevent dangerous overpressure conditions. The correct answer is B."
+      }
+    },
+    {
+      "id": 35,
+      "section": 2,
+      "subsection": "D",
+      "topic": "Natural Gas Pressure Regulation",
+      "question": "Why are multiple pressure reduction stages used in gas distribution?",
+      "options": {
+        "A": "To make system complex",
+        "B": "Each stage reduces pressure incrementally, providing more stable control and safety",
+        "C": "To increase cost",
+        "D": "Multiple stages aren't used"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Multi-stage pressure reduction: utility pressure (60-100+ psi) → intermediate (10-25 psi) → appliance pressure (5-7\" w.c.). Benefits: (1) each regulator has less pressure differential (better control, longer life), (2) stable outlet pressure despite varying inlet, (3) safety - multiple regulators must fail for overpressure, (4) pilot-loaded regulators for accurate control. Common in commercial/industrial. Residential may have single-stage or two-stage.",
+        "incorrect": "Incorrect. Multi-stage serves functional purposes (not complexity or cost). Multiple stages are definitely used in larger systems. Provides better control and safety. The correct answer is B."
+      }
+    },
+    {
+      "id": 36,
+      "section": 2,
+      "subsection": "E",
+      "topic": "Wastewater Grinder Pumps",
+      "question": "What is the purpose of a grinder pump in wastewater systems?",
+      "options": {
+        "A": "To filter water",
+        "B": "To grind solids into slurry that can be pumped through small-diameter pressure sewers",
+        "C": "To measure flow",
+        "D": "To heat wastewater"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Grinder pumps (also called sewage grinders) macerate solid waste into fine slurry using cutting mechanism in pump. Allows: (1) pumping through small diameter force mains (2-4\" vs. 6\"+ for conventional), (2) serving areas where gravity sewers impractical (low elevation, rocky terrain), (3) lower installation costs (smaller pipe, no manholes). Located in below-grade pits at individual properties or small clusters. Require power and maintenance.",
+        "incorrect": "Incorrect. Grinder pumps don't filter (that's treatment), measure flow (that's meters), or heat. They specifically grind solids for pumping through small pipes. The correct answer is B."
+      }
+    },
+    {
+      "id": 37,
+      "section": 2,
+      "subsection": "F",
+      "topic": "Medical Gas Piping",
+      "question": "What special requirements apply to medical gas piping?",
+      "options": {
+        "A": "Same as any piping",
+        "B": "Must be cleaned for oxygen service, pressure tested, identified, and installed by certified personnel",
+        "C": "No special requirements",
+        "D": "Can use any materials"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Medical gas systems (oxygen, medical air, nitrous oxide, vacuum) follow NFPA 99: (1) materials must be brazed copper (type K or L) or stainless steel, (2) cleaned for oxygen service (oil/grease removal - fire hazard), (3) pressure tested (minimum 1.5× working pressure), (4) color-coded and labeled per gas type, (5) installed by certified medical gas installers, (6) verified by independent testing. Life-safety critical - failures kill patients.",
+        "incorrect": "Incorrect. Medical gas has very strict special requirements (not same as other piping). Requirements are extensive and mandatory. Materials and procedures are specified. The correct answer is B."
+      }
+    },
+    {
+      "id": 38,
+      "section": 2,
+      "subsection": "F",
+      "topic": "Medical Oxygen Cleaning",
+      "question": "Why must oxygen piping be specially cleaned?",
+      "options": {
+        "A": "For appearance",
+        "B": "Oil and grease can ignite violently in presence of high-pressure oxygen",
+        "C": "To remove water only",
+        "D": "Cleaning isn't required"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Oxygen is a strong oxidizer - materials that don't normally burn in air can ignite in high-pressure or pure oxygen. Oil, grease, cutting oil, fingerprints, etc. can explode on contact with oxygen. Medical oxygen cleaning: (1) solvent degreasing, (2) acid or alkaline cleaning, (3) high-purity water rinse, (4) dry with oil-free nitrogen, (5) cap ends, (6) never touch inside with bare hands. Critical safety requirement - contamination causes fires/explosions.",
+        "incorrect": "Incorrect. Cleaning is absolutely required for safety (not appearance or water removal). Oil/oxygen mixtures are explosive. Proper cleaning prevents catastrophic fires. The correct answer is B."
+      }
+    },
+    {
+      "id": 39,
+      "section": 2,
+      "subsection": "G",
+      "topic": "Heat Recovery Ventilation",
+      "question": "What is an HRV (Heat Recovery Ventilator)?",
+      "options": {
+        "A": "A type of boiler",
+        "B": "Device that recovers heat from exhaust air to preheat incoming fresh air",
+        "C": "A filter only",
+        "D": "An air conditioner"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! HRVs provide controlled ventilation while recovering heat. Process: (1) exhaust air from building passes through heat exchanger, (2) fresh outdoor air passes through other side of exchanger, (3) heat transfers from warm to cold airstream (no mixing), (4) preheated fresh air enters building. Recovers 60-90% of heat that would be lost with simple ventilation. Essential in tight, energy-efficient buildings. ERV (Energy Recovery Ventilator) also transfers moisture.",
+        "incorrect": "Incorrect. HRVs aren't boilers, just filters, or air conditioners. They're specifically ventilation devices with heat recovery capability. The correct answer is B."
+      }
+    },
+    {
+      "id": 40,
+      "section": 2,
+      "subsection": "G",
+      "topic": "Waste Heat Recovery",
+      "question": "What industrial processes are good candidates for waste heat recovery?",
+      "options": {
+        "A": "Processes with high-temperature exhaust gases or waste streams",
+        "B": "Only cold processes",
+        "C": "No processes benefit",
+        "D": "Only in winter"
+      },
+      "correct_answer": "A",
+      "explanation": {
+        "correct": "Correct! Best waste heat recovery opportunities: (1) furnaces, ovens, kilns with hot exhaust (400-2000°F), (2) compressors (hot discharge air), (3) boiler flue gas, (4) cooling processes (condenser heat), (5) hot liquids/solids being cooled. Recovery methods: heat exchangers, economizers, heat wheels, heat pipes. Used to: preheat combustion air, preheat feedwater, space heating, process heating. Large energy savings - often 10-30% reduction in energy costs.",
+        "incorrect": "Incorrect. Cold processes don't have waste heat to recover. Most processes can benefit from recovery (not none). Useful year-round (not just winter). High-temperature processes offer best opportunities. The correct answer is A."
+      }
+    },
+    {
+      "id": 41,
+      "section": 2,
+      "subsection": "G",
+      "topic": "Run-around Coils",
+      "question": "What is a run-around coil heat recovery system?",
+      "options": {
+        "A": "Coils that run in circles",
+        "B": "Two coils (one in exhaust, one in supply) connected by piping with circulating fluid transferring heat",
+        "C": "A type of boiler",
+        "D": "Exercise equipment"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Run-around coil systems use: (1) coil in exhaust air stream, (2) coil in fresh air stream, (3) piping connecting coils with circulating fluid (water/glycol), (4) pump circulating fluid. Heat transfers from exhaust air to fluid at one coil, fluid carries heat to other coil, heat transfers to fresh air. Advantage: coils can be separated (different locations, contaminant isolation). Efficiency lower than plate exchangers but more flexible installation.",
+        "incorrect": "Incorrect. Run-around refers to circulating fluid running between coils (not circular motion). Not boilers or exercise equipment. It's a specific heat recovery configuration. The correct answer is B."
+      }
+    },
+    {
+      "id": 42,
+      "section": 2,
+      "subsection": "H",
+      "topic": "Solar Thermal Systems",
+      "question": "What is a solar thermal heating system?",
+      "options": {
+        "A": "Photovoltaic electricity generation",
+        "B": "System using solar collectors to heat fluid (water or glycol) for space or water heating",
+        "C": "Passive sunlight only",
+        "D": "Lighting system"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Solar thermal systems use solar collectors (flat plate or evacuated tube) to absorb solar radiation and heat transfer fluid. Applications: (1) domestic hot water heating (most common), (2) space heating (radiant floors, forced air), (3) pool heating, (4) industrial process heat. System includes: collectors, circulation pump, heat exchanger, storage tank, controls. Glycol used in freeze-prone climates. Can provide 50-80% of heating needs in sunny climates.",
+        "incorrect": "Incorrect. Photovoltaic (PV) generates electricity (not thermal heat). Passive solar is different (building design). Not lighting. Solar thermal specifically heats fluids for heating applications. The correct answer is B."
+      }
+    },
+    {
+      "id": 43,
+      "section": 2,
+      "subsection": "H",
+      "topic": "Geothermal Heat Pumps",
+      "question": "How does a ground-source (geothermal) heat pump work?",
+      "options": {
+        "A": "Burns natural gas underground",
+        "B": "Uses stable ground temperature as heat source (winter) or heat sink (summer)",
+        "C": "Digs into magma",
+        "D": "Only works in volcanic areas"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Geothermal heat pumps use ground as heat source/sink: (1) ground loop (vertical bore holes or horizontal trenches) filled with water/antifreeze, (2) heat pump extracts heat from ground in winter (heating mode), (3) rejects heat to ground in summer (cooling mode), (4) ground stays 45-55°F year-round. Highly efficient (COP 3-5) - moves heat rather than generating it. High installation cost but very low operating cost. Works anywhere ground doesn't freeze solid.",
+        "incorrect": "Incorrect. Geothermal heat pumps don't burn fuel, drill to magma, or require volcanoes. They use shallow ground temperature. Work anywhere in world. The correct answer is B."
+      }
+    },
+    {
+      "id": 44,
+      "section": 3,
+      "subsection": "A",
+      "topic": "Coaching vs Mentoring",
+      "question": "What is the difference between coaching and mentoring in the workplace?",
+      "options": {
+        "A": "No difference",
+        "B": "Coaching focuses on specific skills/tasks; mentoring is broader career/personal development",
+        "C": "Coaching is negative; mentoring is positive",
+        "D": "Only managers can coach"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Coaching: task-focused, short-term, specific skill development (e.g., teaching welding technique, how to read drawings). Mentoring: relationship-focused, long-term, broader guidance on career, workplace navigation, professional growth. Journeypersons coach apprentices on tasks while also mentoring them on career development. Both are positive and valuable. Anyone can coach/mentor regardless of position.",
+        "incorrect": "Incorrect. They're different but both positive. Coaching isn't negative. Anyone can provide coaching and mentoring (not just managers). The distinction is scope and timeframe. The correct answer is B."
+      }
+    },
+    {
+      "id": 45,
+      "section": 3,
+      "subsection": "B",
+      "topic": "Red Seal Program",
+      "question": "What is the Red Seal Program?",
+      "options": {
+        "A": "A stamp collection program",
+        "B": "Interprovincial standards program allowing certified tradespeople to work across Canada",
+        "C": "A safety certification",
+        "D": "A tool warranty program"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Red Seal Program (Interprovincial Standards Red Seal Program) establishes common standards for skilled trades across Canada. Tradespersons passing Red Seal exam receive red seal on their provincial certificate, allowing them to practice their trade in any Canadian province/territory without rewriting exams. Covers 55+ trades including Steamfitter-Pipefitter. Promotes labor mobility and consistent standards. Employers recognize Red Seal as mark of excellence.",
+        "incorrect": "Incorrect. Red Seal isn't stamps, safety only, or tool warranty. It's specifically the national skilled trades certification program for interprovincial mobility. The correct answer is B."
+      }
+    },
+    {
+      "id": 46,
+      "section": 3,
+      "subsection": "C",
+      "topic": "Critical Lift Definition",
+      "question": "What factors make a lift 'critical' requiring additional planning?",
+      "options": {
+        "A": "Any lift over 5 pounds",
+        "B": "Lifts near capacity, over personnel/occupied areas, near hazards, or with potential for serious consequences",
+        "C": "Only crane lifts",
+        "D": "Lifts on Mondays"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Critical lifts defined by: (1) load >75-90% of rated capacity, (2) lifts over occupied buildings/work areas, (3) near power lines or hazards, (4) multiple crane lifts, (5) blind lifts, (6) confined spaces, (7) complex rigging, (8) hazardous materials, (9) high value loads. Require: written lift plan, engineering review, permits, qualified supervision, pre-lift meeting, rehearsal. Company-specific definitions vary but concept is universal.",
+        "incorrect": "Incorrect. Not about weight alone, equipment type, or day of week. 'Critical' means potential for serious consequences requiring extra precautions. The correct answer is B."
+      }
+    },
+    {
+      "id": 47,
+      "section": 3,
+      "subsection": "C",
+      "topic": "Lift Plan Components",
+      "question": "What should a written critical lift plan include?",
+      "options": {
+        "A": "Only the crane type",
+        "B": "Load weight, rigging, equipment, sequence, hazards, controls, personnel, and communications",
+        "C": "Just signatures",
+        "D": "Weather only"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Comprehensive lift plans include: (1) load data (weight, dimensions, center of gravity), (2) rigging design (slings, shackles, spreader beams), (3) crane selection and configuration, (4) lift sequence step-by-step, (5) hazard identification and controls, (6) personnel assignments (operator, riggers, signal person, supervisor), (7) communication methods, (8) emergency procedures, (9) ground conditions, (10) approvals/permits. Document reviewed and signed by all parties.",
+        "incorrect": "Incorrect. Lift plans are comprehensive documents, not limited to one element. All factors affecting safety must be addressed. The correct answer is B."
+      }
+    },
+    {
+      "id": 48,
+      "section": 3,
+      "subsection": "C",
+      "topic": "Load Radius",
+      "question": "What is 'load radius' in crane operations?",
+      "options": {
+        "A": "The size of the load",
+        "B": "Horizontal distance from crane's center of rotation to the load's center of gravity",
+        "C": "The boom length",
+        "D": "The crane's turning radius"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Load radius (operating radius) is horizontal distance from centerline of crane rotation to center of gravity of the suspended load. Critical for: (1) determining capacity from load chart (capacity decreases as radius increases), (2) planning lift (know radius at each position), (3) stability (longer radius = higher overturning moment). Measured horizontal, not along boom. Same boom length can have different radius at different angles.",
+        "incorrect": "Incorrect. Load radius isn't load size, boom length (though related), or turning radius. It's specifically horizontal distance from crane center to load. The correct answer is B."
+      }
+    },
+    {
+      "id": 49,
+      "section": 3,
+      "subsection": "C",
+      "topic": "Two-Crane Lifts",
+      "question": "What special considerations apply to lifts using two cranes?",
+      "options": {
+        "A": "No special considerations",
+        "B": "Load sharing, coordination, synchronized movements, and additional safety factors required",
+        "C": "Easier than single crane",
+        "D": "Not allowed"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Dual crane lifts require: (1) precise load distribution calculation (each crane's share considering rigging geometry), (2) load chart reductions (typically use 75% of rated capacity per ASME), (3) synchronized movements (coordinated operators, one person directing), (4) rigging design preventing load shift, (5) dedicated lift director, (6) detailed lift plan and rehearsal. More complex and risky than single crane. Used when load too heavy/large for one crane.",
+        "incorrect": "Incorrect. Two-crane lifts have extensive special requirements. More difficult (not easier). Definitely allowed but require expertise. The correct answer is B."
+      }
+    },
+    {
+      "id": 50,
+      "section": 3,
+      "subsection": "C",
+      "topic": "Blind Lifts",
+      "question": "What is a 'blind lift'?",
+      "options": {
+        "A": "Lifting in the dark",
+        "B": "Lift where operator cannot see the load or landing area, requiring signal person",
+        "C": "Lifting with eyes closed",
+        "D": "Not a real term"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Blind lift occurs when crane operator's view of the load, hook, or landing area is obstructed. Requires: qualified signal person with clear view communicating via hand signals or radio, additional spotters as needed, slower movements, heightened awareness. Common in: buildings (load inside, crane outside), around structures, long-reach lifts. More hazardous than visible lifts - communication and trust critical.",
+        "incorrect": "Incorrect. Blind lift is real term describing operator's obstructed view (not darkness or closed eyes). Requires signal person for safe operation. The correct answer is B."
+      }
+    },
+    {
+      "id": 51,
+      "section": 3,
+      "subsection": "C",
+      "topic": "Boom Length Selection",
+      "question": "Why might you choose a longer boom for a lift than minimum required?",
+      "options": {
+        "A": "To waste time",
+        "B": "Better hook height clearance, improved boom angle, or obstacle clearance",
+        "C": "Longer is always worse",
+        "D": "No reason"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Longer boom provides: (1) higher hook elevation (clearing obstacles, reaching high), (2) better boom angle (>45° reduces side loading on boom), (3) reaching over obstacles while maintaining good angle, (4) flatter boom angle improving stability at same radius. Disadvantages: lower capacity (longer = weaker), longer setup, more counterweight may be needed. Selection balances capacity, geometry, and practical considerations.",
+        "incorrect": "Incorrect. Boom length selection has legitimate reasons (not time-wasting). Longer isn't always worse (has advantages). Multiple valid reasons for longer boom exist. The correct answer is B."
+      }
+    },
+    {
+      "id": 52,
+      "section": 3,
+      "subsection": "C",
+      "topic": "Load Testing",
+      "question": "What is the purpose of a test lift?",
+      "options": {
+        "A": "To break the equipment",
+        "B": "Verify rigging, crane capacity, and procedures before actual lift by lifting slightly off ground",
+        "C": "Not a real procedure",
+        "D": "To impress spectators"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Test lift (trial lift): lift load 2-6 inches off ground and hold, checking: (1) rigging is secure and balanced, (2) crane capacity adequate (load indicator reading), (3) load behaves as expected (doesn't shift), (4) procedures work as planned, (5) communications effective. If problems found, lower load and fix before proceeding. Essential for critical lifts. Prevents disasters by catching problems at low risk.",
+        "incorrect": "Incorrect. Test lifts are real, important procedure (not for show or equipment damage). They verify everything before committing to full lift height. The correct answer is B."
+      }
+    },
+    {
+      "id": 53,
+      "section": 3,
+      "subsection": "C",
+      "topic": "Lift Over Occupied Areas",
+      "question": "What precautions are required for lifting over occupied buildings or work areas?",
+      "options": {
+        "A": "No special precautions",
+        "B": "Evacuate area below, use extra safety factors, secure permits, and post warnings",
+        "C": "Only work at night",
+        "D": "Not allowed under any circumstances"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Lifts over occupied areas require: (1) evacuate people from beneath load path and drop zone, (2) barricade area, (3) post spotters to ensure clear, (4) use reduced capacity (higher safety factor), (5) secure permits/approvals, (6) written lift plan, (7) qualified supervision, (8) backup rigging where feasible. Some companies prohibit entirely. When permitted, treated as critical lift with maximum precautions. Lives at stake if rigging fails.",
+        "incorrect": "Incorrect. Special precautions are absolutely required. Time of day isn't the solution. Some lifts are necessary over occupied areas (building construction/maintenance). Strict controls required. The correct answer is B."
+      }
+    },
+    {
+      "id": 54,
+      "section": 3,
+      "subsection": "C",
+      "topic": "Wind Speed Limitations",
+      "question": "Why are crane operations stopped when wind speed exceeds limits?",
+      "options": {
+        "A": "Wind has no effect on cranes",
+        "B": "Wind creates lateral forces on load and boom, reducing capacity and creating instability",
+        "C": "Only to give workers breaks",
+        "D": "To test wind speed equipment"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Wind effects on crane operations: (1) lateral force on load (swing, impact), (2) side loading on boom (reduces capacity, structural risk), (3) wind loading on boom/crane structure, (4) reduced operator control. Typical limits: 20-30 mph sustained wind, lower for large surface area loads. Must monitor wind speed continuously during lifts. High winds cause: loss of control, overload, tipping, structural failure. Weather monitoring essential for safe lifting.",
+        "incorrect": "Incorrect. Wind significantly affects crane stability and safety. Operations stop for safety (not breaks or equipment testing). Wind limits are critical safety parameters. The correct answer is B."
+      }
+    },
+    {
+      "id": 55,
+      "section": 3,
+      "subsection": "C",
+      "topic": "Lift Director Role",
+      "question": "What is the role of a lift director on critical lifts?",
+      "options": {
+        "A": "To operate the crane",
+        "B": "Overall responsibility for planning, coordinating, and supervising the lift operation",
+        "C": "To make coffee",
+        "D": "Optional position"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Lift Director (Lift Superintendent, Lift Boss) has overall authority and responsibility: (1) develops lift plan, (2) conducts pre-lift meeting, (3) assigns personnel (operator, riggers, signal person), (4) ensures equipment/rigging adequate, (5) supervises execution, (6) authority to stop lift if unsafe, (7) coordinates with other trades/activities. Must be: qualified by training and experience, understand rigging and crane operations. Critical lifts require dedicated lift director.",
+        "incorrect": "Incorrect. Lift director doesn't operate crane (operator does). Position is mandatory for critical lifts (not optional). Has crucial supervisory responsibility. The correct answer is B."
+      }
+    },
+    {
+      "id": 56,
+      "section": 3,
+      "subsection": "C",
+      "topic": "Emergency Procedures",
+      "question": "What should be included in emergency procedures for critical lifts?",
+      "options": {
+        "A": "Nothing - no planning needed",
+        "B": "Procedures for equipment failure, medical emergency, weather, and communication loss",
+        "C": "Only fire evacuation",
+        "D": "Just hope nothing goes wrong"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Emergency procedures should address: (1) equipment failure (crane, rigging) - how to secure load, (2) medical emergency - evacuation, first aid, (3) sudden weather change - securing load or setting down safely, (4) power loss - backup plans, (5) communication failure - alternate methods, (6) earthquake/emergency alert - immediate actions. All personnel must know procedures, emergency contacts posted, rescue plans for load suspended in air. Rehearse critical scenarios.",
+        "incorrect": "Incorrect. Emergency planning is essential (not nothing or hoping). Must cover multiple scenarios (not just fire). Comprehensive emergency procedures save lives. The correct answer is B."
+      }
+    },
+    {
+      "id": 57,
+      "section": 3,
+      "subsection": "D",
+      "topic": "New Construction Sequencing",
+      "question": "Why is work sequencing important in new construction piping?",
+      "options": {
+        "A": "It's not important",
+        "B": "Ensures work proceeds logically, efficiently, and coordinates with other trades",
+        "C": "Only for scheduling meetings",
+        "D": "Random order is best"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Proper sequencing ensures: (1) logical flow (underground before slab, rough-in before walls close), (2) access for installation (large equipment before doorways close, hangers before ceiling), (3) trade coordination (structural supports before piping, piping before insulation), (4) efficient material delivery (just-in-time), (5) inspection access (test before covering). Poor sequencing causes: rework, delays, conflicts, damage. Critical path scheduling optimizes sequence.",
+        "incorrect": "Incorrect. Sequencing is critical for efficiency and quality. Random order causes chaos. It's for actual work planning (not just meetings). Proper sequencing prevents costly problems. The correct answer is B."
+      }
+    },
+    {
+      "id": 58,
+      "section": 3,
+      "subsection": "D",
+      "topic": "Underground Utilities",
+      "question": "What must be done before excavating for underground piping?",
+      "options": {
+        "A": "Just start digging",
+        "B": "Locate and mark all existing underground utilities through one-call service",
+        "C": "Hope for the best",
+        "D": "Ignore what's underground"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Before excavation: (1) call one-call/dig-safe utility location service (811 in North America) minimum 2-3 days ahead, (2) utility owners mark their lines with flags/paint, (3) verify markings before digging, (4) hand dig near marked utilities, (5) notify utilities of damage immediately if struck. Buried utilities include: electrical, gas, water, sewer, communications, steam. Striking utilities causes: service interruption, property damage, injury, death, legal liability, fines.",
+        "incorrect": "Incorrect. Never dig without locating utilities first. This is law in most jurisdictions and critical safety practice. Striking gas or electrical lines kills people. The correct answer is B."
+      }
+    },
+    {
+      "id": 59,
+      "section": 3,
+      "subsection": "D",
+      "topic": "Material Submittals",
+      "question": "What are submittals in construction?",
+      "options": {
+        "A": "Wrestling moves",
+        "B": "Documents submitted to engineer/owner for approval: shop drawings, product data, samples",
+        "C": "Completed work only",
+        "D": "Final invoices"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Submittals are contractor-submitted documents for review/approval before procurement/installation: (1) shop drawings (detailed fabrication drawings), (2) product data (cut sheets, specifications), (3) samples (physical samples of materials), (4) test reports, (5) warranties. Purpose: verify materials/equipment meet specifications, allow engineer to review before work proceeds. Required for: valves, pumps, specialties, major equipment. Delays if not submitted timely. Track status carefully.",
+        "incorrect": "Incorrect. Submittals are pre-work approval documents (not wrestling, completed work, or invoices). Critical part of construction quality control process. The correct answer is B."
+      }
+    },
+    {
+      "id": 60,
+      "section": 3,
+      "subsection": "D",
+      "topic": "Material Procurement Lead Time",
+      "question": "Why is lead time important in project planning?",
+      "options": {
+        "A": "Lead has nothing to do with piping",
+        "B": "Long-lead items must be ordered early to avoid delaying project",
+        "C": "Lead time isn't important",
+        "D": "All materials arrive instantly"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Lead time is time from order to delivery. Long-lead items (weeks to months): boilers, major pumps, specialty valves, controls, engineered equipment. Must: (1) identify long-lead items early, (2) expedite submittals/approvals, (3) order ASAP even if installation is months away, (4) track delivery. Failure to manage lead time causes: project delays (critical path impact), idle crews (waiting for materials), cost overruns, rushed/incorrect orders. Lead time management critical to schedule success.",
+        "incorrect": "Incorrect. Lead time (procurement time) is very important, not about lead metal. Materials don't arrive instantly - some take months. Early ordering of long-lead items prevents delays. The correct answer is B."
+      }
+    },
+    {
+      "id": 61,
+      "section": 3,
+      "subsection": "D",
+      "topic": "Prefabrication Planning",
+      "question": "What are the advantages of prefabricating piping assemblies?",
+      "options": {
+        "A": "No advantages",
+        "B": "Higher quality, faster field installation, better working conditions, and reduced field labor",
+        "C": "More expensive always",
+        "D": "Only for small projects"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Prefabrication benefits: (1) shop environment - better lighting, tools, benches, weather protection, (2) higher quality - better fit-up, QC, less rework, (3) faster field installation - no welding/fitting time in field, (4) reduced field labor costs (shop labor often cheaper), (5) safer (less overhead work), (6) less disruption in occupied areas. Used on: large projects, repetitive systems, difficult field access. Requires: good planning, accurate field measurements, lifting equipment.",
+        "incorrect": "Incorrect. Prefabrication has major advantages. Often cost-effective despite higher shop costs. Used on large and small projects. Industry best practice for efficiency. The correct answer is B."
+      }
+    },
+    {
+      "id": 62,
+      "section": 3,
+      "subsection": "D",
+      "topic": "Field Coordination",
+      "question": "Why are coordination meetings important in construction?",
+      "options": {
+        "A": "Just social gatherings",
+        "B": "Resolve conflicts between trades, coordinate sequencing, and communicate schedule changes",
+        "C": "Waste time",
+        "D": "Not necessary"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Coordination meetings (weekly or bi-weekly) bring together: general contractor, subcontractors (mechanical, electrical, plumbing, fire protection, etc.), owner, architect/engineer. Agenda: (1) schedule review (upcoming work, conflicts), (2) resolve interferences (piping vs. ductwork, equipment access), (3) RFI status (requests for information), (4) material deliveries, (5) change orders, (6) safety issues. Prevents: rework, delays, conflicts. Good communication = successful projects.",
+        "incorrect": "Incorrect. Coordination meetings are essential project management (not social or time-wasting). Absolutely necessary for complex projects with multiple trades. The correct answer is B."
+      }
+    },
+    {
+      "id": 63,
+      "section": 3,
+      "subsection": "E",
+      "topic": "System Flushing",
+      "question": "Why are piping systems flushed before commissioning?",
+      "options": {
+        "A": "For aesthetics only",
+        "B": "Remove construction debris, welding scale, and contaminants that could damage equipment",
+        "C": "Not necessary",
+        "D": "Only if system looks dirty"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Flushing removes: (1) welding slag and spatter, (2) mill scale from pipe, (3) cutting debris, (4) thread cutting oil, (5) dirt and construction debris, (6) flux residue. Debris damages: pump seals, valve seats, control valves, strainers. Flushing procedure: (1) install temporary strainers, (2) flush at high velocity (5-10 fps), (3) inspect strainers, (4) repeat until clean, (5) install permanent strainers/equipment. Required before startup. Critical for system longevity.",
+        "incorrect": "Incorrect. Flushing is absolutely necessary for equipment protection (not optional or cosmetic). Visual inspection inadequate - debris hides inside. The correct answer is B."
+      }
+    },
+    {
+      "id": 64,
+      "section": 3,
+      "subsection": "E",
+      "topic": "Pressure Testing Procedures",
+      "question": "What is the typical test pressure for a piping system?",
+      "options": {
+        "A": "Operating pressure",
+        "B": "1.5 times design pressure (or per code requirement)",
+        "C": "Any random pressure",
+        "D": "No testing required"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Hydrostatic test pressure typically 1.5× design pressure for minimum 1 hour (per ASME B31.1, B31.3 varies by service). Steam systems: 1.5× MAWP. Procedure: (1) fill with water, vent air, (2) pressurize slowly to test pressure, (3) hold for specified time, (4) inspect all joints/welds for leaks, (5) relieve pressure carefully. Test before insulation applied. Document with test certificate. Code requirement - not optional.",
+        "incorrect": "Incorrect. Operating pressure is too low for testing. Pressure isn't random - codes specify requirements. Testing is mandatory for code compliance and safety. The correct answer is B."
+      }
+    },
+    {
+      "id": 65,
+      "section": 3,
+      "subsection": "E",
+      "topic": "Air Testing",
+      "question": "When is air (pneumatic) testing used instead of hydrostatic testing?",
+      "options": {
+        "A": "Always preferred",
+        "B": "When water would damage equipment/system, or for gas systems - but requires extra safety precautions",
+        "C": "Never used",
+        "D": "Randomly chosen"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Air testing used when: (1) water would damage system (steam traps, controls, instruments), (2) system can't support water weight, (3) freezing is concern, (4) system will operate with gas (natural gas piping). DANGEROUS: compressed air stores energy - failure releases explosively. Safety requirements: (1) lower test pressure (often 110% vs. 150% for water), (2) gradual pressurization, (3) personnel evacuated from test area, (4) barricades, (5) special approval. Hydrostatic preferred when possible.",
+        "incorrect": "Incorrect. Air testing isn't preferred (water is safer) or never used. Specific applications require air testing, but with strict safety protocols due to hazards. The correct answer is B."
+      }
+    },
+    {
+      "id": 66,
+      "section": 3,
+      "subsection": "E",
+      "topic": "Insulation Installation",
+      "question": "When should piping insulation be installed relative to testing?",
+      "options": {
+        "A": "Before pressure testing",
+        "B": "After successful pressure testing and inspection",
+        "C": "Insulation isn't needed",
+        "D": "Random timing"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Insulation installed AFTER: (1) pressure testing (can't see leaks through insulation), (2) visual weld inspection, (3) NDT if required, (4) system acceptance. If leak found after insulation, must remove insulation, repair, retest, reinstall insulation (expensive). Exception: testing in winter may require temporary insulation of water-filled systems. Proper sequence critical to avoid rework.",
+        "incorrect": "Incorrect. Insulating before testing is wrong - hides leaks. Insulation is definitely needed for energy conservation and personnel protection. Timing is specified in procedures (not random). The correct answer is B."
+      }
+    },
+    {
+      "id": 67,
+      "section": 3,
+      "subsection": "E",
+      "topic": "System Balancing",
+      "question": "What is system balancing in HVAC?",
+      "options": {
+        "A": "Making systems level",
+        "B": "Adjusting flow rates to each zone to achieve design conditions",
+        "C": "Weighing equipment",
+        "D": "Not a real procedure"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Balancing adjusts water or air flow to each terminal unit (radiator, fan coil, VAV box) to match design: (1) measure actual flow rates, (2) adjust balancing valves/dampers, (3) re-measure and fine-tune, (4) document final settings. Ensures: uniform comfort, design performance, energy efficiency. Performed by: testing and balancing (TAB) technicians using calibrated instruments. Critical final step in HVAC commissioning. Without balancing: some areas too hot/cold, energy waste.",
+        "incorrect": "Incorrect. Balancing is real procedure about flow distribution (not physical level or weight). Essential for proper HVAC performance and comfort. The correct answer is B."
+      }
+    },
+    {
+      "id": 68,
+      "section": 3,
+      "subsection": "E",
+      "topic": "Operator Training",
+      "question": "Why is operator training important during system turnover?",
+      "options": {
+        "A": "It's not important",
+        "B": "Ensures operators understand equipment operation, maintenance, and safety procedures",
+        "C": "Just a formality",
+        "D": "Operators don't need training"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Operator training ensures: (1) proper equipment operation (avoiding damage), (2) understanding control sequences, (3) routine maintenance procedures, (4) emergency shutdown procedures, (5) safety requirements, (6) troubleshooting basics. Training includes: equipment walkthroughs, control demonstrations, Q&A, documentation review. Poor training leads to: equipment damage, inefficient operation, safety incidents, warranty voidance. Often contract requirement. Demonstrates professionalism.",
+        "incorrect": "Incorrect. Training is critical (not unimportant or formality). Operators absolutely need training on new/complex systems. Proper training prevents problems and ensures successful operation. The correct answer is B."
+      }
+    },
+    {
+      "id": 69,
+      "section": 3,
+      "subsection": "F",
+      "topic": "Maintenance Planning",
+      "question": "What is preventive maintenance?",
+      "options": {
+        "A": "Fixing only after breakdown",
+        "B": "Scheduled maintenance to prevent failures before they occur",
+        "C": "Ignoring maintenance",
+        "D": "Random maintenance"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Preventive maintenance (PM) is scheduled, proactive maintenance: (1) regular inspections, (2) lubrication, (3) filter changes, (4) calibration, (5) wear part replacement before failure, (6) cleaning. Benefits: (1) prevents unexpected breakdowns, (2) extends equipment life, (3) maintains efficiency, (4) reduces overall costs, (5) improves safety. PM schedules based on: time, operating hours, or condition. Much cheaper than reactive maintenance (fixing after failure).",
+        "incorrect": "Incorrect. Reactive (run-to-failure) maintenance is fixing after breakdown - costly and disruptive. PM is scheduled and proactive. Ignoring maintenance leads to failures. PM is planned (not random). The correct answer is B."
+      }
+    },
+    {
+      "id": 70,
+      "section": 3,
+      "subsection": "F",
+      "topic": "Shutdown Planning",
+      "question": "Why is planning important for facility shutdowns for maintenance?",
+      "options": {
+        "A": "Planning isn't needed",
+        "B": "Minimizes downtime, ensures safety, and coordinates resources and work",
+        "C": "Only to schedule parties",
+        "D": "To delay work"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Shutdown planning ensures: (1) minimum downtime (schedule work efficiently, parallel activities), (2) all materials/parts available before shutdown, (3) adequate personnel assigned, (4) safety procedures in place (LOTO, confined space), (5) work sequenced logically, (6) contingency plans for problems, (7) startup procedures ready. Poor planning causes: extended downtime (lost production), safety incidents, incomplete work. Major shutdowns planned months ahead.",
+        "incorrect": "Incorrect. Planning is critical for efficient, safe shutdowns. Not for parties or delays. Detailed planning minimizes costly downtime and ensures work completion. The correct answer is B."
+      }
+    },
+    {
+      "id": 71,
+      "section": 3,
+      "subsection": "F",
+      "topic": "Hot Work Permits",
+      "question": "When is a hot work permit required?",
+      "options": {
+        "A": "Never",
+        "B": "When performing welding, cutting, or other spark/flame producing work in areas with fire hazards",
+        "C": "Only in summer",
+        "D": "Only outdoors"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Hot work permits required for welding, cutting, grinding (anything producing sparks/flame) near: flammable materials, in occupied buildings, confined spaces, or designated hot work permit areas. Permit ensures: (1) fire watch assigned, (2) combustibles removed/protected, (3) fire extinguisher available, (4) area inspection before and after, (5) authorization obtained. Prevents fires - major cause of facility damage. Permit typically valid one shift. Strict enforcement necessary.",
+        "incorrect": "Incorrect. Hot work permits are mandatory safety procedure (not never, seasonal, or location-based). Required anywhere fire hazard exists. Prevents catastrophic fires. The correct answer is B."
+      }
+    },
+    {
+      "id": 72,
+      "section": 3,
+      "subsection": "F",
+      "topic": "Pipe Freezing",
+      "question": "When is pipe freezing used in maintenance?",
+      "options": {
+        "A": "To make ice cubes",
+        "B": "To create temporary ice plug in water line allowing valve installation/repair without draining system",
+        "C": "Only in winter",
+        "D": "Not a real technique"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Pipe freezing creates temporary ice plug in water line using: liquid nitrogen jacket or CO₂ equipment. Allows: valve replacement, tie-ins, repairs without draining entire system. Advantages: (1) no system shutdown, (2) no contamination from draining/refilling, (3) faster than drain/refill. Limitations: (1) doesn't work on glycol or saltwater, (2) requires adequate pipe wall thickness, (3) professional equipment and training needed. Used on: domestic water, chilled water, heating water. Time-saving technique for maintenance.",
+        "incorrect": "Incorrect. Pipe freezing is real specialized technique (not ice cubes or seasonal). Works year-round using cryogenic cooling. Allows repairs without full system drainage. The correct answer is B."
+      }
+    },
+    {
+      "id": 73,
+      "section": 3,
+      "subsection": "F",
+      "topic": "As-Built Documentation",
+      "question": "Why are as-built drawings important for maintenance?",
+      "options": {
+        "A": "They're not important",
+        "B": "Show actual installed conditions reflecting field changes, essential for future maintenance and modifications",
+        "C": "Just filed and forgotten",
+        "D": "Only for building inspectors"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! As-built (record) drawings show actual installation: (1) field changes from original design, (2) final routing and locations, (3) buried pipe locations, (4) valve locations, (5) equipment final positions. Critical for: (1) future maintenance (finding valves, routing), (2) modifications (knowing what exists), (3) troubleshooting, (4) facility management. Should be updated throughout project and at closeout. Poor as-builts cause: wasted time searching, damaged lines during excavation, inefficient troubleshooting.",
+        "incorrect": "Incorrect. As-builts are extremely important for facility operation (not unimportant or just filed away). Used regularly by maintenance (not just inspectors). The correct answer is B."
+      }
+    },
+    {
+      "id": 74,
+      "section": 3,
+      "subsection": "F",
+      "topic": "Winterization",
+      "question": "What is winterization of a building's plumbing/piping systems?",
+      "options": {
+        "A": "Painting pipes white",
+        "B": "Draining water, blowing with air, and adding antifreeze to prevent freeze damage in unheated buildings",
+        "C": "Only for houses with winter themes",
+        "D": "Not necessary anywhere"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Winterization protects vacant/unheated buildings from freeze damage: (1) shut off water supply, (2) drain all piping (open high and low points), (3) blow compressed air through lines, (4) add RV antifreeze to traps and fixtures, (5) drain water heaters, pumps, and tanks, (6) drain/protect boilers, (7) drain sprinkler systems if not dry-pipe. Frozen pipes cause: burst pipes, major water damage when thawed. Essential for: seasonal buildings, vacant properties, construction projects over winter.",
+        "incorrect": "Incorrect. Winterization is functional freeze protection (not cosmetic). Necessary in freezing climates for any unheated building. Prevents expensive freeze damage. The correct answer is B."
+      }
+    },
+    {
+      "id": 75,
+      "section": 3,
+      "subsection": "G",
+      "topic": "Quality Control Inspections",
+      "question": "What is the purpose of quality control inspections during construction?",
+      "options": {
+        "A": "To harass workers",
+        "B": "Verify work meets specifications, codes, and standards before covering/proceeding",
+        "C": "Just paperwork",
+        "D": "Not necessary"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! QC inspections verify: (1) materials meet specifications, (2) workmanship is acceptable, (3) installation per drawings, (4) code compliance, (5) testing completed. Inspection points: receiving (materials), in-process (welding, installation), final (before closeout). Inspectors: company QC, owner's rep, engineer, authority having jurisdiction (AHJ). Benefits: (1) catch problems early (cheap to fix), (2) prevent covering defective work, (3) document compliance. Poor QC leads to: failures, callbacks, safety issues, litigation.",
+        "incorrect": "Incorrect. QC inspections serve critical quality/safety purposes (not harassment or just paperwork). Absolutely necessary for quality construction. Catch problems before they become expensive. The correct answer is B."
+      }
+    },
+    {
+      "id": 76,
+      "section": 3,
+      "subsection": "G",
+      "topic": "Non-Destructive Testing (NDT)",
+      "question": "What is radiographic testing (RT) in welding inspection?",
+      "options": {
+        "A": "Testing with radio waves",
+        "B": "X-ray or gamma ray inspection to detect internal weld defects",
+        "C": "Listening to the radio",
+        "D": "Not a real test"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Radiographic testing uses X-rays or gamma rays (Ir-192, Co-60) to create image of weld internal structure on film or digital detector. Detects: porosity, lack of fusion, cracks, inclusions, incomplete penetration - defects invisible to visual inspection. Required on: critical welds (high pressure, toxic service), per code (ASME B31.1, B31.3), structural welds. Performed by certified technicians. Expensive but reveals internal quality. Alternative NDT: ultrasonic testing (UT).",
+        "incorrect": "Incorrect. Radiographic uses X-ray/gamma radiation (not radio waves or entertainment). Definitely real and widely used NDT method. Critical for ensuring weld integrity. The correct answer is B."
+      }
+    },
+    {
+      "id": 77,
+      "section": 3,
+      "subsection": "G",
+      "topic": "Weld Documentation",
+      "question": "What should be documented for each weld on critical piping?",
+      "options": {
+        "A": "Nothing",
+        "B": "Welder ID, procedure, filler metal, date, inspection results, and repairs",
+        "C": "Only the date",
+        "D": "Random notes"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Weld documentation (weld logs, data sheets) records: (1) weld identification number, (2) welder ID and stamp, (3) welding procedure specification (WPS) used, (4) filler metal type and heat number, (5) date welded, (6) visual inspection results (accept/reject), (7) NDT results if performed, (8) repairs if needed. Required by: ASME codes, quality programs, owner specs. Provides: traceability, quality assurance, troubleshooting data. Maintained as permanent records.",
+        "incorrect": "Incorrect. Comprehensive documentation is required for critical welds (not nothing, date only, or random). Provides traceability and quality assurance. The correct answer is B."
+      }
+    },
+    {
+      "id": 78,
+      "section": 3,
+      "subsection": "G",
+      "topic": "Punch Lists",
+      "question": "What is a construction punch list?",
+      "options": {
+        "A": "A list of people to punch",
+        "B": "List of incomplete or deficient items requiring correction before final acceptance",
+        "C": "A party invitation list",
+        "D": "A tool inventory"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Punch list (deficiency list) created during final inspection documenting: (1) incomplete work, (2) deficiencies requiring correction, (3) touch-up/cleanup needed, (4) missing documentation. Examples: leaking valve, missing insulation, unpainted pipe, incomplete testing, missing O&M manuals. Contractor must: complete all items, reinspect, obtain sign-off. Final payment typically held until punch list complete. Normal part of project closeout.",
+        "incorrect": "Incorrect. Punch list is professional project management term (not violence, parties, or tools). Lists work requiring completion before acceptance. The correct answer is B."
+      }
+    },
+    {
+      "id": 79,
+      "section": 4,
+      "subsection": "A",
+      "topic": "Rolling Offset Definition",
+      "question": "What is a rolling offset in piping?",
+      "options": {
+        "A": "A pipe that rolls",
+        "B": "Offset in two planes - both horizontal and vertical direction change",
+        "C": "A simple 90° elbow",
+        "D": "Not a real term"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Rolling offset changes pipe direction in two planes simultaneously - both horizontally (left/right) and vertically (up/down). More complex than simple offset (one plane). Calculation requires: Pythagorean theorem in 3D, or trigonometry. Example: pipe must go 12\" right and 8\" up - requires rolling offset. Used when: obstacles require multi-plane routing, connecting misaligned equipment. Fabricated using two 45° or custom angle fittings at calculated angles.",
+        "incorrect": "Incorrect. Rolling offset is real piping term (not literal rolling). Different from simple elbows (one plane). Involves two-plane directional change. The correct answer is B."
+      }
+    },
+    {
+      "id": 80,
+      "section": 4,
+      "subsection": "A",
+      "topic": "Rolling Offset Calculation",
+      "question": "To calculate a rolling offset, what dimensions must be known?",
+      "options": {
+        "A": "Only pipe diameter",
+        "B": "Horizontal offset and vertical rise (or offset in both planes)",
+        "C": "Only the color of the pipe",
+        "D": "No calculations needed"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Rolling offset requires knowing offset in both planes: (1) horizontal offset (left/right distance), (2) vertical rise (up/down distance), (3) sometimes the run (straight distance). Calculate: true offset = √(horizontal² + vertical²), then calculate fitting angles and travel distance. More complex than single-plane offsets. Common formulas use 45° fittings or custom angles. Accurate measurement and calculation critical for proper fit.",
+        "incorrect": "Incorrect. Pipe diameter isn't needed for offset geometry (though needed for materials). Color is irrelevant. Calculations definitely required. Must know both plane offsets. The correct answer is B."
+      }
+    },
+    {
+      "id": 81,
+      "section": 4,
+      "subsection": "A",
+      "topic": "True Length of Rolling Offset",
+      "question": "How is the true length of a rolling offset calculated?",
+      "options": {
+        "A": "Random guess",
+        "B": "True length = √(run² + horizontal offset² + vertical rise²) - 3D Pythagorean theorem",
+        "C": "Just add all dimensions",
+        "D": "Multiply all dimensions"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! For rolling offset with run, horizontal offset, and vertical rise: True Length = √(run² + offset² + rise²). This is 3D Pythagorean theorem (extension of a² + b² = c²). If calculating just the diagonal offset distance: Diagonal = √(horizontal² + vertical²). Then use with run to get true length. Essential for: ordering correct length pipe, calculating fitting angles, material takeoffs.",
+        "incorrect": "Incorrect. Not random, simple addition, or multiplication. Requires 3D Pythagorean theorem considering all three dimensions. Accurate calculation prevents errors. The correct answer is B."
+      }
+    },
+    {
+      "id": 82,
+      "section": 4,
+      "subsection": "A",
+      "topic": "Fitting Angles for Rolling Offsets",
+      "question": "Why are custom fitting angles often needed for rolling offsets?",
+      "options": {
+        "A": "They're not needed",
+        "B": "Standard 45° fittings may not provide correct angles in both planes",
+        "C": "To make work harder",
+        "D": "For decoration"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Rolling offsets often require compound angles - different angles in horizontal and vertical planes. Standard 45° fittings work for simple offsets but rolling offsets may need: custom mitre cuts, custom bend angles, or specific manufactured fittings. Angles calculated from offset dimensions using trigonometry. Precision critical for proper alignment. Alternative: use adjustable flanges or multiple standard fittings (more fittings but easier fabrication).",
+        "incorrect": "Incorrect. Custom angles definitely needed (standard often won't work). Not for difficulty or decoration - for geometric correctness. Rolling offsets are more complex than simple offsets. The correct answer is B."
+      }
+    },
+    {
+      "id": 83,
+      "section": 4,
+      "subsection": "A",
+      "topic": "Rolling Offset Applications",
+      "question": "When would you use a rolling offset instead of separate horizontal and vertical offsets?",
+      "options": {
+        "A": "Never",
+        "B": "When space is limited or to minimize fittings and joints",
+        "C": "Always, regardless of situation",
+        "D": "Only for decoration"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Rolling offsets used when: (1) limited space for separate offsets, (2) minimizing fittings/joints (fewer leak points), (3) cleaner appearance, (4) connecting misaligned equipment, (5) avoiding obstacles requiring multi-plane routing. Disadvantages: more complex fabrication, harder to support properly, more difficult to insulate. Decision based on: space, economics, fabrication capability, system requirements. Sometimes separate offsets are simpler/better.",
+        "incorrect": "Incorrect. Rolling offsets have specific applications (not never or always). Not decorative - functional choice based on geometry and constraints. The correct answer is B."
+      }
+    },
+    {
+      "id": 84,
+      "section": 4,
+      "subsection": "A",
+      "topic": "Rolling Offset Orientation",
+      "question": "Why is orientation important when installing rolling offsets?",
+      "options": {
+        "A": "Orientation doesn't matter",
+        "B": "Incorrect orientation won't align with destination points",
+        "C": "Only for appearance",
+        "D": "To confuse future workers"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Rolling offset orientation is critical because: (1) must align in both horizontal and vertical planes simultaneously, (2) rotating offset 90° changes which plane each offset acts in (wrong alignment), (3) fabricated for specific horizontal/vertical offsets - swapping doesn't work. Installation: (1) mark tops/orientations clearly, (2) verify alignment before welding, (3) use laser or plumb bob for alignment. Mistakes require cutting out and remaking.",
+        "incorrect": "Incorrect. Orientation is absolutely critical (not irrelevant or cosmetic). Wrong orientation means misalignment in space. Not for confusion - for correct geometric alignment. The correct answer is B."
+      }
+    },
+    {
+      "id": 85,
+      "section": 4,
+      "subsection": "A",
+      "topic": "Measuring for Rolling Offsets",
+      "question": "What is critical when field-measuring for a rolling offset?",
+      "options": {
+        "A": "Nothing is critical",
+        "B": "Accurate measurement of both horizontal and vertical distances from known reference points",
+        "C": "Just eyeball it",
+        "D": "Measurements don't matter"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Field measurement for rolling offsets requires: (1) establish reference points (column lines, finish floor, centerlines), (2) measure horizontal distances accurately (use tape, laser), (3) measure vertical distances (use level, laser level), (4) verify square and plumb, (5) document measurements with sketches, (6) double-check critical dimensions. Errors multiply in rolling offsets - small measurement errors create major fit-up problems. Use precision instruments and verify measurements.",
+        "incorrect": "Incorrect. Accuracy is absolutely critical (not nothing or eyeballing). Measurements definitely matter for proper fit. Rolling offsets require precision - more complex than simple offsets. The correct answer is B."
+      }
+    },
+    {
+      "id": 86,
+      "section": 4,
+      "subsection": "A",
+      "topic": "Testing Rolling Offsets",
+      "question": "Why should rolling offset alignment be verified before final welding?",
+      "options": {
+        "A": "Not necessary to verify",
+        "B": "Errors are difficult and expensive to correct after welding, and misalignment prevents connection",
+        "C": "For fun",
+        "D": "Only if you feel like it"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Verification before welding prevents: (1) costly rework (cutting out and remaking), (2) misalignment preventing final connection, (3) stress on piping from forced fit, (4) schedule delays. Verification methods: (1) tack weld and check alignment, (2) dry fit with temporary supports, (3) laser alignment check, (4) measure to destination points. Much easier to adjust before final welding. Small adjustments possible; major errors require remake.",
+        "incorrect": "Incorrect. Verification is absolutely necessary (not optional, fun, or whim-based). Prevents expensive mistakes. Alignment errors in rolling offsets are particularly hard to correct. The correct answer is B."
+      }
+    },
+    {
+      "id": 87,
+      "section": 4,
+      "subsection": "A",
+      "topic": "Computer-Aided Rolling Offsets",
+      "question": "How can software assist with rolling offset calculations?",
+      "options": {
+        "A": "Software can't help",
+        "B": "CAD and piping software can calculate angles, lengths, and generate cutting patterns",
+        "C": "Only for scheduling",
+        "D": "Just for pretty pictures"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Modern software tools for rolling offsets: (1) CAD systems calculate exact angles and lengths, (2) specialized pipe fitting software (PipeFitter, QuikPipe), (3) BIM models show 3D geometry, (4) pattern development programs create cutting templates, (5) apps calculate on phones/tablets. Benefits: (1) accuracy (no math errors), (2) speed (instant calculations), (3) visualization (3D preview), (4) documentation. Still need to understand principles - software is tool, not replacement for knowledge.",
+        "incorrect": "Incorrect. Software provides powerful assistance (not just pictures or scheduling). Can perform complex calculations and generate fabrication information. Industry standard tools. The correct answer is B."
+      }
+    },
+    {
+      "id": 88,
+      "section": 4,
+      "subsection": "A",
+      "topic": "Rolling Offset Support",
+      "question": "What is challenging about supporting rolling offset piping?",
+      "options": {
+        "A": "No challenges",
+        "B": "Pipes change direction in multiple planes, requiring carefully positioned supports",
+        "C": "Supports are easier than straight pipe",
+        "D": "Supports aren't needed"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Rolling offset support challenges: (1) pipe changing direction in two planes (can't use standard spacing), (2) forces in multiple directions from thermal expansion, (3) need to support weight while allowing movement, (4) fitting support required at directional changes, (5) maintaining alignment under operating loads. Solutions: (1) supports at fittings, (2) guides controlling movement direction, (3) intermediate supports on long runs, (4) spring hangers if needed. More complex than straight pipe support.",
+        "incorrect": "Incorrect. Rolling offset support is definitely challenging (not easier or simple). Supports are absolutely necessary. Multi-plane geometry creates complex support requirements. The correct answer is B."
+      }
+    },
+    {
+      "id": 89,
+      "section": 4,
+      "subsection": "A",
+      "topic": "Prefabricating Rolling Offsets",
+      "question": "What is an advantage of prefabricating rolling offsets in the shop?",
+      "options": {
+        "A": "No advantages",
+        "B": "Better working conditions, equipment, and quality control than field fabrication",
+        "C": "Takes longer",
+        "D": "More expensive always"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Shop prefabrication advantages: (1) better tools and equipment (saws, benders, welding machines), (2) better working conditions (shelter, lighting, benches), (3) quality control (inspection, fixtures), (4) faster field installation, (5) reduced field welding (safety, permits). Challenges: (1) requires accurate field measurements, (2) shipping/handling, (3) lifting equipment for installation. For complex rolling offsets, shop fabrication often preferred despite challenges.",
+        "incorrect": "Incorrect. Prefabrication has significant advantages. May be faster overall (field installation time). Often cost-effective despite shop labor. Rolling offsets particularly benefit from shop fabrication. The correct answer is B."
+      }
+    },
+    {
+      "id": 90,
+      "section": 4,
+      "subsection": "A",
+      "topic": "Documentation of Rolling Offsets",
+      "question": "Why should rolling offsets be documented on as-built drawings?",
+      "options": {
+        "A": "Not necessary to document",
+        "B": "Future maintenance, modifications, and troubleshooting require knowing actual routing",
+        "C": "Just for decoration",
+        "D": "Only if you have time"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Documentation of rolling offsets critical for: (1) future modifications (knowing routing to avoid), (2) maintenance access (understanding configuration), (3) troubleshooting (following flow path), (4) expansion/additions (tie-in points), (5) facility management (asset records). Document: (1) location coordinates, (2) elevations, (3) angles used, (4) dimensions, (5) any special features. Poor documentation causes: wasted time, errors, damaged pipes during construction.",
+        "incorrect": "Incorrect. Documentation is necessary (not optional or time-permitting). Serves functional purposes (not decoration). Rolling offsets are complex - documentation especially important. The correct answer is B."
+      }
+    },
+    {
+      "id": 91,
+      "section": 4,
+      "subsection": "B",
+      "topic": "Revised Drawing Packages",
+      "question": "What are revised drawings in construction?",
+      "options": {
+        "A": "Old drawings that should be thrown away",
+        "B": "Updated drawings reflecting design changes, field conditions, or corrections",
+        "C": "Random sketches",
+        "D": "Decorative artwork"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Revised drawings incorporate: (1) design changes (value engineering, owner requests), (2) field conditions (actual dimensions differ from design), (3) RFI responses (clarifications), (4) coordination changes (avoiding conflicts with other trades), (5) error corrections. Identified by: revision number, date, cloud/triangle markers showing changes. Distribution to all parties essential. Working from superseded drawings causes: errors, rework, conflicts. Document control critical.",
+        "incorrect": "Incorrect. Revised drawings are current official documents (not trash or random sketches). Not decorative - technical construction documents. Must be used in place of superseded versions. The correct answer is B."
+      }
+    },
+    {
+      "id": 92,
+      "section": 4,
+      "subsection": "B",
+      "topic": "Revision Control",
+      "question": "Why is drawing revision control important?",
+      "options": {
+        "A": "It's not important",
+        "B": "Ensures all personnel work from current drawings, preventing costly errors",
+        "C": "Just bureaucracy",
+        "D": "To create paperwork"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Revision control ensures: (1) everyone uses current drawings, (2) superseded drawings removed from circulation, (3) changes communicated to all parties, (4) revision history tracked. Methods: (1) drawing logs tracking current revision, (2) field sets marked with revisions, (3) electronic distribution with version control, (4) mandatory superseded drawing removal. Failures cause: building to wrong dimensions, conflicts, material waste, schedule delays, safety issues. Not bureaucracy - essential quality control.",
+        "incorrect": "Incorrect. Revision control is critical for coordination and quality (not unimportant or just bureaucracy). Prevents expensive mistakes. Essential construction management practice. The correct answer is B."
+      }
+    },
+    {
+      "id": 93,
+      "section": 4,
+      "subsection": "B",
+      "topic": "Addenda",
+      "question": "What is an addendum in construction documents?",
+      "options": {
+        "A": "A math operation",
+        "B": "Formal document issued during bidding to modify or clarify contract documents",
+        "C": "A tool",
+        "D": "Not a real term"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Addenda (plural of addendum) are formal modifications to bid documents issued before bid opening: (1) design clarifications, (2) specification changes, (3) drawing revisions, (4) RFI responses to all bidders, (5) schedule changes. All bidders must acknowledge receiving and incorporating all addenda in their bids. Issued serially (Addendum #1, #2, etc.). After contract award, changes made through Change Orders, not addenda. Addenda ensure all bidders have same information.",
+        "incorrect": "Incorrect. Addendum is real construction term (not math or tools). Formal bidding document ensuring fair competition. Critical part of bidding process. The correct answer is B."
+      }
+    },
+    {
+      "id": 94,
+      "section": 4,
+      "subsection": "B",
+      "topic": "RFIs (Requests for Information)",
+      "question": "What is an RFI in construction?",
+      "options": {
+        "A": "Radio Frequency Interference",
+        "B": "Request for Information - formal query to design team about unclear or conflicting information",
+        "C": "Really Fast Installation",
+        "D": "Not used in construction"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! RFI (Request for Information) is formal written question from contractor to architect/engineer requesting: (1) clarification of unclear drawings/specs, (2) resolution of conflicts or errors, (3) information missing from documents, (4) approval of proposed solutions. Process: contractor submits RFI → engineer reviews → provides written response → distributed to all parties. Tracks questions and answers. Prevents assumptions causing errors. RFI logs maintained as project records.",
+        "incorrect": "Incorrect. RFI is construction term (not radio or speed acronym). Definitely used extensively in construction. Formal communication process for resolving questions. The correct answer is B."
+      }
+    },
+    {
+      "id": 95,
+      "section": 4,
+      "subsection": "B",
+      "topic": "Shop Drawing Review",
+      "question": "What happens during shop drawing review?",
+      "options": {
+        "A": "Drawings are thrown away",
+        "B": "Engineer reviews for general conformance with design intent, marks approved/rejected/resubmit",
+        "C": "Nothing - they're not reviewed",
+        "D": "Only grammar is checked"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Shop drawing review process: (1) contractor submits detailed fabrication drawings, (2) engineer reviews for conformance with design intent, (3) engineer marks drawings: Approved, Approved as Noted (minor corrections), Rejected (resubmit), No Exception Taken (not reviewed in detail), (4) return to contractor, (5) resubmit if needed. Review checks: general conformance, not every detail (contractor responsibility). Approved shop drawings become contract documents. Critical for quality control.",
+        "incorrect": "Incorrect. Shop drawings are definitely reviewed (not discarded or ignored). Technical review for design conformance (not just grammar). Formal approval process. The correct answer is B."
+      }
+    },
+    {
+      "id": 96,
+      "section": 4,
+      "subsection": "B",
+      "topic": "Change Orders",
+      "question": "What is a change order?",
+      "options": {
+        "A": "Ordering lunch",
+        "B": "Formal modification to construction contract scope, price, or schedule",
+        "C": "Rearranging tools",
+        "D": "Not a real term"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Change Order (CO) is written agreement modifying original contract: (1) scope changes (additions, deletions, modifications), (2) price adjustment (cost increase/decrease), (3) schedule impact (time extension). Process: (1) change identified, (2) contractor proposes price/time, (3) negotiation, (4) owner approval, (5) written CO signed by all parties. Reasons: owner changes, unforeseen conditions, errors/omissions, code changes. COs modify contract legally - verbal changes don't count.",
+        "incorrect": "Incorrect. Change Order is real construction term (not food or tools). Formal legal document modifying contract. Essential project management tool. The correct answer is B."
+      }
+    },
+    {
+      "id": 97,
+      "section": 4,
+      "subsection": "B",
+      "topic": "Coordination Drawings",
+      "question": "What are coordination drawings?",
+      "options": {
+        "A": "Drawings showing project organization chart",
+        "B": "Composite drawings showing all trades' work in same space to identify conflicts",
+        "C": "Dance diagrams",
+        "D": "Not used in construction"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Coordination drawings (composite drawings, combined services drawings) overlay all trades in 3D space: mechanical, electrical, plumbing, fire protection, structural. Shows: (1) conflicts/interferences, (2) congested areas requiring resolution, (3) agreed routing. Created from: BIM clash detection, manual overlay, coordination meetings. Benefits: (1) identify conflicts before installation, (2) optimize routing, (3) avoid rework. Required on most commercial projects. Prevents: field conflicts, delays, rework.",
+        "incorrect": "Incorrect. Coordination drawings are technical construction documents (not org charts or dance). Widely used for clash detection. Essential for complex projects with multiple trades. The correct answer is B."
+      }
+    },
+    {
+      "id": 98,
+      "section": 4,
+      "subsection": "B",
+      "topic": "BIM Coordination",
+      "question": "How does BIM (Building Information Modeling) help with coordination?",
+      "options": {
+        "A": "BIM doesn't help coordination",
+        "B": "3D models from all trades combined to detect clashes automatically before construction",
+        "C": "Only for marketing",
+        "D": "Just makes pretty pictures"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! BIM coordination process: (1) each trade creates 3D model of their work, (2) models combined in coordination software (Navisworks, BIM 360), (3) automated clash detection identifies interferences, (4) coordination meetings resolve clashes, (5) models updated, (6) repeat until clash-free. Benefits: (1) find conflicts before field installation, (2) optimize routing in congested areas, (3) virtual construction before physical construction, (4) reduce RFIs and field changes. Industry standard for large projects.",
+        "incorrect": "Incorrect. BIM is powerful coordination tool (not marketing or just visualization). Prevents field conflicts through virtual construction. Mainstream practice on complex projects. The correct answer is B."
+      }
+    },
+    {
+      "id": 99,
+      "section": 4,
+      "subsection": "B",
+      "topic": "Drawing Scales",
+      "question": "Why might drawings be issued at different scales?",
+      "options": {
+        "A": "Random choice",
+        "B": "Different scales show different levels of detail - small scale for overall layout, large scale for details",
+        "C": "To confuse people",
+        "D": "Scales don't matter"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Drawing scales selected for purpose: (1) small scale (1/8\"=1', 1/16\"=1') for overall plans showing entire floors/buildings, (2) medium scale (1/4\"=1') for typical construction drawings, (3) large scale (1/2\"=1', 3/4\"=1', full size) for details requiring precision. Cannot show all detail at small scale - would be unreadable. Multiple scales on one project normal. Always verify scale before measuring - using wrong scale causes errors.",
+        "incorrect": "Incorrect. Scale selection is deliberate (not random or to confuse). Scales definitely matter for measurement and clarity. Different scales serve different purposes. The correct answer is B."
+      }
+    },
+    {
+      "id": 100,
+      "section": 4,
+      "subsection": "B",
+      "topic": "Electronic Drawing Distribution",
+      "question": "What are advantages of electronic drawing distribution versus paper?",
+      "options": {
+        "A": "No advantages",
+        "B": "Instant distribution, version control, searchability, and reduced storage/printing costs",
+        "C": "Only disadvantages",
+        "D": "Paper is always better"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Electronic drawing benefits: (1) instant distribution (email, cloud, project sites), (2) everyone gets updates simultaneously, (3) version control (latest always available), (4) searchable PDFs, (5) reduced printing/storage costs, (6) accessible anywhere (tablets/phones in field), (7) mark-ups easily shared, (8) environmentally friendly. Challenges: (1) requires devices and power, (2) screen size limitations, (3) annotations need software. Most projects now use electronic distribution with limited paper sets.",
+        "incorrect": "Incorrect. Electronic distribution has major advantages (not disadvantages). Paper has some uses but electronic is now standard. Hybrid approach (electronic with some paper) often used. The correct answer is B."
+      }
+    },
+    {
+      "id": 101,
+      "section": 4,
+      "subsection": "B",
+      "topic": "Specification Sections",
+      "question": "Why are specifications organized by CSI divisions?",
+      "options": {
+        "A": "Random organization",
+        "B": "Standardized organization makes specs consistent and easy to navigate across projects",
+        "C": "To create confusion",
+        "D": "Organization doesn't matter"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! CSI MasterFormat provides standardized specification organization: Division 21 (Fire Suppression), Division 22 (Plumbing), Division 23 (HVAC), Division 40 (Process Integration), etc. Benefits: (1) consistent location across all projects (find plumbing in Division 22), (2) industry-standard understood by all parties, (3) complete specs (standardized outline ensures nothing missed), (4) easier cost estimating. Specifications work with drawings - drawings show what/where, specs describe how/quality.",
+        "incorrect": "Incorrect. CSI organization is deliberate standard (not random or to confuse). Organization definitely matters for usability. Industry standard for decades. The correct answer is B."
+      }
+    },
+    {
+      "id": 102,
+      "section": 4,
+      "subsection": "B",
+      "topic": "Drawing Notes",
+      "question": "Where should you look for important requirements not shown graphically on drawings?",
+      "options": {
+        "A": "Nowhere - if not drawn, it doesn't exist",
+        "B": "General notes, detail notes, and specifications",
+        "C": "Just guess",
+        "D": "Ask random people"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Important requirements in: (1) General Notes (apply to entire project or sheets), (2) Detail Notes (specific to particular details), (3) Specifications (detailed requirements, quality standards, procedures), (4) Symbols and abbreviations (legend), (5) Title block notes. Examples: testing requirements, code references, material standards, installation requirements. Cannot draw everything - notes and specs provide requirements. Read all notes carefully - missed notes cause errors.",
+        "incorrect": "Incorrect. Much critical information is in notes/specs (not just graphics). Never guess or rely on random advice. Always read notes and specifications thoroughly. The correct answer is B."
+      }
+    },
+    {
+      "id": 103,
+      "section": 4,
+      "subsection": "B",
+      "topic": "Design Intent",
+      "question": "What should you do if field conditions differ from drawings?",
+      "options": {
+        "A": "Just make it work any way possible",
+        "B": "Document differences and submit RFI to engineer for direction",
+        "C": "Ignore the differences",
+        "D": "Quit the job"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! When field conditions differ from drawings: (1) document actual conditions (photos, measurements, sketches), (2) submit RFI explaining difference and proposing solution, (3) await engineer's response before proceeding, (4) implement approved solution, (5) document as-built. Never make assumptions or ignore differences - could affect: functionality, code compliance, safety, warranty. Engineer may: approve your solution, provide alternative, issue revised drawings. Proper documentation protects all parties.",
+        "incorrect": "Incorrect. Don't improvise solutions, ignore problems, or quit. Follow formal RFI process to get engineering direction. Professional approach to problem resolution. The correct answer is B."
+      }
+    },
+    {
+      "id": 104,
+      "section": 4,
+      "subsection": "B",
+      "topic": "Digital Markups",
+      "question": "How are electronic drawing markups typically shared?",
+      "options": {
+        "A": "Carrier pigeon",
+        "B": "PDF annotation software, BIM collaboration tools, or project management platforms",
+        "C": "Not possible electronically",
+        "D": "Telepathy"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Electronic markup methods: (1) PDF software (Bluebeam, Adobe) - annotate, measure, mark issues, (2) BIM collaboration platforms (BIM 360, Procore) - 3D markups, issue tracking, (3) project management software - integrate markups with RFIs, submittals, (4) cloud sharing - real-time collaboration. Benefits: (1) everyone sees markups instantly, (2) track who marked what and when, (3) searchable comments, (4) integrate with workflows. Industry moving to digital markups vs. red-line paper.",
+        "incorrect": "Incorrect. Multiple electronic tools exist (not impossible). Modern methods (not carrier pigeons or telepathy). Digital markups are standard practice now. The correct answer is B."
+      }
+    },
+    {
+      "id": 105,
+      "section": 4,
+      "subsection": "B",
+      "topic": "Record Drawings",
+      "question": "Who is typically responsible for maintaining record (as-built) drawings?",
+      "options": {
+        "A": "Nobody",
+        "B": "Contractor marks changes, then submits to engineer/owner for final as-built preparation",
+        "C": "Only the janitor",
+        "D": "The city mayor"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Record drawing responsibility: (1) contractor marks up field set drawings during construction showing changes, (2) submits marked-up drawings at project completion, (3) engineer/architect produces final as-built drawings from markups, (4) owner receives final as-builts for facility management. Contractor obligations: (1) mark changes promptly, (2) accurate dimensions and locations, (3) complete markup of all changes, (4) submit per contract schedule. Good record drawings save money during future maintenance and modifications.",
+        "incorrect": "Incorrect. Specific contract responsibilities exist (not nobody or random people). Contractor and engineer share responsibility. Part of project closeout requirements. The correct answer is B."
+      }
+    },
+    {
+      "id": 106,
+      "section": 4,
+      "subsection": "B",
+      "topic": "Drawing Dependencies",
+      "question": "Why must multiple drawing sheets often be reviewed together?",
+      "options": {
+        "A": "They shouldn't be reviewed together",
+        "B": "Information split across sheets - plans, elevations, details, and notes all needed for complete understanding",
+        "C": "Just to waste time",
+        "D": "One sheet is always enough"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Complete understanding requires multiple sheets: (1) plans show layout and locations, (2) elevations show heights and vertical relationships, (3) sections show internal details, (4) detail sheets show construction specifics, (5) schedules list equipment/materials, (6) general notes sheet provides requirements. Cross-references (detail callouts, section cuts) direct you to related sheets. Working from one sheet only causes: missed information, errors, incomplete understanding. Review all referenced sheets.",
+        "incorrect": "Incorrect. Multiple sheets definitely needed (not time-wasting or unnecessary). One sheet insufficient for complex systems. Cross-sheet coordination essential for complete information. The correct answer is B."
+      }
+    },
+    {
+      "id": 107,
+      "section": 4,
+      "subsection": "C",
+      "topic": "Reducing Tee Definition",
+      "question": "What is a reducing tee in piping?",
+      "options": {
+        "A": "A tee that is shrinking",
+        "B": "A tee fitting with one or more outlets smaller than the run pipe",
+        "C": "A tee for weight loss",
+        "D": "Not a real fitting"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Reducing tee has outlet(s) smaller than run. Types: (1) reducing on branch only (most common - run same size, branch smaller), (2) reducing on run (one run smaller), (3) reducing on both (multiple size reductions). Designation: Run × Run × Branch. Example: 4×4×2 tee (4\" run, 2\" branch). Used when: branch serves smaller load, pressure drop management, system design requires size change. Available in various materials: steel, copper, PVC, etc.",
+        "incorrect": "Incorrect. Reducing tee is real standard fitting (not literal shrinking or weight loss). Has specific size relationships. Common in piping systems. The correct answer is B."
+      }
+    },
+    {
+      "id": 108,
+      "section": 4,
+      "subsection": "C",
+      "topic": "Concentric vs Eccentric Reducers",
+      "question": "What is the difference between concentric and eccentric reducers?",
+      "options": {
+        "A": "No difference",
+        "B": "Concentric reducers are centered; eccentric reducers have one side flat",
+        "C": "Concentric are round, eccentric are square",
+        "D": "Only personality differences"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Concentric reducers: both pipes centered on same centerline (cone shape), used for vertical pipes or when centering required. Eccentric reducers: one side flat, allows top-flat (prevents air pockets in horizontal suction lines) or bottom-flat (prevents sediment accumulation in drain lines). Selection: (1) vertical = concentric, (2) horizontal suction = top-flat eccentric, (3) horizontal drain = bottom-flat eccentric. Important for proper system operation.",
+        "incorrect": "Incorrect. Significant functional differences (not personality or shape). Both are round pipe. Eccentric specifically has flat side for drainage/venting. The correct answer is B."
+      }
+    },
+    {
+      "id": 109,
+      "section": 4,
+      "subsection": "C",
+      "topic": "Reducing Tee Applications",
+      "question": "When would you use a reducing tee instead of a reducing wye or reducing laterals?",
+      "options": {
+        "A": "They're all identical",
+        "B": "Reducing tee for 90° perpendicular branch; wye/lateral for angled branches",
+        "C": "Random choice",
+        "D": "Based on color preference"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Fitting selection based on flow angle: (1) Reducing Tee - 90° perpendicular branch, used when flow direction change needed at right angle, (2) Reducing Wye - 45° branch, better for flow (less turbulence), used in drainage and where flow direction is important, (3) Reducing Lateral - similar to wye but for specific applications. Tees cause more turbulence but necessary for perpendicular connections. Wyes better for drainage and flow direction changes.",
+        "incorrect": "Incorrect. Fittings have different geometries and applications (not identical or random). Selection based on engineering requirements (not color). Flow angle drives fitting choice. The correct answer is B."
+      }
+    },
+    {
+      "id": 110,
+      "section": 4,
+      "subsection": "C",
+      "topic": "Swage Nipples",
+      "question": "What is a swage nipple?",
+      "options": {
+        "A": "A type of pirate",
+        "B": "A short pipe nipple threaded with reducing threads (different sizes each end)",
+        "C": "A measuring tool",
+        "D": "Not a real part"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Swage (or reducing) nipple is short threaded pipe section with different size threads on each end. Example: 1\" × 3/4\" swage nipple (1\" one end, 3/4\" other end). Used for: (1) direct size reduction without separate reducer, (2) space-saving, (3) threading into different size fittings. Common lengths: close (very short), 2\", 3\", 4\". Available in various materials. Alternative to coupling + reducer. Threaded products only (not welded).",
+        "incorrect": "Incorrect. Swage nipple is real plumbing component (not pirates, tools, or imaginary). Specifically for threaded size transitions. Common in threaded piping. The correct answer is B."
+      }
+    },
+    {
+      "id": 111,
+      "section": 4,
+      "subsection": "C",
+      "topic": "Increaser Fittings",
+      "question": "What is an increaser fitting?",
+      "options": {
+        "A": "A fitting that gets larger over time",
+        "B": "A fitting that increases pipe size (opposite of reducer)",
+        "C": "A volume control",
+        "D": "Not a real term"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Increaser (also called enlarger or expander) increases pipe size - opposite function of reducer. Less common than reducers but used when: (1) flow velocity must be reduced, (2) pressure drop must be minimized, (3) system design requires size increase. Same types as reducers: concentric (centered) or eccentric (offset). Direction matters in designation: smaller size to larger size. Often custom-fabricated for large sizes.",
+        "incorrect": "Incorrect. Increaser is real term for size increase fitting (not literal growth or volume control). Opposite of reducer. Less common but definitely used. The correct answer is B."
+      }
+    },
+    {
+      "id": 112,
+      "section": 4,
+      "subsection": "C",
+      "topic": "Bell Reducers",
+      "question": "What is a bell reducer in PVC piping?",
+      "options": {
+        "A": "A doorbell accessory",
+        "B": "A reducing coupling for PVC pipe with socket connections both ends",
+        "C": "A noise reducer",
+        "D": "A type of valve"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Bell reducers (reducing couplings) for PVC/plastic piping have socket (hub) connections both ends - different sizes. One end fits larger pipe, other end fits smaller pipe. Installed using solvent cement just like other PVC fittings. Example: 2\" × 1-1/2\" bell reducer (2\" socket one end, 1-1/2\" socket other end). Used for: direct size reduction in PVC systems. Alternative to separate reducer bushing or adapter.",
+        "incorrect": "Incorrect. Bell reducer is PVC plumbing component (not doorbells, noise control, or valves). Socket-type reducing fitting. Common in PVC/CPVC systems. The correct answer is B."
+      }
+    },
+    {
+      "id": 113,
+      "section": 4,
+      "subsection": "D",
+      "topic": "Lateral Y Branch",
+      "question": "What is a lateral Y branch in piping?",
+      "options": {
+        "A": "A side branch",
+        "B": "A wye fitting with branch at 45° from run in different plane (creates Y-shape when viewed from above)",
+        "C": "A tree branch",
+        "D": "Not a real fitting"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Lateral (or lateral wye) is branch fitting where branch comes off at 45° angle but in horizontal plane different from standard wye. Creates lateral offset. Used in drainage systems where: (1) horizontal branch needed at angle, (2) smooth flow transition required, (3) combining flows from different directions. Similar to reducing lateral when branch size differs from run. Common in DWV (drain-waste-vent) systems.",
+        "incorrect": "Incorrect. Lateral is real technical fitting term (not vegetation or generic side branch). Specific 45° angle in different plane than standard wye. Used in drainage applications. The correct answer is B."
+      }
+    },
+    {
+      "id": 114,
+      "section": 4,
+      "subsection": "D",
+      "topic": "TY vs WYE Branches",
+      "question": "What is the difference between a TY and a WYE fitting?",
+      "options": {
+        "A": "TY is 90° branch, WYE is 45° branch",
+        "B": "No difference - same fitting",
+        "C": "TY is threaded, WYE is welded",
+        "D": "Only the spelling"
+      },
+      "correct_answer": "A",
+      "explanation": {
+        "correct": "Correct! TY (or Tee-wye) fitting has 90° branch angle - perpendicular to run. WYE fitting has 45° branch angle. Selection: (1) TY for perpendicular connections, (2) WYE for smoother flow in drainage (gentler direction change), (3) WYE preferred in horizontal drain lines (reduces turbulence, better for solids transport). Both available in various materials and can be threaded or welded. Angle is the key difference.",
+        "incorrect": "Incorrect. They're different fittings (not identical). Difference is angle (not connection method or spelling). Both important in drainage systems. The correct answer is A."
+      }
+    },
+    {
+      "id": 115,
+      "section": 4,
+      "subsection": "D",
+      "topic": "Combination Wye and Eighth Bend",
+      "question": "What is a combination wye and eighth bend in DWV piping?",
+      "options": {
+        "A": "Two separate fittings",
+        "B": "Single fitting combining 45° wye branch with 45° turn on one run creating 90° total",
+        "C": "A musical instrument",
+        "D": "Not used in plumbing"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Combo wye and 1/8 bend is single fitting with: (1) 45° wye branch, (2) one run continues straight, (3) other run turns 45° (1/8 bend), creating total 90° between the two runs. Used in: (1) stack-to-horizontal transitions in DWV, (2) combining drainage flows at angles, (3) smooth flow transitions. More flow-efficient than TY for drainage. Saves space vs. separate wye + elbow. Common in commercial plumbing.",
+        "incorrect": "Incorrect. It's a single combination fitting (not two separate or music). Definitely used extensively in DWV systems. Efficient drainage fitting. The correct answer is B."
+      }
+    },
+    {
+      "id": 116,
+      "section": 4,
+      "subsection": "D",
+      "topic": "Drainage Wye Direction",
+      "question": "Why is the direction of wye branches important in drainage systems?",
+      "options": {
+        "A": "Direction doesn't matter",
+        "B": "Must be installed in direction of flow to prevent solids backup",
+        "C": "Only for appearance",
+        "D": "Random orientation is fine"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Wye orientation critical in drainage: (1) branch must point downstream (direction of flow), (2) flowing into branch backward causes turbulence and solids backup, (3) codes require proper direction for smooth flow. Checking: (1) arrow on fitting (if marked), (2) visual inspection (branch curves downstream), (3) drawings show flow direction. Wrong direction causes: clogs, reduced capacity, code violations. Simple to install correctly - critical to check.",
+        "incorrect": "Incorrect. Direction is absolutely critical (not cosmetic or random). Wrong direction causes operational problems and code violations. Must be verified during installation. The correct answer is B."
+      }
+    },
+    {
+      "id": 117,
+      "section": 4,
+      "subsection": "E",
+      "topic": "True Wye Definition",
+      "question": "What defines a 'true wye' fitting?",
+      "options": {
+        "A": "Any wye-shaped fitting",
+        "B": "Wye with two branches at equal angles from run, creating symmetrical Y-shape",
+        "C": "A measurement tool",
+        "D": "Not a technical term"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! True wye has branches at equal angles (typically 45° each) from run centerline, creating symmetrical Y-shape. Both branches same angle and size. Used when: (1) splitting flow equally, (2) combining flows from two sources, (3) symmetrical routing needed. Different from standard wye (one straight run + one angled branch). True wyes are specialty fittings - less common than standard wyes. Custom fabrication often required for large sizes.",
+        "incorrect": "Incorrect. True wye is specific symmetrical configuration (not any wye or measurement). Technical term with precise geometry. Different from common single-branch wye. The correct answer is B."
+      }
+    },
+    {
+      "id": 118,
+      "section": 4,
+      "subsection": "E",
+      "topic": "Equal vs Unequal Wyes",
+      "question": "What is an unequal wye fitting?",
+      "options": {
+        "A": "A defective wye",
+        "B": "A wye with branch at different angle than standard or different size than run",
+        "C": "A wye that doesn't work",
+        "D": "Not a real fitting type"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Unequal wye variations: (1) unequal angles (branch at non-standard angle like 30° or 60° instead of 45°), (2) unequal sizes (reducing wye - branch smaller than run), (3) asymmetric geometry (one branch different angle/size than other in true wye). Custom-fabricated for specific applications when standard fittings won't work. Used in: complex piping geometry, space constraints, specific flow requirements. More expensive than standard wyes.",
+        "incorrect": "Incorrect. Unequal wye is real specialty fitting (not defective or non-functional). Has specific non-standard geometry for special applications. The correct answer is B."
+      }
+    },
+    {
+      "id": 119,
+      "section": 4,
+      "subsection": "E",
+      "topic": "Wye Branch Reinforcement",
+      "question": "Why might wye branches on large high-pressure piping require reinforcement?",
+      "options": {
+        "A": "For decoration",
+        "B": "To strengthen area of high stress concentration where branch meets run",
+        "C": "Reinforcement never needed",
+        "D": "Only for color coding"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Branch connections create stress concentrations requiring reinforcement when: (1) high pressure service, (2) large branch-to-run ratio, (3) thin wall pipe, (4) code requirements (ASME B31.1, B31.3). Reinforcement methods: (1) reinforcing pad welded around branch, (2) full coupling over branch, (3) integral reinforcement (extra thick fitting), (4) increased wall thickness locally. Calculations per code determine if needed. Prevents failures at high-stress branch intersections.",
+        "incorrect": "Incorrect. Reinforcement serves structural purpose (not decorative or color). Definitely needed in many high-pressure applications. Prevents dangerous failures. The correct answer is B."
+      }
+    },
+    {
+      "id": 120,
+      "section": 4,
+      "subsection": "E",
+      "topic": "Flow Distribution in Wyes",
+      "question": "How does flow distribute in a wye branch?",
+      "options": {
+        "A": "Always equal split",
+        "B": "Distribution depends on downstream resistance, pressure drop, and branch angles",
+        "C": "Randomly",
+        "D": "Flow stops at wye"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Flow distribution in wyes depends on: (1) downstream resistance (flow follows path of least resistance), (2) pressure drop in each branch, (3) pipe sizes and lengths, (4) valves and restrictions, (5) branch angles (affects flow split). NOT necessarily equal even in equal-size branches. Control flow split using: (1) balancing valves, (2) orifice plates, (3) pipe sizing, (4) branch angles. Important in: HVAC distribution, process piping, hydraulic systems.",
+        "incorrect": "Incorrect. Flow isn't automatically equal or random. Flow doesn't stop. Distribution is physics-based on resistance and pressure. Can be controlled through design. The correct answer is B."
+      }
+    },
+    {
+      "id": 121,
+      "section": 4,
+      "subsection": "E",
+      "topic": "Wye vs Tee Pressure Drop",
+      "question": "Which typically has lower pressure drop for flow through the branch?",
+      "options": {
+        "A": "Both identical",
+        "B": "Wye has lower pressure drop due to gradual direction change",
+        "C": "Tee always has lower pressure drop",
+        "D": "Neither has pressure drop"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Wyes have lower pressure drop than tees for branch flow because: (1) 45° angle creates gradual direction change vs. 90° in tee, (2) less turbulence, (3) smoother flow path, (4) less energy loss. Pressure drop matters for: (1) pump sizing, (2) system capacity, (3) energy efficiency. Wyes preferred for: low pressure drop applications, where flow direction is important. Tees used where: perpendicular connection needed, pressure drop acceptable. Both have pressure drop - wyes just less.",
+        "incorrect": "Incorrect. Wyes and tees have different pressure drops. Both create some drop (not zero). Wyes have advantage for branch flow. The correct answer is B."
+      }
+    },
+    {
+      "id": 122,
+      "section": 4,
+      "subsection": "E",
+      "topic": "Custom Wye Fabrication",
+      "question": "When might a custom-fabricated wye be necessary?",
+      "options": {
+        "A": "Never - always use standard fittings",
+        "B": "When standard angles or sizes don't fit design requirements or space constraints",
+        "C": "Just to waste money",
+        "D": "Only for decoration"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Custom wyes needed when: (1) non-standard angles required (30°, 60°, custom), (2) large sizes not available as standard fittings, (3) special size combinations, (4) space constraints require specific geometry, (5) matching existing non-standard equipment. Fabrication methods: (1) cutting and welding pipe sections, (2) mitre cuts, (3) custom forging for large sizes. More expensive but sometimes only solution. Engineer specifies or approves. Common in large industrial piping.",
+        "incorrect": "Incorrect. Custom fittings sometimes necessary (not never or just waste). Serve functional purposes (not decoration). Used when standards don't fit requirements. The correct answer is B."
+      }
+    },
+    {
+      "id": 123,
+      "section": 4,
+      "subsection": "A",
+      "topic": "Rolling Offset Templates",
+      "question": "What is a template used for in rolling offset fabrication?",
+      "options": {
+        "A": "Not used",
+        "B": "Full-size pattern to mark cutting lines on pipe for accurate compound angle cuts",
+        "C": "Just decoration",
+        "D": "Measuring tape replacement"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Templates for rolling offsets: (1) developed from calculations (pattern development), (2) drawn full-size on paper, cardboard, or thin metal, (3) wrapped around pipe, (4) cutting lines marked from template, (5) pipe cut following marks. Benefits: (1) accuracy (eliminates marking errors), (2) repeatability (same template for multiple pieces), (3) visualization of cut before cutting, (4) quality control. Computer software can generate templates to print. Essential for complex angles.",
+        "incorrect": "Incorrect. Templates are essential fabrication tools (not unused, decorative, or tape replacement). Ensure accurate compound angle cuts. Professional fabrication practice. The correct answer is B."
+      }
+    },
+    {
+      "id": 124,
+      "section": 3,
+      "subsection": "C",
+      "topic": "Load Calculations",
+      "question": "What should be included in load weight calculations for critical lifts?",
+      "options": {
+        "A": "Only the main object",
+        "B": "Object weight plus rigging, below-the-hook devices, any attachments, and safety margin",
+        "C": "Just guess at total weight",
+        "D": "Load weight doesn't matter"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Total load for crane capacity includes: (1) object weight (verified, not estimated), (2) rigging weight (slings, shackles, spreader beams - can be significant), (3) below-the-hook devices (lifting beams, magnets, clamps), (4) anything attached (platforms, tools, personnel baskets), (5) safety margin (account for unknowns). Underestimating causes: overload, crane tip-over, rigging failure. Always err on conservative side. Document weight calculations in lift plan.",

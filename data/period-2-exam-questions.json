@@ -1,0 +1,2311 @@
+{
+  "exam_info": {
+    "title": "Steamfitter/Pipefitter Period 2 Theory Practice Questions",
+    "total_questions": 126,
+    "pass_mark_percentage": 70,
+    "time_allowed_hours": 3,
+    "format": "Multiple Choice (A, B, C, D)"
+  },
+  "section_distribution": {
+    "section_1": {
+      "name": "Heating Systems",
+      "questions": 16,
+      "percentage": 13
+    },
+    "section_2": {
+      "name": "Hydronic Heating",
+      "questions": 20,
+      "percentage": 16
+    },
+    "section_3": {
+      "name": "Rigging Equipment and Hoisting Communication",
+      "questions": 29,
+      "percentage": 23
+    },
+    "section_4": {
+      "name": "Specialty Piping",
+      "questions": 13,
+      "percentage": 10
+    },
+    "section_5": {
+      "name": "Drawings, Layout and Elevations",
+      "questions": 28,
+      "percentage": 22
+    },
+    "section_6": {
+      "name": "Gasfitting Fundamentals",
+      "questions": 20,
+      "percentage": 16
+    }
+  },
+  "questions": [
+    {
+      "id": 1,
+      "section": 1,
+      "subsection": "A",
+      "topic": "Temperature and Heat Science",
+      "question": "What are the three methods of heat transfer?",
+      "options": {
+        "A": "Conduction, convection, and radiation",
+        "B": "Heating, cooling, and freezing",
+        "C": "Hot, warm, and cold",
+        "D": "Steam, water, and air"
+      },
+      "correct_answer": "A",
+      "explanation": {
+        "correct": "Correct! The three methods of heat transfer are: (1) Conduction - heat transfer through direct contact between materials, (2) Convection - heat transfer through fluid movement (liquid or gas), and (3) Radiation - heat transfer through electromagnetic waves without requiring a medium.",
+        "incorrect": "Incorrect. Heating/cooling/freezing are temperature changes, not transfer methods. Hot/warm/cold describe temperatures. Steam/water/air are mediums, not transfer methods. The three methods are conduction, convection, and radiation."
+      }
+    },
+    {
+      "id": 2,
+      "section": 1,
+      "subsection": "A",
+      "topic": "Heat Transfer - Conduction",
+      "question": "Which material is the best conductor of heat?",
+      "options": {
+        "A": "Wood",
+        "B": "Copper",
+        "C": "Plastic",
+        "D": "Air"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Copper is an excellent heat conductor - one of the best among common materials. This is why copper is used extensively in heat exchangers, radiators, and heating coils. Metals generally conduct heat well, with copper, aluminum, and steel being good conductors.",
+        "incorrect": "Incorrect. Wood, plastic, and air are all poor conductors (good insulators). Metals conduct heat much better than non-metals. Copper has very high thermal conductivity and is one of the best heat conductors available."
+      }
+    },
+    {
+      "id": 3,
+      "section": 1,
+      "subsection": "A",
+      "topic": "Convection Heat Transfer",
+      "question": "What is convection heat transfer?",
+      "options": {
+        "A": "Heat transfer through direct contact",
+        "B": "Heat transfer through fluid circulation caused by density differences",
+        "C": "Heat transfer through electromagnetic waves",
+        "D": "Heat transfer that only occurs in solids"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Convection is heat transfer through fluid (liquid or gas) movement. Hot fluid becomes less dense and rises, while cool fluid sinks, creating circulation currents that transfer heat. This occurs in boilers, radiators, and air heating systems. Can be natural (driven by density differences) or forced (driven by pumps/fans).",
+        "incorrect": "Incorrect. Direct contact is conduction. Electromagnetic waves are radiation. Convection only occurs in fluids (liquids and gases), not solids. Convection involves fluid circulation driven by temperature-induced density differences."
+      }
+    },
+    {
+      "id": 4,
+      "section": 1,
+      "subsection": "B",
+      "topic": "Thermal Expansion",
+      "question": "What happens to most materials when they are heated?",
+      "options": {
+        "A": "They contract (get smaller)",
+        "B": "They expand (get larger)",
+        "C": "They stay exactly the same size",
+        "D": "They always melt immediately"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Most materials expand when heated because the molecules move faster and farther apart, increasing the material's volume. This is called thermal expansion. Piping systems must account for this with expansion loops, expansion joints, anchors, and guides to prevent damage from expansion forces.",
+        "incorrect": "Incorrect. Materials generally expand when heated, not contract (though they contract when cooled). Size changes are measurable and significant in long pipe runs. Materials don't melt immediately - they expand first, then eventually melt at their melting point if heated enough."
+      }
+    },
+    {
+      "id": 5,
+      "section": 1,
+      "subsection": "B",
+      "topic": "Expansion Control",
+      "question": "What is the purpose of an expansion loop in a piping system?",
+      "options": {
+        "A": "To add weight to the system",
+        "B": "To absorb thermal expansion and contraction without stressing pipes and joints",
+        "C": "To increase flow velocity",
+        "D": "To trap air in the system"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Expansion loops (U-bends, offsets, Z-bends) provide flexibility to absorb the length change from thermal expansion and contraction. As the pipe heats and expands, the loop flexes to accommodate the growth. Without expansion control, expansion forces can break welds, damage equipment, and cause leaks.",
+        "incorrect": "Incorrect. Expansion loops don't add weight (they reduce stress), don't increase velocity (they maintain it), and don't trap air (they allow it to escape upward). Their sole purpose is absorbing thermal expansion movement to protect the system from damage."
+      }
+    },
+    {
+      "id": 6,
+      "section": 1,
+      "subsection": "B",
+      "topic": "Pipe Anchors and Guides",
+      "question": "What is the purpose of pipe guides in a thermal expansion system?",
+      "options": {
+        "A": "To completely prevent all pipe movement",
+        "B": "To direct pipe movement in a controlled direction while allowing expansion",
+        "C": "To support weight only",
+        "D": "To increase friction"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Pipe guides allow the pipe to move in one direction (usually axially along the pipe) while restricting movement in other directions. They direct expansion toward expansion loops or joints. Guides are used with anchors to control where and how expansion occurs, protecting equipment and preventing misalignment.",
+        "incorrect": "Incorrect. Guides allow controlled movement (not prevent all movement). While they do support weight, their primary purpose is directional control. They reduce friction (using low-friction materials), not increase it. Guides work with anchors to manage thermal expansion."
+      }
+    },
+    {
+      "id": 7,
+      "section": 1,
+      "subsection": "C",
+      "topic": "Heat Exchangers",
+      "question": "What is the purpose of a heat exchanger?",
+      "options": {
+        "A": "To generate heat",
+        "B": "To transfer heat from one fluid to another without mixing them",
+        "C": "To store heat for later use",
+        "D": "To eliminate heat completely"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! A heat exchanger transfers heat between two fluids without allowing them to mix. Common types include shell-and-tube, plate, and coil heat exchangers. Hot fluid flows through one side, cold fluid through the other, and heat transfers through the separating wall. Used in heating, cooling, and process applications.",
+        "incorrect": "Incorrect. Heat exchangers don't generate heat (boilers do that), don't store heat (tanks do that), and don't eliminate it (heat always goes somewhere per thermodynamics). They specifically transfer heat between fluids while keeping them separated."
+      }
+    },
+    {
+      "id": 8,
+      "section": 1,
+      "subsection": "D",
+      "topic": "Temperature Scales",
+      "question": "Convert 100°C to Fahrenheit.",
+      "options": {
+        "A": "132°F",
+        "B": "212°F",
+        "C": "100°F",
+        "D": "180°F"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Formula: °F = (°C × 9/5) + 32. So: (100 × 9/5) + 32 = 180 + 32 = 212°F. This is the boiling point of water at standard atmospheric pressure - a key reference point.",
+        "incorrect": "Incorrect. Use the formula °F = (°C × 9/5) + 32. You must multiply by 9/5 (or 1.8) AND add 32. Simply using 100°F ignores the conversion. The correct answer is 212°F."
+      }
+    },
+    {
+      "id": 9,
+      "section": 1,
+      "subsection": "D",
+      "topic": "Sensible vs Latent Heat",
+      "question": "What is sensible heat?",
+      "options": {
+        "A": "Heat that can be measured by temperature change",
+        "B": "Heat that changes state without temperature change",
+        "C": "Heat that cannot be detected",
+        "D": "Heat that only exists in gases"
+      },
+      "correct_answer": "A",
+      "explanation": {
+        "correct": "Correct! Sensible heat causes a measurable temperature change that you can sense or measure with a thermometer. When you heat water from 50°F to 150°F, you're adding sensible heat - the temperature rises. Contrast with latent heat, which changes state (ice to water, water to steam) without temperature change.",
+        "incorrect": "Incorrect. State change without temperature change is latent heat (hidden heat). All heat can be detected. Sensible heat exists in all states. Sensible heat specifically causes temperature to rise or fall that we can measure."
+      }
+    },
+    {
+      "id": 10,
+      "section": 1,
+      "subsection": "E",
+      "topic": "Heat Loss",
+      "question": "Which factor does NOT affect heat loss through a wall?",
+      "options": {
+        "A": "Wall thickness",
+        "B": "Temperature difference between inside and outside",
+        "C": "Color of the wall",
+        "D": "Thermal conductivity of wall material"
+      },
+      "correct_answer": "C",
+      "explanation": {
+        "correct": "Correct! Color affects radiant heat absorption/reflection but has minimal effect on conduction heat loss through walls. Heat loss through walls depends on: temperature difference (driving force), material thermal conductivity (how easily heat flows through), thickness (more distance = more resistance), and surface area.",
+        "incorrect": "Incorrect. Thickness, temperature difference, and thermal conductivity all significantly affect heat loss. Color has minimal effect on conduction (though it affects radiation). The correct answer is C - color doesn't significantly affect heat loss through walls."
+      }
+    },
+    {
+      "id": 11,
+      "section": 1,
+      "subsection": "E",
+      "topic": "R-Value",
+      "question": "What does R-value measure in insulation?",
+      "options": {
+        "A": "The weight of insulation",
+        "B": "The thermal resistance (ability to resist heat flow)",
+        "C": "The color of insulation",
+        "D": "The cost of insulation"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! R-value measures thermal resistance - how well a material resists heat flow. Higher R-value = better insulation. R-value = thickness ÷ thermal conductivity. For example, R-20 insulation provides twice the resistance of R-10. Used to calculate heat loss and determine insulation requirements.",
+        "incorrect": "Incorrect. R-value is not related to weight, color, or cost. It's a technical measurement of thermal resistance. Higher R-value means less heat loss. The correct answer is B."
+      }
+    },
+    {
+      "id": 12,
+      "section": 1,
+      "subsection": "E",
+      "topic": "Heat Loss Calculation",
+      "question": "In heat loss calculations, what is the 'U-factor'?",
+      "options": {
+        "A": "The overall heat transfer coefficient (inverse of total R-value)",
+        "B": "The cost per unit of heat",
+        "C": "The temperature in the room",
+        "D": "The air velocity"
+      },
+      "correct_answer": "A",
+      "explanation": {
+        "correct": "Correct! U-factor (or U-value) is the overall heat transfer coefficient - how much heat flows through a structure per square foot per degree temperature difference. U = 1/R (inverse of total R-value). Lower U-factor = better insulation. Used in formula: Heat Loss = U × Area × ΔT.",
+        "incorrect": "Incorrect. U-factor is not cost, temperature, or velocity. It's the rate of heat transfer through materials. U-factor and R-value are inversely related (U = 1/R). The correct answer is A."
+      }
+    },
+    {
+      "id": 13,
+      "section": 1,
+      "subsection": "F",
+      "topic": "Heat Emission Units",
+      "question": "What is a baseboard radiator?",
+      "options": {
+        "A": "A unit that cools the room",
+        "B": "A heat emission unit installed at floor level along walls",
+        "C": "A type of boiler",
+        "D": "An air conditioning vent"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Baseboard radiators (fin-tube baseboard) are heat emission units installed at floor level along exterior walls. Hot water or steam flows through copper tubing with aluminum fins. The fins increase surface area for better heat transfer. Heat rises by convection, creating circulation in the room.",
+        "incorrect": "Incorrect. Baseboard radiators heat rooms, not cool them. They're not boilers (which generate heat) or AC vents. They're specifically low-profile heating units mounted at floor level along walls. The correct answer is B."
+      }
+    },
+    {
+      "id": 14,
+      "section": 1,
+      "subsection": "G",
+      "topic": "Buoyancy Principles",
+      "question": "What happens to an object placed in water according to Archimedes' Principle?",
+      "options": {
+        "A": "It always sinks",
+        "B": "It experiences an upward force equal to the weight of water it displaces",
+        "C": "It always floats",
+        "D": "It experiences no forces"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Archimedes' Principle states that an object in a fluid experiences an upward buoyant force equal to the weight of fluid it displaces. If buoyant force > object weight, it floats. If buoyant force < object weight, it sinks. If equal, it's neutrally buoyant. Critical for calculating anchoring requirements for submerged tanks and pipes.",
+        "incorrect": "Incorrect. Objects don't always sink or always float - it depends on density. Objects definitely experience buoyant force. The magnitude of the upward force equals the weight of displaced fluid. The correct answer is B."
+      }
+    },
+    {
+      "id": 15,
+      "section": 1,
+      "subsection": "G",
+      "topic": "Specific Gravity and Buoyancy",
+      "question": "An object with a specific gravity of 0.8 is placed in water (SG = 1.0). What happens?",
+      "options": {
+        "A": "It sinks to the bottom",
+        "B": "It floats",
+        "C": "It dissolves",
+        "D": "It stays suspended in the middle"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Objects with specific gravity less than the fluid will float. Since 0.8 < 1.0, the object is less dense than water and will float with 80% submerged. Objects with SG > 1.0 sink. SG = 1.0 means neutral buoyancy (suspended). This principle is used for tank anchoring and pipeline weighting calculations.",
+        "incorrect": "Incorrect. Lower specific gravity means less dense, so it floats (doesn't sink). It won't dissolve - that's a chemical property. It won't stay suspended unless SG exactly equals 1.0. The correct answer is B - it floats."
+      }
+    },
+    {
+      "id": 16,
+      "section": 1,
+      "subsection": "A",
+      "topic": "Thermal Conductivity",
+      "question": "Which statement about thermal conductivity is true?",
+      "options": {
+        "A": "Materials with high thermal conductivity are good insulators",
+        "B": "Materials with low thermal conductivity are good insulators",
+        "C": "Thermal conductivity is unrelated to insulation properties",
+        "D": "All materials have the same thermal conductivity"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Materials with LOW thermal conductivity resist heat flow and make good insulators (fiberglass, foam, air). Materials with HIGH thermal conductivity transfer heat easily and make good conductors (copper, aluminum, steel). Thermal conductivity (k-value) is the rate of heat transfer through a material.",
+        "incorrect": "Incorrect. High conductivity means good conductor, not insulator. Thermal conductivity is directly related to insulation - it's the primary property. Different materials have vastly different thermal conductivities. The correct answer is B."
+      }
+    },
+    {
+      "id": 17,
+      "section": 2,
+      "subsection": "A",
+      "topic": "Hydronic Heating Systems",
+      "question": "What is a hydronic heating system?",
+      "options": {
+        "A": "A system using air to distribute heat",
+        "B": "A system using water as the heat transfer medium",
+        "C": "A system using only electric resistance heating",
+        "D": "A refrigeration system"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Hydronic heating systems use hot water as the heat transfer medium to distribute heat throughout a building. Water is heated in a boiler and circulated through pipes to radiators, baseboard heaters, or radiant floor panels. Efficient and comfortable because water carries heat well and provides even temperatures.",
+        "incorrect": "Incorrect. Air distribution is forced air heating (not hydronic). Electric resistance uses no circulating medium. Refrigeration cools, not heats. Hydronic specifically means water-based heating. The correct answer is B."
+      }
+    },
+    {
+      "id": 18,
+      "section": 2,
+      "subsection": "A",
+      "topic": "One-Pipe vs Two-Pipe Systems",
+      "question": "What is the main difference between one-pipe and two-pipe hydronic systems?",
+      "options": {
+        "A": "One-pipe has supply only; two-pipe has supply and return",
+        "B": "One-pipe uses steam; two-pipe uses water",
+        "C": "They are exactly the same",
+        "D": "One-pipe is for cooling; two-pipe is for heating"
+      },
+      "correct_answer": "A",
+      "explanation": {
+        "correct": "Correct! One-pipe systems have radiators connected in series to a single main - hot water flows through each radiator and returns to the same main. Two-pipe systems have separate supply and return mains - each radiator gets hot water from supply and returns it via dedicated return piping. Two-pipe provides better temperature control and more even heating.",
+        "incorrect": "Incorrect. Both can use water or steam. They're definitely different in piping arrangement. Both can heat (not cool). The key difference is supply-only (one-pipe) versus dedicated supply and return (two-pipe). The correct answer is A."
+      }
+    },
+    {
+      "id": 19,
+      "section": 2,
+      "subsection": "A",
+      "topic": "Reverse Return Piping",
+      "question": "What is the advantage of a reverse return piping system?",
+      "options": {
+        "A": "It costs less to install",
+        "B": "It provides more balanced flow to all heating units",
+        "C": "It requires no pump",
+        "D": "It uses less pipe"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Reverse return piping ensures all radiation units have approximately equal total pipe length (supply + return). The first unit on supply is the last on return, and vice versa. This creates equal flow resistance to all units, providing balanced flow and even heating without complex balancing valves.",
+        "incorrect": "Incorrect. Reverse return costs MORE (uses more pipe) and requires MORE pipe, but provides better performance. It still requires a pump like any hydronic system. The advantage is balanced flow, not cost savings. The correct answer is B."
+      }
+    },
+    {
+      "id": 20,
+      "section": 2,
+      "subsection": "A",
+      "topic": "Air Elimination",
+      "question": "Why must air be eliminated from hydronic heating systems?",
+      "options": {
+        "A": "Air improves efficiency",
+        "B": "Air causes noise, reduces heat transfer, and can lead to corrosion",
+        "C": "Air is required for proper operation",
+        "D": "Air has no effect on the system"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Air in hydronic systems causes multiple problems: (1) noise (gurgling, banging), (2) reduced heat transfer (air pockets block flow in radiators), (3) circulation problems (air locks prevent proper flow), and (4) corrosion (oxygen causes rust). Air is removed using automatic air vents, air separators, and manual vent valves.",
+        "incorrect": "Incorrect. Air reduces efficiency and causes problems - it doesn't improve anything. Air is definitely not required or beneficial. It has major negative effects. Systems must be properly vented and air-free. The correct answer is B."
+      }
+    },
+    {
+      "id": 21,
+      "section": 2,
+      "subsection": "A",
+      "topic": "Expansion Tank",
+      "question": "What is the purpose of an expansion tank in a closed hydronic heating system?",
+      "options": {
+        "A": "To increase system pressure",
+        "B": "To accommodate thermal expansion of water and maintain system pressure",
+        "C": "To add chemicals to the system",
+        "D": "To filter the water"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! As water heats, it expands. In a closed system, this would cause excessive pressure without an expansion tank. The tank contains a compressible cushion (air or bladder) that absorbs the volume increase, preventing pressure relief valve discharge and protecting the system. Maintains stable system pressure throughout temperature cycles.",
+        "incorrect": "Incorrect. Expansion tanks don't increase pressure (they stabilize it), don't add chemicals (that's a chemical feeder), and don't filter (that's a strainer). Their sole purpose is accommodating thermal expansion. The correct answer is B."
+      }
+    },
+    {
+      "id": 22,
+      "section": 2,
+      "subsection": "A",
+      "topic": "System Pressurization",
+      "question": "What maintains pressure in a hydronic heating system?",
+      "options": {
+        "A": "Gravity only",
+        "B": "Expansion tank and pressure reducing valve or fill connection",
+        "C": "Air compressor",
+        "D": "Vacuum pump"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! System pressure is initially established by a pressure reducing valve (PRV) connected to water supply or manual fill. The expansion tank maintains stable pressure as water temperature changes. PRV automatically adds water if pressure drops. Typical residential system pressure is 12-15 psi cold, 18-22 psi hot.",
+        "incorrect": "Incorrect. Gravity alone can't maintain pressure in closed systems. Air compressors aren't used (air causes problems). Vacuum pumps remove air, they don't pressurize. PRV and expansion tank work together to maintain pressure. The correct answer is B."
+      }
+    },
+    {
+      "id": 23,
+      "section": 2,
+      "subsection": "B",
+      "topic": "Boiler Types",
+      "question": "What is a cast iron sectional boiler?",
+      "options": {
+        "A": "A boiler made from steel tube",
+        "B": "A boiler assembled from individual cast iron sections bolted together",
+        "C": "A boiler that produces steam only",
+        "D": "An electric boiler"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Cast iron sectional boilers are assembled from individual cast iron sections nippled and bolted together. Each section contains water passages. Sections can be added or removed to adjust capacity. Advantages: long life, corrosion resistance, field-serviceable. Common in residential and light commercial hydronic heating.",
+        "incorrect": "Incorrect. Steel tube is fire-tube or water-tube boilers. Cast iron boilers can produce hot water or steam. Electric boilers use different construction. Cast iron sectional specifically means assembled sections. The correct answer is B."
+      }
+    },
+    {
+      "id": 24,
+      "section": 2,
+      "subsection": "B",
+      "topic": "Condensing Boilers",
+      "question": "What makes a condensing boiler more efficient than a conventional boiler?",
+      "options": {
+        "A": "It uses more fuel",
+        "B": "It recovers heat from flue gases by condensing water vapor",
+        "C": "It operates at higher temperatures",
+        "D": "It has no efficiency advantage"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Condensing boilers extract additional heat by cooling flue gases below the dew point, condensing water vapor and recovering its latent heat. This can achieve 90-98% efficiency vs. 80-85% for conventional boilers. Requires corrosion-resistant heat exchanger and condensate drain. Works best with low return water temperatures.",
+        "incorrect": "Incorrect. Using more fuel would decrease efficiency. Higher temperatures reduce efficiency (more heat loss). Condensing boilers are definitely more efficient. They recover waste heat from exhaust that conventional boilers lose. The correct answer is B."
+      }
+    },
+    {
+      "id": 25,
+      "section": 2,
+      "subsection": "C",
+      "topic": "Boiler Trim - Pressure Gauge",
+      "question": "What does the pressure gauge on a boiler indicate?",
+      "options": {
+        "A": "Water level",
+        "B": "System pressure in psi",
+        "C": "Temperature only",
+        "D": "Flow rate"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! The pressure gauge shows system pressure in psi (pounds per square inch). Operators monitor this to ensure pressure stays within safe operating range. Typical residential hydronic: 12-30 psi. If pressure is too low (air in system or leak), too high (expansion tank failure), or fluctuating (various problems), it indicates issues requiring attention.",
+        "incorrect": "Incorrect. Water level is shown by sight glass or other level indicators. Temperature is shown by thermometer. Flow rate requires a flow meter. Pressure gauge specifically shows pressure in psi. The correct answer is B."
+      }
+    },
+    {
+      "id": 26,
+      "section": 2,
+      "subsection": "C",
+      "topic": "Low Water Cutoff",
+      "question": "What is the purpose of a low water cutoff on a steam boiler?",
+      "options": {
+        "A": "To add water automatically",
+        "B": "To shut down the boiler if water level drops too low, preventing damage",
+        "C": "To increase steam pressure",
+        "D": "To control temperature"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! The low water cutoff (LWCO) is a critical safety device that shuts off burner/heat source if water level drops below safe minimum. Without adequate water level, boiler metal overheats and fails catastrophically. LWCO prevents dry-firing and explosion. Required by code on all steam boilers and hot water boilers without flow protection.",
+        "incorrect": "Incorrect. Adding water is the feedwater system's job. Pressure is controlled by pressuretrol. Temperature is controlled by aquastat or temperature controller. The LWCO is specifically a safety shutdown device. The correct answer is B."
+      }
+    },
+    {
+      "id": 27,
+      "section": 2,
+      "subsection": "C",
+      "topic": "Pressure Relief Valve",
+      "question": "At what pressure should a pressure relief valve on a residential hydronic heating system be set?",
+      "options": {
+        "A": "10 psi",
+        "B": "30 psi",
+        "C": "100 psi",
+        "D": "150 psi"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Residential hydronic heating systems typically use 30 psi pressure relief valves. This protects the system from overpressure due to expansion tank failure, overheating, or PRV malfunction. When pressure exceeds 30 psi, the valve opens to discharge water and prevent damage. Relief valves must be sized properly and tested periodically.",
+        "incorrect": "Incorrect. 10 psi is too low (normal operating pressure is 12-15 psi). 100 and 150 psi are too high for residential systems (those are for commercial/industrial). Standard residential relief valve setting is 30 psi. The correct answer is B."
+      }
+    },
+    {
+      "id": 28,
+      "section": 2,
+      "subsection": "D",
+      "topic": "Circulator Pumps",
+      "question": "What is the purpose of a circulator pump in a hydronic heating system?",
+      "options": {
+        "A": "To heat the water",
+        "B": "To circulate hot water through the system to deliver heat",
+        "C": "To add pressure to the system",
+        "D": "To filter the water"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Circulator pumps (circulators) move hot water from the boiler through the piping system to the heat emitters and back. They overcome friction losses and maintain flow. Modern systems use multiple circulators with zone valves for different heating zones. Circulators don't significantly increase system pressure - they create flow.",
+        "incorrect": "Incorrect. Boilers heat water, not circulators. Circulators create flow, not static pressure (expansion tank maintains pressure). Filters/strainers clean water. Circulators specifically circulate water to distribute heat. The correct answer is B."
+      }
+    },
+    {
+      "id": 29,
+      "section": 2,
+      "subsection": "D",
+      "topic": "Pump Cavitation",
+      "question": "What can cause cavitation in a circulator pump?",
+      "options": {
+        "A": "Too much water",
+        "B": "Insufficient inlet pressure allowing water to boil at the impeller",
+        "C": "Too much pressure",
+        "D": "Cold water"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Cavitation occurs when pressure at the pump inlet drops below the water's vapor pressure at that temperature, causing it to boil/flash into vapor. Vapor bubbles then collapse violently when reaching higher pressure areas, damaging the impeller. Causes: insufficient NPSH, closed valves, clogged strainer, air in system. Symptoms: noise, vibration, reduced performance, damage.",
+        "incorrect": "Incorrect. Too much water or too much pressure won't cause cavitation (they prevent it). Cold water is less prone to cavitation (lower vapor pressure). Cavitation specifically requires low inlet pressure. The correct answer is B."
+      }
+    },
+    {
+      "id": 30,
+      "section": 2,
+      "subsection": "D",
+      "topic": "Pump Curve",
+      "question": "What does a pump curve show?",
+      "options": {
+        "A": "The physical shape of the pump",
+        "B": "The relationship between flow rate and head (pressure) for that pump",
+        "C": "The pump's color options",
+        "D": "The pump installation instructions"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! A pump curve is a graph showing the relationship between flow rate (GPM) on the x-axis and head (pressure, measured in feet of head) on the y-axis. As flow increases, head decreases. The curve shows pump performance at various operating points. Used to select the right pump and verify it can overcome system resistance at required flow.",
+        "incorrect": "Incorrect. Pump curve isn't about physical shape, colors, or installation (those are in other documents). It's specifically a performance graph showing flow vs. head relationship. Critical for pump selection. The correct answer is B."
+      }
+    },
+    {
+      "id": 31,
+      "section": 2,
+      "subsection": "D",
+      "topic": "System Head",
+      "question": "What creates 'head' (resistance) in a hydronic heating system?",
+      "options": {
+        "A": "Friction in pipes, fittings, and components",
+        "B": "The color of the pipes",
+        "C": "The day of the week",
+        "D": "The pump brand"
+      },
+      "correct_answer": "A",
+      "explanation": {
+        "correct": "Correct! Head (resistance) is created by friction as water flows through pipes, fittings, valves, boilers, and heat emitters. Narrow pipes, long runs, and many fittings increase head. The pump must overcome total system head to achieve desired flow rate. Head is measured in feet of water column (1 psi = 2.31 feet of head).",
+        "incorrect": "Incorrect. Pipe color, day of week, and pump brand don't create resistance. Physical friction from fluid flow through the system creates head. Pump must be sized to overcome this resistance. The correct answer is A."
+      }
+    },
+    {
+      "id": 32,
+      "section": 2,
+      "subsection": "E",
+      "topic": "Radiant Floor Heating",
+      "question": "What is radiant floor heating?",
+      "options": {
+        "A": "Forced air through floor vents",
+        "B": "Hot water tubing embedded in or beneath the floor to heat by radiation",
+        "C": "Electric baseboard along the floor",
+        "D": "Steam radiators"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Radiant floor heating uses plastic tubing (PEX) embedded in concrete slab, beneath tile, or in joist spaces carrying hot water (typically 100-120°F). Floor becomes a large, low-temperature radiator heating by radiation and convection. Provides even, comfortable heat with no visible equipment. Efficient with condensing boilers.",
+        "incorrect": "Incorrect. Forced air uses ducts (not radiant). Electric baseboard is convection, not radiant floor. Steam radiators are visible units. Radiant floor specifically uses embedded hot water tubing. The correct answer is B."
+      }
+    },
+    {
+      "id": 33,
+      "section": 2,
+      "subsection": "E",
+      "topic": "Fan Coil Units",
+      "question": "What is a fan coil unit?",
+      "options": {
+        "A": "A boiler component",
+        "B": "A heat exchanger with a fan that can heat or cool air",
+        "C": "A type of pump",
+        "D": "A pressure vessel"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! A fan coil unit (FCU) consists of a finned-tube coil with a fan that blows air across it. Hot water for heating or chilled water for cooling flows through the coil. The fan forces air across the coil, transferring heat. Common in hotels, apartments, and offices for individual zone control. Can heat and cool using the same hydronic piping.",
+        "incorrect": "Incorrect. Fan coils aren't boiler components (they're heat emitters), pumps (they're heat transfer devices), or pressure vessels (they're heat exchangers with fans). They specifically use forced air across a coil. The correct answer is B."
+      }
+    },
+    {
+      "id": 34,
+      "section": 2,
+      "subsection": "F",
+      "topic": "Heat Tracing",
+      "question": "What is the purpose of heat tracing on pipes?",
+      "options": {
+        "A": "To cool the pipe contents",
+        "B": "To prevent freezing and maintain temperature in pipes",
+        "C": "To locate buried pipes",
+        "D": "To paint the pipes"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Heat tracing provides supplemental heat to pipes to prevent freezing (freeze protection) or maintain process temperature (temperature maintenance). Types include: electric resistance cable (most common), steam tracing, and hot water/glycol tracing. Traced pipes are typically insulated to reduce heat loss and energy consumption.",
+        "incorrect": "Incorrect. Heat tracing adds heat, not cooling. While tracers can help locate pipes, that's not the purpose. It's not for painting. Heat tracing specifically prevents freezing and maintains temperatures. The correct answer is B."
+      }
+    },
+    {
+      "id": 35,
+      "section": 2,
+      "subsection": "F",
+      "topic": "Steam Tracing",
+      "question": "How does steam tracing work?",
+      "options": {
+        "A": "Steam pipe is run parallel to process pipe, providing heat",
+        "B": "Steam is injected directly into the process fluid",
+        "C": "Steam cools the pipe",
+        "D": "Steam has no heating effect"
+      },
+      "correct_answer": "A",
+      "explanation": {
+        "correct": "Correct! Steam tracing uses a small steam line (tracer) running parallel to or spiral-wrapped around the process pipe. Steam condenses in the tracer, releasing latent heat that transfers to the process pipe. Condensate is removed via steam traps. Effective but requires steam supply and condensate return system. Used where electric tracing isn't suitable.",
+        "incorrect": "Incorrect. Direct steam injection mixes steam with fluid (different application). Steam provides heat, not cooling. Steam definitely heats effectively. Steam tracing specifically uses parallel tubing transferring heat by conduction. The correct answer is A."
+      }
+    },
+    {
+      "id": 36,
+      "section": 2,
+      "subsection": "F",
+      "topic": "Electric Heat Tracing",
+      "question": "What is self-regulating heat trace cable?",
+      "options": {
+        "A": "Cable that adjusts its heat output based on temperature",
+        "B": "Cable that requires constant adjustment",
+        "C": "Cable that produces no heat",
+        "D": "Cable that only works in summer"
+      },
+      "correct_answer": "A",
+      "explanation": {
+        "correct": "Correct! Self-regulating (self-limiting) heat trace cable contains a conductive polymer core between two bus wires. As temperature increases, electrical resistance increases, reducing current flow and heat output. As temperature drops, resistance decreases, increasing heat output. Each section regulates independently. Can't overheat or burn out, even if overlapped. Safe and energy-efficient.",
+        "incorrect": "Incorrect. Self-regulating requires NO manual adjustment (that's the benefit). It definitely produces heat. It works year-round (especially in winter). The key feature is automatic temperature-responsive heat output. The correct answer is A."
+      }
+    },
+    {
+      "id": 37,
+      "section": 2,
+      "subsection": "A",
+      "topic": "Zone Control",
+      "question": "What is zone control in hydronic heating?",
+      "options": {
+        "A": "Heating different areas independently with separate controls",
+        "B": "Heating the entire building to one temperature",
+        "C": "Turning all heat off",
+        "D": "Only heating during daytime"
+      },
+      "correct_answer": "A",
+      "explanation": {
+        "correct": "Correct! Zone control divides the building into separate heating zones, each with independent thermostat control. Implemented using zone valves (one circulator, multiple zones) or multiple circulators (one per zone). Improves comfort and efficiency by heating each area only when needed and to its desired temperature. Common zones: upstairs/downstairs, bedrooms/living areas.",
+        "incorrect": "Incorrect. Single-temperature whole-building is unzoned heating (less efficient). Turning all heat off isn't control. Time-only control isn't zoning. Zoning specifically means independent control of different areas. The correct answer is A."
+      }
+    },
+    {
+      "id": 38,
+      "section": 3,
+      "subsection": "A",
+      "topic": "Lift Planning",
+      "question": "What is included in a basic lift plan?",
+      "options": {
+        "A": "Only the weight of the load",
+        "B": "Load weight, rigging method, equipment capacity, and safety considerations",
+        "C": "Just the crane type",
+        "D": "Only the date of the lift"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! A lift plan includes: (1) load weight and center of gravity, (2) rigging configuration and hardware, (3) crane/hoist selection and capacity verification, (4) lift path and clearances, (5) ground conditions and crane positioning, (6) personnel assignments and communication methods, (7) safety considerations and emergency procedures. Critical for safe lifting operations.",
+        "incorrect": "Incorrect. Weight alone is insufficient. Crane type alone doesn't ensure safety. Date is administrative info, not technical planning. A comprehensive lift plan addresses all technical and safety aspects. The correct answer is B."
+      }
+    },
+    {
+      "id": 39,
+      "section": 3,
+      "subsection": "A",
+      "topic": "Center of Gravity",
+      "question": "Why is knowing the center of gravity important when rigging a load?",
+      "options": {
+        "A": "It determines the load's color",
+        "B": "It determines where to attach rigging to achieve balance and prevent tipping",
+        "C": "It's not important",
+        "D": "It only matters for small loads"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! The center of gravity (CG) is the point where the load's weight is balanced. Rigging must be attached above or in line with CG to prevent tipping/rotating. Unbalanced loads are dangerous - they can shift, spin, or tip during the lift. For irregular loads, CG must be calculated or determined experimentally. Critical for safe rigging.",
+        "incorrect": "Incorrect. CG doesn't determine color. It's extremely important, not unimportant. It matters MORE for large/heavy loads (more dangerous if unbalanced). CG location is fundamental to rigging safety. The correct answer is B."
+      }
+    },
+    {
+      "id": 40,
+      "section": 3,
+      "subsection": "A",
+      "topic": "Load Weight Estimation",
+      "question": "How can you determine the weight of a load if it's not marked?",
+      "options": {
+        "A": "Just guess",
+        "B": "Calculate from dimensions and material density, or use scale/load cell",
+        "C": "It doesn't matter",
+        "D": "Use any random number"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Load weight can be determined by: (1) calculating volume × material density (for known materials), (2) weighing with a scale or load cell, (3) checking manufacturer data or shipping documents, (4) using crane load indicator during test lift (if safe). Never guess - overloading equipment causes failures, injuries, and deaths. Always verify weight before lifting.",
+        "incorrect": "Incorrect. Guessing is dangerous and prohibited. Weight matters critically for equipment selection and safety. Random numbers will get someone killed. Accurate weight determination is mandatory for safe rigging. The correct answer is B."
+      }
+    },
+    {
+      "id": 41,
+      "section": 3,
+      "subsection": "A",
+      "topic": "Safe Working Load",
+      "question": "What is the relationship between Working Load Limit (WLL) and breaking strength?",
+      "options": {
+        "A": "WLL equals breaking strength",
+        "B": "WLL is breaking strength divided by safety factor (typically 5:1 or more)",
+        "C": "WLL is greater than breaking strength",
+        "D": "There is no relationship"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! WLL (Working Load Limit) = Breaking Strength ÷ Safety Factor. For rigging, safety factors are typically 5:1 (rigging hardware) or higher. Example: A sling with 10,000 lb breaking strength and 5:1 safety factor has WLL of 2,000 lb. Safety factor accounts for wear, shock loading, angle factors, and unknowns. NEVER exceed WLL.",
+        "incorrect": "Incorrect. WLL never equals breaking strength (no safety margin). WLL can't exceed breaking strength (that's impossible). They're definitely related by safety factor. WLL is always significantly less than breaking strength for safety. The correct answer is B."
+      }
+    },
+    {
+      "id": 42,
+      "section": 3,
+      "subsection": "B",
+      "topic": "Fiber Rope Types",
+      "question": "Which synthetic fiber rope is strongest for its weight?",
+      "options": {
+        "A": "Cotton",
+        "B": "Nylon",
+        "C": "Manila",
+        "D": "Sisal"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Nylon is the strongest synthetic fiber rope per unit weight, with excellent shock absorption due to elasticity (stretches 15-20%). Also very abrasion resistant. Used for tow lines, anchor lines, and lifting where shock loads may occur. Other synthetics: polyester (less stretch, good for static loads), polypropylene (floats, lower strength).",
+        "incorrect": "Incorrect. Cotton, manila, and sisal are natural fibers - weaker than synthetics and susceptible to rot. Nylon has the best strength-to-weight ratio among common fibers. The correct answer is B."
+      }
+    },
+    {
+      "id": 43,
+      "section": 3,
+      "subsection": "B",
+      "topic": "Wire Rope Construction",
+      "question": "What does '6x19' wire rope designation mean?",
+      "options": {
+        "A": "6 feet long with 19 lb breaking strength",
+        "B": "6 strands with 19 wires per strand (approximately)",
+        "C": "6 inches diameter with 19 strands",
+        "D": "Made in 1619"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Wire rope designation format is: [number of strands] × [wires per strand]. So 6×19 has 6 strands with approximately 19 wires each (actual count varies by construction class). Common constructions: 6×19 (flexible, abrasion resistant), 6×37 (very flexible), 6×7 (less flexible, more abrasion resistant). Core can be fiber or steel.",
+        "incorrect": "Incorrect. The numbers don't indicate length, weight, diameter, or dates. They specifically describe rope construction: strands × wires per strand. This tells you flexibility and abrasion characteristics. The correct answer is B."
+      }
+    },
+    {
+      "id": 44,
+      "section": 3,
+      "subsection": "B",
+      "topic": "Wire Rope Inspection",
+      "question": "When should wire rope be removed from service?",
+      "options": {
+        "A": "When it looks slightly dirty",
+        "B": "When it has broken wires, kinks, corrosion, or other damage exceeding standards",
+        "C": "Never - rope lasts forever",
+        "D": "Only when it breaks during a lift"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Wire rope must be removed from service when inspection reveals: (1) broken wires exceeding standards (typically 6 randomly distributed or 3 in one strand in one lay), (2) kinks or bird-caging, (3) significant corrosion, (4) wear/abrasion reducing diameter >1/3, (5) heat damage, (6) core damage. Removal criteria are in ASME B30.9 and manufacturer specs.",
+        "incorrect": "Incorrect. Dirt doesn't affect strength. Rope definitely wears out and must be replaced. Waiting until it breaks during a lift is catastrophically dangerous. Specific damage criteria require removal before failure. The correct answer is B."
+      }
+    },
+    {
+      "id": 45,
+      "section": 3,
+      "subsection": "B",
+      "topic": "Wire Rope Terminations",
+      "question": "What is the most efficient wire rope termination?",
+      "options": {
+        "A": "Knots (40-50% efficiency)",
+        "B": "Proper speltering or swaging (90-95% efficiency)",
+        "C": "Wire rope clips (80% efficiency when proper number used)",
+        "D": "Tape"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Termination efficiency (% of rope strength retained): Speltering (zinc poured socket) or swaging (compressed fittings) = 90-95% (strongest), properly installed wire rope clips = 80%, thimble eye splice = 90%, knots = 40-50% (never use for lifting). Proper termination is critical for safety.",
+        "incorrect": "Incorrect. Knots drastically reduce strength (only 40-50%) - never use for critical lifting. Clips are good (80%) but not best. Tape has no strength and isn't a termination. Speltering/swaging are strongest terminations. The correct answer is B."
+      }
+    },
+    {
+      "id": 46,
+      "section": 3,
+      "subsection": "B",
+      "topic": "Rope Fiber Core vs Steel Core",
+      "question": "What is the advantage of Independent Wire Rope Core (IWRC) over fiber core?",
+      "options": {
+        "A": "IWRC is cheaper",
+        "B": "IWRC is lighter",
+        "C": "IWRC provides greater strength and resistance to crushing",
+        "D": "IWRC is more flexible"
+      },
+      "correct_answer": "C",
+      "explanation": {
+        "correct": "Correct! Independent Wire Rope Core (IWRC) is a small wire rope forming the core, providing 7-10% greater strength than fiber core and much better resistance to crushing and heat. Used in high-load, high-temperature, or crushing-force applications. Fiber core is more flexible and provides lubrication but is weaker and heat-sensitive.",
+        "incorrect": "Incorrect. IWRC costs more (not less). It's heavier (not lighter). It's less flexible (not more). The advantages are strength and crush resistance. The correct answer is C."
+      }
+    },
+    {
+      "id": 47,
+      "section": 3,
+      "subsection": "B",
+      "topic": "Wire Rope Angle Factor",
+      "question": "What happens to the load on each leg of a sling as the sling angle decreases?",
+      "options": {
+        "A": "Load decreases",
+        "B": "Load stays the same",
+        "C": "Load increases (more stress on each leg)",
+        "D": "The sling becomes stronger"
+      },
+      "correct_answer": "C",
+      "explanation": {
+        "correct": "Correct! As sling angle from vertical decreases (becomes more horizontal), tension in each leg increases dramatically. At 60° angle, each leg carries 100% of load. At 45°, each carries 130%. At 30°, each carries 200%! Never use sling angles less than 30° from horizontal (60° included angle between legs). Always calculate angle factor when rigging.",
+        "incorrect": "Incorrect. Load definitely doesn't decrease or stay the same - it increases significantly at shallow angles. The sling doesn't become stronger - opposite, the load on it increases. Decreasing angle is dangerous. The correct answer is C."
+      }
+    },
+    {
+      "id": 48,
+      "section": 3,
+      "subsection": "B",
+      "topic": "Synthetic Sling Advantages",
+      "question": "What is an advantage of synthetic web slings over wire rope slings?",
+      "options": {
+        "A": "Can be used at higher temperatures",
+        "B": "Less damaging to delicate loads and won't mar finished surfaces",
+        "C": "Stronger than steel",
+        "D": "Last forever"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Synthetic (nylon, polyester) web slings are soft and flexible, making them ideal for loads with finished surfaces, delicate equipment, or easily damaged materials. Won't scratch, mar, or conduct electricity. Also lightweight and flexible. Disadvantages: lower temperature limit (nylon max 180°F, polyester 200°F), can be cut, must be protected from chemicals and UV.",
+        "incorrect": "Incorrect. Synthetics have LOWER temperature limits (not higher). They're not stronger than steel (lower strength-to-size ratio). They don't last forever (wear out faster than steel in some applications). The advantage is protecting delicate loads. The correct answer is B."
+      }
+    },
+    {
+      "id": 49,
+      "section": 3,
+      "subsection": "B",
+      "topic": "Web Sling Inspection",
+      "question": "When should a synthetic web sling be removed from service?",
+      "options": {
+        "A": "When it's slightly dirty",
+        "B": "When it has cuts, tears, burns, holes, excessive wear, or chemical damage",
+        "C": "Never",
+        "D": "Only when it breaks"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Remove synthetic slings from service when inspection reveals: (1) cuts or tears through any stitching or webbing, (2) snags, punctures, or holes, (3) excessive abrasive wear or fraying, (4) melting, charring, or heat damage, (5) chemical damage (discoloration, brittleness, softening), (6) missing or illegible tags, (7) knots. Damaged slings can fail without warning.",
+        "incorrect": "Incorrect. Dirt alone doesn't require removal (can be cleaned). Never removing slings is dangerous - they wear out. Waiting for breakage during a lift is catastrophic. Specific damage criteria require immediate removal. The correct answer is B."
+      }
+    },
+    {
+      "id": 50,
+      "section": 3,
+      "subsection": "B",
+      "topic": "Rigging Hardware Color Codes",
+      "question": "What do the color codes on synthetic slings indicate?",
+      "options": {
+        "A": "The manufacturer's favorite color",
+        "B": "The sling capacity rating",
+        "C": "Nothing important",
+        "D": "The age of the sling"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Color codes indicate sling capacity: Purple = 1,000 lb, Green = 2,000 lb, Yellow = 3,000 lb, Tan = 4,000 lb, Red = 5,000 lb, White = 6,000 lb, Blue = 8,000 lb, Orange = 10,000 lb. This allows quick visual identification of capacity. Always verify with tag/label - color alone isn't sufficient for safety decisions.",
+        "incorrect": "Incorrect. Colors aren't random or aesthetic choices. They're definitely important for capacity identification. They don't indicate age (date is on tag). Color coding is an industry standard safety feature. The correct answer is B."
+      }
+    },
+    {
+      "id": 51,
+      "section": 3,
+      "subsection": "C",
+      "topic": "Pulleys and Blocks",
+      "question": "What is mechanical advantage in rigging?",
+      "options": {
+        "A": "The advantage of using machines",
+        "B": "The ratio of load weight to pulling force required",
+        "C": "The speed of lifting",
+        "D": "The cost savings"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Mechanical advantage (MA) = Load ÷ Effort. With a 4:1 mechanical advantage, you can lift 400 lb with 100 lb of pulling force (ignoring friction). Achieved using blocks and tackle (multiple pulleys). Trade-off: you pull more rope - if MA is 4:1, you pull 4 feet of rope to lift load 1 foot. Used to lift heavy loads with limited force.",
+        "incorrect": "Incorrect. While machines provide advantage, MA specifically is a ratio. It doesn't measure speed (speed actually decreases with MA). It's not about cost. MA is the force multiplication factor. The correct answer is B."
+      }
+    },
+    {
+      "id": 52,
+      "section": 3,
+      "subsection": "C",
+      "topic": "Sheave Diameter",
+      "question": "Why should sheave (pulley) diameter be at least 20 times the wire rope diameter?",
+      "options": {
+        "A": "To look better",
+        "B": "To reduce rope bending stress and extend rope life",
+        "C": "To increase rope speed",
+        "D": "To make it heavier"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Minimum sheave diameter prevents excessive bending stress on wire rope. Rule of thumb: sheave diameter ≥ 20× rope diameter for optimal life. Smaller sheaves cause: (1) higher bending stress on outer wires, (2) fatigue failures, (3) significantly reduced rope life. Critical for wire rope longevity. Check manufacturer specifications for specific applications.",
+        "incorrect": "Incorrect. Sheave size isn't about appearance, speed, or weight. It's specifically about preventing destructive bending stress. Too-small sheaves destroy rope quickly through fatigue. Proper sizing is critical for safety and economics. The correct answer is B."
+      }
+    },
+    {
+      "id": 53,
+      "section": 3,
+      "subsection": "C",
+      "topic": "Come-along / Cable Puller",
+      "question": "What is a come-along (cable puller)?",
+      "options": {
+        "A": "A type of crane",
+        "B": "A portable hand-operated ratchet lever hoist for pulling/tensioning",
+        "C": "A welding tool",
+        "D": "A measuring device"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! A come-along is a portable, hand-operated ratchet mechanism that grips wire rope or chain to pull or tension loads. Common for: positioning equipment, pulling pipe into alignment, vehicle recovery, tensioning, and light rigging. Limited capacity (typical 1-5 tons). Not for overhead lifting - horizontal pulling and positioning only.",
+        "incorrect": "Incorrect. Come-alongs aren't cranes (much simpler/smaller), welding tools, or measuring devices. They're specific portable pulling tools using ratchet mechanism. Very common on job sites for alignment and positioning. The correct answer is B."
+      }
+    },
+    {
+      "id": 54,
+      "section": 3,
+      "subsection": "D",
+      "topic": "Shackles",
+      "question": "What is a shackle used for in rigging?",
+      "options": {
+        "A": "Cutting wire rope",
+        "B": "Connecting rigging components (slings, hooks, load, etc.)",
+        "C": "Measuring loads",
+        "D": "Painting equipment"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Shackles are U-shaped connectors with a pin closure used to connect rigging components: slings to hooks, multiple slings to a common point, slings to loads with lifting eyes, etc. Types: anchor/bow shackles (wide body for multiple connections) and chain shackles (narrow for single connections). Rated with WLL - never overload.",
+        "incorrect": "Incorrect. Shackles don't cut (that's cutters), measure (that's instruments), or paint (that's brushes). They're specifically for making connections between rigging components. Essential hardware for every rigging operation. The correct answer is B."
+      }
+    },
+    {
+      "id": 55,
+      "section": 3,
+      "subsection": "D",
+      "topic": "Shackle Types",
+      "question": "What type of shackle should be used when connecting multiple slings?",
+      "options": {
+        "A": "Chain shackle",
+        "B": "Anchor shackle (bow shackle)",
+        "C": "Any shackle works the same",
+        "D": "No shackle needed"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Anchor shackles (bow shackles) have a wide, rounded body that accommodates multiple slings without binding or creating side loads on the pin. The wide body keeps slings properly positioned. Chain shackles have narrow bodies suited for single connections only. Using the right shackle type prevents side loading and ensures proper load distribution.",
+        "incorrect": "Incorrect. Chain shackles (narrow) aren't suitable for multiple slings. Different shackles are designed for different applications. Shackles are definitely needed for safe connections. Anchor/bow shackles are correct for multiple connections. The correct answer is B."
+      }
+    },
+    {
+      "id": 56,
+      "section": 3,
+      "subsection": "D",
+      "topic": "Eyebolts",
+      "question": "What must be checked before using an eyebolt?",
+      "options": {
+        "A": "Only the color",
+        "B": "Thread condition, eye condition, and that it's fully seated in tapped hole",
+        "C": "Nothing - they're always safe",
+        "D": "Only the size"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Before using eyebolts, inspect: (1) threads for damage, engagement, and full seating (shoulder must contact surface), (2) eye for cracks, deformation, or wear, (3) load rating/certification markings, (4) proper orientation (eye must align with load direction). Lifting angle affects capacity - straight pull is strongest. Never use damaged, unmarked, or partially threaded eyebolts.",
+        "incorrect": "Incorrect. Color isn't a safety check. Eyebolts can fail catastrophically if damaged or improperly installed. Size alone doesn't ensure safety. Thorough inspection of threads, eye, and installation is mandatory. The correct answer is B."
+      }
+    },
+    {
+      "id": 57,
+      "section": 3,
+      "subsection": "D",
+      "topic": "Hooks",
+      "question": "When should a rigging hook be removed from service?",
+      "options": {
+        "A": "When slightly dirty",
+        "B": "When throat opening increased 15%, bent, twisted, cracked, or otherwise damaged",
+        "C": "Never",
+        "D": "Only after it breaks"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Remove hooks from service when: (1) throat opening increased >15% (or 1/4\" for small hooks, 3/8\" for large), (2) any twist, bend, or set from normal plane, (3) cracks anywhere, (4) excessive wear, corrosion, or gouging, (5) missing or illegible markings, (6) missing, damaged, or inoperative safety latch. ASME B30.10 provides detailed criteria. Damaged hooks fail catastrophically.",
+        "incorrect": "Incorrect. Dirt doesn't require removal. Never removing hooks is dangerous - they wear and damage. Waiting for breakage during use is catastrophic. Specific damage criteria mandate removal before failure occurs. The correct answer is B."
+      }
+    },
+    {
+      "id": 58,
+      "section": 3,
+      "subsection": "D",
+      "topic": "Alloy Chain",
+      "question": "What grade of alloy chain is commonly used for overhead lifting?",
+      "options": {
+        "A": "Grade 30 (proof coil)",
+        "B": "Grade 80 or Grade 100",
+        "C": "Any grade works",
+        "D": "Hardware store chain"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Grade 80 and Grade 100 alloy chains are rated for overhead lifting. Grade 100 is strongest (25% higher WLL than Grade 80 same size). Both are heat-treated alloy steel, individually proof-tested. Grade 30/43 (proof coil/high test) are for binding/transport only - NEVER overhead lifting. All lifting chain must be marked with grade, size, and capacity.",
+        "incorrect": "Incorrect. Grade 30 is for towing/binding, not lifting (will break - people die). Not any grade works - only rated alloy lifting chain. Hardware store chain is never acceptable for lifting. Use only Grade 80/100 marked for lifting. The correct answer is B."
+      }
+    },
+    {
+      "id": 59,
+      "section": 3,
+      "subsection": "D",
+      "topic": "Chain Sling Inspection",
+      "question": "When should an alloy chain sling be removed from service?",
+      "options": {
+        "A": "When it looks old",
+        "B": "When links are stretched >3%, cracked, gouged, worn, or bent",
+        "C": "Never - chain lasts forever",
+        "D": "Only when painted"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Remove chain slings when inspection reveals: (1) stretch >3% in any link (measure 10-link section), (2) any cracks, (3) gouges, nicks, or wear, (4) bent or twisted links, (5) excessive wear (reduces chain diameter >10%), (6) heat damage (discoloration), (7) missing or illegible tags. Chain failure is sudden and catastrophic - inspect before every use.",
+        "incorrect": "Incorrect. Age alone (appearance) doesn't determine serviceability - actual damage does. Chain definitely wears out and must be removed. Paint doesn't indicate removal (though painting chain can hide cracks - shouldn't be painted). Specific measured criteria mandate removal. The correct answer is B."
+      }
+    },
+    {
+      "id": 60,
+      "section": 3,
+      "subsection": "D",
+      "topic": "Spreader Beams",
+      "question": "What is the purpose of a spreader beam in rigging?",
+      "options": {
+        "A": "To increase sling angles and reduce sling tension",
+        "B": "To reduce sling angles and increase sling tension",
+        "C": "To paint equipment",
+        "D": "To measure distances"
+      },
+      "correct_answer": "A",
+      "explanation": {
+        "correct": "Correct! Spreader beams (lifting beams) increase the distance between sling attachment points, which increases sling angle from vertical, which REDUCES tension in each sling leg. Also prevents crushing or squeezing tall loads, provides attachment points at desired locations, and allows lifting loads without lifting eyes. The beam itself must be engineered for the bending load.",
+        "incorrect": "Incorrect. Spreader beams increase angles (not reduce), which reduces tension (not increases) - that's the whole purpose. They're structural rigging tools, not for painting or measuring. The correct answer is A."
+      }
+    },
+    {
+      "id": 61,
+      "section": 3,
+      "subsection": "D",
+      "topic": "Rigging Safety Factor",
+      "question": "What is the minimum safety factor for rigging hardware?",
+      "options": {
+        "A": "1:1 (no safety factor)",
+        "B": "2:1",
+        "C": "5:1",
+        "D": "100:1"
+      },
+      "correct_answer": "C",
+      "explanation": {
+        "correct": "Correct! Rigging hardware (slings, shackles, hooks, etc.) must have a minimum 5:1 safety factor (Breaking Strength = 5 × WLL minimum). This accounts for: dynamic loading, shock loads, angle effects, wear, corrosion, and unknowns. Wire rope slings typically 5:1, alloy chain 4:1, synthetic 5:1. Never overload - use rated capacity marked on tag.",
+        "incorrect": "Incorrect. 1:1 has no safety margin (breaks at rated load - unacceptable). 2:1 is too low for rigging. 100:1 is excessive and uneconomical. Industry standard minimum is 5:1 (some applications require higher). The correct answer is C."
+      }
+    },
+    {
+      "id": 62,
+      "section": 3,
+      "subsection": "D",
+      "topic": "Master Links",
+      "question": "What is a master link in a chain sling?",
+      "options": {
+        "A": "The longest link",
+        "B": "The main connecting link where multiple legs join to the hook",
+        "C": "The first link made",
+        "D": "The painted link"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! The master link is the large oblong or pear-shaped link at the top of multi-leg chain slings where all legs connect. It fits over the hook and distributes load to individual legs. Designed to handle multiple connections and combined load of all legs. May also include swivel. Critical component - must be inspected carefully.",
+        "incorrect": "Incorrect. Length, manufacturing order, and paint don't define master links. The master link is specifically the main top connecting point for multi-leg assemblies. The correct answer is B."
+      }
+    },
+    {
+      "id": 63,
+      "section": 3,
+      "subsection": "D",
+      "topic": "Softeners and Edge Protection",
+      "question": "Why use edge protectors or softeners when rigging with synthetic slings?",
+      "options": {
+        "A": "To make slings more colorful",
+        "B": "To protect slings from cuts and abrasion at sharp load edges",
+        "C": "To increase sling weight",
+        "D": "They serve no purpose"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Edge protectors (corner protectors, softeners) prevent synthetic slings and wire ropes from being cut or abraded by sharp edges on loads. Made of leather, rubber, wood, or plastic. Place between sling and any sharp corner or edge. Prevents catastrophic sling failure from cutting. Essential safety practice when rigging loads with sharp or abrasive edges.",
+        "incorrect": "Incorrect. Edge protection isn't decorative, doesn't add beneficial weight, and definitely serves a critical purpose. Without protection, sharp edges cut through slings causing failure and dropped loads. The correct answer is B."
+      }
+    },
+    {
+      "id": 64,
+      "section": 3,
+      "subsection": "E",
+      "topic": "Hand Signals",
+      "question": "What is the standard hand signal for \"hoist\" (raise load)?",
+      "options": {
+        "A": "Arm extended down, fist closed, thumb pointing down",
+        "B": "Arm extended up, fist closed, thumb pointing up, circular motion",
+        "C": "Hands on head",
+        "D": "Waving both arms"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Standard hand signal for HOIST: arm extended up (or at side), fist closed, thumb pointing up, with small circular motion or bobbing. LOWER is opposite: thumb pointing down. These are ASME B30.5 standard signals. All crane operations personnel must know standard signals. Only the designated signal person gives signals - operator follows only that person.",
+        "incorrect": "Incorrect. Thumb down is LOWER (not hoist). Hands on head or waving arms aren't standard signals. Standardized signals prevent miscommunication that causes accidents. The correct answer is B."
+      }
+    },
+    {
+      "id": 65,
+      "section": 3,
+      "subsection": "E",
+      "topic": "Emergency Stop Signal",
+      "question": "What is the hand signal for emergency stop?",
+      "options": {
+        "A": "Thumbs up",
+        "B": "Arm extended, palm down, waving side to side",
+        "C": "Both arms extended overhead, hands open, rapid waving",
+        "D": "Finger pointing"
+      },
+      "correct_answer": "C",
+      "explanation": {
+        "correct": "Correct! EMERGENCY STOP: Both arms extended overhead, hands/palms open, rapid side-to-side waving motion. This signal means IMMEDIATE STOP regardless of who gives it - anyone observing danger can give emergency stop. Operator must stop all motion immediately. Different from normal stop (arm extended, palm down, hold steady).",
+        "incorrect": "Incorrect. Thumbs up isn't a standard signal. Side-to-side waving with one arm is DOG EVERYTHING (stop and hold). Pointing isn't standard. Emergency stop uses both arms overhead waving - most visible and urgent signal. The correct answer is C."
+      }
+    },
+    {
+      "id": 66,
+      "section": 3,
+      "subsection": "E",
+      "topic": "Radio Communication",
+      "question": "What is the correct radio protocol when using radio communication for hoisting?",
+      "options": {
+        "A": "Speak as fast as possible",
+        "B": "Use clear, concise commands with confirmation from operator",
+        "C": "Use codes that only some people understand",
+        "D": "No protocol needed"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Radio communication protocol: (1) speak clearly and deliberately, (2) use standard terminology (hoist, lower, travel, boom up/down, etc.), (3) operator acknowledges each command before executing, (4) signal person confirms operator understood correctly, (5) if communication lost, stop immediately. Clear communication prevents accidents. Test radios before lift.",
+        "incorrect": "Incorrect. Fast speaking causes miscommunication. Secret codes exclude people and create confusion. Protocol is essential for safety. Clear, confirmed, standardized communication is mandatory. The correct answer is B."
+      }
+    },
+    {
+      "id": 67,
+      "section": 3,
+      "subsection": "F",
+      "topic": "Scaffold Types",
+      "question": "What is a supported scaffold?",
+      "options": {
+        "A": "A scaffold hanging from overhead",
+        "B": "A scaffold that rests on the ground or structure and supports workers from below",
+        "C": "A ladder",
+        "D": "A crane"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Supported scaffolds are platforms supported from below by poles, legs, frames, outriggers, brackets, or similar rigid supports. Examples: frame (tubular) scaffolds, system scaffolds, tube-and-clamp scaffolds. Most common type. Contrast with suspended scaffolds (hung from overhead supports) and aerial lifts (self-propelled).",
+        "incorrect": "Incorrect. Hanging from overhead is suspended scaffold, not supported. Ladders and cranes aren't scaffolds. Supported scaffolds specifically have support from below. The correct answer is B."
+      }
+    },
+    {
+      "id": 68,
+      "section": 3,
+      "subsection": "F",
+      "topic": "Scaffold Safety",
+      "question": "What is the minimum guardrail height required on scaffolds?",
+      "options": {
+        "A": "No guardrails needed",
+        "B": "6 inches",
+        "C": "42 inches ± 3 inches (107 cm)",
+        "D": "100 inches"
+      },
+      "correct_answer": "C",
+      "explanation": {
+        "correct": "Correct! Scaffolds over 10 feet high require guardrail systems with: (1) top rail 42\" ± 3\" above platform, (2) mid-rail at approximately 21\", (3) toe board 4\" high minimum when materials could fall. End frames with intermediate members closer than 19\" can substitute for midrails. Guardrails prevent falls - the leading cause of construction deaths.",
+        "incorrect": "Incorrect. Guardrails are definitely required (not optional). 6\" is way too low. 100\" is excessive. The standard is 42\" ± 3\" for fall protection. The correct answer is C."
+      }
+    },
+    {
+      "id": 69,
+      "section": 4,
+      "subsection": "A",
+      "topic": "Plastic Lined Pipe",
+      "question": "What is plastic-lined steel pipe used for?",
+      "options": {
+        "A": "Potable water only",
+        "B": "Corrosive chemical service where steel strength is needed with corrosion resistance",
+        "C": "Natural gas only",
+        "D": "Decorative purposes"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Plastic-lined steel pipe combines steel's strength and pressure capability with plastic's corrosion resistance. The inner plastic liner (PTFE, PP, PVDF, etc.) contacts the corrosive chemical, while outer steel pipe provides structural strength and pressure containment. Used in chemical plants, mining, and industrial processes. More economical than solid alloy pipe for corrosive service.",
+        "incorrect": "Incorrect. Not limited to water or gas - used for various corrosives. Not decorative - it's functional for corrosion resistance. The key is combining steel strength with plastic corrosion resistance. The correct answer is B."
+      }
+    },
+    {
+      "id": 70,
+      "section": 4,
+      "subsection": "A",
+      "topic": "PTFE Lined Pipe",
+      "question": "What does PTFE stand for in PTFE-lined pipe?",
+      "options": {
+        "A": "Plastic Tube For Everything",
+        "B": "Polytetrafluoroethylene (Teflon)",
+        "C": "Pressure Tested For Emergencies",
+        "D": "Pipe Temperature For Estimation"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! PTFE is Polytetrafluoroethylene, commonly known by DuPont's brand name Teflon. PTFE has exceptional chemical resistance (resists almost all chemicals), wide temperature range (-100°F to +500°F), low friction, and non-stick properties. Expensive but invaluable for highly corrosive chemicals. Used in chemical processing, pharmaceuticals, and food processing.",
+        "incorrect": "Incorrect. The other options are made up. PTFE is the chemical name for Teflon fluoropolymer. It's one of the most chemically resistant materials available. The correct answer is B."
+      }
+    },
+    {
+      "id": 71,
+      "section": 4,
+      "subsection": "A",
+      "topic": "Lined Pipe Installation",
+      "question": "What special precaution is needed when installing plastic-lined pipe?",
+      "options": {
+        "A": "Paint it bright colors",
+        "B": "Avoid damaging the liner during cutting, threading, or joining",
+        "C": "Always use maximum torque",
+        "D": "No special precautions needed"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! The plastic liner can be damaged during installation by: cutting (use special tools), threading (remove chips carefully), over-tightening (liner extrudes/cracks), misalignment, or rough handling. Follow manufacturer installation procedures strictly. Damaged liner allows corrosive fluid to contact steel, causing failure. Visual inspection after assembly is critical.",
+        "incorrect": "Incorrect. Paint color isn't relevant. Maximum torque would damage liner. Special precautions are absolutely necessary. The liner is delicate and critical - improper installation defeats its purpose. The correct answer is B."
+      }
+    },
+    {
+      "id": 72,
+      "section": 4,
+      "subsection": "B",
+      "topic": "Fiberglass Pipe",
+      "question": "What is FRP pipe?",
+      "options": {
+        "A": "Fire Resistant Plastic pipe",
+        "B": "Fiberglass Reinforced Plastic (or Polymer) pipe",
+        "C": "Flat Round Pipe",
+        "D": "Frozen Rigid Pipe"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! FRP is Fiberglass Reinforced Plastic (or Polymer) - composite pipe made of glass fibers embedded in resin matrix (polyester, vinyl ester, or epoxy). Combines light weight, corrosion resistance, strength, and long life. Used for corrosive chemicals, underground piping, seawater, and industrial applications. Can be manufactured in large diameters.",
+        "incorrect": "Incorrect. While FRP has some fire resistance, that's not what the acronym means. It's not about shape (flat/round) or temperature (frozen). FRP specifically means fiberglass reinforcement in plastic matrix. The correct answer is B."
+      }
+    },
+    {
+      "id": 73,
+      "section": 4,
+      "subsection": "B",
+      "topic": "FRP Joining Methods",
+      "question": "How is FRP pipe typically joined?",
+      "options": {
+        "A": "Threaded connections",
+        "B": "Adhesive bonding, bell-and-spigot with elastomer seals, or flanges",
+        "C": "Welding only",
+        "D": "Crimping"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! FRP pipe joining methods: (1) adhesive bonding using compatible resin (strongest, permanent), (2) bell-and-spigot with O-rings or elastomer seals (allows some movement), (3) flanged connections (allows disassembly), (4) mechanical couplings (for repair/retrofit). Cannot be threaded (fibers) or welded (not thermoplastic). Proper surface preparation is critical for adhesive joints.",
+        "incorrect": "Incorrect. FRP can't be threaded (fibers would be cut) or welded like metal or thermoplastics. Crimping isn't suitable. Adhesive bonding and mechanical sealing are correct methods. The correct answer is B."
+      }
+    },
+    {
+      "id": 74,
+      "section": 4,
+      "subsection": "C",
+      "topic": "Cast Iron Pipe",
+      "question": "Where is cast iron soil pipe commonly used?",
+      "options": {
+        "A": "High-pressure steam",
+        "B": "Drain, waste, and vent (DWV) plumbing systems",
+        "C": "Natural gas distribution",
+        "D": "Compressed air"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Cast iron soil pipe is traditionally used for drain, waste, and vent (DWV) systems in buildings. Properties: quiet (dampens water flow noise), fire-resistant, durable, and corrosion-resistant to sewage. Modern systems often use PVC or ABS, but cast iron remains premium choice for commercial buildings due to sound and fire properties. Joined with hubless clamps or hub-and-spigot.",
+        "incorrect": "Incorrect. Cast iron is not suitable for high-pressure steam (too brittle), gas (not code-approved for modern gas systems), or compressed air (other materials better). It's specifically for drainage applications. The correct answer is B."
+      }
+    },
+    {
+      "id": 75,
+      "section": 4,
+      "subsection": "D",
+      "topic": "Stainless Steel Pipe",
+      "question": "Why is stainless steel pipe used instead of carbon steel in many applications?",
+      "options": {
+        "A": "It's cheaper",
+        "B": "Superior corrosion resistance",
+        "C": "It's lighter weight",
+        "D": "It's easier to weld"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Stainless steel's primary advantage is superior corrosion resistance due to chromium content (minimum 10.5%) forming a passive oxide layer. Used for: food/pharmaceutical processing (sanitary), corrosive chemicals, seawater, high-purity systems. Common grades: 304 (general purpose), 316 (better corrosion resistance with molybdenum). More expensive than carbon steel but lasts much longer in corrosive service.",
+        "incorrect": "Incorrect. Stainless costs MORE (not less). Weight is similar to carbon steel. Welding is more difficult (requires special techniques and filler metals). The advantage is corrosion resistance justifying higher cost. The correct answer is B."
+      }
+    },
+    {
+      "id": 76,
+      "section": 4,
+      "subsection": "D",
+      "topic": "Alloy Steel Grades",
+      "question": "What does '316 stainless steel' designation mean?",
+      "options": {
+        "A": "Made in year 316",
+        "B": "A specific alloy grade with chromium, nickel, and molybdenum",
+        "C": "316 pounds per foot",
+        "D": "316 degrees maximum temperature"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! 316 stainless steel is a specific alloy grade: approximately 16-18% chromium, 10-14% nickel, 2-3% molybdenum, balance iron. The molybdenum provides superior corrosion resistance, especially to chlorides and acids. More corrosion-resistant than 304 stainless. Used in marine, chemical, pharmaceutical, and food processing. Common designations: 304 (18-8), 316 (18-10-2), 321, 347.",
+        "incorrect": "Incorrect. 316 doesn't indicate year, weight, or temperature. It's an AISI/SAE alloy designation indicating specific chemical composition. Different grades have different properties. The correct answer is B."
+      }
+    },
+    {
+      "id": 77,
+      "section": 4,
+      "subsection": "D",
+      "topic": "Nickel Alloy Pipe",
+      "question": "When is nickel alloy pipe (like Hastelloy or Inconel) used?",
+      "options": {
+        "A": "For potable water systems",
+        "B": "For extremely corrosive chemicals or high temperatures where stainless steel is inadequate",
+        "C": "For general HVAC",
+        "D": "For drain systems"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Nickel alloys (Hastelloy, Inconel, Monel, etc.) are used for extreme conditions: very corrosive chemicals (hot acids, chlorides), very high temperatures (up to 2000°F), or combinations where stainless steel fails. Extremely expensive but necessary for specific harsh applications: chemical processing, nuclear, aerospace. Each alloy designed for specific environments.",
+        "incorrect": "Incorrect. Nickel alloys are far too expensive for water, HVAC, or drains. They're specialty materials for extreme conditions where nothing else works. The correct answer is B."
+      }
+    },
+    {
+      "id": 78,
+      "section": 4,
+      "subsection": "E",
+      "topic": "Grooved Pipe Fittings",
+      "question": "What is an advantage of grooved pipe fittings (Victaulic-type)?",
+      "options": {
+        "A": "Cannot be disassembled",
+        "B": "Fast installation without welding or threading, and allows some pipe movement",
+        "C": "Only works on plastic pipe",
+        "D": "No gaskets needed"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Grooved (mechanical) pipe fittings offer: (1) fast installation (no welding or threading required), (2) can be disassembled for maintenance, (3) allows some pipe movement/flexibility (thermal expansion, vibration), (4) can join dissimilar materials, (5) reduces fire hazard (no hot work). Groove is cut or rolled in pipe ends; coupling with gasket and bolts joins them. Common in fire protection, HVAC, mining.",
+        "incorrect": "Incorrect. Grooved fittings CAN be disassembled (that's an advantage). Works on steel, copper, some plastics (not just plastic). Gaskets are essential for sealing. The advantages are speed and flexibility. The correct answer is B."
+      }
+    },
+    {
+      "id": 79,
+      "section": 4,
+      "subsection": "E",
+      "topic": "Compression Fittings",
+      "question": "Where are compression fittings commonly used?",
+      "options": {
+        "A": "High-pressure steam",
+        "B": "Instrumentation tubing, water supply, and applications requiring easy disassembly",
+        "C": "Sewage systems",
+        "D": "Nowhere - they're obsolete"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Compression fittings are used where: (1) easy disassembly is needed (instrumentation, maintenance access), (2) welding/brazing isn't practical (existing installations, fire hazard areas), (3) small diameter tubing (instrument air, hydraulics, water lines). Work by compressing ferrule onto tube when nut is tightened. Limited to lower pressures and small sizes compared to welded/brazed.",
+        "incorrect": "Incorrect. Compression fittings aren't suitable for high-pressure steam (temperature and pressure too high) or sewage (typically larger pipe with different joining). They're definitely not obsolete - widely used in instrumentation. The correct answer is B."
+      }
+    },
+    {
+      "id": 80,
+      "section": 4,
+      "subsection": "F",
+      "topic": "Pipe Bending Equipment",
+      "question": "What type of equipment is used for cold bending large steel pipe?",
+      "options": {
+        "A": "Hand benders only",
+        "B": "Hydraulic bending machines or mandrel benders",
+        "C": "Hammers",
+        "D": "Pipe cannot be bent"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Large steel pipe (>2\") is cold bent using: (1) hydraulic rotary draw benders with mandrel support (prevents collapse), (2) compression/ram benders for larger sizes, (3) induction bending (heats small area, bends incrementally). Mandrel inside prevents collapse and wrinkling. Maximum radius depends on pipe size, wall thickness, and material. Proper bending preserves pipe integrity.",
+        "incorrect": "Incorrect. Hand benders only work on small tubing. Hammers would damage/collapse pipe. Pipe can definitely be bent (very common in piping fabrication). Professional bending equipment is required for large pipe. The correct answer is B."
+      }
+    },
+    {
+      "id": 81,
+      "section": 5,
+      "subsection": "A",
+      "topic": "Trigonometry Basics",
+      "question": "In a right triangle, what is the sine of an angle?",
+      "options": {
+        "A": "Adjacent / Hypotenuse",
+        "B": "Opposite / Hypotenuse",
+        "C": "Opposite / Adjacent",
+        "D": "Hypotenuse / Opposite"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! In a right triangle: Sine = Opposite / Hypotenuse. Remember SOH-CAH-TOA: Sine = Opposite/Hypotenuse, Cosine = Adjacent/Hypotenuse, Tangent = Opposite/Adjacent. Used extensively in pipe offset calculations, rolling offsets, and layouts. Essential for pipefitter math.",
+        "incorrect": "Incorrect. Adjacent/Hypotenuse is cosine. Opposite/Adjacent is tangent. Hypotenuse/Opposite is reciprocal of sine (cosecant). Use SOH-CAH-TOA to remember. The correct answer is B."
+      }
+    },
+    {
+      "id": 82,
+      "section": 5,
+      "subsection": "A",
+      "topic": "Right Triangle Applications",
+      "question": "Using the Pythagorean Theorem, if a right triangle has legs of 8\" and 6\", what is the hypotenuse?",
+      "options": {
+        "A": "14 inches",
+        "B": "2 inches",
+        "C": "10 inches",
+        "D": "48 inches"
+      },
+      "correct_answer": "C",
+      "explanation": {
+        "correct": "Correct! Pythagorean Theorem: c² = a² + b². So c² = 8² + 6² = 64 + 36 = 100. Therefore c = √100 = 10 inches. This is a 3-4-5 right triangle scaled by 2 (6-8-10). Common in offset calculations.",
+        "incorrect": "Incorrect. 14 is adding the legs (wrong). 2 is subtracting (wrong). 48 is multiplying (wrong). Must use Pythagorean Theorem: √(8² + 6²) = 10\". The correct answer is C."
+      }
+    },
+    {
+      "id": 83,
+      "section": 5,
+      "subsection": "A",
+      "topic": "Common Right Triangles",
+      "question": "What are the proportions of a 3-4-5 right triangle?",
+      "options": {
+        "A": "Three angles of 3°, 4°, and 5°",
+        "B": "Sides in ratio 3:4:5 where 5 is hypotenuse",
+        "C": "Three sides all equal",
+        "D": "Perimeter of 12 units"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! A 3-4-5 triangle has sides in the ratio 3:4:5 where 5 is the hypotenuse. Can be any scale: 6-8-10, 9-12-15, 30-40-50, etc. Always a right triangle (proves Pythagorean Theorem: 3² + 4² = 9 + 16 = 25 = 5²). Memorizing common right triangles (3-4-5, 5-12-13, 8-15-17) speeds calculations and checking.",
+        "incorrect": "Incorrect. The numbers describe side length ratios, not angles. Sides aren't equal (that's equilateral). While perimeter would be 12 for 3-4-5, that's not what defines it. The ratio of sides is the key. The correct answer is B."
+      }
+    },
+    {
+      "id": 84,
+      "section": 5,
+      "subsection": "A",
+      "topic": "Trigonometric Functions",
+      "question": "What is the tangent of a 45° angle?",
+      "options": {
+        "A": "0",
+        "B": "0.5",
+        "C": "1.0",
+        "D": "1.414"
+      },
+      "correct_answer": "C",
+      "explanation": {
+        "correct": "Correct! Tangent of 45° = 1.0. In a 45-45-90 triangle, opposite and adjacent sides are equal, so Tangent = Opposite/Adjacent = 1/1 = 1.0. Common trig values to memorize: sin 30° = 0.5, cos 30° = 0.866, tan 45° = 1.0, sin 45° = 0.707, cos 45° = 0.707.",
+        "incorrect": "Incorrect. 0 is tan 0°. 0.5 is sin 30°. 1.414 is related to 45° (it's 1/cos 45° or the multiplier for 45° offsets) but not the tangent. Tangent 45° = 1.0. The correct answer is C."
+      }
+    },
+    {
+      "id": 85,
+      "section": 5,
+      "subsection": "B",
+      "topic": "Offset Calculations",
+      "question": "For a rolling offset, if you need to offset 12\" horizontally and 9\" vertically, what is the travel distance?",
+      "options": {
+        "A": "21 inches",
+        "B": "3 inches",
+        "C": "15 inches",
+        "D": "108 inches"
+      },
+      "correct_answer": "C",
+      "explanation": {
+        "correct": "Correct! For a rolling offset with two perpendicular offsets, use Pythagorean Theorem: Travel² = Horizontal² + Vertical² = 12² + 9² = 144 + 81 = 225. Travel = √225 = 15 inches. This is a 3-4-5 triangle scaled by 3 (9-12-15).",
+        "incorrect": "Incorrect. 21 is adding (wrong - can't add perpendicular distances). 3 is subtracting (wrong). 108 is multiplying (wrong). Use Pythagorean Theorem for right-angle offsets. The correct answer is C."
+      }
+    },
+    {
+      "id": 86,
+      "section": 5,
+      "subsection": "B",
+      "topic": "45° Offsets",
+      "question": "If you need a 10\" offset using 45° fittings, what is the travel distance?",
+      "options": {
+        "A": "10 inches",
+        "B": "20 inches",
+        "C": "14.14 inches (10 × 1.414)",
+        "D": "5 inches"
+      },
+      "correct_answer": "C",
+      "explanation": {
+        "correct": "Correct! For 45° offsets: Travel = Offset × 1.414. So Travel = 10\" × 1.414 = 14.14\" (approximately 14-1/8\"). The constant 1.414 is √2. Also remember: Offset = Travel × 0.707 (reciprocal relationship).",
+        "incorrect": "Incorrect. 10\" is the offset, not travel. 20\" uses wrong multiplier (that's for some other angles). 5\" is offset/2 (wrong). For 45° always multiply offset by 1.414 to get travel. The correct answer is C."
+      }
+    },
+    {
+      "id": 87,
+      "section": 5,
+      "subsection": "B",
+      "topic": "Spread Offset",
+      "question": "What is a 'spread' in a pipe offset?",
+      "options": {
+        "A": "The vertical offset distance",
+        "B": "The horizontal distance between the two offset fittings",
+        "C": "The pipe diameter",
+        "D": "The fitting allowance"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! The spread is the horizontal distance measured along the direction of the pipe run between the two offset fittings (where the fittings are located). Combined with the offset (perpendicular distance), these define the offset geometry. Used to calculate travel and fitting angles needed.",
+        "incorrect": "Incorrect. Vertical distance is the offset (or rise). Pipe diameter is separate. Fitting allowance is for cut lengths. Spread specifically means horizontal distance between fittings. The correct answer is B."
+      }
+    },
+    {
+      "id": 88,
+      "section": 5,
+      "subsection": "C",
+      "topic": "Bolt Circle",
+      "question": "How do you calculate the distance between bolt holes on a bolt circle?",
+      "options": {
+        "A": "Diameter divided by number of bolts",
+        "B": "Use formula: Chord = 2 × Radius × sin(180°/Number of bolts)",
+        "C": "Just guess",
+        "D": "Measure after drilling"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Chord distance (straight line between adjacent bolts) = 2 × Radius × sin(180°/N), where N = number of bolts. Example: 8-bolt pattern on 12\" diameter circle: Chord = 2 × 6\" × sin(180°/8) = 12 × sin(22.5°) = 12 × 0.3827 = 4.59\". Alternatively use bolt circle calculators or tables.",
+        "incorrect": "Incorrect. Diameter/bolts doesn't give chord distance. Guessing isn't acceptable for precision work. Measuring after drilling is too late if you drilled wrong. Calculate before layout. The correct answer is B."
+      }
+    },
+    {
+      "id": 89,
+      "section": 5,
+      "subsection": "C",
+      "topic": "Gasket Layout",
+      "question": "Why is accurate bolt hole layout important for gasket joints?",
+      "options": {
+        "A": "For aesthetic appearance only",
+        "B": "To ensure bolts align with mating flange and gasket seats properly",
+        "C": "It's not important",
+        "D": "To use more bolts"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Accurate bolt hole layout ensures: (1) bolt holes align with mating flange holes, (2) gasket seats evenly on flange face, (3) even bolt tension distribution, (4) proper sealing. Misaligned holes prevent assembly or cause leaks from uneven gasket compression. Use dividers or calculations for precise layout.",
+        "incorrect": "Incorrect. This is functional, not cosmetic. Alignment is absolutely critical for assembly and sealing. Bolt count is specified by design, not layout. Precision layout is mandatory for leak-free joints. The correct answer is B."
+      }
+    },
+    {
+      "id": 90,
+      "section": 5,
+      "subsection": "D",
+      "topic": "Orthographic Views",
+      "question": "Which views are typically shown in a three-view orthographic projection?",
+      "options": {
+        "A": "Top, bottom, side",
+        "B": "Front, top, right side",
+        "C": "Inside, outside, edge",
+        "D": "Perspective, isometric, oblique"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Standard three-view orthographic projection shows: Front view (front elevation), Top view (plan view from above), and Right side view (right elevation). These three mutually perpendicular views fully describe the 3D object. Left side, bottom, or rear views can be added if needed for clarity.",
+        "incorrect": "Incorrect. Bottom views are uncommon unless necessary. Inside/outside/edge aren't view types. Perspective/isometric/oblique are pictorial views, not orthographic. Standard views are front, top, right side. The correct answer is B."
+      }
+    },
+    {
+      "id": 91,
+      "section": 5,
+      "subsection": "D",
+      "topic": "Third Angle Projection",
+      "question": "In third-angle projection (North American standard), where is the top view placed relative to the front view?",
+      "options": {
+        "A": "Below the front view",
+        "B": "Above the front view",
+        "C": "To the left of the front view",
+        "D": "Behind the front view"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! In third-angle projection (used in North America), the top view is placed ABOVE the front view, and the right side view is to the RIGHT. It's as if you're looking through the object at each view. European drawings use first-angle projection (opposite arrangement). Check drawing title block for projection type.",
+        "incorrect": "Incorrect. Below is first-angle projection (European). Left and behind aren't standard arrangements. Third-angle places top view above front view. The correct answer is B."
+      }
+    },
+    {
+      "id": 92,
+      "section": 5,
+      "subsection": "E",
+      "topic": "Isometric Drawing",
+      "question": "In an isometric drawing, at what angle from horizontal are the horizontal axes drawn?",
+      "options": {
+        "A": "0° (truly horizontal)",
+        "B": "30° from horizontal",
+        "C": "45° from horizontal",
+        "D": "90° (vertical)"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! In isometric drawings, the two horizontal axes are drawn at 30° from the horizontal plane (one going up-right, one up-left). The vertical axis remains truly vertical. This creates a 3D representation where the three axes are 120° apart. All measurements along these axes are to scale (no perspective distortion).",
+        "incorrect": "Incorrect. 0° would be flat (not isometric). 45° is used in some other pictorial views but not isometric. 90° is the vertical axis only. Isometric specifically uses 30° for horizontal axes. The correct answer is B."
+      }
+    },
+    {
+      "id": 93,
+      "section": 5,
+      "subsection": "E",
+      "topic": "Isometric Pipe Layout",
+      "question": "On an isometric piping drawing, how are vertical pipes drawn?",
+      "options": {
+        "A": "At 30° from horizontal",
+        "B": "Truly vertical (straight up and down)",
+        "C": "At 45° from horizontal",
+        "D": "Horizontally"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! In isometric piping drawings, vertical pipes are drawn truly vertical (straight up and down, 90° from horizontal). North-South pipes are drawn at 30° up to the right, East-West pipes at 30° up to the left. This maintains the isometric 120° axis relationship while showing vertical pipes in their true orientation.",
+        "incorrect": "Incorrect. 30° is for horizontal pipes (North-South and East-West directions). 45° isn't used in standard isometric. Horizontal would be wrong for vertical pipes. Verticals are drawn truly vertical. The correct answer is B."
+      }
+    },
+    {
+      "id": 94,
+      "section": 5,
+      "subsection": "E",
+      "topic": "Isometric Dimensions",
+      "question": "Can you measure distances directly on an isometric drawing with a scale?",
+      "options": {
+        "A": "No - isometric has distortion",
+        "B": "Yes - distances along the three isometric axes are to scale",
+        "C": "Only on vertical lines",
+        "D": "Only on diagonal lines"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Distances measured along the three isometric axes (vertical and the two 30° axes) are drawn to scale and can be measured directly with a scale. This is a key advantage of isometric over perspective drawings (which have distortion). However, distances NOT along these axes (diagonals, angles) cannot be measured directly.",
+        "incorrect": "Incorrect. Isometric doesn't have the foreshortening distortion of perspective. Measurements work on ALL three axes, not just vertical or diagonal. Isometric is true to scale along axes. The correct answer is B."
+      }
+    },
+    {
+      "id": 95,
+      "section": 5,
+      "subsection": "E",
+      "topic": "Piping Spools",
+      "question": "What is a piping 'spool' in fabrication?",
+      "options": {
+        "A": "A storage reel for wire",
+        "B": "A prefabricated pipe assembly that can be transported and installed as a unit",
+        "C": "A type of valve",
+        "D": "A welding rod"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! A pipe spool is a prefabricated pipe assembly (pipes, fittings, flanges, sometimes valves) welded/joined in the shop and transported to site for installation. Advantages: better quality control in shop, faster field installation, safer (less field welding). Spool drawings show detailed dimensions and components. Spools are numbered for identification.",
+        "incorrect": "Incorrect. Wire reels, valves, and welding rods aren't pipe spools. A spool is specifically a pre-assembled pipe section ready for installation. The correct answer is B."
+      }
+    },
+    {
+      "id": 96,
+      "section": 5,
+      "subsection": "E",
+      "topic": "Isometric Symbols",
+      "question": "How are pipe slopes indicated on isometric drawings?",
+      "options": {
+        "A": "They're never shown",
+        "B": "Arrow showing slope direction with gradient notation (e.g., 1:100 or 1%)",
+        "C": "By color only",
+        "D": "By line thickness"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Pipe slopes on isometrics are shown with: (1) arrow pointing in direction of slope (downward direction), (2) slope gradient notation like \"1:100\" (1 in 100, or 1% grade) or \"1/4 in/ft\". Critical for drainage lines, condensate returns, and gravity flow systems. Must be installed as shown for proper operation.",
+        "incorrect": "Incorrect. Slopes are definitely shown (they're critical). Color and line thickness serve other purposes. Arrows with gradient notation are the standard method. The correct answer is B."
+      }
+    },
+    {
+      "id": 97,
+      "section": 5,
+      "subsection": "F",
+      "topic": "Specifications",
+      "question": "What information is found in piping specifications?",
+      "options": {
+        "A": "Only pipe colors",
+        "B": "Material grades, pressure ratings, joining methods, testing requirements, and quality standards",
+        "C": "Only installation dates",
+        "D": "Worker names"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Piping specifications detail: (1) material specifications (pipe grades, fitting classes, flange ratings), (2) joining methods (welding procedures, bolt torques), (3) testing and inspection requirements, (4) quality standards and codes to follow, (5) special requirements (cleaning, flushing, heat treating). Specifications work with drawings to fully define the system.",
+        "incorrect": "Incorrect. Specs aren't about colors (though tags may mention color coding), dates, or personnel. They're comprehensive technical requirements for materials, installation, and quality. The correct answer is B."
+      }
+    },
+    {
+      "id": 98,
+      "section": 5,
+      "subsection": "F",
+      "topic": "Line Designation Tables",
+      "question": "What does a line designation like '2-HS-150-A53B' typically indicate?",
+      "options": {
+        "A": "Nothing - random numbers",
+        "B": "Line size (2 inch), service (high pressure steam), pressure class (150#), material (A53 Grade B)",
+        "C": "The installer's employee number",
+        "D": "The cost of the pipe"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Line designation format typically includes: Size (2\" NPS) - Service code (HS = high pressure steam) - Pressure class (150# flanges) - Material spec (ASTM A53 Grade B). This uniquely identifies every line in the system. Designations appear on drawings, tags, and documentation. Essential for tracking and maintenance.",
+        "incorrect": "Incorrect. Designations aren't random - they're systematic. They don't indicate personnel or costs. Each element has specific meaning for line identification. The correct answer is B."
+      }
+    },
+    {
+      "id": 99,
+      "section": 5,
+      "subsection": "F",
+      "topic": "CSI Format",
+      "question": "What is the CSI (Construction Specifications Institute) format used for?",
+      "options": {
+        "A": "Organizing construction specifications into standardized divisions and sections",
+        "B": "Crime investigation",
+        "C": "Computer programming",
+        "D": "Chemical formulas"
+      },
+      "correct_answer": "A",
+      "explanation": {
+        "correct": "Correct! CSI MasterFormat organizes construction specifications into divisions (e.g., Division 22 = Plumbing, Division 23 = HVAC, Division 40 = Process Integration). Each division has sections with standardized numbering (e.g., 22 05 00 = Common Work Results for Plumbing). Provides consistent organization so specs from different projects have similar structure.",
+        "incorrect": "Incorrect. This CSI is Construction Specifications Institute (not crime investigation, computers, or chemistry). It's specifically for organizing building specs. The correct answer is A."
+      }
+    },
+    {
+      "id": 100,
+      "section": 5,
+      "subsection": "F",
+      "topic": "Material Standards",
+      "question": "What does 'ASTM A53' specify?",
+      "options": {
+        "A": "A type of valve",
+        "B": "Standard specification for pipe, steel, black and hot-dipped, zinc-coated, welded and seamless",
+        "C": "A welding procedure",
+        "D": "A safety regulation"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! ASTM A53 is the specification for carbon steel pipe (black or galvanized, welded or seamless) commonly used in steam, water, gas, and air. Grades A and B differ in strength. ASTM (American Society for Testing and Materials, now ASTM International) publishes thousands of material and testing standards used worldwide.",
+        "incorrect": "Incorrect. ASTM standards cover materials, not valves, welding procedures, or regulations (though related documents exist). A53 specifically defines carbon steel pipe properties. The correct answer is B."
+      }
+    },
+    {
+      "id": 101,
+      "section": 5,
+      "subsection": "G",
+      "topic": "Drawing Views",
+      "question": "What is a plan view?",
+      "options": {
+        "A": "A side view of equipment",
+        "B": "A view looking down from above (top view)",
+        "C": "A front view",
+        "D": "A 3D rendering"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! A plan view (or floor plan) looks down from directly above, showing layout, equipment locations, and horizontal piping arrangements as if the roof was removed. Shows compass orientation (North arrow). Critical for understanding spatial relationships, clearances, and pipe routing. Also called top view.",
+        "incorrect": "Incorrect. Side views are elevations. Front views are front elevations. 3D renderings are perspectives or isometrics. Plan specifically means looking down from above. The correct answer is B."
+      }
+    },
+    {
+      "id": 102,
+      "section": 5,
+      "subsection": "G",
+      "topic": "Elevation Views",
+      "question": "What does an elevation drawing show?",
+      "options": {
+        "A": "Top view only",
+        "B": "Vertical side view showing heights and vertical relationships",
+        "C": "Only text information",
+        "D": "Underground piping only"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Elevation drawings show vertical side views (North, South, East, West elevations, or named sections) displaying: heights, vertical positions, elevation above datum (often finish floor or mean sea level), and vertical relationships between equipment and piping. Essential for determining pipe elevations and vertical clearances.",
+        "incorrect": "Incorrect. Top views are plans, not elevations. Elevations are graphical views, not just text. They show everything at that vertical slice, not just underground. Elevations specifically show vertical information. The correct answer is B."
+      }
+    },
+    {
+      "id": 103,
+      "section": 5,
+      "subsection": "G",
+      "topic": "Section Views",
+      "question": "What is a section view used for?",
+      "options": {
+        "A": "To show only exterior surfaces",
+        "B": "To show internal features by cutting through the object",
+        "C": "To show building exterior only",
+        "D": "To show landscaping"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Section views cut through equipment, buildings, or assemblies along a defined cutting plane to reveal internal construction, pipe routings, internal components, wall thicknesses, and details not visible in exterior views. The cut surface is usually cross-hatched. Labeled 'Section A-A' etc. corresponding to cutting plane line on plan/elevation.",
+        "incorrect": "Incorrect. Sections specifically reveal internal features, not just exteriors. They're not limited to building exteriors or landscaping. The purpose is showing what's inside. The correct answer is B."
+      }
+    },
+    {
+      "id": 104,
+      "section": 5,
+      "subsection": "G",
+      "topic": "Detail Drawings",
+      "question": "What is a detail drawing?",
+      "options": {
+        "A": "A drawing showing the entire building",
+        "B": "An enlarged view of a specific area showing construction/connection details",
+        "C": "A photograph",
+        "D": "A schedule/list only"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Detail drawings are enlarged, zoomed-in views of specific areas requiring additional clarity: complex connections, special constructions, typical assemblies, penetrations, supports, etc. Drawn at larger scale (e.g., 1/2\"=1' or full size) than general drawings. Referenced from main drawings with detail callout bubbles.",
+        "incorrect": "Incorrect. Overall building views are general arrangement drawings. Photos aren't details (though may supplement). Schedules are different documents. Details are specifically enlarged technical views. The correct answer is B."
+      }
+    },
+    {
+      "id": 105,
+      "section": 6,
+      "subsection": "A",
+      "topic": "Natural Gas Properties",
+      "question": "What is the main component of natural gas?",
+      "options": {
+        "A": "Oxygen",
+        "B": "Methane (CH4)",
+        "C": "Carbon dioxide",
+        "D": "Nitrogen"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Natural gas is primarily methane (CH₄), typically 85-95%. Also contains smaller amounts of ethane, propane, butane, nitrogen, CO₂, and trace impurities. Methane is colorless, odorless (mercaptan odorant added for safety), lighter than air (SG ≈ 0.6), and has high heating value (≈1,000 BTU/ft³).",
+        "incorrect": "Incorrect. Oxygen isn't in natural gas (it's the oxidizer from air for combustion). CO₂ and nitrogen are minor components only. Methane is the primary constituent. The correct answer is B."
+      }
+    },
+    {
+      "id": 106,
+      "section": 6,
+      "subsection": "A",
+      "topic": "Propane Properties",
+      "question": "What is the specific gravity of propane vapor compared to air?",
+      "options": {
+        "A": "0.6 (lighter than air)",
+        "B": "1.0 (same as air)",
+        "C": "1.52 (heavier than air)",
+        "D": "10.0 (much heavier)"
+      },
+      "correct_answer": "C",
+      "explanation": {
+        "correct": "Correct! Propane (C₃H₈) vapor has specific gravity of approximately 1.52 (heavier than air). This means propane vapor sinks and accumulates in low areas, basements, and pits - creating explosion hazards. Natural gas (methane) is lighter and rises. This difference is critical for safety - propane leaks collect at floor level.",
+        "incorrect": "Incorrect. 0.6 is natural gas/methane (lighter). 1.0 would be same as air. 10.0 is way too heavy. Propane is specifically heavier at 1.52, which is why it's so dangerous in enclosed low areas. The correct answer is C."
+      }
+    },
+    {
+      "id": 107,
+      "section": 6,
+      "subsection": "A",
+      "topic": "Combustion",
+      "question": "What three elements are required for combustion to occur?",
+      "options": {
+        "A": "Water, earth, and fire",
+        "B": "Fuel, oxygen (air), and ignition source (heat)",
+        "C": "Propane, methane, and butane",
+        "D": "Pressure, temperature, and volume"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! The fire triangle requires three elements: (1) Fuel (gas, oil, wood), (2) Oxygen (from air - 21% oxygen), (3) Ignition source (spark, flame, hot surface). Remove any one element and combustion stops. This principle is fundamental to both fire starting and fire fighting.",
+        "incorrect": "Incorrect. Water/earth/fire are not technical combustion requirements. Different gases are all fuels. Pressure/temperature/volume are gas properties. The three combustion elements are fuel, oxygen, and ignition. The correct answer is B."
+      }
+    },
+    {
+      "id": 108,
+      "section": 6,
+      "subsection": "A",
+      "topic": "Complete vs Incomplete Combustion",
+      "question": "What is produced by complete combustion of hydrocarbon fuels?",
+      "options": {
+        "A": "Carbon monoxide and soot",
+        "B": "Carbon dioxide (CO₂) and water vapor (H₂O)",
+        "C": "Only heat",
+        "D": "Only light"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Complete combustion of hydrocarbons (with sufficient oxygen) produces: CO₂ (carbon dioxide), H₂O (water vapor), and heat. Example: CH₄ + 2O₂ → CO₂ + 2H₂O + heat. Efficient and safe. Incomplete combustion (insufficient oxygen) produces toxic CO (carbon monoxide), soot, and less heat. Proper air supply is critical.",
+        "incorrect": "Incorrect. CO and soot indicate INCOMPLETE combustion (dangerous). Heat and light are released but aren't the only products. Complete combustion specifically produces CO₂ and H₂O. The correct answer is B."
+      }
+    },
+    {
+      "id": 109,
+      "section": 6,
+      "subsection": "A",
+      "topic": "Heating Value",
+      "question": "What is the approximate heating value of natural gas?",
+      "options": {
+        "A": "100 BTU/ft³",
+        "B": "1,000 BTU/ft³",
+        "C": "10,000 BTU/ft³",
+        "D": "100,000 BTU/ft³"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Natural gas has approximately 1,000 BTU per cubic foot (ranges 900-1,100 depending on composition). Propane is higher: ≈2,500 BTU/ft³. Heating value (heat of combustion) is the energy released when fuel completely burns. Used to calculate heat output, fuel consumption, and equipment sizing.",
+        "incorrect": "Incorrect. 100 is too low. 10,000 and 100,000 are way too high. Standard natural gas is approximately 1,000 BTU/ft³. The correct answer is B."
+      }
+    },
+    {
+      "id": 110,
+      "section": 6,
+      "subsection": "A",
+      "topic": "Wobbe Index",
+      "question": "What is the Wobbe Index used for in gas applications?",
+      "options": {
+        "A": "Measuring gas color",
+        "B": "Determining if different gas supplies are interchangeable in appliances",
+        "C": "Measuring pipe size",
+        "D": "Calculating gas age"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Wobbe Index = Heating Value ÷ √(Specific Gravity). Gases with similar Wobbe Index are interchangeable in appliances (produce similar heat output at same pressure). Used to determine if appliances designed for one gas (natural gas) can use another (propane) or if gas composition changes are acceptable. Critical for appliance compatibility.",
+        "incorrect": "Incorrect. Wobbe Index isn't about color, pipe size, or age. It's specifically an interchangeability indicator comparing heating value and density. The correct answer is B."
+      }
+    },
+    {
+      "id": 111,
+      "section": 6,
+      "subsection": "B",
+      "topic": "Gas Regulators",
+      "question": "What is the purpose of a gas pressure regulator?",
+      "options": {
+        "A": "To increase gas pressure",
+        "B": "To reduce and maintain constant outlet pressure despite inlet pressure variations",
+        "C": "To measure gas flow",
+        "D": "To add odor to gas"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Gas regulators reduce high, varying inlet pressure to lower, constant outlet pressure required by appliances. Example: utility supply at 6\" w.c. to 60 psi, regulator reduces to appliance manifold pressure of 3.5-5\" w.c. (natural gas) or 11\" w.c. (propane). Maintains constant pressure despite demand changes. Essential for safe, efficient appliance operation.",
+        "incorrect": "Incorrect. Regulators reduce pressure, not increase it (that's compressors). Flow meters measure flow. Odorant is added at utility plants. Regulators specifically maintain constant downstream pressure. The correct answer is B."
+      }
+    },
+    {
+      "id": 112,
+      "section": 6,
+      "subsection": "B",
+      "topic": "Gas Meters",
+      "question": "What do most residential gas meters measure?",
+      "options": {
+        "A": "Pressure only",
+        "B": "Volume of gas (cubic feet or cubic meters)",
+        "C": "Temperature only",
+        "D": "BTU content"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Residential gas meters measure VOLUME of gas consumed (cubic feet or cubic meters). Utility bills multiply volume × heating value to calculate energy (therms or BTUs) for billing. Common types: diaphragm meters (residential) and rotary meters (commercial). Must be sized for peak demand flow rate.",
+        "incorrect": "Incorrect. Meters measure volume, not just pressure or temperature (though these affect volume measurement). BTU content is calculated from volume × heating value, not directly measured by standard meters. The correct answer is B."
+      }
+    },
+    {
+      "id": 113,
+      "section": 6,
+      "subsection": "B",
+      "topic": "Pressure Relief Vents",
+      "question": "Where must pressure relief vent discharge be terminated?",
+      "options": {
+        "A": "Inside the building",
+        "B": "Outside the building in a safe location away from ignition sources",
+        "C": "Into the sewer",
+        "D": "Anywhere convenient"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Pressure relief vent discharge must terminate outdoors at least 3 feet from openings into buildings, away from ignition sources, and where venting gas won't create hazards. Relief vents discharge gas if regulator fails or pressure exceeds safe limits. Indoor venting would create explosion hazard. Specific code requirements in CSA B149.1.",
+        "incorrect": "Incorrect. Indoor venting is extremely dangerous (explosion risk). Sewer venting is prohibited. Location isn't arbitrary - codes specify safe termination requirements. Must be outdoors and safe. The correct answer is B."
+      }
+    },
+    {
+      "id": 114,
+      "section": 6,
+      "subsection": "B",
+      "topic": "Clocking a Meter",
+      "question": "What is 'clocking' a gas meter?",
+      "options": {
+        "A": "Installing a clock on the meter",
+        "B": "Measuring gas flow rate by timing how long it takes to use a specific volume",
+        "C": "Setting the meter time",
+        "D": "Painting numbers on the meter"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Clocking a meter measures actual gas flow rate by: (1) noting meter reading, (2) timing with stopwatch while appliance runs, (3) noting new meter reading, (4) calculating: Flow (ft³/hr) = (Volume used) × (3600 / seconds). Used to verify appliance input matches rating, check regulator performance, and troubleshoot. Requires appliance to be only gas user during test.",
+        "incorrect": "Incorrect. Not about installing clocks, setting time, or painting. Clocking is a measurement technique using the meter's volume measurement and a timer. The correct answer is B."
+      }
+    },
+    {
+      "id": 115,
+      "section": 6,
+      "subsection": "C",
+      "topic": "Manometers",
+      "question": "What does a manometer measure in gas systems?",
+      "options": {
+        "A": "Temperature",
+        "B": "Pressure (especially low pressures in inches water column)",
+        "C": "Flow rate",
+        "D": "BTU content"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Manometers measure gas pressure, especially low pressures expressed in inches water column (\" w.c. or \" W.C.). U-tube manometer: pressure pushes liquid down one side, up the other - height difference = pressure. Digital manometers display directly. Used to measure appliance manifold pressure, regulator outlet pressure, and check for leaks (pressure drop test).",
+        "incorrect": "Incorrect. Thermometers measure temperature. Flow meters measure flow. Calorimeters measure BTU content. Manometers specifically measure pressure. The correct answer is B."
+      }
+    },
+    {
+      "id": 116,
+      "section": 6,
+      "subsection": "C",
+      "topic": "Combustion Analyzers",
+      "question": "What does a combustion analyzer measure?",
+      "options": {
+        "A": "Only gas pressure",
+        "B": "Flue gas composition (O₂, CO, CO₂) and temperature to assess combustion efficiency",
+        "C": "Only pipe size",
+        "D": "Only gas flow"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Combustion analyzers measure flue gas composition: (1) O₂ (oxygen remaining - indicates excess air), (2) CO (carbon monoxide - indicates incomplete combustion), (3) CO₂ (carbon dioxide), (4) flue gas temperature. Calculates combustion efficiency and identifies problems (insufficient air, overfiring, incomplete combustion). Essential for tuning and troubleshooting burners.",
+        "incorrect": "Incorrect. Pressure gauges measure pressure. Rulers measure size. Flow meters measure flow. Combustion analyzers specifically analyze exhaust gases to assess combustion quality. The correct answer is B."
+      }
+    },
+    {
+      "id": 117,
+      "section": 6,
+      "subsection": "C",
+      "topic": "Leak Detection",
+      "question": "What is the approved method for checking for gas leaks on pipe joints?",
+      "options": {
+        "A": "Using an open flame",
+        "B": "Applying soap solution and checking for bubbles",
+        "C": "Smelling only",
+        "D": "Using water only"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Approved leak detection uses soap solution (liquid dish soap and water) brushed on joints - bubbles indicate leaks. Electronic gas detectors also work. NEVER use open flame (causes fires/explosions). While gas odor helps detect large leaks, small leaks may not be smelled and nose fatigue occurs. Some people can't smell mercaptan. Always use soap test.",
+        "incorrect": "Incorrect. Open flame is extremely dangerous (causes what you're trying to prevent). Smell alone is unreliable. Plain water shows no indication. Soap solution is the safe, reliable standard method. The correct answer is B."
+      }
+    },
+    {
+      "id": 118,
+      "section": 6,
+      "subsection": "D",
+      "topic": "Pilot Burners",
+      "question": "What is the purpose of a pilot burner (standing pilot)?",
+      "options": {
+        "A": "To heat the room",
+        "B": "To provide continuous small flame that ignites main burner when needed",
+        "C": "To measure gas pressure",
+        "D": "To filter gas"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! A standing pilot is a small continuous flame that ignites the main burner when the gas valve opens. Pilots burn constantly (24/7), using small amount of gas. When thermostat calls for heat, main gas valve opens and pilot ignites main burner. Modern appliances often use electronic ignition (intermittent or hot surface) instead to save energy.",
+        "incorrect": "Incorrect. Pilots don't heat rooms (waste heat). They don't measure pressure (that's gauges) or filter gas (that's filters). Pilots specifically provide ignition source for main burner. The correct answer is B."
+      }
+    },
+    {
+      "id": 119,
+      "section": 6,
+      "subsection": "D",
+      "topic": "Thermocouples",
+      "question": "How does a thermocouple safety device work?",
+      "options": {
+        "A": "It measures room temperature",
+        "B": "When heated by pilot flame, it generates millivoltage that holds gas valve open; if pilot goes out, voltage drops and valve closes",
+        "C": "It pumps gas",
+        "D": "It lights the pilot automatically"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! A thermocouple is two dissimilar metals joined at one end (the hot junction in the pilot flame). When heated, it generates small voltage (millivolts) through Seebeck effect. This voltage energizes electromagnet in gas valve, holding it open. If pilot goes out, junction cools, voltage drops, magnet releases, valve closes - preventing unburned gas release. Critical safety device.",
+        "incorrect": "Incorrect. Thermostats measure room temperature. Pumps move gas. Igniters light pilots. Thermocouples specifically generate electricity from heat to control safety shutoff valve. The correct answer is B."
+      }
+    },
+    {
+      "id": 120,
+      "section": 6,
+      "subsection": "D",
+      "topic": "Thermopiles",
+      "question": "What is the difference between a thermocouple and a thermopile?",
+      "options": {
+        "A": "No difference - same device",
+        "B": "Thermopile has multiple thermocouples in series producing higher voltage",
+        "C": "Thermopile is colder",
+        "D": "Thermopile is larger physically only"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! A thermopile is multiple thermocouples connected in series, producing higher voltage (typically 250-750 millivolts vs. 25-30 for single thermocouple). Higher voltage can power millivolt gas valves and thermostats without external power. Used in gas fireplaces, wall heaters, and older furnaces for self-powered operation. Still a safety device - if pilot out, voltage drops, valve closes.",
+        "incorrect": "Incorrect. They're related but different (thermopile = multiple thermocouples). Temperature and physical size aren't the distinctions. The key difference is voltage output from series connection. The correct answer is B."
+      }
+    },
+    {
+      "id": 121,
+      "section": 6,
+      "subsection": "D",
+      "topic": "Troubleshooting Thermocouples",
+      "question": "If a thermocouple fails to hold a pilot valve open, what should be checked?",
+      "options": {
+        "A": "Nothing - just replace immediately",
+        "B": "Thermocouple position in flame, cleanliness, connections, and output voltage",
+        "C": "Only the gas pressure",
+        "D": "The color of the thermocouple"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Troubleshooting thermocouples: (1) verify hot junction is in pilot flame (not too high or to side), (2) check for corrosion, carbon deposits, or damage, (3) verify tight electrical connections, (4) measure output voltage with pilot lit (should be 25-30 mV for thermocouples, higher for thermopiles), (5) if voltage low, clean or replace. Many \"bad thermocouples\" just need repositioning or cleaning.",
+        "incorrect": "Incorrect. Immediate replacement wastes money if the problem is positioning/cleaning. Gas pressure affects pilot size but not thermocouple directly. Color isn't diagnostic. Systematic troubleshooting is correct. The correct answer is B."
+      }
+    },
+    {
+      "id": 122,
+      "section": 5,
+      "subsection": "B",
+      "topic": "Equal Spread Offset",
+      "question": "In an equal spread offset, if the offset is 10\" and spread is 20\", what angle fittings are needed?",
+      "options": {
+        "A": "90° fittings",
+        "B": "45° fittings",
+        "C": "Approximately 26.5° fittings (tan⁻¹(10/20))",
+        "D": "22.5° fittings"
+      },
+      "correct_answer": "C",
+      "explanation": {
+        "correct": "Correct! Angle = tan⁻¹(Offset/Spread) = tan⁻¹(10/20) = tan⁻¹(0.5) = 26.57°. Use next available standard angle fitting (22.5° or 30°) or fabricate custom angle. Also: Travel = √(Offset² + Spread²) = √(100 + 400) = √500 = 22.36\".",
+        "incorrect": "Incorrect. 90° would go straight up. 45° is for equal offset and spread (10\" offset, 10\" spread). 22.5° is close but the calculated angle is 26.5°. The correct answer is C."
+      }
+    },
+    {
+      "id": 123,
+      "section": 2,
+      "subsection": "A",
+      "topic": "Primary-Secondary Pumping",
+      "question": "What is primary-secondary pumping in hydronic systems?",
+      "options": {
+        "A": "Using two identical pumps",
+        "B": "Separating production loop (primary) from distribution loops (secondary) with common pipe",
+        "C": "Having a backup pump only",
+        "D": "Pumping in sequence"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Primary-secondary pumping uses: (1) Primary loop circulating through boiler(s) at constant flow, (2) Secondary loop(s) for distribution with variable flow, (3) Common pipe (closely-spaced tees) connecting them with minimal pressure drop. Allows different flow rates in each circuit. Primary protects boiler from low flow; secondary provides variable flow for zones. Efficient and flexible.",
+        "incorrect": "Incorrect. Not about identical pumps or simple backup. Not sequential operation. Primary-secondary specifically separates production from distribution loops. The correct answer is B."
+      }
+    },
+    {
+      "id": 124,
+      "section": 3,
+      "subsection": "B",
+      "topic": "Wire Rope Lubrication",
+      "question": "Why should wire rope be lubricated?",
+      "options": {
+        "A": "To make it look better",
+        "B": "To reduce internal friction, prevent corrosion, and extend service life",
+        "C": "To increase weight",
+        "D": "It should never be lubricated"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Wire rope lubrication: (1) reduces internal friction between wires and strands, (2) prevents corrosion, (3) displaces moisture, (4) extends service life. Factory lubrication wears off - periodic re-lubrication needed, especially for outdoor or marine use. Use proper wire rope lubricant (penetrating, not too thick). Over-lubrication attracts dirt.",
+        "incorrect": "Incorrect. Lubrication is functional, not cosmetic. Adding weight isn't beneficial. Wire rope SHOULD be lubricated per manufacturer recommendations. Proper lubrication is essential maintenance. The correct answer is B."
+      }
+    },
+    {
+      "id": 125,
+      "section": 5,
+      "subsection": "E",
+      "topic": "Bill of Materials",
+      "question": "What is a Bill of Materials (BOM) on piping drawings?",
+      "options": {
+        "A": "The cost of materials",
+        "B": "List of all materials, components, and quantities required for the project",
+        "C": "Names of workers",
+        "D": "Delivery schedule"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Bill of Materials (BOM, material list, material takeoff) itemizes: (1) all pipes (sizes, lengths, material specs), (2) fittings (types, sizes, quantities), (3) valves, (4) flanges, gaskets, bolts, (5) specialties and supports. Used for: estimating, purchasing, fabrication, and installation. Generated from drawings. Critical for project planning and cost control.",
+        "incorrect": "Incorrect. BOM lists items and quantities, not costs (though used for costing). Doesn't list personnel or schedules. It's specifically a materials inventory. The correct answer is B."
+      }
+    },
+    {
+      "id": 126,
+      "section": 4,
+      "subsection": "F",
+      "topic": "Pipe Bending Gain",
+      "question": "What is 'gain' in pipe bending?",
+      "options": {
+        "A": "Weight added to pipe",
+        "B": "The difference between the sum of leg lengths and the developed length of the bend",
+        "C": "Profit from the job",
+        "D": "Increase in pipe diameter"
+      },
+      "correct_answer": "B",
+      "explanation": {
+        "correct": "Correct! Gain is the difference between: (Sum of straight leg lengths measured from corner) minus (Actual developed length around the bend). Bending takes less pipe than a sharp corner would. Example: 90° bend with 12\" legs from corner, 6\" radius: straight legs = 24\", developed length ≈ 14.6\", gain ≈ 9.4\". Must subtract gain when calculating cut length for bent pipe.",
+        "incorrect": "Incorrect. Gain isn't about weight, money, or diameter changes. It's specifically the geometric difference between corner measurement and actual bend length. Critical for accurate pipe cutting. The correct answer is B."
+      }
+    }
+  ]
+}
