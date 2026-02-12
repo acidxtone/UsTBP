@@ -22,6 +22,7 @@ export default function Study() {
   const { user } = useAuth();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedSection, setSelectedSection] = useState('all');
+  const [visibleQuestionCount, setVisibleQuestionCount] = useState(10);
   const navigate = useNavigate();
   const queryClient = useQueryClient();
 
@@ -247,7 +248,7 @@ export default function Study() {
               </Card>
             ) : (
               <div className="space-y-4">
-                {filteredQuestions.slice(0, 10).map((question, index) => (
+                {filteredQuestions.slice(0, visibleQuestionCount).map((question, index) => (
                   <motion.div
                     key={question.id}
                     initial={{ opacity: 0, y: 20 }}
@@ -316,9 +317,16 @@ export default function Study() {
                     </Card>
                   </motion.div>
                 ))}
-                {filteredQuestions.length > 10 && (
+                {filteredQuestions.length > visibleQuestionCount && (
                   <div className="text-center">
-                    <Button variant="outline">
+                    <Button 
+                      variant="outline"
+                      onClick={() => {
+                        setVisibleQuestionCount((prev) => 
+                          Math.min(prev + 10, filteredQuestions.length)
+                        );
+                      }}
+                    >
                       Load More Questions
                       <ChevronRight className="h-4 w-4 ml-1" />
                     </Button>
