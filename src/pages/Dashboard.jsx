@@ -269,14 +269,7 @@ export default function Dashboard() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.25 }}
           >
-            <SectionProgress sectionStats={progress?.section_stats || {
-              // Mock data for testing - remove this after testing
-              1: { attempted: 15, correct: 12 }, // 80% - Excellent
-              2: { attempted: 25, correct: 15 }, // 60% - Needs Work  
-              3: { attempted: 10, correct: 8 },  // 80% - Excellent
-              4: { attempted: 0, correct: 0 },   // Not Started
-              5: { attempted: 20, correct: 11 }  // 55% - Needs Work
-            }} />
+            <SectionProgress sectionStats={progress?.section_stats || {}} />
           </motion.div>
 
           {/* Quiz Modes */}
