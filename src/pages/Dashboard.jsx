@@ -61,6 +61,10 @@ export default function Dashboard() {
       if (!user?.id || !user?.selected_year) return null;
       const result = await api.userProgress.get(user.id, user.selected_year);
       console.log('🔧 Dashboard: Progress data received:', result);
+      console.log('🔧 Dashboard: Section stats:', result?.section_stats);
+      console.log('🔧 Dashboard: Total questions answered:', result?.total_questions_answered);
+      console.log('🔧 Dashboard: Total correct:', result?.total_correct);
+      console.log('🔧 Dashboard: Quizzes completed:', result?.quizzes_completed);
       return result;
     },
     enabled: !!user?.id && !!user?.selected_year

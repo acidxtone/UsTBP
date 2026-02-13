@@ -188,6 +188,7 @@ export default function Quiz() {
       }
     },
     onSuccess: () => {
+      console.log('🎯 Quiz: Progress updated successfully, invalidating queries');
       queryClient.invalidateQueries(['userProgress', user?.selected_year]);
     }
   });
@@ -253,6 +254,10 @@ export default function Quiz() {
       question_results: finalAnswers,
       completed: true
     };
+
+    console.log('🎯 Quiz: Completion results:', results);
+    console.log('🎯 Quiz: Section scores calculated:', sectionScores);
+    console.log('🎯 Quiz: Progress data to be saved:', progressData);
 
     updateProgressMutation.mutate(results);
     setQuizComplete(true);
