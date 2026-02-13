@@ -92,7 +92,10 @@ export default function Quiz() {
 
     // Filter for weak areas mode
     if (mode === 'weak_areas' && progress?.weak_questions) {
+      console.log('🎯 Quiz: Weak areas mode, filtering questions');
+      console.log('🎯 Quiz: Weak question IDs:', progress.weak_questions);
       filtered = filtered.filter(q => progress.weak_questions.includes(q.id));
+      console.log('🎯 Quiz: Filtered weak questions count:', filtered.length);
     }
 
     // Filter for bookmarked mode
@@ -334,6 +337,9 @@ export default function Quiz() {
           onHome={() => navigate(createPageUrl('Dashboard'))}
           onReviewWrong={() => {
             const wrongIds = answers.filter(a => !a.correct).map(a => a.question_id);
+            console.log('🎯 Quiz: Review Wrong clicked');
+            console.log('🎯 Quiz: Wrong IDs:', wrongIds);
+            console.log('🎯 Quiz: Navigation URL:', createPageUrl('Quiz') + `?mode=review&ids=${wrongIds.join(',')}`);
             navigate(createPageUrl('Quiz') + `?mode=review&ids=${wrongIds.join(',')}`);
           }}
         />
