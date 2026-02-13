@@ -60,7 +60,7 @@ export default function Quiz() {
   const [isPaused, setIsPaused] = useState(false);
   const [showExitDialog, setShowExitDialog] = useState(false);
   const [quizComplete, setQuizComplete] = useState(false);
-  const [startTime] = useState(Date.now());
+  const [startTime, setStartTime] = useState(Date.now());
   const [bookmarkedQuestions, setBookmarkedQuestions] = useState([]);
   const [quizQuestions, setQuizQuestions] = useState([]);
 
@@ -84,10 +84,12 @@ export default function Quiz() {
   const { data: progress } = useQuery({
     queryKey: ['userProgress', user?.selected_year],
     queryFn: async () => {
-      const results = await api.entities.UserProgress.filter({ created_by: user?.email, year: user?.selected_year });
-      return results[0] || null;
+      if (!user?.id || !user?.selected_year) return null;
+      const result = await api.userProgress.get(user.id, user.selected_year);
+      console.log('🎯 Quiz: Progress data loaded:', result);
+      return result;
     },
-    enabled: !!user?.email && !!user?.selected_year
+    enabled: !!user?.id && !!user?.selected_year
   });
 
   // Select questions based on mode
@@ -293,12 +295,31 @@ export default function Quiz() {
     completeQuiz(answers);
   };
 
-  const toggleBookmark = () => {
+  const toggleBookmark = async () => {
     const questionId = currentQuestion.id;
+    let newBookmarkedQuestions;
+    
     if (bookmarkedQuestions.includes(questionId)) {
-      setBookmarkedQuestions(bookmarkedQuestions.filter(id => id !== questionId));
+      newBookmarkedQuestions = bookmarkedQuestions.filter(id => id !== questionId);
     } else {
-      setBookmarkedQuestions([...bookmarkedQuestions, questionId]);
+      newBookmarkedQuestions = [...bookmarkedQuestions, questionId];
+    }
+    
+    setBookmarkedQuestions(newBookmarkedQuestions);
+    
+    // Save to database
+    try {
+      const existing = progress;
+      const progressData = {
+        bookmarked_questions: newBookmarkedQuestions,
+      };
+      
+      if (existing?.id) {
+        await api.entities.UserProgress.update(existing.id, { ...progressData, _year: user?.selected_year });
+      }
+      console.log('🎯 Quiz: Bookmarks saved to database');
+    } catch (error) {
+      console.error('🎯 Quiz: Error saving bookmarks:', error);
     }
   };
 
@@ -310,11 +331,16 @@ export default function Quiz() {
     }
   };
 
-  const confirmExit = () => {
+  const confirmExit = async () => {
     if (answers.length > 0) {
-      completeQuiz(answers);
+      await completeQuiz(answers);
+      // Wait a moment for the save to complete
+      setTimeout(() => {
+        navigate(createPageUrl('Dashboard'));
+      }, 500);
+    } else {
+      navigate(createPageUrl('Dashboard'));
     }
-    navigate(createPageUrl('Dashboard'));
   };
 
   if (isLoading || quizQuestions.length === 0) {
@@ -356,7 +382,10 @@ export default function Quiz() {
             section_scores: sectionScores,
             question_results: answers
           }}
-          onRetry={() => window.location.reload()}
+          onRetry={() => {
+    setStartTime(Date.now());
+    window.location.reload();
+  }}
           onHome={() => navigate(createPageUrl('Dashboard'))}
           onReviewWrong={() => {
             const wrongIds = answers.filter(a => !a.correct).map(a => a.question_id);
