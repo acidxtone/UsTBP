@@ -217,7 +217,7 @@ export default function Quiz() {
     },
     onSuccess: () => {
       console.log('🎯 Quiz: Progress updated successfully, invalidating queries');
-      queryClient.invalidateQueries(['userProgress', user?.selected_year]);
+      queryClient.invalidateQueries({ queryKey: ['userProgress'] });
     }
   });
 
@@ -285,7 +285,6 @@ export default function Quiz() {
 
     console.log('🎯 Quiz: Completion results:', results);
     console.log('🎯 Quiz: Section scores calculated:', sectionScores);
-    console.log('🎯 Quiz: Progress data to be saved:', progressData);
 
     updateProgressMutation.mutate(results);
     setQuizComplete(true);
@@ -331,16 +330,45 @@ export default function Quiz() {
     }
   };
 
-  const confirmExit = async () => {
-    if (answers.length > 0) {
-      await completeQuiz(answers);
-      // Wait a moment for the save to complete
-      setTimeout(() => {
-        navigate(createPageUrl('Dashboard'));
-      }, 500);
-    } else {
+  const saveProgressAndExit = useCallback(async () => {
+    if (answers.length === 0) {
+      navigate(createPageUrl('Dashboard'));
+      return;
+    }
+    const correctCount = answers.filter(a => a.correct).length;
+    const timeTaken = Math.floor((Date.now() - startTime) / 1000);
+    const sectionScores = {};
+    answers.forEach(a => {
+      if (!sectionScores[a.section]) sectionScores[a.section] = { total: 0, correct: 0 };
+      sectionScores[a.section].total++;
+      if (a.correct) sectionScores[a.section].correct++;
+    });
+    Object.keys(sectionScores).forEach(sec => {
+      sectionScores[sec].percentage = (sectionScores[sec].correct / sectionScores[sec].total) * 100;
+    });
+    const results = {
+      mode,
+      total_questions: answers.length,
+      correct_answers: correctCount,
+      score_percentage: (correctCount / answers.length) * 100,
+      time_taken_seconds: timeTaken,
+      section_scores: sectionScores,
+      question_results: answers,
+      completed: true
+    };
+    try {
+      await updateProgressMutation.mutateAsync(results);
+      setShowExitDialog(false);
+      navigate(createPageUrl('Dashboard'));
+    } catch (err) {
+      console.error('Failed to save progress on exit:', err);
+      setShowExitDialog(false);
       navigate(createPageUrl('Dashboard'));
     }
+  }, [answers, startTime, mode, updateProgressMutation, navigate]);
+
+  const confirmExit = () => {
+    saveProgressAndExit();
   };
 
   if (isLoading || quizQuestions.length === 0) {
@@ -461,7 +489,7 @@ export default function Quiz() {
           <AlertDialogHeader>
             <AlertDialogTitle>Exit Quiz?</AlertDialogTitle>
             <AlertDialogDescription>
-              You've answered {answers.length} of {quizQuestions.length} questions. 
+              You&apos;ve answered {answers.length} of {quizQuestions.length} question{quizQuestions.length !== 1 ? 's' : ''}.
               Your progress will be saved if you exit now.
             </AlertDialogDescription>
           </AlertDialogHeader>

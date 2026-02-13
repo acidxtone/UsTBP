@@ -90,6 +90,18 @@ const entities = {
   },
 
   UserProgress: {
+    async get(_userId, year) {
+      if (year == null) return null;
+      const key = progressKey(year);
+      const raw = localStorage.getItem(key);
+      if (!raw) return null;
+      try {
+        return JSON.parse(raw);
+      } catch {
+        return null;
+      }
+    },
+
     async filter({ created_by, year }) {
       const key = progressKey(year);
       const raw = localStorage.getItem(key);

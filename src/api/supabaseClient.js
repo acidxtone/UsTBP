@@ -299,6 +299,42 @@ const entities = {
   },
 
   UserProgress: {
+    async get(userId, year) {
+      try {
+        const { data: user } = await supabase.auth.getUser();
+        if (!user?.user) return null;
+        if (year == null) return null;
+
+        const { data, error } = await supabase
+          .from('user_progress')
+          .select('*')
+          .eq('user_id', user.user.id)
+          .eq('year', year)
+          .maybeSingle();
+
+        if (error && error.code !== 'PGRST116') {
+          console.error('Error fetching user progress:', error);
+          return null;
+        }
+        if (!data) return null;
+
+        const progressData = data.progress_data || {};
+        const statistics = data.statistics || {};
+        return {
+          ...data,
+          ...progressData,
+          ...statistics,
+          bookmarked_questions: data.bookmarks || progressData.bookmarked_questions || [],
+          weak_questions: data.weak_areas || progressData.weak_questions || [],
+          created_by: user.user.email,
+          year: data.year
+        };
+      } catch (error) {
+        console.error('Error in userProgress.get:', error);
+        return null;
+      }
+    },
+
     async filter({ created_by, year }) {
       try {
         const { data: user } = await supabase.auth.getUser();
