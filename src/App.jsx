@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster"
 import { QueryClientProvider } from '@tanstack/react-query'
 import { queryClientInstance } from '@/lib/query-client'
 import NavigationTracker from '@/lib/NavigationTracker'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import PageNotFound from '@/lib/PageNotFound';
 import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import { AdProvider, SideAd, StickyHeaderAd, StickyFooterAd } from '@/components/ads/AdProvider';
@@ -39,6 +39,7 @@ const LayoutWrapper = ({ children, currentPageName }) => {
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isAuthenticated } = useAuth();
+  const location = useLocation();
 
   if (isLoadingAuth) {
     return (
@@ -82,7 +83,7 @@ const AuthenticatedApp = () => {
       } />
       <Route path="/Quiz" element={
         <LayoutWrapper currentPageName="Quiz">
-          <Quiz />
+          <Quiz key={location.search || 'default'} />
         </LayoutWrapper>
       } />
       <Route path="/QuizSetup" element={
