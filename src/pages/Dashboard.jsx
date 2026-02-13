@@ -59,7 +59,9 @@ export default function Dashboard() {
     queryKey: ['userProgress', user?.id, user?.selected_year],
     queryFn: async () => {
       if (!user?.id || !user?.selected_year) return null;
-      const result = await api.userProgress.get(user.id, user.selected_year);
+      const year = user.selected_year != null ? Number(user.selected_year) : null;
+      if (year == null || Number.isNaN(year)) return null;
+      const result = await api.userProgress.get(user.id, year);
       console.log('🔧 Dashboard: Progress data received:', result);
       console.log('🔧 Dashboard: Section stats:', result?.section_stats);
       console.log('🔧 Dashboard: Total questions answered:', result?.total_questions_answered);
@@ -67,7 +69,8 @@ export default function Dashboard() {
       console.log('🔧 Dashboard: Quizzes completed:', result?.quizzes_completed);
       return result;
     },
-    enabled: !!user?.id && !!user?.selected_year
+    enabled: !!user?.id && !!user?.selected_year,
+    refetchOnWindowFocus: true
   });
 
   const { data: questions = [] } = useQuery({

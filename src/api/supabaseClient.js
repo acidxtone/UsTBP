@@ -304,12 +304,14 @@ const entities = {
         const { data: user } = await supabase.auth.getUser();
         if (!user?.user) return null;
         if (year == null) return null;
+        const yearNum = typeof year === 'string' ? parseInt(year, 10) : Number(year);
+        if (Number.isNaN(yearNum)) return null;
 
         const { data, error } = await supabase
           .from('user_progress')
           .select('*')
           .eq('user_id', user.user.id)
-          .eq('year', year)
+          .eq('year', yearNum)
           .maybeSingle();
 
         if (error && error.code !== 'PGRST116') {
@@ -398,9 +400,13 @@ const entities = {
           throw new Error('User not authenticated');
         }
 
-        // Extract year from payload or _year
-        const year = payload.year || payload._year;
+        // Extract year from payload or _year (normalize to number for DB consistency)
+        const yearRaw = payload.year ?? payload._year;
+        const year = yearRaw != null ? (typeof yearRaw === 'number' ? yearRaw : parseInt(String(yearRaw), 10)) : null;
         delete payload._year;
+        if (year == null || Number.isNaN(year)) {
+          throw new Error('Year is required for user progress');
+        }
 
         // Separate fields that go into JSONB vs direct columns
         const {
@@ -480,8 +486,9 @@ const entities = {
           throw new Error('User not authenticated');
         }
 
-        // Extract year from payload or _year
-        const year = payload.year || payload._year;
+        // Extract year from payload or _year (normalize to number)
+        const yearRaw = payload.year ?? payload._year;
+        const year = yearRaw != null ? (typeof yearRaw === 'number' ? yearRaw : parseInt(String(yearRaw), 10)) : undefined;
         delete payload._year;
 
         // Get existing data to merge

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useAuth } from '@/lib/AuthContext';
-import { api } from '@/api/supabaseClient';  // ← Use Supabase directly like Study.jsx
+import { api } from '@/lib/api-client';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { useNavigate } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
@@ -44,13 +44,10 @@ export default function Quiz() {
   console.log('🎯 Quiz: Difficulty:', difficulty);
   console.log('🎯 Quiz: IDs:', ids);
 
-  // Handle review mode
-  let reviewIds = null;
-  if (mode === 'review' && ids) {
-    console.log('🎯 Quiz: Review mode detected with IDs:', ids);
-    reviewIds = ids.split(',').map(id => parseInt(id.trim()));
-    console.log('🎯 Quiz: Parsed review IDs:', reviewIds);
-  }
+  // Handle review mode — support both integer and string IDs (e.g. UUID from Supabase)
+  const reviewIdSet = mode === 'review' && ids
+    ? new Set(ids.split(',').map(s => s.trim()).filter(Boolean))
+    : null;
 
   const { user } = useAuth();
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -121,11 +118,9 @@ export default function Quiz() {
       filtered = filtered.filter(q => progress.bookmarked_questions.includes(q.id));
     }
 
-    // Filter for review mode
-    if (mode === 'review' && reviewIds) {
-      console.log('🎯 Quiz: Filtering for review mode with IDs:', reviewIds);
-      filtered = allQuestions.filter(q => reviewIds.includes(q.id));
-      console.log('🎯 Quiz: Review questions filtered:', filtered.length);
+    // Filter for review mode (match by string or number id)
+    if (mode === 'review' && reviewIdSet && reviewIdSet.size > 0) {
+      filtered = allQuestions.filter(q => reviewIdSet.has(String(q.id)) || reviewIdSet.has(Number(q.id)));
     }
 
     // Shuffle and limit
@@ -149,7 +144,7 @@ export default function Quiz() {
     } else {
       setQuizQuestions(selected);
     }
-  }, [allQuestions, mode, section, difficulty, questionCount, progress]);
+  }, [allQuestions, mode, section, difficulty, questionCount, progress, ids]);
 
   useEffect(() => {
     if (progress?.bookmarked_questions) {
@@ -172,11 +167,12 @@ export default function Quiz() {
 
       const mergedSectionStats = { ...(existing?.section_stats || {}) };
       Object.entries(sectionScores).forEach(([sec, data]) => {
-        if (!mergedSectionStats[sec]) {
-          mergedSectionStats[sec] = { attempted: 0, correct: 0 };
+        const key = String(sec);
+        if (!mergedSectionStats[key]) {
+          mergedSectionStats[key] = { attempted: 0, correct: 0 };
         }
-        mergedSectionStats[sec].attempted += data.attempted;
-        mergedSectionStats[sec].correct += data.correct;
+        mergedSectionStats[key].attempted += data.attempted;
+        mergedSectionStats[key].correct += data.correct;
       });
 
       const wrongIds = results.question_results
@@ -208,7 +204,11 @@ export default function Quiz() {
         last_study_date: today
       };
 
-      const year = user?.selected_year;
+      const year = user?.selected_year != null ? Number(user.selected_year) : null;
+      if (year == null || Number.isNaN(year)) {
+        console.error('🎯 Quiz: Cannot save progress — no selected year');
+        return;
+      }
       if (existing?.id) {
         await api.entities.UserProgress.update(existing.id, { ...progressData, _year: year });
       } else {
@@ -286,8 +286,13 @@ export default function Quiz() {
     console.log('🎯 Quiz: Completion results:', results);
     console.log('🎯 Quiz: Section scores calculated:', sectionScores);
 
-    updateProgressMutation.mutate(results);
-    setQuizComplete(true);
+    updateProgressMutation.mutate(results, {
+      onSuccess: () => setQuizComplete(true),
+      onError: (err) => {
+        console.error('🎯 Quiz: Failed to save progress', err);
+        setQuizComplete(true);
+      }
+    });
   }, [startTime, mode, updateProgressMutation]);
 
   const handleTimeUp = () => {
@@ -372,6 +377,20 @@ export default function Quiz() {
   };
 
   if (isLoading || quizQuestions.length === 0) {
+    // Review mode with no matching questions — show empty state instead of infinite loading
+    if (mode === 'review' && !isLoading && allQuestions.length > 0 && quizQuestions.length === 0) {
+      return (
+        <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 flex items-center justify-center p-4">
+          <div className="text-center max-w-md">
+            <p className="text-slate-700 font-medium mb-2">No questions to review</p>
+            <p className="text-slate-500 text-sm mb-6">The questions for this review could not be loaded. They may be from a different year.</p>
+            <Button onClick={() => navigate(createPageUrl('Dashboard'))} className="bg-slate-900 hover:bg-slate-800">
+              Back to Dashboard
+            </Button>
+          </div>
+        </div>
+      );
+    }
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 flex items-center justify-center">
         <div className="text-center">
