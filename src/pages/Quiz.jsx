@@ -35,6 +35,21 @@ export default function Quiz() {
   const timeLimit = parseInt(urlParams.get('timeLimit')) || questionCount * 108;
   const difficulty = urlParams.get('difficulty') || 'mixed';
   const showExplanationsMode = urlParams.get('explanations') || 'immediate';
+  const ids = urlParams.get('ids');
+
+  console.log('🎯 Quiz: URL Parameters parsed:');
+  console.log('🎯 Quiz: Mode:', mode);
+  console.log('🎯 Quiz: Question Count:', questionCount);
+  console.log('🎯 Quiz: Section:', section);
+  console.log('🎯 Quiz: Difficulty:', difficulty);
+  console.log('🎯 Quiz: IDs:', ids);
+
+  // Handle review mode
+  if (mode === 'review' && ids) {
+    console.log('🎯 Quiz: Review mode detected with IDs:', ids);
+    const reviewIds = ids.split(',').map(id => parseInt(id.trim()));
+    console.log('🎯 Quiz: Parsed review IDs:', reviewIds);
+  }
 
   const { user } = useAuth();
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -101,6 +116,13 @@ export default function Quiz() {
     // Filter for bookmarked mode
     if (mode === 'bookmarked' && progress?.bookmarked_questions) {
       filtered = filtered.filter(q => progress.bookmarked_questions.includes(q.id));
+    }
+
+    // Filter for review mode
+    if (mode === 'review' && reviewIds) {
+      console.log('🎯 Quiz: Filtering for review mode with IDs:', reviewIds);
+      filtered = allQuestions.filter(q => reviewIds.includes(q.id));
+      console.log('🎯 Quiz: Review questions filtered:', filtered.length);
     }
 
     // Shuffle and limit
