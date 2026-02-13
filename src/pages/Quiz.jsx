@@ -45,9 +45,10 @@ export default function Quiz() {
   console.log('🎯 Quiz: IDs:', ids);
 
   // Handle review mode
+  let reviewIds = null;
   if (mode === 'review' && ids) {
     console.log('🎯 Quiz: Review mode detected with IDs:', ids);
-    const reviewIds = ids.split(',').map(id => parseInt(id.trim()));
+    reviewIds = ids.split(',').map(id => parseInt(id.trim()));
     console.log('🎯 Quiz: Parsed review IDs:', reviewIds);
   }
 
