@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { BannerAd } from '@/components/ads/AdSense';
+import SectionProgress from '@/components/dashboard/SectionProgress';
 
 export default function Dashboard() {
   const { user } = useAuth();
@@ -59,6 +60,7 @@ export default function Dashboard() {
     queryFn: async () => {
       if (!user?.id || !user?.selected_year) return null;
       const result = await api.userProgress.get(user.id, user.selected_year);
+      console.log('🔧 Dashboard: Progress data received:', result);
       return result;
     },
     enabled: !!user?.id && !!user?.selected_year
@@ -259,6 +261,22 @@ export default function Dashboard() {
                 </div>
               </CardContent>
             </Card>
+          </motion.div>
+
+          {/* Section Progress */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.25 }}
+          >
+            <SectionProgress sectionStats={progress?.section_stats || {
+              // Mock data for testing - remove this after testing
+              1: { attempted: 15, correct: 12 }, // 80% - Excellent
+              2: { attempted: 25, correct: 15 }, // 60% - Needs Work  
+              3: { attempted: 10, correct: 8 },  // 80% - Excellent
+              4: { attempted: 0, correct: 0 },   // Not Started
+              5: { attempted: 20, correct: 11 }  // 55% - Needs Work
+            }} />
           </motion.div>
 
           {/* Quiz Modes */}

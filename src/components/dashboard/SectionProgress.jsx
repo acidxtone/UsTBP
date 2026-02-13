@@ -13,6 +13,8 @@ const sectionInfo = {
 };
 
 export default function SectionProgress({ sectionStats = {} }) {
+  console.log('🔧 SectionProgress: sectionStats received:', sectionStats);
+  
   const sections = Object.entries(sectionInfo).map(([num, info]) => {
     const stats = sectionStats[num] || { attempted: 0, correct: 0 };
     const percentage = stats.attempted > 0 
@@ -28,6 +30,8 @@ export default function SectionProgress({ sectionStats = {} }) {
       status
     };
   });
+
+  console.log('🔧 SectionProgress: processed sections:', sections);
 
   const getStatusIcon = (status, percentage) => {
     if (status === "not_started") return <Minus className="h-4 w-4 text-slate-400" />;
