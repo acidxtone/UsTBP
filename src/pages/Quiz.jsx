@@ -127,19 +127,32 @@ export default function Quiz() {
     const shuffled = filtered.sort(() => Math.random() - 0.5);
     const selected = shuffled.slice(0, Math.min(questionCount, shuffled.length));
 
-    // For full exam, ensure proper section distribution
-    if (mode === 'full_exam' && allQuestions.length >= 100) {
+    // For full exam: use exam distribution (10+38+19+13+20 = 100), then fill to 100 from remaining if needed
+    if (mode === 'full_exam' && questionCount >= 100) {
       const distribution = { 1: 10, 2: 38, 3: 19, 4: 13, 5: 20 };
+      const targetTotal = 100;
       const distributed = [];
-      
+      const usedIds = new Set();
+
       for (const [sec, count] of Object.entries(distribution)) {
+        const sectionNum = parseInt(sec, 10);
         const sectionQs = allQuestions
-          .filter(q => q.section === parseInt(sec))
+          .filter(q => (typeof q.section === 'number' ? q.section : parseInt(q.section, 10)) === sectionNum)
           .sort(() => Math.random() - 0.5)
           .slice(0, count);
+        sectionQs.forEach(q => usedIds.add(q.id));
         distributed.push(...sectionQs);
       }
-      
+
+      // If we have 100+ questions total but distribution gave fewer (e.g. a section is short), fill to 100 from the rest
+      if (distributed.length < targetTotal && allQuestions.length >= targetTotal) {
+        const remaining = allQuestions
+          .filter(q => !usedIds.has(q.id))
+          .sort(() => Math.random() - 0.5);
+        const need = targetTotal - distributed.length;
+        distributed.push(...remaining.slice(0, need));
+      }
+
       setQuizQuestions(distributed.sort(() => Math.random() - 0.5));
     } else {
       setQuizQuestions(selected);
