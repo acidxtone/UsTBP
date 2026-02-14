@@ -27,6 +27,7 @@ $$;
 -- Drop trigger if it exists so we can recreate (idempotent)
 DROP TRIGGER IF EXISTS on_auth_user_created ON auth.users;
 
+-- Use EXECUTE PROCEDURE if your Postgres version doesn't support EXECUTE FUNCTION
 CREATE TRIGGER on_auth_user_created
   AFTER INSERT ON auth.users
   FOR EACH ROW
