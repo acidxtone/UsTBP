@@ -32,12 +32,14 @@ export default function Settings() {
   const [selectedNewYear, setSelectedNewYear] = useState(null);
 
   const { data: progress } = useQuery({
-    queryKey: ['userProgress', user?.selected_year],
+    queryKey: ['userProgress', user?.id, user?.selected_year],
     queryFn: async () => {
-      const results = await api.entities.UserProgress.filter({ created_by: user?.email, year: user?.selected_year });
-      return results[0] || null;
+      if (!user?.id || user?.selected_year == null) return null;
+      const year = Number(user.selected_year);
+      if (Number.isNaN(year)) return null;
+      return await api.entities.UserProgress.get(user.id, year);
     },
-    enabled: !!user?.email && !!user?.selected_year
+    enabled: !!user?.id && !!user?.selected_year
   });
 
   const resetProgressMutation = useMutation({

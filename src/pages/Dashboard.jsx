@@ -55,22 +55,18 @@ export default function Dashboard() {
     }
   }, [selectedYear, navigate]);
 
-  const { data: progress } = useQuery({
+  const { data: progress, isLoading: progressLoading, isError: progressError, refetch: refetchProgress } = useQuery({
     queryKey: ['userProgress', user?.id, user?.selected_year],
     queryFn: async () => {
       if (!user?.id || !user?.selected_year) return null;
       const year = user.selected_year != null ? Number(user.selected_year) : null;
       if (year == null || Number.isNaN(year)) return null;
-      const result = await api.userProgress.get(user.id, year);
-      console.log('🔧 Dashboard: Progress data received:', result);
-      console.log('🔧 Dashboard: Section stats:', result?.section_stats);
-      console.log('🔧 Dashboard: Total questions answered:', result?.total_questions_answered);
-      console.log('🔧 Dashboard: Total correct:', result?.total_correct);
-      console.log('🔧 Dashboard: Quizzes completed:', result?.quizzes_completed);
+      const result = await api.entities.UserProgress.get(user.id, year);
       return result;
     },
     enabled: !!user?.id && !!user?.selected_year,
-    refetchOnWindowFocus: true
+    refetchOnWindowFocus: true,
+    staleTime: 0
   });
 
   const { data: questions = [] } = useQuery({
@@ -276,6 +272,12 @@ export default function Dashboard() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.25 }}
           >
+            {progressError && (
+              <div className="mb-4 p-4 bg-amber-50 border border-amber-200 rounded-xl flex items-center justify-between gap-4">
+                <p className="text-sm text-amber-800">Could not load your progress. It will update after you complete a quiz.</p>
+                <Button variant="outline" size="sm" onClick={() => refetchProgress()}>Retry</Button>
+              </div>
+            )}
             <SectionProgress sectionStats={progress?.section_stats || {}} />
           </motion.div>
 

@@ -322,10 +322,17 @@ const entities = {
 
         const progressData = data.progress_data || {};
         const statistics = data.statistics || {};
+        const sectionStats = progressData.section_stats && typeof progressData.section_stats === 'object'
+          ? progressData.section_stats
+          : {};
         return {
           ...data,
           ...progressData,
           ...statistics,
+          section_stats: sectionStats,
+          total_questions_answered: progressData.total_questions_answered ?? statistics.total_questions_answered ?? 0,
+          total_correct: progressData.total_correct ?? statistics.total_correct ?? 0,
+          quizzes_completed: progressData.quizzes_completed ?? statistics.quizzes_completed ?? 0,
           bookmarked_questions: data.bookmarks || progressData.bookmarked_questions || [],
           weak_questions: data.weak_areas || progressData.weak_questions || [],
           created_by: user.user.email,

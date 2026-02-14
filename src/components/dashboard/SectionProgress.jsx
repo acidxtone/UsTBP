@@ -13,10 +13,15 @@ const sectionInfo = {
 };
 
 export default function SectionProgress({ sectionStats = {} }) {
-  console.log('🔧 SectionProgress: sectionStats received:', sectionStats);
+  // Normalize to plain object with string keys (API may return numeric keys from JSONB)
+  const normalized = typeof sectionStats === 'object' && sectionStats !== null
+    ? Object.fromEntries(
+        Object.entries(sectionStats).map(([k, v]) => [String(k), v && typeof v === 'object' ? v : { attempted: 0, correct: 0 }])
+      )
+    : {};
   
   const sections = Object.entries(sectionInfo).map(([num, info]) => {
-    const stats = sectionStats[num] || { attempted: 0, correct: 0 };
+    const stats = normalized[num] || normalized[String(num)] || { attempted: 0, correct: 0 };
     const percentage = stats.attempted > 0 
       ? Math.round((stats.correct / stats.attempted) * 100) 
       : 0;
@@ -30,8 +35,6 @@ export default function SectionProgress({ sectionStats = {} }) {
       status
     };
   });
-
-  console.log('🔧 SectionProgress: processed sections:', sections);
 
   const getStatusIcon = (status, percentage) => {
     if (status === "not_started") return <Minus className="h-4 w-4 text-slate-400" />;
@@ -117,7 +120,7 @@ export default function SectionProgress({ sectionStats = {} }) {
           );
         })}
 
-        {Object.values(sectionStats).every(s => !s?.attempted) && (
+        {Object.values(normalized).every(s => !s?.attempted) && (
           <div className="flex items-center gap-2 p-4 bg-slate-50 rounded-xl text-sm text-slate-600">
             <AlertCircle className="h-4 w-4" />
             Start practicing to track your progress by section
