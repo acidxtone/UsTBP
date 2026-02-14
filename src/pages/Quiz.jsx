@@ -131,29 +131,37 @@ export default function Quiz() {
     if (mode === 'full_exam' && questionCount >= 100) {
       const distribution = { 1: 10, 2: 38, 3: 19, 4: 13, 5: 20 };
       const targetTotal = 100;
+
+      const normSection = (q) => {
+        const s = q.section;
+        if (s == null || s === '') return null;
+        const n = typeof s === 'number' ? s : parseInt(s, 10);
+        return Number.isNaN(n) ? null : n;
+      };
+
       const distributed = [];
       const usedIds = new Set();
 
       for (const [sec, count] of Object.entries(distribution)) {
         const sectionNum = parseInt(sec, 10);
         const sectionQs = allQuestions
-          .filter(q => (typeof q.section === 'number' ? q.section : parseInt(q.section, 10)) === sectionNum)
+          .filter(q => normSection(q) === sectionNum)
           .sort(() => Math.random() - 0.5)
           .slice(0, count);
-        sectionQs.forEach(q => usedIds.add(q.id));
-        distributed.push(...sectionQs);
+        sectionQs.forEach(q => { usedIds.add(q.id); distributed.push(q); });
       }
 
-      // If we have 100+ questions total but distribution gave fewer (e.g. a section is short), fill to 100 from the rest
+      // Fill to 100 from any remaining questions when we have enough in the bank
       if (distributed.length < targetTotal && allQuestions.length >= targetTotal) {
         const remaining = allQuestions
           .filter(q => !usedIds.has(q.id))
           .sort(() => Math.random() - 0.5);
-        const need = targetTotal - distributed.length;
-        distributed.push(...remaining.slice(0, need));
+        const need = Math.min(targetTotal - distributed.length, remaining.length);
+        for (let i = 0; i < need; i++) distributed.push(remaining[i]);
       }
 
-      setQuizQuestions(distributed.sort(() => Math.random() - 0.5));
+      const final = distributed.slice(0, targetTotal).sort(() => Math.random() - 0.5);
+      setQuizQuestions(final);
     } else {
       setQuizQuestions(selected);
     }
