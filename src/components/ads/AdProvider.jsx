@@ -108,7 +108,7 @@ export const SideAd = ({ position = 'left' }) => {
   );
 };
 
-// Sticky Header Ad – stays sticky; smaller height on mobile
+// Fixed Top Ad – fixed to viewport top (does not follow scroll)
 export const StickyHeaderAd = () => {
   const { adsEnabled, headerAdClosed, closeHeaderAd, isQuizMode } = useAds();
   const isMobile = useIsMobile();
@@ -117,7 +117,7 @@ export const StickyHeaderAd = () => {
 
   const height = isMobile ? 40 : 60;
   return (
-    <div className="sticky top-0 z-40 bg-white border-b border-gray-200 shadow-sm">
+    <div className="fixed top-0 left-0 right-0 z-40 bg-white border-b border-gray-200 shadow-sm">
       <div className="relative">
         <button
           onClick={closeHeaderAd}
@@ -140,7 +140,7 @@ export const StickyHeaderAd = () => {
   );
 };
 
-// Sticky Footer Ad – stays fixed at bottom; smaller height on mobile
+// Fixed Bottom Ad – fixed to viewport bottom (does not follow scroll)
 export const StickyFooterAd = () => {
   const { adsEnabled, footerAdClosed, closeFooterAd, isQuizMode } = useAds();
   const isMobile = useIsMobile();

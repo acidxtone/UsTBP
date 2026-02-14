@@ -152,7 +152,7 @@ function App() {
             <SideAd position="left" />
             <SideAd position="right" />
             <StickyHeaderAd />
-            <div className="lg:mx-32"> {/* Add margin for side ads */}
+            <div className="pt-12 md:pt-16 lg:mx-32 min-h-screen">
               <AuthenticatedApp />
             </div>
             <StickyFooterAd />
