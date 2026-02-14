@@ -214,10 +214,29 @@ export default function Quiz() {
       } else {
         await api.entities.UserProgress.create({ ...progressData, year });
       }
+      // Record attempt in quiz_attempts for history/stats
+      try {
+        await api.entities.QuizAttempt.create({
+          completed_at: new Date().toISOString(),
+          score: Math.round(results.score_percentage),
+          total_questions: results.total_questions,
+          quiz_mode: results.mode,
+          attempt_data: {
+            correct_answers: results.correct_answers,
+            time_taken_seconds: results.time_taken_seconds,
+            section_scores: results.section_scores
+          }
+        });
+      } catch (attemptErr) {
+        console.warn('🎯 Quiz: Could not save quiz attempt (non-blocking):', attemptErr);
+      }
     },
     onSuccess: () => {
       console.log('🎯 Quiz: Progress updated successfully, invalidating queries');
       queryClient.invalidateQueries({ queryKey: ['userProgress'] });
+    },
+    onError: (err) => {
+      console.error('🎯 Quiz: Progress save failed — check Supabase (RLS, profiles row, year):', err);
     }
   });
 
@@ -430,9 +449,12 @@ export default function Quiz() {
             question_results: answers
           }}
           onRetry={() => {
-    setStartTime(Date.now());
-    window.location.reload();
-  }}
+            if (mode === 'review') {
+              navigate(createPageUrl('Dashboard'));
+            } else {
+              navigate(createPageUrl('QuizSetup') + `?mode=${mode}`);
+            }
+          }}
           onHome={() => navigate(createPageUrl('Dashboard'))}
           onReviewWrong={() => {
             const wrongIds = answers.filter(a => !a.correct).map(a => a.question_id);
