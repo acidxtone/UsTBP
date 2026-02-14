@@ -13,17 +13,16 @@ const AdSenseAd = ({
   const [adLoaded, setAdLoaded] = useState(false);
   const [adError, setAdError] = useState(false);
 
+  const publisherId = import.meta.env.VITE_ADSENSE_PUBLISHER_ID || 'ca-pub-5932083189692902';
+  const adsEnabled = import.meta.env.VITE_ADSENSE_ENABLED !== 'false';
+
   useEffect(() => {
-    // Only load AdSense if enabled and configured
-    if (!import.meta.env.VITE_ADSENSE_ENABLED || !import.meta.env.VITE_ADSENSE_PUBLISHER_ID) {
-      return;
-    }
+    if (!adsEnabled || !publisherId) return;
 
     try {
-      // Load AdSense script if not already loaded
       if (!window.adsbygoogle) {
         const script = document.createElement('script');
-        script.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${import.meta.env.VITE_ADSENSE_PUBLISHER_ID}`;
+        script.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${publisherId}`;
         script.async = true;
         script.crossOrigin = 'anonymous';
         document.head.appendChild(script);
@@ -53,10 +52,7 @@ const AdSenseAd = ({
     }
   }, [slot, format]);
 
-  // Don't render if AdSense is not configured
-  if (!import.meta.env.VITE_ADSENSE_ENABLED || !import.meta.env.VITE_ADSENSE_PUBLISHER_ID) {
-    return null;
-  }
+  if (!adsEnabled || !publisherId) return null;
 
   const adStyle = {
     display: responsive ? 'block' : 'inline-block',
@@ -78,7 +74,7 @@ const AdSenseAd = ({
         ref={adRef}
         className="adsbygoogle"
         style={adStyle}
-        data-ad-client={import.meta.env.VITE_ADSENSE_PUBLISHER_ID}
+        data-ad-client={publisherId}
         data-ad-slot={slot}
         data-ad-format={format}
         data-full-width-responsive={responsive ? 'true' : 'false'}

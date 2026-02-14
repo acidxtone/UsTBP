@@ -78,11 +78,12 @@ export const SideAd = ({ position = 'left' }) => {
     ? 'fixed left-0 top-0 h-full w-32' 
     : 'fixed right-0 top-0 h-full w-32';
 
+  const slot = import.meta.env.VITE_ADSENSE_SLOT_SIDE || '0000000000';
   return (
     <div className={`${positionClasses} bg-gray-50 border-r border-gray-200 z-30 hidden lg:block`}>
       <div className="h-full flex items-center justify-center p-4">
         <AdSenseAd
-          slot="1234567891" // Different slot for side ads
+          slot={slot}
           format="vertical"
           width={120}
           height={600}
@@ -115,9 +116,9 @@ export const StickyHeaderAd = () => {
           </svg>
         </button>
         <AdSenseAd
-          slot="1234567890" // Replace with your actual ad slot
+          slot={import.meta.env.VITE_ADSENSE_SLOT_HEADER || '0000000000'}
           format="horizontal"
-          height={60} // Reduced height
+          height={60}
           className="w-full"
           style={{ maxHeight: '60px' }}
         />
@@ -147,7 +148,7 @@ export const StickyFooterAd = () => {
           </svg>
         </button>
         <AdSenseAd
-          slot="0987654321" // Replace with your actual ad slot
+          slot={import.meta.env.VITE_ADSENSE_SLOT_FOOTER || '0000000000'}
           format="horizontal"
           height={90}
           className="w-full"
@@ -161,17 +162,16 @@ export const StickyFooterAd = () => {
 };
 
 // In-content Ad for between sections
-export const InContentAd = ({ slot = "1111111111", className = "" }) => {
+export const InContentAd = ({ slot, className = "" }) => {
   const { adsEnabled, isQuizMode } = useAds();
+  const adSlot = slot || import.meta.env.VITE_ADSENSE_SLOT_INCONTENT || '0000000000';
 
-  if (!adsEnabled || isQuizMode) {
-    return null;
-  }
+  if (!adsEnabled || isQuizMode) return null;
 
   return (
     <div className={`my-6 ${className}`}>
       <AdSenseAd
-        slot={slot}
+        slot={adSlot}
         format="rectangle"
         width={300}
         height={250}
