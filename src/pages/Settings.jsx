@@ -27,7 +27,7 @@ import { useNavigate } from 'react-router-dom';
 export default function Settings() {
   const queryClient = useQueryClient();
   const navigate = useNavigate();
-  const { user, updateMe } = useAuth();
+  const { user, updateMe, signOut } = useAuth();
   const [showChangeYear, setShowChangeYear] = useState(false);
   const [selectedNewYear, setSelectedNewYear] = useState(null);
 
@@ -96,8 +96,14 @@ export default function Settings() {
     }
   });
 
-  const handleLogout = () => {
-    api.auth.logout();
+  const handleLogout = async () => {
+    try {
+      await signOut();
+      navigate('/');
+    } catch (err) {
+      console.error('Sign out error:', err);
+      toast.error('Could not sign out. Please try again.');
+    }
   };
 
   return (

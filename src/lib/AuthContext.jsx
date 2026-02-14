@@ -119,12 +119,12 @@ export const AuthProvider = ({ children }) => {
   };
 
   const signOut = async () => {
-    try {
-      await auth.logout();
-    } catch (_) {}
+    // Clear UI state first so Sign Out always works even if Supabase hangs
     setUser(null);
     setIsAuthenticated(false);
     setAuthError(null);
+    // Clear Supabase session in background (don't block UI)
+    auth.logout().catch(() => {});
   };
 
   const updateMe = async (data) => {
