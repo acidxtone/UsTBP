@@ -1,6 +1,19 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import AdSenseAd from './AdSenseAd';
 
+const MOBILE_BREAKPOINT = 768;
+
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' && window.innerWidth < MOBILE_BREAKPOINT);
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < MOBILE_BREAKPOINT);
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
+  return isMobile;
+}
+
 const AdContext = createContext();
 
 export const AdProvider = ({ children }) => {
@@ -95,69 +108,71 @@ export const SideAd = ({ position = 'left' }) => {
   );
 };
 
-// Sticky Header Ad Component (now smaller and less intrusive)
+// Sticky Header Ad – stays sticky; smaller height on mobile
 export const StickyHeaderAd = () => {
   const { adsEnabled, headerAdClosed, closeHeaderAd, isQuizMode } = useAds();
+  const isMobile = useIsMobile();
 
-  if (!adsEnabled || headerAdClosed || isQuizMode) {
-    return null;
-  }
+  if (!adsEnabled || headerAdClosed || isQuizMode) return null;
 
+  const height = isMobile ? 40 : 60;
   return (
     <div className="sticky top-0 z-40 bg-white border-b border-gray-200 shadow-sm">
       <div className="relative">
         <button
           onClick={closeHeaderAd}
-          className="absolute top-2 right-2 z-10 bg-white rounded-full p-1 shadow-md hover:bg-gray-100 transition-colors"
+          className="absolute top-1 right-1 md:top-2 md:right-2 z-10 bg-white rounded-full p-1 shadow-md hover:bg-gray-100 transition-colors"
           aria-label="Close ad"
         >
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-3 h-3 md:w-4 md:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
         <AdSenseAd
           slot={import.meta.env.VITE_ADSENSE_SLOT_HEADER || '0000000000'}
           format="horizontal"
-          height={60}
+          height={height}
           className="w-full"
-          style={{ maxHeight: '60px' }}
+          style={{ maxHeight: `${height}px` }}
         />
       </div>
     </div>
   );
 };
 
-// Sticky Footer Ad Component
+// Sticky Footer Ad – stays fixed at bottom; smaller height on mobile
 export const StickyFooterAd = () => {
   const { adsEnabled, footerAdClosed, closeFooterAd, isQuizMode } = useAds();
+  const isMobile = useIsMobile();
 
-  if (!adsEnabled || footerAdClosed || isQuizMode) {
-    return null;
-  }
+  if (!adsEnabled || footerAdClosed || isQuizMode) return null;
 
+  const height = isMobile ? 50 : 90;
   return (
+    <>
     <div className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 shadow-lg">
       <div className="relative">
         <button
           onClick={closeFooterAd}
-          className="absolute top-2 right-2 z-10 bg-white rounded-full p-1 shadow-md hover:bg-gray-100 transition-colors"
+          className="absolute top-1 right-1 md:top-2 md:right-2 z-10 bg-white rounded-full p-1 shadow-md hover:bg-gray-100 transition-colors"
           aria-label="Close ad"
         >
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-3 h-3 md:w-4 md:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
         <AdSenseAd
           slot={import.meta.env.VITE_ADSENSE_SLOT_FOOTER || '0000000000'}
           format="horizontal"
-          height={90}
+          height={height}
           className="w-full"
-          style={{ maxHeight: '90px' }}
+          style={{ maxHeight: `${height}px` }}
         />
       </div>
-      {/* Add padding to prevent content overlap */}
-      <div className="h-20"></div>
     </div>
+    {/* Spacer so content isn't hidden behind sticky footer – smaller on mobile */}
+    <div className="h-12 md:h-20" />
+    </>
   );
 };
 
