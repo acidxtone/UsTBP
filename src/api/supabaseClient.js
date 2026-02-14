@@ -437,6 +437,14 @@ const entities = {
           ...(weak_questions && { weak_questions })
         };
 
+        // Ensure profile exists so user_progress insert (FK to profiles.id) succeeds
+        await supabase.from('profiles').upsert({
+          id: user.user.id,
+          email: user.user.email || '',
+          full_name: user.user.user_metadata?.full_name || user.user.email || 'User',
+          updated_at: new Date().toISOString()
+        }, { onConflict: 'id' });
+
         const { data, error } = await supabase
           .from('user_progress')
           .insert({

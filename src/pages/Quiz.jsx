@@ -449,10 +449,10 @@ export default function Quiz() {
             question_results: answers
           }}
           onRetry={() => {
-            if (mode === 'review') {
-              navigate(createPageUrl('Dashboard'));
+            if (mode === 'review' && ids) {
+              navigate(createPageUrl('Quiz') + `?mode=review&ids=${ids}&_t=${Date.now()}`);
             } else {
-              navigate(createPageUrl('QuizSetup') + `?mode=${mode}`);
+              navigate(createPageUrl('QuizSetup') + `?mode=${mode || 'quick_quiz'}`);
             }
           }}
           onHome={() => navigate(createPageUrl('Dashboard'))}
