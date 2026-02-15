@@ -24,6 +24,30 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog';
 
+/** Renders plain text with URLs turned into clickable links (all years, content field). */
+function linkifyContent(text) {
+  if (!text || typeof text !== 'string') return null;
+  const urlRegex = /(https?:\/\/[^\s]+)/g;
+  const parts = text.split(urlRegex);
+  return parts.map((part, i) => {
+    if (part.startsWith('http://') || part.startsWith('https://')) {
+      const href = part.replace(/[.,;:)\]]+$/, '');
+      return (
+        <a
+          key={i}
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-600 underline hover:text-blue-800"
+        >
+          {href}
+        </a>
+      );
+    }
+    return part;
+  });
+}
+
 export default function Study() {
   const { user } = useAuth();
   const [searchTerm, setSearchTerm] = useState('');
@@ -223,7 +247,7 @@ export default function Study() {
                       </CardHeader>
                       <CardContent>
                         <p className="text-slate-600 text-sm mb-4 line-clamp-3">
-                          {guide.content}
+                          {linkifyContent(guide.content)}
                         </p>
                         <div className="flex items-center justify-between">
                           <span className="text-xs text-slate-500">
@@ -260,7 +284,7 @@ export default function Study() {
                 )}
               </DialogHeader>
               <div className="overflow-y-auto flex-1 min-h-0 rounded-md border bg-slate-50/50 p-4 text-slate-700 whitespace-pre-wrap text-sm">
-                {selectedGuide?.content}
+                {linkifyContent(selectedGuide?.content)}
               </div>
             </DialogContent>
           </Dialog>
