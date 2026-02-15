@@ -17,12 +17,19 @@ import {
 import { motion } from "framer-motion";
 import YearIndicator from '@/components/YearIndicator';
 import { BannerAd, InContentAd } from '@/components/ads/AdSense';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
 
 export default function Study() {
   const { user } = useAuth();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedSection, setSelectedSection] = useState('all');
   const [visibleQuestionCount, setVisibleQuestionCount] = useState(10);
+  const [selectedGuide, setSelectedGuide] = useState(null);
   const navigate = useNavigate();
   const queryClient = useQueryClient();
 
@@ -220,9 +227,13 @@ export default function Study() {
                         </p>
                         <div className="flex items-center justify-between">
                           <span className="text-xs text-slate-500">
-                            {guide.topics?.length || 0} topics
+                            {guide.topics?.length ? `${guide.topics.length} topics` : 'Study guide'}
                           </span>
-                          <Button variant="outline" size="sm">
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            onClick={() => setSelectedGuide(guide)}
+                          >
                             Read More
                             <ChevronRight className="h-4 w-4 ml-1" />
                           </Button>
@@ -234,6 +245,25 @@ export default function Study() {
               </div>
             )}
           </div>
+
+          {/* Study guide Read More dialog */}
+          <Dialog open={!!selectedGuide} onOpenChange={(open) => !open && setSelectedGuide(null)}>
+            <DialogContent className="max-w-2xl max-h-[85vh] overflow-hidden flex flex-col">
+              <DialogHeader>
+                <DialogTitle className="pr-8">
+                  {selectedGuide?.title}
+                </DialogTitle>
+                {selectedGuide?.section && (
+                  <Badge variant="secondary" className="w-fit">
+                    {selectedGuide.section}
+                  </Badge>
+                )}
+              </DialogHeader>
+              <div className="overflow-y-auto flex-1 min-h-0 rounded-md border bg-slate-50/50 p-4 text-slate-700 whitespace-pre-wrap text-sm">
+                {selectedGuide?.content}
+              </div>
+            </DialogContent>
+          </Dialog>
 
           {/* Practice Questions */}
           <div className="space-y-6">
