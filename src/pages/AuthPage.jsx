@@ -205,7 +205,7 @@ export default function AuthPage() {
             <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
               <BookOpen className="w-5 h-5 text-white" />
             </div>
-            <span className="text-xl font-bold text-slate-900">TradeBench</span>
+            <span className="text-xl font-bold text-slate-900">TradeBenchPrep</span>
           </Link>
           <Link to="/">
             <Button variant="ghost" className="text-slate-600">

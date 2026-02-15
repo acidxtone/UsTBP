@@ -1,4 +1,4 @@
-// Anonymous Session Manager for TradeBench
+// Anonymous Session Manager for TradeBenchPrep
 // Stores user progress in LocalStorage for anonymous sessions
 
 const ANONYMOUS_SESSION_KEY = 'tradebench_anonymous_session';

@@ -13,7 +13,7 @@ export default function LandingPage() {
             <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
               <BookOpen className="w-5 h-5 text-white" />
             </div>
-            <span className="text-xl font-bold text-slate-900">TradeBench</span>
+            <span className="text-xl font-bold text-slate-900">TradeBenchPrep</span>
           </div>
           <Link to="/auth">
             <Button className="bg-blue-600 hover:bg-blue-700">
@@ -105,13 +105,13 @@ export default function LandingPage() {
       <section className="py-20 px-6 bg-slate-50">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-serif font-bold text-slate-900 text-center mb-12">
-            Why Choose TradeBench for Your Steamfitter Training?
+            Why Choose TradeBenchPrep for Your Steamfitter Training?
           </h2>
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div>
               <h3 className="text-xl font-semibold text-slate-900 mb-4">Comprehensive Trade Exam Preparation</h3>
               <p className="text-slate-600 mb-4 leading-relaxed">
-                TradeBench provides specialized preparation for steamfitter and pipefitter apprentices at all levels. 
+                TradeBenchPrep provides specialized preparation for steamfitter and pipefitter apprentices at all levels. 
                 Our platform covers everything from basic safety procedures to advanced pipefitting calculations, 
                 ensuring you're fully prepared for your certification exams.
               </p>
@@ -130,7 +130,7 @@ export default function LandingPage() {
               </p>
               <p className="text-slate-600 leading-relaxed">
                 Whether you're in your first year of apprenticeship or preparing for your journeyman certification, 
-                TradeBench adapts to your skill level and provides targeted practice to help you succeed.
+                TradeBenchPrep adapts to your skill level and provides targeted practice to help you succeed.
               </p>
             </div>
           </div>
@@ -179,12 +179,12 @@ export default function LandingPage() {
             <div className="w-6 h-6 bg-blue-600 rounded flex items-center justify-center">
               <BookOpen className="w-4 h-4 text-white" />
             </div>
-            <span className="text-sm font-semibold text-slate-700">TradeBench</span>
+            <span className="text-sm font-semibold text-slate-700">TradeBenchPrep</span>
           </div>
           <div className="flex items-center gap-6 text-sm text-slate-500">
             <Link to="/Privacy" className="hover:text-blue-600 transition-colors">Privacy Policy</Link>
             <Link to="/Terms" className="hover:text-blue-600 transition-colors">Terms of Service</Link>
-            <span>&copy; {new Date().getFullYear()} TradeBench. All rights reserved.</span>
+            <span>&copy; {new Date().getFullYear()} TradeBenchPrep. All rights reserved.</span>
           </div>
         </div>
       </footer>

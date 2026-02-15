@@ -20,7 +20,7 @@ const YearHeader = () => {
         <div className="flex items-center gap-4">
           <Link to="/" className="flex items-center gap-2 hover:text-blue-100 transition-colors">
             <Home className="h-4 w-4" />
-            <span className="text-sm font-bold tracking-tight">TradeBench</span>
+            <span className="text-sm font-bold tracking-tight">TradeBenchPrep</span>
           </Link>
           <span className="text-blue-200 opacity-50">•</span>
           <div className="flex items-center gap-2">
