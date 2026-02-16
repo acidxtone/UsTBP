@@ -102,19 +102,13 @@ export default function QuizSetup() {
 
   // ← FIXED: Proper query configuration matching Study.jsx
   const { data: questions = [] } = useQuery({
-    queryKey: ['questions', user?.selected_year],
+    queryKey: ['questions', user?.selected_trade, user?.selected_year],
     queryFn: async () => {
       if (!user?.selected_year) return [];
-      
-      // Convert to INTEGER to match database schema (year INTEGER NOT NULL)
       const yearAsInt = parseInt(user.selected_year, 10);
-      
-      console.log('QuizSetup - Fetching questions for year:', yearAsInt, 'type:', typeof yearAsInt);
-      const results = await api.entities.Question.filter({ year: yearAsInt });
-      console.log('QuizSetup - Questions fetched:', results.length);
-      return results;
+      return await api.entities.Question.filter({ trade: user?.selected_trade || 'SF', year: yearAsInt });
     },
-    enabled: !!user?.selected_year  // ← CRITICAL FIX: Check for selected_year, not just user
+    enabled: !!user?.selected_year
   });
 
   const config = modeConfig[mode] || modeConfig.quick_quiz;

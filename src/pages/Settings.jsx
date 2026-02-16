@@ -19,10 +19,11 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import { ArrowLeft, User, RotateCcw, LogOut, Calendar } from "lucide-react";
+import { ArrowLeft, User, RotateCcw, LogOut, Calendar, Briefcase } from "lucide-react";
 import { toast } from "sonner";
 import YearIndicator from '@/components/YearIndicator';
 import { useNavigate } from 'react-router-dom';
+import { getTradeLabel, getYearsForTrade } from '@/lib/trade-config';
 
 export default function Settings() {
   const queryClient = useQueryClient();
@@ -187,6 +188,28 @@ export default function Settings() {
           </CardContent>
         </Card>
 
+        {/* Trade */}
+        <Card className="border-0 shadow-sm">
+          <CardHeader>
+            <CardTitle className="text-lg flex items-center gap-2">
+              <Briefcase className="h-5 w-5" />
+              Trade
+            </CardTitle>
+            <CardDescription>Changing trade will reset your year selection</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="flex items-center justify-between p-3 rounded-lg bg-slate-50">
+              <div>
+                <p className="font-medium">{getTradeLabel(user?.selected_trade)}</p>
+                <p className="text-sm text-slate-500">Current trade</p>
+              </div>
+              <Link to={createPageUrl('TradeSelection')}>
+                <Button variant="outline" size="sm">Change trade</Button>
+              </Link>
+            </div>
+          </CardContent>
+        </Card>
+
         {/* Year Management */}
         <Card className="border-0 shadow-sm">
           <CardHeader>
@@ -194,7 +217,7 @@ export default function Settings() {
               <Calendar className="h-5 w-5" />
               Study Year
             </CardTitle>
-            <CardDescription>Change your apprenticeship year</CardDescription>
+            <CardDescription>Change your apprenticeship year (Welder has Years 1–3 only)</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="flex items-center justify-between p-3 rounded-lg bg-slate-50">
@@ -327,7 +350,7 @@ export default function Settings() {
             </AlertDialogDescription>
           </AlertDialogHeader>
           <div className="grid grid-cols-2 gap-3 py-4">
-            {[1, 2, 3, 4].map(year => (
+            {getYearsForTrade(user?.selected_trade).map(year => (
               <Button
                 key={year}
                 variant={selectedNewYear === year ? "default" : "outline"}

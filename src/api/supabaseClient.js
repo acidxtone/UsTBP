@@ -81,11 +81,16 @@ const auth = {
         console.error('Error fetching profile:', profileError);
       }
 
+      const selected_trade = profile?.selected_trade ?? ((typeof localStorage !== 'undefined' && localStorage.getItem('selected_trade')) || 'SF');
+      const selected_year_raw = profile?.selected_year ?? ((typeof localStorage !== 'undefined' && localStorage.getItem('selected_year')) || null);
+      const selected_year_num = selected_year_raw != null ? (typeof selected_year_raw === 'number' ? selected_year_raw : parseInt(selected_year_raw, 10)) : null;
+
       return {
         id: user.id,
         email: user.email,
         full_name: profile?.full_name || user.user_metadata?.full_name || 'User',
-        selected_year: profile?.selected_year || null,
+        selected_trade,
+        selected_year: (Number.isNaN(selected_year_num) ? null : selected_year_num),
         role: profile?.role || 'user',
       };
     } catch (error) {
@@ -94,35 +99,25 @@ const auth = {
     }
   },
 
-  async updateMe({ selected_year }) {
+  async updateMe({ selected_trade, selected_year }) {
     try {
       const { data: { user } } = await supabase.auth.getUser();
-      
-      if (!user) {
-        throw new Error('User not authenticated');
-      }
+      if (!user) throw new Error('User not authenticated');
+      const updates = { id: user.id, email: user.email, updated_at: new Date().toISOString() };
+      if (selected_trade !== undefined) updates.selected_trade = selected_trade;
+      if (selected_year !== undefined) updates.selected_year = selected_year;
 
-      const { data, error } = await supabase
-        .from('profiles')
-        .upsert({
-          id: user.id,
-          email: user.email,
-          selected_year,
-          updated_at: new Date().toISOString()
-        })
-        .select()
-        .single();
-
+      const { data, error } = await supabase.from('profiles').upsert(updates).select().single();
       if (error) {
         console.error('Error updating profile:', error);
         throw error;
       }
-
       return {
         id: user.id,
         email: user.email,
         full_name: data.full_name || user.user_metadata?.full_name || 'User',
-        selected_year: data.selected_year,
+        selected_trade: selected_trade !== undefined ? selected_trade : (data.selected_trade ?? 'SF'),
+        selected_year: selected_year !== undefined ? selected_year : (data.selected_year ?? null),
         role: data.role || 'user',
       };
     } catch (error) {
@@ -231,65 +226,42 @@ const auth = {
 
 const entities = {
   Question: {
-    async filter({ year, section }) {
+    async filter({ trade, year, section }) {
       try {
-        console.log('supabaseClient.js - Question.filter called with:', { year, section, yearType: typeof year });
         let query = supabase.from('questions').select('*');
-        
-        if (year != null) {
-          console.log('supabaseClient.js - Filtering by year:', year);
-          query = query.eq('year', year);
-        }
-        if (section != null) {
-          console.log('supabaseClient.js - Filtering by section:', section);
-          query = query.eq('section', section);
-        }
-        
-        const { data, error } = await query.order('year, section');
-        
+        if (trade != null) query = query.eq('trade', trade);
+        query = query.eq('country', 'CA');
+        if (year != null) query = query.eq('year', year);
+        if (section != null) query = query.eq('section', section);
+        const { data, error } = await query.order('year').order('section');
+
         if (error) {
           console.error('Error filtering questions:', error);
           return [];
         }
-        
-        // Transform data to match expected format
-        // Supabase stores options as JSONB object {a: "...", b: "...", c: "...", d: "..."}
-        // Components expect option_a, option_b, option_c, option_d as separate fields
+
         const transformedData = (data || []).map(q => {
-          // Handle section - convert to integer if it's stored as text/number
           const sectionValue = typeof q.section === 'string' ? parseInt(q.section, 10) : q.section;
-          
           return {
             id: q.id,
             year: q.year,
-            section: sectionValue || q.section,
+            section: sectionValue ?? q.section,
             section_name: q.section_name || q.section || sectionValue,
             difficulty: q.difficulty,
             question_text: q.question_text,
-            // Extract options from JSONB object
-            option_a: q.options?.a || q.option_a || '',
-            option_b: q.options?.b || q.option_b || '',
-            option_c: q.options?.c || q.option_c || '',
-            option_d: q.options?.d || q.option_d || '',
-            // Keep options object for backward compatibility
-            options: q.options || (q.option_a ? {
-              a: q.option_a,
-              b: q.option_b,
-              c: q.option_c,
-              d: q.option_d
-            } : null),
+            option_a: q.option_a ?? q.options?.a ?? '',
+            option_b: q.option_b ?? q.options?.b ?? '',
+            option_c: q.option_c ?? q.options?.c ?? '',
+            option_d: q.option_d ?? q.options?.d ?? '',
+            options: q.options || (q.option_a ? { a: q.option_a, b: q.option_b, c: q.option_c, d: q.option_d } : null),
             correct_answer: q.correct_answer,
             explanation: q.explanation,
             reference: q.reference || 'AIT Curriculum',
-            // Include any other fields that might exist
-            ...(q.question ? { question: q.question } : {}),
-            ...(q.wrong_explanations ? { wrong_explanations: q.wrong_explanations } : {}),
-            ...(q.formula ? { formula: q.formula } : {})
+            ...(q.question && { question: q.question }),
+            ...(q.wrong_explanations && { wrong_explanations: q.wrong_explanations }),
+            ...(q.formula && { formula: q.formula }),
           };
         });
-        
-        console.log('supabaseClient.js - Questions returned:', transformedData?.length || 0);
-        console.log('supabaseClient.js - Sample transformed question:', transformedData?.[0]);
         return transformedData;
       } catch (error) {
         console.error('Error filtering questions:', error);

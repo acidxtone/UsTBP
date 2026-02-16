@@ -58,9 +58,8 @@ export default function Study() {
   const queryClient = useQueryClient();
 
   useEffect(() => {
-    if (user && !user.selected_year) {
-      navigate(createPageUrl('YearSelection'));
-    }
+    if (!user?.selected_trade) navigate(createPageUrl('TradeSelection'));
+    else if (user && !user.selected_year) navigate(createPageUrl('YearSelection'));
   }, [user, navigate]);
 
   const { data: progress } = useQuery({
@@ -83,17 +82,11 @@ export default function Study() {
   });
 
   const { data: questions = [] } = useQuery({
-    queryKey: ['questions', user?.selected_year],
+    queryKey: ['questions', user?.selected_trade, user?.selected_year],
     queryFn: async () => {
       if (!user?.selected_year) return [];
-      
-      // Convert to INTEGER to match database schema (year INTEGER NOT NULL)
       const yearAsInt = parseInt(user.selected_year, 10);
-      
-      console.log('Study.jsx - Fetching questions for year:', yearAsInt, 'type:', typeof yearAsInt);
-      const results = await api.entities.Question.filter({ year: yearAsInt });
-      console.log('Study.jsx - Questions fetched:', results.length);
-      return results;
+      return await api.entities.Question.filter({ trade: user?.selected_trade || 'SF', year: yearAsInt });
     },
     enabled: !!user?.selected_year
   });

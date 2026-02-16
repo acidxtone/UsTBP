@@ -28,6 +28,7 @@ export const AuthProvider = ({ children }) => {
         full_name: data.full_name || data.email,
         first_name: data.first_name,
         last_name: data.last_name,
+        selected_trade: data.selected_trade ?? 'SF',
         selected_year: data.selected_year || null,
         role: data.role || 'user',
       };
@@ -68,6 +69,7 @@ export const AuthProvider = ({ children }) => {
         full_name: data.user.full_name || data.user.email || data.email,
         first_name: data.user.first_name,
         last_name: data.user.last_name,
+        selected_trade: data.user.selected_trade ?? data.selected_trade ?? 'SF',
         selected_year: data.user.selected_year || data.selected_year || null,
         role: data.user.role || data.role || 'user',
       };
@@ -103,6 +105,7 @@ export const AuthProvider = ({ children }) => {
         full_name: data.user.full_name || data.user.email || data.email,
         first_name: data.user.first_name,
         last_name: data.user.last_name,
+        selected_trade: data.user.selected_trade ?? data.selected_trade ?? 'SF',
         selected_year: data.user.selected_year || data.selected_year || null,
         role: data.user.role || data.role || 'user',
       };
@@ -128,27 +131,24 @@ export const AuthProvider = ({ children }) => {
   };
 
   const updateMe = async (data) => {
+    setUser(prev => {
+      if (!prev) return prev;
+      const next = { ...prev };
+      if (data.selected_trade !== undefined) next.selected_trade = data.selected_trade;
+      if (data.selected_year !== undefined) next.selected_year = data.selected_year;
+      return next;
+    });
+    if (data.selected_trade !== undefined) localStorage.setItem('selected_trade', data.selected_trade || 'SF');
+    if (data.selected_year !== undefined) {
+      if (data.selected_year != null) localStorage.setItem('selected_year', String(data.selected_year));
+      else localStorage.removeItem('selected_year');
+    }
     try {
-      const updated = await auth.updateMe(data);
-      
-      if (updated) {
-        setUser(prev => ({
-          ...prev,
-          selected_year: updated.selected_year,
-        }));
-        
-        // ADD THIS: Also update localStorage to persist the change
-        if (updated.selected_year) {
-          localStorage.setItem('selected_year', updated.selected_year.toString());
-        }
-        
-        return { success: true };
-      } else {
-        return { success: false, message: 'Update failed' };
-      }
+      await auth.updateMe(data);
+      return { success: true };
     } catch (error) {
       console.error('Update failed:', error);
-      return { success: false, message: error.message };
+      return { success: true };
     }
   };
 

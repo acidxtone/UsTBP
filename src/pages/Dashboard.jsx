@@ -23,37 +23,22 @@ import {
 import { motion } from "framer-motion";
 import { BannerAd } from '@/components/ads/AdSense';
 import SectionProgress from '@/components/dashboard/SectionProgress';
+import { getTradeLabel } from '@/lib/trade-config';
 
 export default function Dashboard() {
   const { user } = useAuth();
   const navigate = useNavigate();
 
-  // Get selected year from user or localStorage with better fallback logic
-  const getSelectedYear = () => {
-    // Check user object first
-    if (user?.selected_year) {
-      console.log('🔧 Dashboard: Found year in user object:', user.selected_year);
-      return user.selected_year;
-    }
-    
-    // Check localStorage as fallback
-    const localStorageYear = localStorage.getItem('selected_year');
-    if (localStorageYear) {
-      console.log('🔧 Dashboard: Found year in localStorage:', localStorageYear);
-      return parseInt(localStorageYear);
-    }
-    
-    console.log('🔧 Dashboard: No year found');
-    return null;
-  };
-
-  const selectedYear = getSelectedYear();
+  const selectedTrade = user?.selected_trade || localStorage.getItem('selected_trade') || 'SF';
+  const selectedYear = user?.selected_year != null ? user.selected_year : (() => {
+    const y = localStorage.getItem('selected_year');
+    return y ? parseInt(y, 10) : null;
+  })();
 
   useEffect(() => {
-    if (!selectedYear) {
-      navigate(createPageUrl('YearSelection'));
-    }
-  }, [selectedYear, navigate]);
+    if (!selectedTrade) navigate(createPageUrl('TradeSelection'));
+    else if (!selectedYear) navigate(createPageUrl('YearSelection'));
+  }, [selectedTrade, selectedYear, navigate]);
 
   const { data: progress, isLoading: progressLoading, isError: progressError, refetch: refetchProgress } = useQuery({
     queryKey: ['userProgress', user?.id, user?.selected_year],
@@ -70,11 +55,10 @@ export default function Dashboard() {
   });
 
   const { data: questions = [] } = useQuery({
-    queryKey: ['questions', selectedYear],
+    queryKey: ['questions', selectedTrade, selectedYear],
     queryFn: async () => {
       if (!selectedYear) return [];
-      const results = await api.entities.Question.filter({ year: selectedYear });
-      return results;
+      return await api.entities.Question.filter({ trade: selectedTrade, year: selectedYear });
     },
     enabled: !!selectedYear
   });
@@ -168,7 +152,7 @@ export default function Dashboard() {
               Welcome back, {user?.full_name || user?.first_name || user?.email?.split('@')[0]}!
             </h1>
             <p className="text-lg text-slate-600">
-              Ready to continue your Steamfitter/Pipefitter journey?
+              Ready to continue your {getTradeLabel(selectedTrade)} journey?
             </p>
           </motion.div>
 

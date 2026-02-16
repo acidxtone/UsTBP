@@ -41,10 +41,12 @@ export default function AuthPage() {
   const [resetStep, setResetStep] = useState(1);
 
   const navigateAfterAuth = (authUser) => {
-    if (authUser?.selected_year) {
-      navigate(createPageUrl('Dashboard'));
-    } else {
+    if (!authUser?.selected_trade) {
+      navigate(createPageUrl('TradeSelection'));
+    } else if (!authUser?.selected_year) {
       navigate(createPageUrl('YearSelection'));
+    } else {
+      navigate(createPageUrl('Dashboard'));
     }
   };
 

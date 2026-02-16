@@ -4,14 +4,11 @@ import { Link } from 'react-router-dom';
 import { Home, Calendar } from 'lucide-react';
 import YearIndicator from '@/components/YearIndicator';
 import { createPageUrl } from '@/utils';
+import { getTradeLabel } from '@/lib/trade-config';
 
-/**
- * Year Header Component
- * Shows current study year at the top of every page
- */
 const YearHeader = () => {
   const { user } = useAuth();
-
+  const trade = user?.selected_trade || 'SF';
   if (!user?.selected_year) return null;
 
   return (
@@ -24,18 +21,17 @@ const YearHeader = () => {
           </Link>
           <span className="text-blue-200 opacity-50">•</span>
           <div className="flex items-center gap-2">
+            <span className="text-xs font-medium text-blue-100">{getTradeLabel(trade)}</span>
+            <span className="text-blue-200 opacity-50">·</span>
             <YearIndicator year={user.selected_year} />
-            <Link 
-              to={createPageUrl('YearSelection')} 
-              className="text-[10px] uppercase tracking-wider font-bold bg-white/10 hover:bg-white/20 px-2 py-0.5 rounded transition-colors flex items-center gap-1"
-            >
+            <Link to={createPageUrl('YearSelection')} className="text-[10px] uppercase tracking-wider font-bold bg-white/10 hover:bg-white/20 px-2 py-0.5 rounded transition-colors flex items-center gap-1">
               <Calendar className="h-3 w-3" />
               Change
             </Link>
           </div>
         </div>
         <div className="hidden sm:block text-xs font-medium text-blue-100 uppercase tracking-widest opacity-80">
-          Steamfitter/Pipefitter Prep
+          {getTradeLabel(trade)} Prep
         </div>
       </div>
     </div>

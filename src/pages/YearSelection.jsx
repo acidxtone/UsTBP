@@ -7,6 +7,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { GraduationCap, CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import { useAuth } from '@/lib/AuthContext';
+import { getYearsForTrade } from '@/lib/trade-config';
+
+const YEAR_LABELS = { 1: "First Year", 2: "Second Year", 3: "Third Year", 4: "Fourth Year" };
+const YEAR_DESC = { 1: "Foundation and basics", 2: "Building on fundamentals", 3: "Advanced techniques", 4: "Mastery and specialization" };
 
 export default function YearSelection() {
   const { user, updateMe } = useAuth();
@@ -14,12 +18,8 @@ export default function YearSelection() {
   const [saving, setSaving] = useState(false);
   const navigate = useNavigate();
 
-  const years = [
-    { year: 1, label: "First Year", description: "Foundation and basics" },
-    { year: 2, label: "Second Year", description: "Building on fundamentals" },
-    { year: 3, label: "Third Year", description: "Advanced techniques" },
-    { year: 4, label: "Fourth Year", description: "Mastery and specialization" }
-  ];
+  const yearNumbers = getYearsForTrade(user?.selected_trade || 'SF');
+  const years = yearNumbers.map(year => ({ year, label: YEAR_LABELS[year], description: YEAR_DESC[year] }));
 
   const handleContinue = async () => {
     if (!selectedYear) {

@@ -19,13 +19,14 @@ import QuizSetup from '@/pages/QuizSetup';
 import Settings from '@/pages/Settings';
 import Curriculum from '@/pages/Curriculum';
 import YearSelection from '@/pages/YearSelection';
+import TradeSelection from '@/pages/TradeSelection';
 import Privacy from '@/pages/Privacy';
 import Terms from '@/pages/Terms';
 import DebugQuestions from '@/components/DebugQuestions';
 import SimpleDebug from '@/components/SimpleDebug';
 import ConnectionTest from '@/components/ConnectionTest';
 
-const PAGES_WITHOUT_YEAR_HEADER = ['YearSelection', 'debug', 'test', 'connection'];
+const PAGES_WITHOUT_YEAR_HEADER = ['YearSelection', 'TradeSelection', 'debug', 'test', 'connection'];
 
 const LayoutWrapper = ({ children, currentPageName }) => {
   const showYearHeader = !PAGES_WITHOUT_YEAR_HEADER.includes(currentPageName);
@@ -109,6 +110,11 @@ const AuthenticatedApp = () => {
       <Route path="/Terms" element={
         <LayoutWrapper currentPageName="Terms">
           <Terms />
+        </LayoutWrapper>
+      } />
+      <Route path="/TradeSelection" element={
+        <LayoutWrapper currentPageName="TradeSelection">
+          <TradeSelection />
         </LayoutWrapper>
       } />
       <Route path="/YearSelection" element={

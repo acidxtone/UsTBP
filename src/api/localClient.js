@@ -5,6 +5,7 @@
 
 const STORAGE_KEYS = {
   selectedYear: 'tradebench_selected_year',
+  selectedTrade: 'tradebench_selected_trade',
   userProgress: 'tradebench_user_progress',
 };
 
@@ -52,27 +53,28 @@ async function loadStudyGuides() {
 const auth = {
   async me() {
     const selectedYear = parseInt(localStorage.getItem(STORAGE_KEYS.selectedYear), 10);
+    const selectedTrade = localStorage.getItem(STORAGE_KEYS.selectedTrade) || 'SF';
     return {
       email: GUEST_USER_EMAIL,
       full_name: 'Guest',
+      selected_trade: selectedTrade,
       selected_year: Number.isFinite(selectedYear) ? selectedYear : null,
       role: 'user',
     };
   },
 
-  async updateMe({ selected_year }) {
-    if (selected_year != null) {
-      localStorage.setItem(STORAGE_KEYS.selectedYear, String(selected_year));
-    }
+  async updateMe({ selected_trade, selected_year }) {
+    if (selected_trade != null) localStorage.setItem(STORAGE_KEYS.selectedTrade, selected_trade);
+    if (selected_year != null) localStorage.setItem(STORAGE_KEYS.selectedYear, String(selected_year));
+    if (selected_year === null) localStorage.removeItem(STORAGE_KEYS.selectedYear);
     return auth.me();
   },
 
   logout() {
     localStorage.removeItem(STORAGE_KEYS.selectedYear);
+    localStorage.removeItem(STORAGE_KEYS.selectedTrade);
     localStorage.removeItem(STORAGE_KEYS.userProgress);
-    for (let y = 1; y <= 4; y++) {
-      localStorage.removeItem(progressKey(y));
-    }
+    for (let y = 1; y <= 4; y++) localStorage.removeItem(progressKey(y));
   },
 
   redirectToLogin() {},
@@ -80,9 +82,10 @@ const auth = {
 
 const entities = {
   Question: {
-    async filter({ year, section }) {
+    async filter({ trade, year, section }) {
       const all = await loadQuestions();
       let list = all;
+      if (trade != null) list = list.filter((q) => (q.trade || 'SF') === trade);
       if (year != null) list = list.filter((q) => q.year === year);
       if (section != null) list = list.filter((q) => q.section === section);
       return list;
