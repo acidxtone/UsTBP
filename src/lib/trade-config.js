@@ -20,3 +20,14 @@ export function getYearsForTrade(tradeCode) {
 export function getTradeLabel(code) {
   return TRADES.find((t) => t.code === code)?.label || code || 'Steamfitter / Pipefitter';
 }
+
+/** Value stored in the questions table (trade column). Matches your CSV/DB. */
+export function getTradeDbValue(code) {
+  const map = {
+    SF: 'steamfitter_pipefitter',
+    E: 'electrician',
+    M: 'millwright',
+    W: 'welder',
+  };
+  return map[code] || code || 'steamfitter_pipefitter';
+}

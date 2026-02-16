@@ -4,6 +4,7 @@
  */
 
 import { supabase } from '@/lib/supabase';
+import { getTradeDbValue } from '@/lib/trade-config';
 
 let questionsCache = null;
 let studyGuidesCache = null;
@@ -229,7 +230,8 @@ const entities = {
     async filter({ trade, year, section }) {
       try {
         let query = supabase.from('questions').select('*');
-        if (trade != null) query = query.eq('trade', trade);
+        const tradeDb = trade != null ? getTradeDbValue(trade) : null;
+        if (tradeDb) query = query.eq('trade', tradeDb);
         query = query.eq('country', 'CA');
         if (year != null) query = query.eq('year', year);
         if (section != null) query = query.eq('section', section);
