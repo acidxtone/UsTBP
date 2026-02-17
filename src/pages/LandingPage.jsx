@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { BookOpen, Target, Zap, CheckCircle, ArrowRight } from "lucide-react";
+import { BannerAd, InContentAd } from '@/components/ads/AdSense';
 
 export default function LandingPage() {
   return (
@@ -23,6 +24,13 @@ export default function LandingPage() {
           </Link>
         </div>
       </nav>
+
+      {/* Top Banner Ad */}
+      <section className="pt-8 pb-4 px-6" aria-label="Advertisement">
+        <div className="max-w-6xl mx-auto">
+          <BannerAd position="top" />
+        </div>
+      </section>
 
       <section className="pt-32 pb-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
@@ -170,6 +178,13 @@ export default function LandingPage() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Bottom Banner Ad */}
+      <section className="py-8 px-6" aria-label="Advertisement">
+        <div className="max-w-6xl mx-auto">
+          <BannerAd position="bottom" />
         </div>
       </section>
 
