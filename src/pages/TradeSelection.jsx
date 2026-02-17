@@ -43,8 +43,8 @@ export default function TradeSelection() {
       <section aria-label="Advertisement" className="flex-shrink-0 py-2">
         <BannerAd position="top" />
       </section>
-      <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="w-full max-w-4xl flex-1 flex items-center justify-center">
-        <div className="text-center mb-8">
+      <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="w-full max-w-4xl mx-auto flex-1 flex items-center justify-center">
+        <div className="w-full text-center mb-8">
           <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-white/10 mb-4">
             <Briefcase className="h-10 w-10 text-white" />
           </div>
@@ -60,7 +60,7 @@ export default function TradeSelection() {
               className="w-full px-3 py-2 rounded-lg border border-white/20 bg-white/10 text-white placeholder:text-slate-400 text-center text-sm focus:outline-none focus:ring-2 focus:ring-white/50"
             />
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 w-full">
             {TRADES.map((trade) => (
               <motion.div key={trade.code} whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                 <Card

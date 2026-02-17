@@ -72,9 +72,9 @@ export default function YearSelection() {
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="w-full max-w-4xl flex-1 flex flex-col items-center justify-center"
+        className="w-full max-w-4xl mx-auto flex-1 flex flex-col items-center justify-center"
       >
-        <div className="text-center mb-8">
+        <div className="w-full text-center mb-8">
           <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-white/10 mb-4">
             <GraduationCap className="h-10 w-10 text-white" />
           </div>
@@ -85,7 +85,7 @@ export default function YearSelection() {
             Select your apprenticeship year to access the right study materials and track your progress
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 w-full">
             {years.map((item) => (
               <motion.div
                 key={item.year}
