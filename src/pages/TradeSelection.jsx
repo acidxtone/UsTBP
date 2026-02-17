@@ -7,12 +7,21 @@ import { Briefcase, CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import { useAuth } from '@/lib/AuthContext';
 import { TRADES } from '@/lib/trade-config';
+import AnonymousSession from '@/lib/AnonymousSession';
 
 export default function TradeSelection() {
-  const { user, updateMe } = useAuth();
+  const { user, updateMe, checkAppState } = useAuth();
   const [selectedTrade, setSelectedTrade] = useState(user?.selected_trade || null);
+  const [name, setName] = useState(user?.full_name && !user.full_name.startsWith('User') ? user.full_name : '');
   const [saving, setSaving] = useState(false);
   const navigate = useNavigate();
+
+  const handleNameBlur = () => {
+    if (name.trim()) {
+      AnonymousSession.updateUserName(name.trim());
+      checkAppState?.();
+    }
+  };
 
   const handleContinue = async () => {
     if (!selectedTrade) return;
@@ -36,7 +45,17 @@ export default function TradeSelection() {
             <Briefcase className="h-10 w-10 text-white" />
           </div>
           <h1 className="text-4xl font-bold text-white mb-3">Which trade are you studying?</h1>
-          <p className="text-slate-300 text-lg mb-6">Select your trade to access the right materials and track your progress</p>
+          <p className="text-slate-300 text-lg mb-4">Select your trade to access the right materials and track your progress</p>
+          <div className="max-w-xs mx-auto mb-6">
+            <input
+              type="text"
+              placeholder="Your name (optional)"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              onBlur={handleNameBlur}
+              className="w-full px-3 py-2 rounded-lg border border-white/20 bg-white/10 text-white placeholder:text-slate-400 text-center text-sm focus:outline-none focus:ring-2 focus:ring-white/50"
+            />
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
             {TRADES.map((trade) => (
               <motion.div key={trade.code} whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>

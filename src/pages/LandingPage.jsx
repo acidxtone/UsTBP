@@ -4,8 +4,14 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { BookOpen, Target, Zap, CheckCircle, ArrowRight } from "lucide-react";
 import { BannerAd, InContentAd } from '@/components/ads/AdSense';
+import AnonymousSession from '@/lib/AnonymousSession';
 
 export default function LandingPage() {
+  const handleGetStarted = () => {
+    AnonymousSession.init(null);
+    window.location.href = '/TradeSelection';
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
@@ -16,12 +22,10 @@ export default function LandingPage() {
             </div>
             <span className="text-xl font-bold text-slate-900">TradeBenchPrep</span>
           </div>
-          <Link to="/auth">
-            <Button className="bg-blue-600 hover:bg-blue-700">
-              Sign In
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
-          </Link>
+          <Button className="bg-blue-600 hover:bg-blue-700" onClick={handleGetStarted}>
+            Get Started
+            <ArrowRight className="w-4 h-4 ml-2" />
+          </Button>
         </div>
       </nav>
 
@@ -42,12 +46,10 @@ export default function LandingPage() {
             The ultimate quiz and study platform for apprenticeship training. Practice questions, track your progress, and prepare with confidence.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <Link to="/auth">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-6 w-full sm:w-auto">
-                Get Started Free
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
-            </Link>
+            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-6 w-full sm:w-auto" onClick={handleGetStarted}>
+              Get Started Free
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
           </div>
           <div className="flex items-center justify-center gap-6 text-sm text-slate-500">
             <span className="flex items-center gap-1.5">

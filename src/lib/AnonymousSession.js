@@ -1,153 +1,111 @@
-// Anonymous Session Manager for TradeBenchPrep
-// Stores user progress in LocalStorage for anonymous sessions
+/**
+ * Anonymous session manager: creates a temporary session (no login).
+ * Session expires after 1 week of inactivity.
+ * Uses crypto.randomUUID() for session IDs (no extra dependency).
+ */
 
-const ANONYMOUS_SESSION_KEY = 'tradebench_anonymous_session';
-const USER_PROGRESS_KEY = 'tradebench_user_progress';
+const STORAGE_KEY = 'tradebench_anonymous_session';
+const ONE_WEEK_MS = 7 * 24 * 60 * 60 * 1000;
 
-export const anonymousSession = {
-  // Initialize or get existing anonymous session
-  init() {
-    const existing = localStorage.getItem(ANONYMOUS_SESSION_KEY);
-    if (!existing) {
-      const sessionId = `anon_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
-      const session = {
-        id: sessionId,
-        createdAt: new Date().toISOString(),
-        isAnonymous: true,
-        progress: {
-          answeredQuestions: [],
-          currentYear: null,
-          problemAreas: [],
-          timeSpent: 0,
-          sessionsCount: 0
+class AnonymousSession {
+  constructor() {
+    this.sessionId = null;
+    this.userName = null;
+    this.createdAt = null;
+    this.lastActivity = null;
+  }
+
+  /** Initialize or resume session. Call with optional userName when user chooses a name. */
+  init(userName = null) {
+    if (typeof localStorage === 'undefined') return false;
+    const stored = localStorage.getItem(STORAGE_KEY);
+
+    if (stored) {
+      try {
+        const session = JSON.parse(stored);
+        if (Date.now() - (session.lastActivity || session.createdAt) < ONE_WEEK_MS) {
+          this.sessionId = session.sessionId;
+          this.userName = (userName != null && String(userName).trim() !== '') ? String(userName).trim() : (session.userName ?? session.user_name);
+          this.createdAt = session.createdAt;
+          this.lastActivity = Date.now();
+          this.save();
+          return true;
         }
-      };
-      localStorage.setItem(ANONYMOUS_SESSION_KEY, JSON.stringify(session));
-      return session;
+      } catch (_) {
+        // invalid stored data
+      }
+      this.cleanup();
     }
-    return JSON.parse(existing);
-  },
 
-  // Get current session
-  getCurrent() {
-    return this.init();
-  },
+    this.sessionId = (typeof crypto !== 'undefined' && crypto.randomUUID)
+      ? crypto.randomUUID()
+      : `anon_${Date.now()}_${Math.random().toString(36).slice(2, 11)}`;
+    this.userName = (userName && String(userName).trim()) || `User${Math.floor(Math.random() * 10000)}`;
+    this.createdAt = Date.now();
+    this.lastActivity = Date.now();
+    this.save();
+    return true;
+  }
 
-  // Update progress
-  updateProgress(progress) {
-    const session = this.getCurrent();
-    session.progress = { ...session.progress, ...progress };
-    session.lastActivity = new Date().toISOString();
-    localStorage.setItem(ANONYMOUS_SESSION_KEY, JSON.stringify(session));
-  },
+  save() {
+    if (typeof localStorage === 'undefined') return;
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({
+      sessionId: this.sessionId,
+      userName: this.userName,
+      createdAt: this.createdAt,
+      lastActivity: this.lastActivity
+    }));
+  }
 
-  // Add answered question
-  addAnsweredQuestion(questionId, year, section, isCorrect = false) {
-    const session = this.getCurrent();
-    const answeredQuestion = {
-      questionId,
-      year,
-      section,
-      isCorrect,
-      timestamp: new Date().toISOString()
-    };
-    
-    // Avoid duplicates
-    session.progress.answeredQuestions = session.progress.answeredQuestions.filter(
-      q => q.questionId !== questionId
+  updateActivity() {
+    this.lastActivity = Date.now();
+    this.save();
+  }
+
+  updateUserName(name) {
+    if (this.sessionId == null) return;
+    this.userName = (name != null && String(name).trim() !== '') ? String(name).trim() : this.userName;
+    this.lastActivity = Date.now();
+    this.save();
+  }
+
+  isValid() {
+    return !!(
+      this.sessionId &&
+      (Date.now() - (this.lastActivity || this.createdAt) < ONE_WEEK_MS)
     );
-    session.progress.answeredQuestions.push(answeredQuestion);
-    
-    // Track problem areas
-    if (!isCorrect) {
-      const problemArea = `Year ${year} - Section ${section}`;
-      if (!session.progress.problemAreas.includes(problemArea)) {
-        session.progress.problemAreas.push(problemArea);
+  }
+
+  /** Clear session and all TradeBench progress from localStorage */
+  cleanup() {
+    if (typeof localStorage === 'undefined') return;
+    const keysToRemove = [];
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      if (key === STORAGE_KEY || (key && key.startsWith('tradebench_'))) {
+        keysToRemove.push(key);
       }
     }
-    
-    this.updateProgress(session.progress);
-  },
-
-  // Set current year
-  setCurrentYear(year) {
-    const session = this.getCurrent();
-    session.progress.currentYear = year;
-    session.progress.sessionsCount++;
-    this.updateProgress(session.progress);
-  },
-
-  // Get session stats
-  getStats() {
-    const session = this.getCurrent();
-    return {
-      sessionId: session.id,
-      isAnonymous: session.isAnonymous,
-      totalAnswered: session.progress.answeredQuestions.length,
-      correctAnswers: session.progress.answeredQuestions.filter(q => q.isCorrect).length,
-      currentYear: session.progress.currentYear,
-      problemAreas: session.progress.problemAreas,
-      timeSpent: session.progress.timeSpent,
-      sessionsCount: session.progress.sessionsCount,
-      createdAt: session.createdAt
-    };
-  },
-
-  // Merge anonymous session with email account
-  async mergeWithEmail(email) {
-    const session = this.getCurrent();
-    if (!session.isAnonymous) return session;
-
-    // Store the merge data for later processing
-    const mergeData = {
-      anonymousSessionId: session.id,
-      email: email,
-      progress: session.progress,
-      mergeRequestedAt: new Date().toISOString()
-    };
-
-    // Store merge request in localStorage for processing after login
-    localStorage.setItem('tradebench_merge_request', JSON.stringify(mergeData));
-    
-    return mergeData;
-  },
-
-  // Clear anonymous session
-  clear() {
-    localStorage.removeItem(ANONYMOUS_SESSION_KEY);
-  }
-};
-
-// Progress persistence utilities
-export const progressUtils = {
-  // Save progress to persistent storage
-  save(key, data) {
-    try {
-      localStorage.setItem(`${USER_PROGRESS_KEY}_${key}`, JSON.stringify(data));
-    } catch (error) {
-      console.error('Failed to save progress:', error);
-    }
-  },
-
-  // Load progress from persistent storage
-  load(key) {
-    try {
-      const data = localStorage.getItem(`${USER_PROGRESS_KEY}_${key}`);
-      return data ? JSON.parse(data) : null;
-    } catch (error) {
-      console.error('Failed to load progress:', error);
-      return null;
-    }
-  },
-
-  // Get all saved progress
-  getAll() {
-    const keys = Object.keys(localStorage).filter(key => key.startsWith(USER_PROGRESS_KEY));
-    const progress = {};
-    keys.forEach(key => {
-      const cleanKey = key.replace(`${USER_PROGRESS_KEY}_`, '');
-      progress[cleanKey] = this.load(cleanKey);
+    keysToRemove.forEach(k => localStorage.removeItem(k));
+    // Also clear legacy keys if present
+    ['anonymousSession', 'userProgress', 'bookmarkedQuestions', 'quizResults', 'selected_trade', 'selected_year'].forEach(k => {
+      try { localStorage.removeItem(k); } catch (_) {}
     });
-    return progress;
+    this.sessionId = null;
+    this.userName = null;
+    this.createdAt = null;
+    this.lastActivity = null;
   }
-};
+
+  getSessionData() {
+    return {
+      sessionId: this.sessionId,
+      userName: this.userName,
+      createdAt: this.createdAt,
+      lastActivity: this.lastActivity
+    };
+  }
+}
+
+const instance = new AnonymousSession();
+export default instance;

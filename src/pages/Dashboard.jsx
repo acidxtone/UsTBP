@@ -26,19 +26,25 @@ import SectionProgress from '@/components/dashboard/SectionProgress';
 import { getTradeLabel } from '@/lib/trade-config';
 
 export default function Dashboard() {
-  const { user } = useAuth();
+  const { user, updateActivity } = useAuth();
   const navigate = useNavigate();
 
-  const selectedTrade = user?.selected_trade || localStorage.getItem('selected_trade') || 'SF';
-  const selectedYear = user?.selected_year != null ? user.selected_year : (() => {
+  const storedTrade = user?.selected_trade ?? localStorage.getItem('selected_trade');
+  const storedYear = user?.selected_year != null ? user.selected_year : (() => {
     const y = localStorage.getItem('selected_year');
-    return y ? parseInt(y, 10) : null;
+    return y != null && y !== '' ? parseInt(y, 10) : null;
   })();
+  const selectedTrade = storedTrade || 'SF';
+  const selectedYear = storedYear;
 
   useEffect(() => {
-    if (!selectedTrade) navigate(createPageUrl('TradeSelection'));
-    else if (!selectedYear) navigate(createPageUrl('YearSelection'));
-  }, [selectedTrade, selectedYear, navigate]);
+    updateActivity?.();
+  }, [updateActivity]);
+
+  useEffect(() => {
+    if (!storedTrade || storedTrade === '') navigate(createPageUrl('TradeSelection'));
+    else if (storedYear == null) navigate(createPageUrl('YearSelection'));
+  }, [storedTrade, storedYear, navigate]);
 
   const { data: progress, isLoading: progressLoading, isError: progressError, refetch: refetchProgress } = useQuery({
     queryKey: ['userProgress', user?.id, user?.selected_year],
@@ -262,7 +268,11 @@ export default function Dashboard() {
                 <Button variant="outline" size="sm" onClick={() => refetchProgress()}>Retry</Button>
               </div>
             )}
-            <SectionProgress sectionStats={progress?.section_stats || {}} />
+            <SectionProgress 
+              sectionStats={progress?.section_stats || {}} 
+              trade={selectedTrade}
+              year={selectedYear}
+            />
           </motion.div>
 
           {/* Quiz Modes */}

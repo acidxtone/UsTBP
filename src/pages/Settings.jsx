@@ -137,10 +137,6 @@ export default function Settings() {
               <Label>Name</Label>
               <Input value={user?.full_name || ''} disabled />
             </div>
-            <div className="space-y-2">
-              <Label>Email</Label>
-              <Input value={user?.email || ''} disabled />
-            </div>
             <div className="flex items-center justify-between p-3 rounded-lg bg-slate-50">
               <div>
                 <p className="text-sm text-slate-500">Study Year</p>
