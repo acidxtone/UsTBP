@@ -25,6 +25,8 @@ import {
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import YearIndicator from '@/components/YearIndicator';
+import { BannerAd } from '@/components/ads/AdSense';
+import { getSectionsForTradeYear } from '@/lib/trade-config';
 
 const modeConfig = {
   full_exam: {
@@ -71,16 +73,16 @@ const modeConfig = {
   }
 };
 
-const sections = [
-  { num: 1, name: 'Workplace Safety and Rigging', questions: 10 },
-  { num: 2, name: 'Tools, Equipment and Materials', questions: 38 },
-  { num: 3, name: 'Metal Fabrication', questions: 19 },
-  { num: 4, name: 'Drawings and Specifications', questions: 13 },
-  { num: 5, name: 'Calculations and Science', questions: 20 }
-];
-
 export default function QuizSetup() {
   const { user } = useAuth();
+  const trade = user?.selected_trade || 'SF';
+  const year = user?.selected_year != null ? Number(user.selected_year) : 1;
+  const sectionInfo = getSectionsForTradeYear(trade, year);
+  const sections = Object.entries(sectionInfo).map(([numStr, info]) => ({
+    num: parseInt(numStr, 10),
+    name: info?.name || `Section ${numStr}`,
+    questions: info?.target ?? 0
+  }));
   const navigate = useNavigate();
   const urlParams = new URLSearchParams(window.location.search);
   const mode = urlParams.get('mode') || 'quick_quiz';
@@ -170,6 +172,9 @@ export default function QuizSetup() {
       </header>
 
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <section aria-label="Advertisement" className="pt-2 pb-4">
+          <BannerAd position="top" />
+        </section>
         {/* Mode Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -395,6 +400,9 @@ export default function QuizSetup() {
             </Card>
           </motion.div>
         </div>
+        <section aria-label="Advertisement" className="pt-6 pb-4">
+          <BannerAd position="bottom" />
+        </section>
       </main>
     </div>
   );

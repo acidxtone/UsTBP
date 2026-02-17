@@ -8,6 +8,7 @@ import { GraduationCap, CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import { useAuth } from '@/lib/AuthContext';
 import { getYearsForTrade } from '@/lib/trade-config';
+import { BannerAd } from '@/components/ads/AdSense';
 
 const YEAR_LABELS = { 1: "First Year", 2: "Second Year", 3: "Third Year", 4: "Fourth Year" };
 const YEAR_DESC = { 1: "Foundation and basics", 2: "Building on fundamentals", 3: "Advanced techniques", 4: "Mastery and specialization" };
@@ -64,11 +65,14 @@ export default function YearSelection() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex flex-col p-4">
+      <section aria-label="Advertisement" className="flex-shrink-0 py-2">
+        <BannerAd position="top" />
+      </section>
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="w-full max-w-4xl"
+        className="w-full max-w-4xl flex-1 flex flex-col items-center justify-center"
       >
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-white/10 mb-4">
@@ -129,6 +133,9 @@ export default function YearSelection() {
           </div>
         </div>
       </motion.div>
+      <section aria-label="Advertisement" className="flex-shrink-0 py-2">
+        <BannerAd position="bottom" />
+      </section>
     </div>
   );
 }

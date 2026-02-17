@@ -4,6 +4,7 @@ import { api } from '@/lib/api-client';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { useNavigate } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
+import { useAds } from '@/components/ads/AdProvider';
 import { Button } from "@/components/ui/button";
 import { 
   AlertDialog,
@@ -50,6 +51,7 @@ export default function Quiz() {
     : null;
 
   const { user } = useAuth();
+  const { setQuizMode } = useAds();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [showExplanation, setShowExplanation] = useState(false);
@@ -82,6 +84,12 @@ export default function Quiz() {
     },
     enabled: !!user?.id && !!user?.selected_year
   });
+
+  // Hide sticky/side ads during quiz so they don't block questions or buttons
+  useEffect(() => {
+    setQuizMode?.(true);
+    return () => setQuizMode?.(false);
+  }, [setQuizMode]);
 
   // Select questions based on mode
   useEffect(() => {
