@@ -15,7 +15,30 @@ class AnonymousSession {
     this.lastActivity = null;
   }
 
-  /** Initialize or resume session. Call with optional userName when user chooses a name. */
+  /**
+   * Restore existing session from storage only. Does NOT create a new session.
+   * Call on app load to see if user already clicked Get Started before.
+   */
+  resume() {
+    if (typeof localStorage === 'undefined') return false;
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (!stored) return false;
+    try {
+      const session = JSON.parse(stored);
+      if (Date.now() - (session.lastActivity || session.createdAt) < ONE_WEEK_MS) {
+        this.sessionId = session.sessionId;
+        this.userName = session.userName ?? session.user_name;
+        this.createdAt = session.createdAt;
+        this.lastActivity = Date.now();
+        this.save();
+        return true;
+      }
+    } catch (_) {}
+    this.cleanup();
+    return false;
+  }
+
+  /** Create or update session. Call only when user clicks Get Started (or sets name). */
   init(userName = null) {
     if (typeof localStorage === 'undefined') return false;
     const stored = localStorage.getItem(STORAGE_KEY);

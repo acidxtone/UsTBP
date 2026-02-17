@@ -6,8 +6,9 @@ import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-route
 import PageNotFound from '@/lib/PageNotFound';
 import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import { AdProvider, SideAd, StickyHeaderAd, StickyFooterAd } from '@/components/ads/AdProvider';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Navigate } from 'react-router-dom';
+import { initPeriodicCleanup } from '@/lib/SessionCleanup';
 import Dashboard from '@/pages/Dashboard';
 import LandingPage from '@/pages/LandingPage';
 import AuthPage from '@/pages/AuthPage';
@@ -65,12 +66,8 @@ const AuthenticatedApp = () => {
   return (
     <Routes>
       <Route path="/auth" element={<Navigate to="/" replace />} />
-      <Route path="/" element={
-        <LayoutWrapper currentPageName="Dashboard">
-          <Dashboard />
-        </LayoutWrapper>
-      } />
-      {/* Add explicit Dashboard route for /Dashboard path */}
+      {/* Root always shows landing; Get Started sends users to TradeSelection */}
+      <Route path="/" element={<LandingPage />} />
       <Route path="/Dashboard" element={
         <LayoutWrapper currentPageName="Dashboard">
           <Dashboard />
@@ -148,6 +145,9 @@ const AuthenticatedApp = () => {
 
 
 function App() {
+  useEffect(() => {
+    initPeriodicCleanup();
+  }, []);
 
   return (
     <AdProvider>

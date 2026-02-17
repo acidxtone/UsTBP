@@ -42,7 +42,7 @@ export const AuthProvider = ({ children }) => {
   const [authError, setAuthError] = useState(null);
 
   const refreshUser = useCallback(() => {
-    const ok = AnonymousSession.init();
+    const ok = AnonymousSession.resume();
     if (ok && AnonymousSession.isValid()) {
       setUser(buildUserFromSession());
       setIsAuthenticated(true);
@@ -56,7 +56,8 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     setIsLoadingAuth(true);
-    const ok = AnonymousSession.init();
+    // Only restore existing session; do NOT create one (so first-time visitors see landing)
+    const ok = AnonymousSession.resume();
     if (ok && AnonymousSession.isValid()) {
       setUser(buildUserFromSession());
       setIsAuthenticated(true);
