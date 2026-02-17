@@ -162,7 +162,10 @@ export function getSectionsForTradeYear(tradeCode, year) {
   const tradeSections = SECTION_MAPPINGS[tradeCode];
   if (!tradeSections) return {};
 
-  const yearSections = tradeSections[year];
+  const y = year != null ? Number(year) : null;
+  if (y == null || Number.isNaN(y)) return {};
+
+  const yearSections = tradeSections[y];
   if (!yearSections) return {};
 
   return yearSections;

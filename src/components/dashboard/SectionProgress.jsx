@@ -3,16 +3,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import { TrendingUp, TrendingDown, Minus, AlertCircle } from "lucide-react";
+import { getSectionsForTradeYear } from '@/lib/trade-config';
 
-const sectionInfo = {
-  1: { name: "Workplace Safety and Rigging", target: 10, color: "blue" },
-  2: { name: "Tools, Equipment and Materials", target: 38, color: "purple" },
-  3: { name: "Metal Fabrication", target: 19, color: "orange" },
-  4: { name: "Drawings and Specifications", target: 13, color: "teal" },
-  5: { name: "Calculations and Science", target: 20, color: "pink" }
-};
-
-export default function SectionProgress({ sectionStats = {} }) {
+export default function SectionProgress({ sectionStats = {}, trade = 'SF', year = 1 }) {
+  const tradeCode = trade || 'SF';
+  const yearNum = year != null && !Number.isNaN(Number(year)) ? Number(year) : 1;
+  const sectionInfo = getSectionsForTradeYear(tradeCode, yearNum);
+  
   // Normalize to plain object with string keys (API may return numeric keys from JSONB)
   const normalized = typeof sectionStats === 'object' && sectionStats !== null
     ? Object.fromEntries(
@@ -50,66 +47,97 @@ export default function SectionProgress({ sectionStats = {} }) {
     return { text: "Focus Area", class: "bg-rose-100 text-rose-700" };
   };
 
+  const getProgressBarColor = (color) => {
+    const colorMap = {
+      blue: "bg-blue-500",
+      purple: "bg-purple-500",
+      orange: "bg-orange-500",
+      teal: "bg-teal-500",
+      pink: "bg-pink-500",
+      green: "bg-green-500",
+      indigo: "bg-indigo-500",
+      red: "bg-red-500"
+    };
+    return colorMap[color] || "bg-slate-500";
+  };
+
+  const getProgressBgColor = (color) => {
+    const colorMap = {
+      blue: "bg-blue-100",
+      purple: "bg-purple-100",
+      orange: "bg-orange-100",
+      teal: "bg-teal-100",
+      pink: "bg-pink-100",
+      green: "bg-green-100",
+      indigo: "bg-indigo-100",
+      red: "bg-red-100"
+    };
+    return colorMap[color] || "bg-slate-100";
+  };
+
+  if (Object.keys(sectionInfo).length === 0) {
+    return (
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <AlertCircle className="h-5 w-5 text-amber-500" />
+            Section Progress
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="text-center py-8">
+            <p className="text-slate-500">No sections available for this trade and year combination.</p>
+          </div>
+        </CardContent>
+      </Card>
+    );
+  }
+
   return (
-    <Card className="border-0 shadow-sm">
-      <CardHeader className="pb-2">
-        <CardTitle className="text-lg font-semibold flex items-center gap-2">
-          Section Progress
-          <Badge variant="outline" className="font-normal">
-            Exam Distribution
-          </Badge>
+    <Card>
+      <CardHeader>
+        <CardTitle className="flex items-center gap-2">
+          <AlertCircle className="h-5 w-5 text-blue-500" />
+          Section Progress - Year {yearNum}
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-4">
-        {sections.map((section) => {
-          const badge = getStatusBadge(section.status, section.percentage);
-          
-          return (
-            <div key={section.section} className="space-y-2">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <span className={cn(
-                    "w-7 h-7 rounded-lg flex items-center justify-center text-sm font-semibold",
-                    `bg-${section.color}-100 text-${section.color}-700`
-                  )}
-                  style={{
-                    backgroundColor: section.color === 'blue' ? '#dbeafe' : 
-                                   section.color === 'purple' ? '#f3e8ff' :
-                                   section.color === 'orange' ? '#fed7aa' :
-                                   section.color === 'teal' ? '#ccfbf1' : '#fce7f3',
-                    color: section.color === 'blue' ? '#1d4ed8' : 
-                          section.color === 'purple' ? '#7c3aed' :
-                          section.color === 'orange' ? '#c2410c' :
-                          section.color === 'teal' ? '#0d9488' : '#be185d'
-                  }}
-                  >
-                    {section.section}
-                  </span>
-                  <div>
-                    <p className="text-sm font-medium text-slate-700">{section.name}</p>
-                    <p className="text-xs text-slate-500">
-                      {section.target}% of exam • {section.attempted} practiced
-                    </p>
+      <CardContent>
+        <div className="space-y-4">
+          {sections.map((section) => {
+            const statusBadge = getStatusBadge(section.status, section.percentage);
+            const progressColor = getProgressBarColor(section.color);
+            const progressBgColor = getProgressBgColor(section.color);
+            
+            return (
+              <div key={section.section} className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm font-medium text-slate-700">
+                      {section.section}: {section.name}
+                    </span>
+                    <Badge variant="secondary" className={cn("text-xs", statusBadge.class)}>
+                      {statusBadge.text}
+                    </Badge>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm text-slate-600">
+                      {section.percentage}% ({section.correct}/{section.attempted})
+                    </span>
+                    {getStatusIcon(section.status, section.percentage)}
                   </div>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Badge className={cn("font-medium", badge.class)}>
-                    {badge.text}
-                  </Badge>
-                  {getStatusIcon(section.status, section.percentage)}
+                
+                <div className="relative">
+                  <div className={cn("w-full rounded-full h-2", progressBgColor)}>
+                    <div
+                      className={cn("h-2 rounded-full transition-all duration-300", progressColor)}
+                      style={{ width: `${Math.min(section.percentage, 100)}%` }}
+                    />
+                  </div>
+                  <div className="absolute -top-1 right-0 text-xs text-slate-500">
+                    Target: {section.target}%
+                  </div>
                 </div>
-              </div>
-              
-              <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
-                <div 
-                  className={cn(
-                    "h-full transition-all duration-500",
-                    section.percentage >= 70 ? "bg-emerald-500" :
-                    section.percentage > 0 ? "bg-amber-500" : "bg-slate-200"
-                  )}
-                  style={{ width: `${section.percentage}%` }}
-                />
-              </div>
               
               {section.status !== "not_started" && (
                 <p className="text-xs text-slate-500 text-right">
@@ -126,6 +154,7 @@ export default function SectionProgress({ sectionStats = {} }) {
             Start practicing to track your progress by section
           </div>
         )}
+        </div>
       </CardContent>
     </Card>
   );

@@ -29,22 +29,21 @@ export default function Dashboard() {
   const { user, updateActivity } = useAuth();
   const navigate = useNavigate();
 
-  const storedTrade = user?.selected_trade ?? localStorage.getItem('selected_trade');
-  const storedYear = user?.selected_year != null ? user.selected_year : (() => {
+  // Resolve trade/year same as backup that worked: user first, then localStorage
+  const selectedTrade = user?.selected_trade || localStorage.getItem('selected_trade') || 'SF';
+  const selectedYear = user?.selected_year != null ? Number(user.selected_year) : (() => {
     const y = localStorage.getItem('selected_year');
     return y != null && y !== '' ? parseInt(y, 10) : null;
   })();
-  const selectedTrade = storedTrade || 'SF';
-  const selectedYear = storedYear;
 
   useEffect(() => {
     updateActivity?.();
   }, [updateActivity]);
 
   useEffect(() => {
-    if (!storedTrade || storedTrade === '') navigate(createPageUrl('TradeSelection'));
-    else if (storedYear == null) navigate(createPageUrl('YearSelection'));
-  }, [storedTrade, storedYear, navigate]);
+    if (!selectedTrade || selectedTrade === '') navigate(createPageUrl('TradeSelection'));
+    else if (selectedYear == null) navigate(createPageUrl('YearSelection'));
+  }, [selectedTrade, selectedYear, navigate]);
 
   const { data: progress, isLoading: progressLoading, isError: progressError, refetch: refetchProgress } = useQuery({
     queryKey: ['userProgress', user?.id, user?.selected_year],
@@ -269,9 +268,10 @@ export default function Dashboard() {
               </div>
             )}
             <SectionProgress 
+              key={`section-progress-${selectedTrade}-${selectedYear}`}
               sectionStats={progress?.section_stats || {}} 
               trade={selectedTrade}
-              year={selectedYear}
+              year={selectedYear != null ? Number(selectedYear) : 1}
             />
           </motion.div>
 
