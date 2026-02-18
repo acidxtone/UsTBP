@@ -6,4 +6,4 @@ User-agent: Mediapartners-Google
 Allow: /
 
 # Sitemap
-Sitemap: https://tradebenchprep.org/sitemap.xml
+Sitemap: https://www.tradebenchprep.org/sitemap.xml
