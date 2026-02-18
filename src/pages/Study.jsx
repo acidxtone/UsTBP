@@ -97,28 +97,16 @@ export default function Study() {
 
   const bookmarkMutation = useMutation({
     mutationFn: async ({ questionId, bookmarked }) => {
-      const year = user?.selected_year != null ? Number(user.selected_year) : null;
-      if (year == null || Number.isNaN(year)) return;
-
       if (bookmarked) {
-        if (progress?.id) {
-          await api.entities.UserProgress.update(progress.id, {
-            bookmarked_questions: [...(progress.bookmarked_questions || []), questionId],
-            _year: year
-          });
-        } else {
-          await api.entities.UserProgress.create({
-            year,
-            bookmarked_questions: [questionId]
-          });
-        }
+        await api.entities.UserProgress.update(progress.id, {
+          bookmarked_questions: [...(progress.bookmarked_questions || []), questionId],
+          _year: user?.selected_year
+        });
       } else {
-        if (progress?.id) {
-          await api.entities.UserProgress.update(progress.id, {
-            bookmarked_questions: progress.bookmarked_questions?.filter(id => id !== questionId) || [],
-            _year: year
-          });
-        }
+        await api.entities.UserProgress.update(progress.id, {
+          bookmarked_questions: progress.bookmarked_questions?.filter(id => id !== questionId) || [],
+          _year: user?.selected_year
+        });
       }
     },
     onSuccess: () => {
