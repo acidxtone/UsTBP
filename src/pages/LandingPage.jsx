@@ -115,67 +115,61 @@ export default function LandingPage() {
       <section className="py-20 px-6 bg-slate-50">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-serif font-bold text-slate-900 text-center mb-12">
-            Why Choose TradeBenchPrep for Your Steamfitter Training?
+            Why Choose TradeBenchPrep for Canadian Trade Exam Prep?
           </h2>
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div>
               <h3 className="text-xl font-semibold text-slate-900 mb-4">Comprehensive Trade Exam Preparation</h3>
               <p className="text-slate-600 mb-4 leading-relaxed">
-                TradeBenchPrep provides specialized preparation for steamfitter and pipefitter apprentices at all levels. 
-                Our platform covers everything from basic safety procedures to advanced pipefitting calculations, 
-                ensuring you're fully prepared for your certification exams.
+                TradeBenchPrep helps Steamfitter/Pipefitter, Electrician, Millwright, and Welder apprentices prepare for Red Seal and provincial certification exams. Practice by year and topic, track your progress, and close gaps before exam day.
               </p>
               <p className="text-slate-600 leading-relaxed">
-                With over 500 practice questions organized by year and topic, you can focus on specific areas 
-                where you need improvement. Our questions are designed to match the format and difficulty level 
-                of actual trade certification exams.
+                With hundreds of practice questions organized by year and topic, you can focus on specific areas where you need improvement. Questions are designed to match the format and difficulty of Canadian trade certification exams.
               </p>
             </div>
             <div>
               <h3 className="text-xl font-semibold text-slate-900 mb-4">Industry-Standard Study Materials</h3>
               <p className="text-slate-600 mb-4 leading-relaxed">
-                Our study guides and practice materials are developed by experienced steamfitters and pipefitters 
-                who understand the challenges of modern trade work. We cover essential topics including rigging safety, 
-                pipe threading, blueprint reading, welding procedures, and steam system installation.
+                Study guides and practice materials are aligned with Canadian apprenticeship curriculum—safety and legislation, codes and standards, trade theory and calculations, and trade-specific systems. Content supports all four trades at every level.
               </p>
               <p className="text-slate-600 leading-relaxed">
-                Whether you're in your first year of apprenticeship or preparing for your journeyman certification, 
-                TradeBenchPrep adapts to your skill level and provides targeted practice to help you succeed.
+                Whether you're in Year 1 or preparing for Red Seal certification, TradeBenchPrep adapts to your trade and skill level and provides targeted practice to help you succeed.
               </p>
             </div>
           </div>
           
           <div className="bg-white rounded-xl p-8 border border-slate-200">
-            <h3 className="text-xl font-semibold text-slate-900 mb-4">Key Topics Covered</h3>
+            <h3 className="text-xl font-semibold text-slate-900 mb-1">Key Topics Covered</h3>
+            <p className="text-slate-500 text-sm mb-4">Aligned with apprenticeship curriculum for Steamfitter/Pipefitter, Electrician, Millwright, and Welder.</p>
             <div className="grid md:grid-cols-3 gap-4 text-sm text-slate-600">
               <div>
                 <h4 className="font-semibold text-slate-900 mb-2">Year 1 - Foundation</h4>
                 <ul className="space-y-1">
-                  <li>• Workplace Safety and OSHA Compliance</li>
-                  <li>• Basic Rigging and Lifting Equipment</li>
-                  <li>• Tool Identification and Usage</li>
-                  <li>• Trade Mathematics and Calculations</li>
-                  <li>• Blueprint Reading Fundamentals</li>
+                  <li>• Workplace safety, legislation & compliance</li>
+                  <li>• Tools, equipment & materials</li>
+                  <li>• Trade math & calculations</li>
+                  <li>• Drawings & documentation basics</li>
+                  <li>• Introduction to trade-specific systems</li>
                 </ul>
               </div>
               <div>
                 <h4 className="font-semibold text-slate-900 mb-2">Year 2 - Intermediate</h4>
                 <ul className="space-y-1">
-                  <li>• Heat Transfer and Thermodynamics</li>
-                  <li>• Pipe System Design Principles</li>
-                  <li>• Advanced Rigging Techniques</li>
-                  <li>• Welding and Joining Methods</li>
-                  <li>• Steam System Components</li>
+                  <li>• Codes & standards (CEC, ASME, CSA, etc.)</li>
+                  <li>• Trade theory & applications</li>
+                  <li>• Installation & assembly practices</li>
+                  <li>• Quality and inspection basics</li>
+                  <li>• Intermediate systems & procedures</li>
                 </ul>
               </div>
               <div>
                 <h4 className="font-semibold text-slate-900 mb-2">Year 3-4 - Advanced</h4>
                 <ul className="space-y-1">
-                  <li>• High Pressure Steam Systems</li>
-                  <li>• Advanced Pipefitting Calculations</li>
-                  <li>• System Troubleshooting and Maintenance</li>
-                  <li>• Project Management and Planning</li>
-                  <li>• Advanced Blueprint Interpretation</li>
+                  <li>• Advanced trade theory & systems</li>
+                  <li>• Troubleshooting & maintenance</li>
+                  <li>• Project planning & documentation</li>
+                  <li>• Red Seal / certification-level practice</li>
+                  <li>• Trade-specific advanced topics</li>
                 </ul>
               </div>
             </div>
