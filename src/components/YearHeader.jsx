@@ -1,13 +1,14 @@
 import React from 'react';
 import { useAuth } from '@/lib/AuthContext';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { Home, Calendar } from 'lucide-react';
 import YearIndicator from '@/components/YearIndicator';
-import { createPageUrl, getDashboardUrl } from '@/utils';
+import { createPageUrl, getDashboardUrlWithUrlFirst } from '@/utils';
 import { getTradeLabel } from '@/lib/trade-config';
 
 const YearHeader = () => {
   const { user } = useAuth();
+  const { trade: urlTrade, year: urlYear } = useParams();
   const trade = user?.selected_trade || 'SF';
   if (!user?.selected_year) return null;
 
@@ -15,7 +16,7 @@ const YearHeader = () => {
     <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-2 px-4 shadow-sm">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex items-center gap-4">
-          <Link to={getDashboardUrl(user?.selected_trade, user?.selected_year != null ? Number(user.selected_year) : null)} className="flex items-center gap-2 hover:text-blue-100 transition-colors">
+          <Link to={getDashboardUrlWithUrlFirst(urlTrade, urlYear, user?.selected_trade, user?.selected_year != null ? Number(user.selected_year) : null)} className="flex items-center gap-2 hover:text-blue-100 transition-colors">
             <Home className="h-4 w-4" />
             <span className="text-sm font-bold tracking-tight">TradeBenchPrep</span>
           </Link>

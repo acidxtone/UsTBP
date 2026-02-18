@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { createPageUrl, getDashboardUrl } from '@/utils';
+import { useNavigate, useParams } from 'react-router-dom';
+import { createPageUrl, getDashboardUrlWithUrlFirst } from '@/utils';
 import { api } from '@/lib/api-client';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -49,7 +49,7 @@ export default function YearSelection() {
       // Small delay to ensure localStorage is set before navigation
       setTimeout(() => {
         console.log('🔧 YearSelection: Navigating to Dashboard');
-        navigate(getDashboardUrl(user?.selected_trade, selectedYear));
+        navigate(getDashboardUrlWithUrlFirst(urlTrade, urlYear, user?.selected_trade, selectedYear));
       }, 100);
       
     } catch (error) {
@@ -57,7 +57,7 @@ export default function YearSelection() {
       console.log('🔧 YearSelection: Fallback - localStorage already set, navigating anyway');
       // Even if auth fails, localStorage is already set, so navigate
       setTimeout(() => {
-        navigate(getDashboardUrl(user?.selected_trade, selectedYear));
+        navigate(getDashboardUrlWithUrlFirst(urlTrade, urlYear, user?.selected_trade, selectedYear));
       }, 100);
     } finally {
       setSaving(false);

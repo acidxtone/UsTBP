@@ -3,8 +3,8 @@ import { useAuth } from '@/lib/AuthContext';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BookOpen, ArrowLeft, Eye, EyeOff, Loader2, ChevronDown } from "lucide-react";
-import { Link, useNavigate } from 'react-router-dom';
-import { createPageUrl, getDashboardUrl } from '@/utils';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import { createPageUrl, getDashboardUrlWithUrlFirst } from '@/utils';
 
 const SECURITY_QUESTIONS = [
   "What was the name of your first pet?",
@@ -20,6 +20,7 @@ const SECURITY_QUESTIONS = [
 export default function AuthPage() {
   const { signIn, signUp } = useAuth();
   const navigate = useNavigate();
+  const { trade: urlTrade, year: urlYear } = useParams();
   const [mode, setMode] = useState('signin');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -46,7 +47,7 @@ export default function AuthPage() {
     } else if (!authUser?.selected_year) {
       navigate(createPageUrl('YearSelection'));
     } else {
-      navigate(getDashboardUrl(authUser?.selected_trade, authUser?.selected_year != null ? Number(authUser.selected_year) : null));
+      navigate(getDashboardUrlWithUrlFirst(urlTrade, urlYear, authUser?.selected_trade, authUser?.selected_year != null ? Number(authUser.selected_year) : null));
     }
   };
 

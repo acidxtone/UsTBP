@@ -1,4 +1,4 @@
-import { CODE_TO_TRADE_SLUG } from '@/lib/trade-config';
+import { CODE_TO_TRADE_SLUG, TRADE_SLUG_TO_CODE } from '@/lib/trade-config';
 
 export function createPageUrl(pageName: string) {
     if (!pageName) return '/';
@@ -16,4 +16,23 @@ export function getDashboardUrl(tradeCode?: string | null, year?: number | null)
     const slug = (CODE_TO_TRADE_SLUG as Record<string, string>)[tradeCode];
     if (!slug) return '/Dashboard';
     return year != null ? `/${slug}/year-${year}` : `/${slug}`;
+}
+
+/**
+ * Dashboard URL with URL params as source of truth first (for use in links/navigate).
+ * Use when component may be rendered on /:trade or /:trade/year-:year so the link keeps that URL.
+ */
+export function getDashboardUrlWithUrlFirst(
+    urlTradeSlug?: string | null,
+    urlYear?: string | null,
+    tradeCodeFromState?: string | null,
+    yearFromState?: number | null
+): string {
+    const codeFromUrl = urlTradeSlug
+        ? (TRADE_SLUG_TO_CODE as Record<string, string>)[urlTradeSlug.toLowerCase()]
+        : null;
+    const tradeCode = codeFromUrl || tradeCodeFromState;
+    const yearFromUrl = urlYear != null && urlYear !== '' ? parseInt(urlYear, 10) : null;
+    const year = yearFromUrl != null && !Number.isNaN(yearFromUrl) ? yearFromUrl : yearFromState;
+    return getDashboardUrl(tradeCode, year);
 }

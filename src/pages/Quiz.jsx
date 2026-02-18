@@ -2,8 +2,8 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useAuth } from '@/lib/AuthContext';
 import { api } from '@/lib/api-client';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { useNavigate } from 'react-router-dom';
-import { createPageUrl, getDashboardUrl } from '@/utils';
+import { useNavigate, useParams } from 'react-router-dom';
+import { createPageUrl, getDashboardUrlWithUrlFirst } from '@/utils';
 import { useAds } from '@/components/ads/AdProvider';
 import { Button } from "@/components/ui/button";
 import { 
@@ -51,6 +51,7 @@ export default function Quiz() {
     : null;
 
   const { user } = useAuth();
+  const { trade: urlTrade, year: urlYear } = useParams();
   const { setQuizMode } = useAds();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
@@ -369,7 +370,7 @@ export default function Quiz() {
     }
   };
 
-  const dashboardUrl = getDashboardUrl(user?.selected_trade, user?.selected_year != null ? Number(user.selected_year) : null);
+  const dashboardUrl = getDashboardUrlWithUrlFirst(urlTrade, urlYear, user?.selected_trade, user?.selected_year != null ? Number(user.selected_year) : null);
   const handleExit = () => {
     if (answers.length > 0) {
       setShowExitDialog(true);
@@ -380,7 +381,7 @@ export default function Quiz() {
 
   const saveProgressAndExit = useCallback(async () => {
     if (answers.length === 0) {
-      navigate(getDashboardUrl(user?.selected_trade, user?.selected_year != null ? Number(user.selected_year) : null));
+      navigate(getDashboardUrlWithUrlFirst(urlTrade, urlYear, user?.selected_trade, user?.selected_year != null ? Number(user.selected_year) : null));
       return;
     }
     const correctCount = answers.filter(a => a.correct).length;
@@ -407,13 +408,13 @@ export default function Quiz() {
     try {
       await updateProgressMutation.mutateAsync(results);
       setShowExitDialog(false);
-      navigate(getDashboardUrl(user?.selected_trade, user?.selected_year != null ? Number(user.selected_year) : null));
+      navigate(getDashboardUrlWithUrlFirst(urlTrade, urlYear, user?.selected_trade, user?.selected_year != null ? Number(user.selected_year) : null));
     } catch (err) {
       console.error('Failed to save progress on exit:', err);
       setShowExitDialog(false);
-      navigate(getDashboardUrl(user?.selected_trade, user?.selected_year != null ? Number(user.selected_year) : null));
+      navigate(getDashboardUrlWithUrlFirst(urlTrade, urlYear, user?.selected_trade, user?.selected_year != null ? Number(user.selected_year) : null));
     }
-  }, [answers, startTime, mode, updateProgressMutation, navigate, user?.selected_trade, user?.selected_year]);
+  }, [answers, startTime, mode, updateProgressMutation, navigate, urlTrade, urlYear, user?.selected_trade, user?.selected_year]);
 
   const confirmExit = () => {
     saveProgressAndExit();
