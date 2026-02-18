@@ -338,6 +338,22 @@ export default function Settings() {
             </Button>
           </CardContent>
         </Card>
+
+        {/* Legal */}
+        <Card className="border-0 shadow-sm">
+          <CardHeader>
+            <CardTitle className="text-lg">Legal</CardTitle>
+            <CardDescription>Privacy and terms</CardDescription>
+          </CardHeader>
+          <CardContent className="flex flex-wrap gap-3">
+            <Link to="/Privacy">
+              <Button variant="outline" size="sm">Privacy Policy</Button>
+            </Link>
+            <Link to="/Terms">
+              <Button variant="outline" size="sm">Terms of Service</Button>
+            </Link>
+          </CardContent>
+        </Card>
         <section aria-label="Advertisement" className="pt-6 pb-4">
           <BannerAd position="bottom" />
         </section>

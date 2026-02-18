@@ -27,7 +27,7 @@ import DebugQuestions from '@/components/DebugQuestions';
 import SimpleDebug from '@/components/SimpleDebug';
 import ConnectionTest from '@/components/ConnectionTest';
 
-const PAGES_WITHOUT_YEAR_HEADER = ['YearSelection', 'TradeSelection', 'debug', 'test', 'connection'];
+const PAGES_WITHOUT_YEAR_HEADER = ['YearSelection', 'TradeSelection', 'Privacy', 'Terms', 'debug', 'test', 'connection'];
 
 const LayoutWrapper = ({ children, currentPageName }) => {
   const showYearHeader = !PAGES_WITHOUT_YEAR_HEADER.includes(currentPageName);
@@ -58,6 +58,8 @@ const AuthenticatedApp = () => {
     return (
       <Routes>
         <Route path="/auth" element={<AuthPage />} />
+        <Route path="/Privacy" element={<Privacy />} />
+        <Route path="/Terms" element={<Terms />} />
         <Route path="*" element={<LandingPage />} />
       </Routes>
     );

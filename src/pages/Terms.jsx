@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { BannerAd } from '@/components/ads/AdSense';
 
 /**
  * Terms of Service Page
- * Required for Google AdSense compliance
+ * Content from TradeBenchPrep Terms of Service (Effective February 17, 2026)
  */
 const Terms = () => {
   return (
@@ -13,224 +14,169 @@ const Terms = () => {
           <BannerAd position="top" />
         </section>
         <div className="bg-white rounded-lg shadow-sm p-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-8">
-            Terms of Service
-          </h1>
-          
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">Terms of Service</h1>
+          <p className="text-gray-500 text-sm mb-8">Effective Date: February 17, 2026</p>
+
           <div className="prose prose-gray max-w-none">
+            <p className="text-gray-600 mb-8">
+              Please read these Terms of Service ("Terms") carefully before using TradeBenchPrep (the "App"), operated by TradeBenchPrep ("we", "us", or "our"). By accessing or using the App, you agree to be bound by these Terms. If you do not agree to these Terms, do not use the App.
+            </p>
+
             <section className="mb-8">
-              <h2 className="text-xl font-semibold text-gray-800 mb-4">
-                Acceptance of Terms
-              </h2>
-              <p className="text-gray-600 mb-4">
-                By accessing and using PipeForge Exam Prep ("Service"), you accept and agree to be bound by these Terms of Service ("Terms"). 
-                If you do not agree to these Terms, please do not use our Service.
+              <h2 className="text-xl font-semibold text-gray-800 mb-4">1. Acceptance of Terms</h2>
+              <p className="text-gray-600">
+                By accessing, browsing, or using the App in any way, you confirm that you are at least 18 years of age (or the age of majority in your jurisdiction), have read and understood these Terms, and agree to be legally bound by them. These Terms constitute a binding agreement between you and us.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-xl font-semibold text-gray-800 mb-4">
-                Service Description
-              </h2>
-              <p className="text-gray-600 mb-4">
-                PipeForge Exam Prep provides:
+              <h2 className="text-xl font-semibold text-gray-800 mb-4">2. Description of the App</h2>
+              <p className="text-gray-600">
+                The App provides free exam preparation resources for individuals pursuing skilled trades certification in Canada. All study materials, practice questions, and content within the App are derived from publicly available information, government-published trade standards, and other publicly accessible educational resources. The App is provided for informational and educational purposes only.
               </p>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="text-xl font-semibold text-gray-800 mb-4">3. No Guarantee of Exam Success</h2>
+              <p className="text-gray-600">
+                Use of the App does not guarantee that you will pass any trade certification exam, licensing test, or other assessment. Results may vary depending on individual effort, prior knowledge, and the specific exam requirements of the certifying body. We make no representation that the content in the App is current, complete, or aligned with any specific exam at any given time.
+              </p>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="text-xl font-semibold text-gray-800 mb-4">4. Free Access and Advertising</h2>
+              <p className="text-gray-600">
+                The App is provided free of charge. To sustain operations and keep the App free, we display third-party advertisements within the App. By using the App, you consent to the display of such advertisements. We are not responsible for the content of third-party advertisements, and the display of an advertisement does not constitute our endorsement of the advertiser or its products and services.
+              </p>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="text-xl font-semibold text-gray-800 mb-4">5. User Accounts and Data</h2>
+              <p className="text-gray-600 mb-4"><strong>a) Browser-Based Storage:</strong> The App stores certain data (such as progress and preferences) in your browser. You are responsible for the security of your device and browser. We are not liable for unauthorized access to data stored on your device.</p>
+              <p className="text-gray-600 mb-4"><strong>b) Backend Storage:</strong> Certain usage data may be temporarily stored on our servers for up to seven (7) days and is then permanently deleted. See our Privacy Policy for further details.</p>
+              <p className="text-gray-600"><strong>c) User Deletion:</strong> You may delete your stored information at any time through the Settings page within the App. We are not liable for any loss of data resulting from your use of this feature.</p>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="text-xl font-semibold text-gray-800 mb-4">6. Accuracy of Content</h2>
+              <p className="text-gray-600">
+                All exam preparation content in the App is based on publicly available information. While we strive to provide accurate and up-to-date material, we make no warranties or representations, express or implied, regarding the accuracy, reliability, completeness, suitability, or timeliness of any content. The App is not a substitute for official study materials provided by trade certification authorities, apprenticeship programs, or regulatory bodies.
+              </p>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="text-xl font-semibold text-gray-800 mb-4">7. Intellectual Property</h2>
+              <p className="text-gray-600">
+                The App's design, layout, branding, original code, and any proprietary content created by us are protected by applicable intellectual property laws. All publicly sourced educational content used in the App remains the property of its respective owners. Nothing in these Terms transfers any intellectual property rights to you. You may not reproduce, distribute, modify, or create derivative works from any proprietary portion of the App without our express written permission.
+              </p>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="text-xl font-semibold text-gray-800 mb-4">8. Acceptable Use</h2>
+              <p className="text-gray-600 mb-4">You agree not to:</p>
               <ul className="list-disc pl-6 space-y-2 text-gray-600">
-                <li>Steamfitter/Pipefitter apprenticeship exam preparation materials</li>
-                <li>Practice quizzes and assessments</li>
-                <li>Study guides and learning resources</li>
-                <li>Progress tracking and performance analytics</li>
-                <li>Free access supported by advertisements</li>
+                <li>Use the App for any unlawful purpose or in violation of any applicable laws or regulations;</li>
+                <li>Attempt to gain unauthorized access to any portion of the App or its related systems;</li>
+                <li>Interfere with or disrupt the operation of the App or servers;</li>
+                <li>Scrape, harvest, or systematically collect data from the App by automated means;</li>
+                <li>Reverse engineer, decompile, or disassemble any aspect of the App;</li>
+                <li>Use the App in any way that could damage, disable, overburden, or impair it.</li>
               </ul>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-xl font-semibold text-gray-800 mb-4">
-                User Accounts
-              </h2>
-              <div className="space-y-4 text-gray-600">
-                <p>
-                  <strong>Registration:</strong> You may register using Google OAuth or email/password. You must provide accurate and complete information.
-                </p>
-                <p>
-                  <strong>Account Security:</strong> You are responsible for maintaining the confidentiality of your account credentials.
-                </p>
-                <p>
-                  <strong>Account Termination:</strong> We may terminate or suspend your account for violation of these Terms or at your discretion.
-                </p>
-              </div>
-            </section>
-
-            <section className="mb-8">
-              <h2 className="text-xl font-semibold text-gray-800 mb-4">
-                Free Service and Advertising
-              </h2>
-              <p className="text-gray-600 mb-4">
-                PipeForge Exam Prep is provided free of charge, supported by advertising:
+              <h2 className="text-xl font-semibold text-gray-800 mb-4">9. Disclaimer of Warranties</h2>
+              <p className="text-gray-600">
+                THE APP IS PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS WITHOUT WARRANTIES OF ANY KIND, WHETHER EXPRESS, IMPLIED, OR STATUTORY. TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, WE DISCLAIM ALL WARRANTIES, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. WE DO NOT WARRANT THAT THE APP WILL BE UNINTERRUPTED, ERROR-FREE, SECURE, OR FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS.
               </p>
-              <ul className="list-disc pl-6 space-y-2 text-gray-600">
-                <li>Google AdSense displays advertisements throughout the Service</li>
-                <li>Advertisements are targeted based on user interests and behavior</li>
-                <li>You may see different ads based on your location and browsing history</li>
-                <li>Ad revenue supports the continued free operation of the Service</li>
-                <li>You are not required to click on advertisements to use the Service</li>
-              </ul>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-xl font-semibold text-gray-800 mb-4">
-                User Conduct
-              </h2>
+              <h2 className="text-xl font-semibold text-gray-800 mb-4">10. Limitation of Liability</h2>
               <p className="text-gray-600 mb-4">
-                You agree not to:
-              </p>
-              <ul className="list-disc pl-6 space-y-2 text-gray-600">
-                <li>Use the Service for any illegal or unauthorized purpose</li>
-                <li>Violate any applicable laws or regulations</li>
-                <li>Infringe upon intellectual property rights</li>
-                <li>Transmit harmful, offensive, or inappropriate content</li>
-                <li>Attempt to gain unauthorized access to our systems</li>
-                <li>Interfere with or disrupt the Service</li>
-                <li>Use automated tools to access the Service excessively</li>
-                <li>Share your account credentials with others</li>
-              </ul>
-            </section>
-
-            <section className="mb-8">
-              <h2 className="text-xl font-semibold text-gray-800 mb-4">
-                Intellectual Property
-              </h2>
-              <p className="text-gray-600 mb-4">
-                All content and materials provided through the Service are owned by PipeForge Exam Prep or its licensors and are protected by 
-                copyright, trademark, and other intellectual property laws.
+                TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL TRADEBENCHPREP, ITS OWNERS, OPERATORS, EMPLOYEES, AGENTS, OR LICENSORS BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, PUNITIVE, OR EXEMPLARY DAMAGES ARISING OUT OF OR RELATED TO YOUR USE OF OR INABILITY TO USE THE APP, INCLUDING BUT NOT LIMITED TO LOSS OF DATA, LOSS OF REVENUE, OR FAILURE TO PASS AN EXAM, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
               </p>
               <p className="text-gray-600">
-                You may not use, copy, reproduce, distribute, or create derivative works of our content without our express written permission.
+                OUR TOTAL LIABILITY TO YOU FOR ANY CLAIMS ARISING FROM YOUR USE OF THE APP SHALL NOT EXCEED THE GREATER OF (A) THE AMOUNT YOU PAID TO ACCESS THE APP (IF ANY), OR (B) TWENTY CANADIAN DOLLARS ($20 CAD).
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-xl font-semibold text-gray-800 mb-4">
-                Privacy and Data Protection
-              </h2>
-              <p className="text-gray-600 mb-4">
-                Your privacy is important to us. Our collection and use of personal information is governed by our Privacy Policy, 
-                which is incorporated into these Terms by reference.
-              </p>
+              <h2 className="text-xl font-semibold text-gray-800 mb-4">11. Indemnification</h2>
               <p className="text-gray-600">
-                By using our Service, you consent to the collection and use of information as described in our Privacy Policy.
+                You agree to indemnify, defend, and hold harmless TradeBenchPrep and its owners, operators, officers, employees, and agents from and against any claims, liabilities, damages, losses, costs, or expenses (including reasonable legal fees) arising from: (a) your use of the App; (b) your violation of these Terms; or (c) your violation of any third-party rights.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-xl font-semibold text-gray-800 mb-4">
-                Disclaimers
-              </h2>
-              <div className="space-y-4 text-gray-600">
-                <p>
-                  <strong>Educational Content:</strong> Our materials are designed to help prepare for Steamfitter/Pipefitter exams, 
-                  but we do not guarantee passing results or employment outcomes.
-                </p>
-                <p>
-                  <strong>Accuracy:</strong> While we strive for accuracy, exam requirements and questions may change. 
-                  Always verify with official sources.
-                </p>
-                <p>
-                  <strong>Service Availability:</strong> We do not guarantee uninterrupted or error-free operation of the Service.
-                </p>
-              </div>
-            </section>
-
-            <section className="mb-8">
-              <h2 className="text-xl font-semibold text-gray-800 mb-4">
-                Limitation of Liability
-              </h2>
-              <p className="text-gray-600 mb-4">
-                To the maximum extent permitted by law, PipeForge Exam Prep shall not be liable for any indirect, incidental, special, 
-                consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses.
-              </p>
+              <h2 className="text-xl font-semibold text-gray-800 mb-4">12. Third-Party Links and Services</h2>
               <p className="text-gray-600">
-                Our total liability for any claims arising from the Service shall not exceed the amount you paid us, if any, for use of the Service.
+                The App may contain links to third-party websites or services. These links are provided for your convenience only. We have no control over and assume no responsibility for the content, privacy policies, or practices of third-party sites. Accessing third-party sites is at your own risk.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-xl font-semibold text-gray-800 mb-4">
-                Indemnification
-              </h2>
+              <h2 className="text-xl font-semibold text-gray-800 mb-4">13. Modifications to the App and Terms</h2>
               <p className="text-gray-600">
-                You agree to indemnify and hold harmless PipeForge Exam Prep from and against any claims, damages, obligations, 
-                losses, liabilities, costs or expenses, including reasonable attorneys' fees, arising from:
+                We reserve the right, at our sole discretion, to modify or discontinue the App (or any portion thereof) at any time without notice. We also reserve the right to modify these Terms at any time. Changes become effective when posted, and your continued use of the App constitutes acceptance of the revised Terms. It is your responsibility to review these Terms periodically.
               </p>
-              <ul className="list-disc pl-6 space-y-2 text-gray-600">
-                <li>Your use of the Service</li>
-                <li>Your violation of these Terms</li>
-                <li>Your violation of rights of any third party</li>
-              </ul>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-xl font-semibold text-gray-800 mb-4">
-                Termination
-              </h2>
-              <p className="text-gray-600 mb-4">
-                We may terminate or suspend your account and bar access to the Service immediately, without prior notice or liability, 
-                for any reason, including if you breach the Terms.
-              </p>
+              <h2 className="text-xl font-semibold text-gray-800 mb-4">14. Termination</h2>
               <p className="text-gray-600">
-                Upon termination, your right to use the Service will cease immediately. All provisions of the Terms which by their nature 
-                should survive termination shall survive termination.
+                We reserve the right to suspend or terminate your access to the App at any time, for any reason, without notice. Provisions of these Terms that by their nature should survive termination (including but not limited to disclaimers, limitations of liability, and indemnification) shall survive.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-xl font-semibold text-gray-800 mb-4">
-                Governing Law
-              </h2>
+              <h2 className="text-xl font-semibold text-gray-800 mb-4">15. Governing Law and Dispute Resolution</h2>
               <p className="text-gray-600">
-                These Terms shall be interpreted and governed by the laws of the Province of Alberta, Canada, without regard to 
-                its conflict of law provisions.
+                These Terms are governed by and construed in accordance with the laws of the Province of Alberta and the federal laws of Canada applicable therein, without regard to conflict of law principles. Any dispute arising from these Terms or your use of the App shall be resolved in the courts located in Alberta, Canada, and you hereby consent to the exclusive jurisdiction of such courts.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-xl font-semibold text-gray-800 mb-4">
-                Changes to Terms
-              </h2>
-              <p className="text-gray-600 mb-4">
-                We reserve the right to modify these Terms at any time. If we make material changes, we will notify you by:
-              </p>
-              <ul className="list-disc pl-6 space-y-2 text-gray-600">
-                <li>Posting the updated Terms on our website</li>
-                <li>Sending email notifications for significant changes</li>
-                <li>Updating the effective date at the top of these Terms</li>
-              </ul>
+              <h2 className="text-xl font-semibold text-gray-800 mb-4">16. Entire Agreement</h2>
               <p className="text-gray-600">
-                Your continued use of the Service after any such changes constitutes your acceptance of the new Terms.
+                These Terms, together with our Privacy Policy, constitute the entire agreement between you and us with respect to your use of the App and supersede all prior agreements, understandings, or representations relating to the same subject matter.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-xl font-semibold text-gray-800 mb-4">
-                Contact Information
-              </h2>
-              <p className="text-gray-600 mb-4">
-                If you have any questions about these Terms of Service, please contact us:
+              <h2 className="text-xl font-semibold text-gray-800 mb-4">17. Severability</h2>
+              <p className="text-gray-600">
+                If any provision of these Terms is found to be invalid, illegal, or unenforceable, the remaining provisions shall continue in full force and effect.
               </p>
-              <div className="bg-gray-50 rounded-lg p-4 mt-4">
+            </section>
+
+            <section className="mb-8">
+              <h2 className="text-xl font-semibold text-gray-800 mb-4">18. Waiver</h2>
+              <p className="text-gray-600">
+                Our failure to enforce any provision of these Terms shall not be deemed a waiver of that provision or our right to enforce it in the future.
+              </p>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="text-xl font-semibold text-gray-800 mb-4">19. Contact Us</h2>
+              <p className="text-gray-600 mb-4">If you have any questions about these Terms of Service, please contact us at:</p>
+              <div className="bg-gray-50 rounded-lg p-4">
                 <p className="text-gray-700">
-                  <strong>Email:</strong> legal@pipeforge-exam-prep.com<br />
-                  <strong>Response Time:</strong> Within 7 business days<br />
-                  <strong>Business Hours:</strong> Monday-Friday, 9 AM - 5 PM MST
+                  <strong>TradeBenchPrep</strong><br />
+                  Email: support@tradebenchprep.org<br />
+                  Website: https://www.tradebenchprep.org/
                 </p>
               </div>
             </section>
 
-            <div className="mt-12 pt-8 border-t border-gray-200">
-              <p className="text-sm text-gray-500 text-center">
-                <strong>Last Updated:</strong> {new Date().toLocaleDateString()}<br />
-                <strong>Effective Date:</strong> February 5, 2025
+            <div className="mt-12 pt-8 border-t border-gray-200 flex flex-wrap items-center justify-between gap-4">
+              <p className="text-sm text-gray-500">
+                <strong>Effective Date:</strong> February 17, 2026
               </p>
+              <div className="flex gap-4 text-sm">
+                <Link to="/" className="text-blue-600 hover:underline">Home</Link>
+                <Link to="/Privacy" className="text-blue-600 hover:underline">Privacy Policy</Link>
+              </div>
             </div>
           </div>
         </div>
