@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { createPageUrl, getDashboardUrlWithUrlFirst } from '@/utils';
 import { api } from '@/lib/api-client';
 import { Button } from "@/components/ui/button";
@@ -47,17 +47,21 @@ export default function YearSelection() {
       }
       
       // Small delay to ensure localStorage is set before navigation
+      // Use newly selected trade/year explicitly (no URL params on YearSelection); fallback to localStorage for trade
+      const tradeForUrl = user?.selected_trade || localStorage.getItem('selected_trade');
+      const dashboardUrl = getDashboardUrlWithUrlFirst(undefined, undefined, tradeForUrl, selectedYear);
       setTimeout(() => {
         console.log('🔧 YearSelection: Navigating to Dashboard');
-        navigate(getDashboardUrlWithUrlFirst(urlTrade, urlYear, user?.selected_trade, selectedYear));
+        navigate(dashboardUrl);
       }, 100);
       
     } catch (error) {
       console.error('YearSelection: Failed to save year selection:', error);
       console.log('🔧 YearSelection: Fallback - localStorage already set, navigating anyway');
-      // Even if auth fails, localStorage is already set, so navigate
+      const tradeForUrl = user?.selected_trade || localStorage.getItem('selected_trade');
+      const dashboardUrl = getDashboardUrlWithUrlFirst(undefined, undefined, tradeForUrl, selectedYear);
       setTimeout(() => {
-        navigate(getDashboardUrlWithUrlFirst(urlTrade, urlYear, user?.selected_trade, selectedYear));
+        navigate(dashboardUrl);
       }, 100);
     } finally {
       setSaving(false);
