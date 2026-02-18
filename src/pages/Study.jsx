@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '@/lib/AuthContext';
-import { api } from '@/api/supabaseClient';
+import { api } from '@/lib/api-client';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { Link, useNavigate } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
+import { getAvailableSections, getSectionDisplayName } from '@/lib/dynamicSections';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -72,10 +73,13 @@ export default function Study() {
   });
 
   const { data: studyGuides = [] } = useQuery({
-    queryKey: ['studyGuides', user?.selected_year],
+    queryKey: ['studyGuides', user?.selected_trade, user?.selected_year],
     queryFn: async () => {
       if (!user?.selected_year) return [];
-      const results = await api.studyGuides.getByYear(user?.selected_year);
+      const results = await api.studyGuides.getByTradeAndYear(
+        user?.selected_trade || 'SF',
+        user?.selected_year
+      );
       return results;
     },
     enabled: !!user?.selected_year
@@ -110,12 +114,19 @@ export default function Study() {
     }
   });
 
-  const sections = ['all', ...new Set(studyGuides.map(guide => guide.section))];
-  const filteredGuides = studyGuides.filter(guide => 
-    (selectedSection === 'all' || guide.section === selectedSection) &&
-    (guide.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-     guide.content.toLowerCase().includes(searchTerm.toLowerCase()))
+  const sectionValues = getAvailableSections(
+    studyGuides,
+    user?.selected_trade || 'SF',
+    user?.selected_year
   );
+  const filteredGuides = studyGuides.filter((guide) => {
+    const sectionMatch = selectedSection === 'all' || guide.section === selectedSection || String(guide.section) === String(selectedSection);
+    const title = (guide.title || '').toLowerCase();
+    const content = (guide.content || '').toLowerCase();
+    const search = searchTerm.toLowerCase();
+    const searchMatch = !search || title.includes(search) || content.includes(search);
+    return sectionMatch && searchMatch;
+  });
 
   const filteredQuestions = questions.filter(question => {
     const search = searchTerm.toLowerCase();
@@ -187,16 +198,21 @@ export default function Study() {
                     />
                   </div>
                 </div>
-                <div className="flex gap-2">
-                  {sections.map(section => (
+                <div className="flex flex-wrap gap-2">
+                  {sectionValues.map((sectionVal) => (
                     <Button
-                      key={section}
-                      variant={selectedSection === section ? "default" : "outline"}
+                      key={sectionVal}
+                      variant={selectedSection === sectionVal ? 'default' : 'outline'}
                       size="sm"
-                      onClick={() => setSelectedSection(section)}
+                      onClick={() => setSelectedSection(sectionVal)}
                       className="capitalize"
                     >
-                      {section}
+                      {getSectionDisplayName(
+                        studyGuides,
+                        user?.selected_trade || 'SF',
+                        user?.selected_year,
+                        sectionVal
+                      )}
                     </Button>
                   ))}
                 </div>
@@ -232,7 +248,7 @@ export default function Study() {
                           <div className="flex-1">
                             <CardTitle className="text-lg">{guide.title}</CardTitle>
                             <Badge variant="secondary" className="mt-2">
-                              {guide.section}
+                              {guide.section_name || guide.section}
                             </Badge>
                           </div>
                           <BookOpen className="h-5 w-5 text-slate-400" />
@@ -270,9 +286,9 @@ export default function Study() {
                 <DialogTitle className="pr-8">
                   {selectedGuide?.title}
                 </DialogTitle>
-                {selectedGuide?.section && (
+                {(selectedGuide?.section_name || selectedGuide?.section) && (
                   <Badge variant="secondary" className="w-fit">
-                    {selectedGuide.section}
+                    {selectedGuide.section_name || selectedGuide.section}
                   </Badge>
                 )}
               </DialogHeader>

@@ -3,33 +3,48 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import { TrendingUp, TrendingDown, Minus, AlertCircle } from "lucide-react";
-import { getSectionsForTradeYear } from '@/lib/trade-config';
+import { getSectionsForTradeYear as getDynamicSections } from '@/lib/dynamicSections';
+import { getSectionsForTradeYear as getConfigSections } from '@/lib/trade-config';
 
-export default function SectionProgress({ sectionStats = {}, trade = 'SF', year = 1 }) {
+export default function SectionProgress({ sectionStats = {}, trade = 'SF', year = 1, studyGuides }) {
   const tradeCode = trade || 'SF';
   const yearNum = year != null && !Number.isNaN(Number(year)) ? Number(year) : 1;
-  const sectionInfo = getSectionsForTradeYear(tradeCode, yearNum);
-  
-  // Normalize to plain object with string keys (API may return numeric keys from JSONB)
+
+  const dynamicList = Array.isArray(studyGuides) && studyGuides.length > 0
+    ? getDynamicSections(studyGuides, tradeCode, yearNum)
+    : [];
+  const configSections = getConfigSections(tradeCode, yearNum);
+
+  const sectionList = dynamicList.length > 0
+    ? dynamicList.map((s) => ({ section: s.section, name: s.name, target: s.target ?? 70, color: s.color }))
+    : Object.entries(configSections).map(([num, info]) => ({
+        section: num,
+        name: info.name,
+        target: info.target ?? 70,
+        color: info.color ?? 'blue',
+      }));
+
   const normalized = typeof sectionStats === 'object' && sectionStats !== null
     ? Object.fromEntries(
         Object.entries(sectionStats).map(([k, v]) => [String(k), v && typeof v === 'object' ? v : { attempted: 0, correct: 0 }])
       )
     : {};
-  
-  const sections = Object.entries(sectionInfo).map(([num, info]) => {
-    const stats = normalized[num] || normalized[String(num)] || { attempted: 0, correct: 0 };
-    const percentage = stats.attempted > 0 
-      ? Math.round((stats.correct / stats.attempted) * 100) 
+
+  const sections = sectionList.map((info) => {
+    const key = String(info.section);
+    const stats = normalized[key] || normalized[info.section] || { attempted: 0, correct: 0 };
+    const percentage = stats.attempted > 0
+      ? Math.round((stats.correct / stats.attempted) * 100)
       : 0;
-    const status = percentage >= 70 ? "passing" : percentage > 0 ? "needs_work" : "not_started";
-    
+    const status = percentage >= 70 ? 'passing' : percentage > 0 ? 'needs_work' : 'not_started';
     return {
-      section: num,
-      ...info,
+      section: info.section,
+      name: info.name,
+      target: info.target,
+      color: info.color,
       ...stats,
       percentage,
-      status
+      status,
     };
   });
 
@@ -75,7 +90,7 @@ export default function SectionProgress({ sectionStats = {}, trade = 'SF', year 
     return colorMap[color] || "bg-slate-100";
   };
 
-  if (Object.keys(sectionInfo).length === 0) {
+  if (sections.length === 0) {
     return (
       <Card>
         <CardHeader>

@@ -30,6 +30,23 @@ async function loadQuestions() {
   return questionsCache;
 }
 
+function mapStudyGuideFields(guide) {
+  if (!guide) return guide;
+  const sectionName =
+    guide.section_text ||
+    guide.section_name ||
+    (guide.title && String(guide.section) !== String(guide.title) ? guide.title : null) ||
+    `Section ${guide.section}`;
+  return {
+    ...guide,
+    section_name: sectionName,
+    title: guide.title || sectionName,
+    reference: guide.reference || 'Study Guide',
+    section_text: guide.section_text || guide.section_name || sectionName,
+    topics: guide.topics,
+  };
+}
+
 async function loadStudyGuides() {
   if (studyGuidesCache) return studyGuidesCache;
   try {
@@ -42,7 +59,7 @@ async function loadStudyGuides() {
       console.error('Error loading study guides:', error);
       studyGuidesCache = [];
     } else {
-      studyGuidesCache = data || [];
+      studyGuidesCache = (data || []).map(mapStudyGuideFields);
     }
   } catch (error) {
     console.error('Error loading study guides:', error);
@@ -685,44 +702,82 @@ const appLogs = {
 };
 
 const studyGuides = {
+  async getAll() {
+    try {
+      return await loadStudyGuides();
+    } catch (error) {
+      console.error('Error fetching study guides:', error);
+      return [];
+    }
+  },
+
   async getByYear(year) {
     try {
-      const { data, error } = await supabase
-        .from('study_guides')
-        .select('*')
-        .eq('year', year)
-        .order('section');
-
-      if (error) {
-        console.error('Error fetching study guides by year:', error);
-        return [];
-      }
-
-      return data || [];
+      const all = await loadStudyGuides();
+      const yearNum = year != null ? Number(year) : null;
+      if (yearNum == null || Number.isNaN(yearNum)) return [];
+      return all.filter((g) => g.year === yearNum);
     } catch (error) {
       console.error('Error fetching study guides by year:', error);
       return [];
     }
   },
 
+  async getByTradeAndYear(trade, year) {
+    try {
+      const all = await loadStudyGuides();
+      const yearNum = year != null ? Number(year) : null;
+      if (yearNum == null || Number.isNaN(yearNum)) return [];
+      const hasTradeColumn = all.some((g) => g.trade != null && g.trade !== '');
+      const tradeDb = trade != null ? getTradeDbValue(trade) : null;
+      return all.filter(
+        (g) =>
+          g.year === yearNum &&
+          (tradeDb == null || !hasTradeColumn || g.trade === tradeDb)
+      );
+    } catch (error) {
+      console.error('Error fetching study guides by trade/year:', error);
+      return [];
+    }
+  },
+
   async getByYearAndSection(year, section) {
     try {
-      const { data, error } = await supabase
-        .from('study_guides')
-        .select('*')
-        .eq('year', year)
-        .eq('section', section)
-        .single();
-
-      if (error && error.code !== 'PGRST116') {
-        console.error('Error fetching study guide:', error);
-        return null;
-      }
-
-      return data;
+      const all = await loadStudyGuides();
+      const yearNum = year != null ? Number(year) : null;
+      if (yearNum == null || Number.isNaN(yearNum)) return null;
+      const found = all.find(
+        (g) => g.year === yearNum && (g.section === section || String(g.section) === String(section))
+      );
+      return found || null;
     } catch (error) {
       console.error('Error fetching study guide:', error);
       return null;
+    }
+  },
+
+  async filter({ trade, year, section }) {
+    try {
+      let list = await loadStudyGuides();
+      const tradeDb = trade != null ? getTradeDbValue(trade) : null;
+      if (tradeDb) list = list.filter((g) => g.trade === tradeDb);
+      list = list.filter((g) => g.country === 'CA' || g.country == null);
+      if (year != null) list = list.filter((g) => g.year === year);
+      if (section != null)
+        list = list.filter(
+          (g) => g.section === section || String(g.section) === String(section)
+        );
+      list.sort((a, b) => {
+        const y = (a.year || 0) - (b.year || 0);
+        if (y !== 0) return y;
+        const sa = typeof a.section === 'number' ? a.section : parseInt(a.section, 10);
+        const sb = typeof b.section === 'number' ? b.section : parseInt(b.section, 10);
+        return (Number.isNaN(sa) ? 0 : sa) - (Number.isNaN(sb) ? 0 : sb);
+      });
+      return list;
+    } catch (error) {
+      console.error('Error filtering study guides:', error);
+      return [];
     }
   },
 };

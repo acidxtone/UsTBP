@@ -68,6 +68,15 @@ export default function Dashboard() {
     enabled: !!selectedYear
   });
 
+  const { data: studyGuides = [] } = useQuery({
+    queryKey: ['studyGuides', selectedTrade, selectedYear],
+    queryFn: async () => {
+      if (!selectedYear) return [];
+      return await api.studyGuides.getByTradeAndYear(selectedTrade, selectedYear);
+    },
+    enabled: !!selectedYear
+  });
+
   const quizModes = [
     {
       mode: 'full_exam',
@@ -272,6 +281,7 @@ export default function Dashboard() {
               sectionStats={progress?.section_stats || {}} 
               trade={selectedTrade}
               year={selectedYear != null ? Number(selectedYear) : 1}
+              studyGuides={studyGuides}
             />
           </motion.div>
 
