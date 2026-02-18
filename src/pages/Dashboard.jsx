@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useAuth } from '@/lib/AuthContext';
 import { api } from '@/lib/api-client';
 import { useQuery } from '@tanstack/react-query';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams, useLocation } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -30,11 +30,19 @@ import { getSEOTitleForTrade, getSEODescriptionForTrade, getSEOTitleForTradeYear
 export default function Dashboard() {
   const { user, updateActivity, updateMe } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
   const { trade: tradeSlug, year: yearNum } = useParams();
-  const yearSlug = yearNum != null && yearNum !== '' ? `year-${yearNum}` : undefined;
-  const parsedFromRoute = parseTradeYearFromSlug(tradeSlug, yearSlug);
 
-  // When route params exist and are valid, they are source of truth. Otherwise: user first, then localStorage.
+  // URL params are primary source of truth. If useParams() is empty (e.g. first frame), parse from pathname so direct /welder/year-1 always works.
+  const pathname = location.pathname || '';
+  const pathMatchTradeYear = pathname.match(/^\/(electrician|steamfitter|millwright|welder)\/year-([1-4])$/);
+  const pathMatchTradeOnly = pathname.match(/^\/(electrician|steamfitter|millwright|welder)$/);
+  const effectiveTradeSlug = tradeSlug || (pathMatchTradeYear && pathMatchTradeYear[1]) || (pathMatchTradeOnly && pathMatchTradeOnly[1]);
+  const effectiveYearNum = yearNum || (pathMatchTradeYear && pathMatchTradeYear[2]);
+  const yearSlug = effectiveYearNum != null && effectiveYearNum !== '' ? `year-${effectiveYearNum}` : undefined;
+  const parsedFromRoute = parseTradeYearFromSlug(effectiveTradeSlug, yearSlug);
+
+  // When URL has valid trade/year → use them. Only fall back to localStorage/user when URL has no params (e.g. /Dashboard).
   const selectedTrade = parsedFromRoute
     ? parsedFromRoute.tradeCode
     : (user?.selected_trade || localStorage.getItem('selected_trade') || 'SF');
@@ -49,14 +57,14 @@ export default function Dashboard() {
     updateActivity?.();
   }, [updateActivity]);
 
-  // Invalid SEO slug: redirect to homepage
+  // Invalid SEO slug (params or path look like trade/year but failed validation): redirect to homepage
   useEffect(() => {
-    if (tradeSlug != null && tradeSlug !== '' && !parsedFromRoute) {
+    if (effectiveTradeSlug && !parsedFromRoute) {
       navigate('/', { replace: true });
     }
-  }, [tradeSlug, parsedFromRoute, navigate]);
+  }, [effectiveTradeSlug, parsedFromRoute, navigate]);
 
-  // Sync valid route params to state (localStorage + user)
+  // Sync valid URL params to state immediately so localStorage and user stay in sync with URL
   useEffect(() => {
     if (!parsedFromRoute) return;
     const { tradeCode, year } = parsedFromRoute;
@@ -68,7 +76,7 @@ export default function Dashboard() {
     updateMe?.({ selected_trade: tradeCode, selected_year: year ?? undefined });
   }, [parsedFromRoute?.tradeCode, parsedFromRoute?.year, updateMe]);
 
-  // Redirect to TradeSelection/YearSelection only when NOT on a valid SEO route
+  // Redirect to TradeSelection/YearSelection only when NOT on a valid SEO route (no trade/year in URL)
   useEffect(() => {
     if (parsedFromRoute) return;
     if (!selectedTrade || selectedTrade === '') navigate(createPageUrl('TradeSelection'));
@@ -165,15 +173,15 @@ export default function Dashboard() {
     );
   }
 
-  const seoMeta = parsedFromRoute && tradeSlug
+  const seoMeta = parsedFromRoute && effectiveTradeSlug
     ? {
         title: yearSlug
-          ? getSEOTitleForTradeYear(tradeSlug, parsedFromRoute.year)
-          : getSEOTitleForTrade(tradeSlug),
+          ? getSEOTitleForTradeYear(effectiveTradeSlug, parsedFromRoute.year)
+          : getSEOTitleForTrade(effectiveTradeSlug),
         description: yearSlug
-          ? getSEODescriptionForTradeYear(tradeSlug, parsedFromRoute.year)
-          : getSEODescriptionForTrade(tradeSlug),
-        canonicalPath: yearSlug ? `/${tradeSlug}/${yearSlug}` : `/${tradeSlug}`,
+          ? getSEODescriptionForTradeYear(effectiveTradeSlug, parsedFromRoute.year)
+          : getSEODescriptionForTrade(effectiveTradeSlug),
+        canonicalPath: yearSlug ? `/${effectiveTradeSlug}/${yearSlug}` : `/${effectiveTradeSlug}`,
       }
     : null;
 
