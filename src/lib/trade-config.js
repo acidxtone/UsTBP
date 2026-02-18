@@ -17,41 +17,6 @@ export function getYearsForTrade(tradeCode) {
   return tradeCode === 'W' ? [1, 2, 3] : [1, 2, 3, 4];
 }
 
-/** SEO-friendly URL slugs (lowercase). Must match route params. */
-export const TRADE_SLUGS = ['electrician', 'steamfitter', 'millwright', 'welder'];
-
-/** Map URL slug -> internal trade code */
-export const TRADE_SLUG_TO_CODE = {
-  electrician: 'E',
-  steamfitter: 'SF',
-  millwright: 'M',
-  welder: 'W',
-};
-
-/** Map internal trade code -> URL slug */
-export const CODE_TO_TRADE_SLUG = {
-  E: 'electrician',
-  SF: 'steamfitter',
-  M: 'millwright',
-  W: 'welder',
-};
-
-/**
- * Validate trade slug and optional year slug. Returns { tradeCode, year } or null if invalid.
- * year is 1-4 (or 1-3 for welder).
- */
-export function parseTradeYearFromSlug(tradeSlug, yearSlug) {
-  const code = TRADE_SLUG_TO_CODE[tradeSlug?.toLowerCase()];
-  if (!code) return null;
-  const validYears = getYearsForTrade(code);
-  if (!yearSlug) return { tradeCode: code, year: null };
-  const match = /^year-([1-4])$/.exec(yearSlug.toLowerCase());
-  if (!match) return null;
-  const year = parseInt(match[1], 10);
-  if (!validYears.includes(year)) return null;
-  return { tradeCode: code, year };
-}
-
 export function getTradeLabel(code) {
   return TRADES.find((t) => t.code === code)?.label || code || 'Steamfitter / Pipefitter';
 }

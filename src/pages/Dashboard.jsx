@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useAuth } from '@/lib/AuthContext';
 import { api } from '@/lib/api-client';
 import { useQuery } from '@tanstack/react-query';
-import { Link, useNavigate, useParams, useLocation } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -23,65 +23,27 @@ import {
 import { motion } from "framer-motion";
 import { BannerAd } from '@/components/ads/AdSense';
 import SectionProgress from '@/components/dashboard/SectionProgress';
-import { getTradeLabel, parseTradeYearFromSlug } from '@/lib/trade-config';
-import SEOHead from '@/components/SEOHead';
-import { getSEOTitleForTrade, getSEODescriptionForTrade, getSEOTitleForTradeYear, getSEODescriptionForTradeYear } from '@/lib/seo-content';
+import { getTradeLabel } from '@/lib/trade-config';
 
 export default function Dashboard() {
-  const { user, updateActivity, updateMe } = useAuth();
+  const { user, updateActivity } = useAuth();
   const navigate = useNavigate();
-  const location = useLocation();
-  const { trade: tradeSlug, year: yearNum } = useParams();
 
-  // URL params are primary source of truth. If useParams() is empty (e.g. first frame), parse from pathname so direct /welder/year-1 always works.
-  const pathname = location.pathname || '';
-  const pathMatchTradeYear = pathname.match(/^\/(electrician|steamfitter|millwright|welder)\/year-([1-4])$/);
-  const pathMatchTradeOnly = pathname.match(/^\/(electrician|steamfitter|millwright|welder)$/);
-  const effectiveTradeSlug = tradeSlug || (pathMatchTradeYear && pathMatchTradeYear[1]) || (pathMatchTradeOnly && pathMatchTradeOnly[1]);
-  const effectiveYearNum = yearNum || (pathMatchTradeYear && pathMatchTradeYear[2]);
-  const yearSlug = effectiveYearNum != null && effectiveYearNum !== '' ? `year-${effectiveYearNum}` : undefined;
-  const parsedFromRoute = parseTradeYearFromSlug(effectiveTradeSlug, yearSlug);
-
-  // When URL has valid trade/year → use them. Only fall back to localStorage/user when URL has no params (e.g. /Dashboard).
-  const selectedTrade = parsedFromRoute
-    ? parsedFromRoute.tradeCode
-    : (user?.selected_trade || localStorage.getItem('selected_trade') || 'SF');
-  const selectedYear = parsedFromRoute
-    ? parsedFromRoute.year
-    : (user?.selected_year != null ? Number(user.selected_year) : (() => {
-        const y = localStorage.getItem('selected_year');
-        return y != null && y !== '' ? parseInt(y, 10) : null;
-      })());
+  // Resolve trade/year same as backup that worked: user first, then localStorage
+  const selectedTrade = user?.selected_trade || localStorage.getItem('selected_trade') || 'SF';
+  const selectedYear = user?.selected_year != null ? Number(user.selected_year) : (() => {
+    const y = localStorage.getItem('selected_year');
+    return y != null && y !== '' ? parseInt(y, 10) : null;
+  })();
 
   useEffect(() => {
     updateActivity?.();
   }, [updateActivity]);
 
-  // Invalid SEO slug (params or path look like trade/year but failed validation): redirect to homepage
   useEffect(() => {
-    if (effectiveTradeSlug && !parsedFromRoute) {
-      navigate('/', { replace: true });
-    }
-  }, [effectiveTradeSlug, parsedFromRoute, navigate]);
-
-  // Sync valid URL params to state immediately so localStorage and user stay in sync with URL
-  useEffect(() => {
-    if (!parsedFromRoute) return;
-    const { tradeCode, year } = parsedFromRoute;
-    try {
-      localStorage.setItem('selected_trade', tradeCode);
-      if (year != null) localStorage.setItem('selected_year', String(year));
-      else localStorage.removeItem('selected_year');
-    } catch (_) {}
-    updateMe?.({ selected_trade: tradeCode, selected_year: year ?? undefined });
-  }, [parsedFromRoute?.tradeCode, parsedFromRoute?.year, updateMe]);
-
-  // Redirect to TradeSelection/YearSelection only when NOT on a valid SEO route (no trade/year in URL)
-  useEffect(() => {
-    if (parsedFromRoute) return;
     if (!selectedTrade || selectedTrade === '') navigate(createPageUrl('TradeSelection'));
     else if (selectedYear == null) navigate(createPageUrl('YearSelection'));
-  }, [parsedFromRoute, selectedTrade, selectedYear, navigate]);
+  }, [selectedTrade, selectedYear, navigate]);
 
   const { data: progress, isLoading: progressLoading, isError: progressError, refetch: refetchProgress } = useQuery({
     queryKey: ['userProgress', user?.id, user?.selected_year],
@@ -173,22 +135,8 @@ export default function Dashboard() {
     );
   }
 
-  const seoMeta = parsedFromRoute && effectiveTradeSlug
-    ? {
-        title: yearSlug
-          ? getSEOTitleForTradeYear(effectiveTradeSlug, parsedFromRoute.year)
-          : getSEOTitleForTrade(effectiveTradeSlug),
-        description: yearSlug
-          ? getSEODescriptionForTradeYear(effectiveTradeSlug, parsedFromRoute.year)
-          : getSEODescriptionForTrade(effectiveTradeSlug),
-        canonicalPath: yearSlug ? `/${effectiveTradeSlug}/${yearSlug}` : `/${effectiveTradeSlug}`,
-      }
-    : null;
-
   return (
-    <>
-      {seoMeta && <SEOHead title={seoMeta.title} description={seoMeta.description} canonicalPath={seoMeta.canonicalPath} />}
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100">
       <BannerAd position="top" />
       
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -458,6 +406,5 @@ export default function Dashboard() {
       
       <BannerAd position="bottom" />
     </div>
-    </>
   );
 }

@@ -119,17 +119,6 @@ const AuthenticatedApp = () => {
           <YearSelection />
         </LayoutWrapper>
       } />
-      {/* SEO-friendly trade and trade+year routes (after all static routes); Dashboard handles params internally */}
-      <Route path="/:trade/year-:year" element={
-        <LayoutWrapper currentPageName="Dashboard">
-          <Dashboard />
-        </LayoutWrapper>
-      } />
-      <Route path="/:trade" element={
-        <LayoutWrapper currentPageName="Dashboard">
-          <Dashboard />
-        </LayoutWrapper>
-      } />
       {import.meta.env.DEV && (
         <>
           <Route path="/debug" element={

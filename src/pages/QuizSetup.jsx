@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { useAuth } from '@/lib/AuthContext';
 import { api } from '@/api/supabaseClient';  // ← Use Supabase directly like Study.jsx
 import { useQuery } from '@tanstack/react-query';
-import { Link, useNavigate, useParams } from 'react-router-dom';
-import { createPageUrl, getDashboardUrlWithUrlFirst } from '@/utils';
+import { Link, useNavigate } from 'react-router-dom';
+import { createPageUrl } from '@/utils';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
@@ -75,7 +75,6 @@ const modeConfig = {
 
 export default function QuizSetup() {
   const { user } = useAuth();
-  const { trade: urlTrade, year: urlYear } = useParams();
   const trade = user?.selected_trade || 'SF';
   const year = user?.selected_year != null ? Number(user.selected_year) : 1;
   const sectionInfo = getSectionsForTradeYear(trade, year);
@@ -163,7 +162,7 @@ export default function QuizSetup() {
       <header className="bg-white/80 backdrop-blur-sm border-b border-slate-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
-            <Link to={getDashboardUrlWithUrlFirst(urlTrade, urlYear, user?.selected_trade, user?.selected_year != null ? Number(user.selected_year) : null)} className="inline-flex items-center text-slate-600 hover:text-slate-900">
+            <Link to={createPageUrl('Dashboard')} className="inline-flex items-center text-slate-600 hover:text-slate-900">
               <ArrowLeft className="h-4 w-4 mr-2" />
               Back to Dashboard
             </Link>

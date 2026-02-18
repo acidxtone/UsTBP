@@ -1,15 +1,12 @@
 import React from 'react';
-import { Link, useParams } from 'react-router-dom';
-import { getDashboardUrlWithUrlFirst } from '@/utils';
-import { useAuth } from '@/lib/AuthContext';
+import { Link } from 'react-router-dom';
+import { createPageUrl } from '@/utils';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, ExternalLink, GraduationCap } from "lucide-react";
 import { BannerAd, InContentAd } from '@/components/ads/AdSense';
 
 export default function Curriculum() {
-  const { user } = useAuth();
-  const { trade: urlTrade, year: urlYear } = useParams();
   const sections = [
     {
       id: 1,
@@ -101,7 +98,7 @@ export default function Curriculum() {
       <header className="bg-white/80 backdrop-blur-sm border-b border-slate-200 sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
-            <Link to={getDashboardUrlWithUrlFirst(urlTrade, urlYear, user?.selected_trade, user?.selected_year != null ? Number(user.selected_year) : null)} className="inline-flex items-center text-slate-600 hover:text-slate-900">
+            <Link to={createPageUrl('Dashboard')} className="inline-flex items-center text-slate-600 hover:text-slate-900">
               <ArrowLeft className="h-4 w-4 mr-2" />
               Back to Dashboard
             </Link>

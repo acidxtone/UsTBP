@@ -2,8 +2,8 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useAuth } from '@/lib/AuthContext';
 import { api } from '@/lib/api-client';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { useNavigate, useParams } from 'react-router-dom';
-import { createPageUrl, getDashboardUrlWithUrlFirst } from '@/utils';
+import { useNavigate } from 'react-router-dom';
+import { createPageUrl } from '@/utils';
 import { useAds } from '@/components/ads/AdProvider';
 import { Button } from "@/components/ui/button";
 import { 
@@ -51,7 +51,6 @@ export default function Quiz() {
     : null;
 
   const { user } = useAuth();
-  const { trade: urlTrade, year: urlYear } = useParams();
   const { setQuizMode } = useAds();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
@@ -370,18 +369,17 @@ export default function Quiz() {
     }
   };
 
-  const dashboardUrl = getDashboardUrlWithUrlFirst(urlTrade, urlYear, user?.selected_trade, user?.selected_year != null ? Number(user.selected_year) : null);
   const handleExit = () => {
     if (answers.length > 0) {
       setShowExitDialog(true);
     } else {
-      navigate(dashboardUrl);
+      navigate(createPageUrl('Dashboard'));
     }
   };
 
   const saveProgressAndExit = useCallback(async () => {
     if (answers.length === 0) {
-      navigate(getDashboardUrlWithUrlFirst(urlTrade, urlYear, user?.selected_trade, user?.selected_year != null ? Number(user.selected_year) : null));
+      navigate(createPageUrl('Dashboard'));
       return;
     }
     const correctCount = answers.filter(a => a.correct).length;
@@ -408,13 +406,13 @@ export default function Quiz() {
     try {
       await updateProgressMutation.mutateAsync(results);
       setShowExitDialog(false);
-      navigate(getDashboardUrlWithUrlFirst(urlTrade, urlYear, user?.selected_trade, user?.selected_year != null ? Number(user.selected_year) : null));
+      navigate(createPageUrl('Dashboard'));
     } catch (err) {
       console.error('Failed to save progress on exit:', err);
       setShowExitDialog(false);
-      navigate(getDashboardUrlWithUrlFirst(urlTrade, urlYear, user?.selected_trade, user?.selected_year != null ? Number(user.selected_year) : null));
+      navigate(createPageUrl('Dashboard'));
     }
-  }, [answers, startTime, mode, updateProgressMutation, navigate, urlTrade, urlYear, user?.selected_trade, user?.selected_year]);
+  }, [answers, startTime, mode, updateProgressMutation, navigate]);
 
   const confirmExit = () => {
     saveProgressAndExit();
@@ -428,7 +426,7 @@ export default function Quiz() {
           <div className="text-center max-w-md">
             <p className="text-slate-700 font-medium mb-2">No questions to review</p>
             <p className="text-slate-500 text-sm mb-6">The questions for this review could not be loaded. They may be from a different year.</p>
-            <Button onClick={() => navigate(dashboardUrl)} className="bg-slate-900 hover:bg-slate-800">
+            <Button onClick={() => navigate(createPageUrl('Dashboard'))} className="bg-slate-900 hover:bg-slate-800">
               Back to Dashboard
             </Button>
           </div>
@@ -480,7 +478,7 @@ export default function Quiz() {
               navigate(createPageUrl('QuizSetup') + `?mode=${mode || 'quick_quiz'}`);
             }
           }}
-          onHome={() => navigate(dashboardUrl)}
+          onHome={() => navigate(createPageUrl('Dashboard'))}
           onReviewWrong={() => {
             const wrongIds = answers.filter(a => !a.correct).map(a => a.question_id);
             console.log('🎯 Quiz: Review Wrong clicked');

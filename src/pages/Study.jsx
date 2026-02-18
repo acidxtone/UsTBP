@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useAuth } from '@/lib/AuthContext';
 import { api } from '@/api/supabaseClient';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { Link, useNavigate, useParams } from 'react-router-dom';
-import { createPageUrl, getDashboardUrlWithUrlFirst } from '@/utils';
+import { Link, useNavigate } from 'react-router-dom';
+import { createPageUrl } from '@/utils';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -50,7 +50,6 @@ function linkifyContent(text) {
 
 export default function Study() {
   const { user } = useAuth();
-  const { trade: urlTrade, year: urlYear } = useParams();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedSection, setSelectedSection] = useState('all');
   const [visibleQuestionCount, setVisibleQuestionCount] = useState(10);
@@ -164,7 +163,7 @@ export default function Study() {
             <div className="flex items-center gap-3">
               {user?.selected_year && <YearIndicator year={user.selected_year} />}
               <Button variant="outline" size="sm" asChild>
-                <Link to={getDashboardUrlWithUrlFirst(urlTrade, urlYear, user?.selected_trade, user?.selected_year != null ? Number(user.selected_year) : null)}>
+                <Link to={createPageUrl('Dashboard')}>
                   <ArrowLeft className="h-4 w-4 mr-2" />
                   Back to Dashboard
                 </Link>
