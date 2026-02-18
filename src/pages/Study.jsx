@@ -138,7 +138,14 @@ export default function Study() {
     // so we must convert it to string before calling toLowerCase
     const sectionText = String(question.section ?? '').toLowerCase();
 
-    return questionText.includes(search) || sectionText.includes(search);
+    // Section filter matching - same logic as study guides
+    const sectionMatch = selectedSection === 'all' ||
+      String(question.section) === String(selectedSection) ||
+      question.section === selectedSection;
+
+    const searchMatch = !search || questionText.includes(search) || sectionText.includes(search);
+
+    return sectionMatch && searchMatch;
   });
 
   if (!user) {
