@@ -323,7 +323,9 @@ export default function Study() {
                         <div className="flex items-start justify-between mb-4">
                           <div className="flex-1">
                             <div className="flex items-center gap-2 mb-2">
-                              <Badge variant="outline">{question.section}</Badge>
+                              <Badge variant="outline">
+                                {question.section} - {getSectionDisplayName(studyGuides, user?.selected_trade, user?.selected_year, question.section)}
+                              </Badge>
                               <Badge variant={question.difficulty === 'easy' ? 'secondary' : 
                                            question.difficulty === 'medium' ? 'default' : 'destructive'}>
                                 {question.difficulty}
