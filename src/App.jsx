@@ -26,7 +26,6 @@ import Terms from '@/pages/Terms';
 import DebugQuestions from '@/components/DebugQuestions';
 import SimpleDebug from '@/components/SimpleDebug';
 import ConnectionTest from '@/components/ConnectionTest';
-import DashboardSEOWrapper from '@/components/DashboardSEOWrapper';
 
 const PAGES_WITHOUT_YEAR_HEADER = ['YearSelection', 'TradeSelection', 'debug', 'test', 'connection'];
 
@@ -120,15 +119,15 @@ const AuthenticatedApp = () => {
           <YearSelection />
         </LayoutWrapper>
       } />
-      {/* SEO-friendly trade and trade+year routes (after all static routes) */}
+      {/* SEO-friendly trade and trade+year routes (after all static routes); Dashboard handles params internally */}
       <Route path="/:trade/year-:year" element={
         <LayoutWrapper currentPageName="Dashboard">
-          <DashboardSEOWrapper />
+          <Dashboard />
         </LayoutWrapper>
       } />
       <Route path="/:trade" element={
         <LayoutWrapper currentPageName="Dashboard">
-          <DashboardSEOWrapper />
+          <Dashboard />
         </LayoutWrapper>
       } />
       {import.meta.env.DEV && (

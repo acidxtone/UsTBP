@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useAuth } from '@/lib/AuthContext';
 import { api } from '@/lib/api-client';
 import { useQuery } from '@tanstack/react-query';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -23,27 +23,57 @@ import {
 import { motion } from "framer-motion";
 import { BannerAd } from '@/components/ads/AdSense';
 import SectionProgress from '@/components/dashboard/SectionProgress';
-import { getTradeLabel } from '@/lib/trade-config';
+import { getTradeLabel, parseTradeYearFromSlug } from '@/lib/trade-config';
+import SEOHead from '@/components/SEOHead';
+import { getSEOTitleForTrade, getSEODescriptionForTrade, getSEOTitleForTradeYear, getSEODescriptionForTradeYear } from '@/lib/seo-content';
 
 export default function Dashboard() {
-  const { user, updateActivity } = useAuth();
+  const { user, updateActivity, updateMe } = useAuth();
   const navigate = useNavigate();
+  const { trade: tradeSlug, year: yearNum } = useParams();
+  const yearSlug = yearNum != null && yearNum !== '' ? `year-${yearNum}` : undefined;
+  const parsedFromRoute = parseTradeYearFromSlug(tradeSlug, yearSlug);
 
-  // Resolve trade/year same as backup that worked: user first, then localStorage
-  const selectedTrade = user?.selected_trade || localStorage.getItem('selected_trade') || 'SF';
-  const selectedYear = user?.selected_year != null ? Number(user.selected_year) : (() => {
-    const y = localStorage.getItem('selected_year');
-    return y != null && y !== '' ? parseInt(y, 10) : null;
-  })();
+  // When route params exist and are valid, they are source of truth. Otherwise: user first, then localStorage.
+  const selectedTrade = parsedFromRoute
+    ? parsedFromRoute.tradeCode
+    : (user?.selected_trade || localStorage.getItem('selected_trade') || 'SF');
+  const selectedYear = parsedFromRoute
+    ? parsedFromRoute.year
+    : (user?.selected_year != null ? Number(user.selected_year) : (() => {
+        const y = localStorage.getItem('selected_year');
+        return y != null && y !== '' ? parseInt(y, 10) : null;
+      })());
 
   useEffect(() => {
     updateActivity?.();
   }, [updateActivity]);
 
+  // Invalid SEO slug: redirect to homepage
   useEffect(() => {
+    if (tradeSlug != null && tradeSlug !== '' && !parsedFromRoute) {
+      navigate('/', { replace: true });
+    }
+  }, [tradeSlug, parsedFromRoute, navigate]);
+
+  // Sync valid route params to state (localStorage + user)
+  useEffect(() => {
+    if (!parsedFromRoute) return;
+    const { tradeCode, year } = parsedFromRoute;
+    try {
+      localStorage.setItem('selected_trade', tradeCode);
+      if (year != null) localStorage.setItem('selected_year', String(year));
+      else localStorage.removeItem('selected_year');
+    } catch (_) {}
+    updateMe?.({ selected_trade: tradeCode, selected_year: year ?? undefined });
+  }, [parsedFromRoute?.tradeCode, parsedFromRoute?.year, updateMe]);
+
+  // Redirect to TradeSelection/YearSelection only when NOT on a valid SEO route
+  useEffect(() => {
+    if (parsedFromRoute) return;
     if (!selectedTrade || selectedTrade === '') navigate(createPageUrl('TradeSelection'));
     else if (selectedYear == null) navigate(createPageUrl('YearSelection'));
-  }, [selectedTrade, selectedYear, navigate]);
+  }, [parsedFromRoute, selectedTrade, selectedYear, navigate]);
 
   const { data: progress, isLoading: progressLoading, isError: progressError, refetch: refetchProgress } = useQuery({
     queryKey: ['userProgress', user?.id, user?.selected_year],
@@ -135,8 +165,22 @@ export default function Dashboard() {
     );
   }
 
+  const seoMeta = parsedFromRoute && tradeSlug
+    ? {
+        title: yearSlug
+          ? getSEOTitleForTradeYear(tradeSlug, parsedFromRoute.year)
+          : getSEOTitleForTrade(tradeSlug),
+        description: yearSlug
+          ? getSEODescriptionForTradeYear(tradeSlug, parsedFromRoute.year)
+          : getSEODescriptionForTrade(tradeSlug),
+        canonicalPath: yearSlug ? `/${tradeSlug}/${yearSlug}` : `/${tradeSlug}`,
+      }
+    : null;
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100">
+    <>
+      {seoMeta && <SEOHead title={seoMeta.title} description={seoMeta.description} canonicalPath={seoMeta.canonicalPath} />}
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100">
       <BannerAd position="top" />
       
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -406,5 +450,6 @@ export default function Dashboard() {
       
       <BannerAd position="bottom" />
     </div>
+    </>
   );
 }
