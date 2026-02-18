@@ -5,5 +5,5 @@ Allow: /
 User-agent: Mediapartners-Google
 Allow: /
 
-# Sitemap (if available)
-# Sitemap: https://tradebenchprep.org/sitemap.xml
+# Sitemap
+Sitemap: https://tradebenchprep.org/sitemap.xml
