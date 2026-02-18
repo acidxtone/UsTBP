@@ -3,7 +3,7 @@ import { useAuth } from '@/lib/AuthContext';
 import { api } from '@/lib/api-client';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { useNavigate } from 'react-router-dom';
-import { createPageUrl } from '@/utils';
+import { createPageUrl, getDashboardUrl } from '@/utils';
 import { useAds } from '@/components/ads/AdProvider';
 import { Button } from "@/components/ui/button";
 import { 
@@ -369,17 +369,18 @@ export default function Quiz() {
     }
   };
 
+  const dashboardUrl = getDashboardUrl(user?.selected_trade, user?.selected_year != null ? Number(user.selected_year) : null);
   const handleExit = () => {
     if (answers.length > 0) {
       setShowExitDialog(true);
     } else {
-      navigate(createPageUrl('Dashboard'));
+      navigate(dashboardUrl);
     }
   };
 
   const saveProgressAndExit = useCallback(async () => {
     if (answers.length === 0) {
-      navigate(createPageUrl('Dashboard'));
+      navigate(getDashboardUrl(user?.selected_trade, user?.selected_year != null ? Number(user.selected_year) : null));
       return;
     }
     const correctCount = answers.filter(a => a.correct).length;
@@ -406,13 +407,13 @@ export default function Quiz() {
     try {
       await updateProgressMutation.mutateAsync(results);
       setShowExitDialog(false);
-      navigate(createPageUrl('Dashboard'));
+      navigate(getDashboardUrl(user?.selected_trade, user?.selected_year != null ? Number(user.selected_year) : null));
     } catch (err) {
       console.error('Failed to save progress on exit:', err);
       setShowExitDialog(false);
-      navigate(createPageUrl('Dashboard'));
+      navigate(getDashboardUrl(user?.selected_trade, user?.selected_year != null ? Number(user.selected_year) : null));
     }
-  }, [answers, startTime, mode, updateProgressMutation, navigate]);
+  }, [answers, startTime, mode, updateProgressMutation, navigate, user?.selected_trade, user?.selected_year]);
 
   const confirmExit = () => {
     saveProgressAndExit();
@@ -426,7 +427,7 @@ export default function Quiz() {
           <div className="text-center max-w-md">
             <p className="text-slate-700 font-medium mb-2">No questions to review</p>
             <p className="text-slate-500 text-sm mb-6">The questions for this review could not be loaded. They may be from a different year.</p>
-            <Button onClick={() => navigate(createPageUrl('Dashboard'))} className="bg-slate-900 hover:bg-slate-800">
+            <Button onClick={() => navigate(dashboardUrl)} className="bg-slate-900 hover:bg-slate-800">
               Back to Dashboard
             </Button>
           </div>
@@ -478,7 +479,7 @@ export default function Quiz() {
               navigate(createPageUrl('QuizSetup') + `?mode=${mode || 'quick_quiz'}`);
             }
           }}
-          onHome={() => navigate(createPageUrl('Dashboard'))}
+          onHome={() => navigate(dashboardUrl)}
           onReviewWrong={() => {
             const wrongIds = answers.filter(a => !a.correct).map(a => a.question_id);
             console.log('🎯 Quiz: Review Wrong clicked');

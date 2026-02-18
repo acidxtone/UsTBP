@@ -3,7 +3,7 @@ import { useAuth } from '@/lib/AuthContext';
 import { api } from '@/api/supabaseClient';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { Link, useNavigate } from 'react-router-dom';
-import { createPageUrl } from '@/utils';
+import { createPageUrl, getDashboardUrl } from '@/utils';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -163,7 +163,7 @@ export default function Study() {
             <div className="flex items-center gap-3">
               {user?.selected_year && <YearIndicator year={user.selected_year} />}
               <Button variant="outline" size="sm" asChild>
-                <Link to={createPageUrl('Dashboard')}>
+                <Link to={getDashboardUrl(user?.selected_trade, user?.selected_year != null ? Number(user.selected_year) : null)}>
                   <ArrowLeft className="h-4 w-4 mr-2" />
                   Back to Dashboard
                 </Link>

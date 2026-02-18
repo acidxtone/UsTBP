@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BookOpen, ArrowLeft, Eye, EyeOff, Loader2, ChevronDown } from "lucide-react";
 import { Link, useNavigate } from 'react-router-dom';
-import { createPageUrl } from '@/utils';
+import { createPageUrl, getDashboardUrl } from '@/utils';
 
 const SECURITY_QUESTIONS = [
   "What was the name of your first pet?",
@@ -46,7 +46,7 @@ export default function AuthPage() {
     } else if (!authUser?.selected_year) {
       navigate(createPageUrl('YearSelection'));
     } else {
-      navigate(createPageUrl('Dashboard'));
+      navigate(getDashboardUrl(authUser?.selected_trade, authUser?.selected_year != null ? Number(authUser.selected_year) : null));
     }
   };
 

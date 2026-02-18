@@ -3,7 +3,7 @@ import { useAuth } from '@/lib/AuthContext';
 import { api } from '@/lib/api-client';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { Link } from 'react-router-dom';
-import { createPageUrl } from '@/utils';
+import { createPageUrl, getDashboardUrl } from '@/utils';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -96,7 +96,7 @@ export default function Settings() {
       setShowChangeYear(false);
       setSelectedNewYear(null);
       toast.success('Switched to Year ' + newYear + '. Your progress for each year is saved separately.');
-      navigate(createPageUrl('Dashboard'));
+      navigate(getDashboardUrl(user?.selected_trade, newYear));
     }
   });
 
@@ -115,7 +115,7 @@ export default function Settings() {
       {/* Header */}
       <header className="bg-white/80 backdrop-blur-sm border-b border-slate-200">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <Link to={createPageUrl('Dashboard')} className="inline-flex items-center text-slate-600 hover:text-slate-900">
+          <Link to={getDashboardUrl(user?.selected_trade, user?.selected_year != null ? Number(user.selected_year) : null)} className="inline-flex items-center text-slate-600 hover:text-slate-900">
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Dashboard
           </Link>

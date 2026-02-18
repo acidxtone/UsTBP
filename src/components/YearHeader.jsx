@@ -3,7 +3,7 @@ import { useAuth } from '@/lib/AuthContext';
 import { Link } from 'react-router-dom';
 import { Home, Calendar } from 'lucide-react';
 import YearIndicator from '@/components/YearIndicator';
-import { createPageUrl } from '@/utils';
+import { createPageUrl, getDashboardUrl } from '@/utils';
 import { getTradeLabel } from '@/lib/trade-config';
 
 const YearHeader = () => {
@@ -15,7 +15,7 @@ const YearHeader = () => {
     <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-2 px-4 shadow-sm">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex items-center gap-4">
-          <Link to={createPageUrl('Dashboard')} className="flex items-center gap-2 hover:text-blue-100 transition-colors">
+          <Link to={getDashboardUrl(user?.selected_trade, user?.selected_year != null ? Number(user.selected_year) : null)} className="flex items-center gap-2 hover:text-blue-100 transition-colors">
             <Home className="h-4 w-4" />
             <span className="text-sm font-bold tracking-tight">TradeBenchPrep</span>
           </Link>
