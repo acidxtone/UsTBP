@@ -177,7 +177,7 @@ export default function Quiz() {
 
   const updateProgressMutation = useMutation({
     mutationFn: async (results) => {
-      const existing = progress;
+      const existing = queryClient.getQueryData(['userProgress', user?.selected_year]) ?? progress;
       const sectionScores = {};
       
       results.question_results.forEach(r => {

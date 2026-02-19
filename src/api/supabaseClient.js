@@ -337,7 +337,27 @@ const entities = {
           console.error('Error fetching user progress:', error);
           return null;
         }
-        if (!data) return null;
+        if (!data) {
+          const key = progressStorageKey(yearNum);
+          try {
+            const raw = typeof localStorage !== 'undefined' ? localStorage.getItem(key) : null;
+            if (!raw) return null;
+            const localData = JSON.parse(raw);
+            const sectionStats = localData.section_stats && typeof localData.section_stats === 'object' ? localData.section_stats : {};
+            return {
+              ...localData,
+              section_stats: sectionStats,
+              total_questions_answered: localData.total_questions_answered ?? 0,
+              total_correct: localData.total_correct ?? 0,
+              quizzes_completed: localData.quizzes_completed ?? 0,
+              bookmarked_questions: localData.bookmarked_questions ?? localData.bookmarks ?? [],
+              weak_questions: localData.weak_questions ?? localData.weak_areas ?? [],
+              year: localData.year ?? yearNum
+            };
+          } catch (_) {
+            return null;
+          }
+        }
 
         const progressData = data.progress_data || {};
         const statistics = data.statistics || {};
