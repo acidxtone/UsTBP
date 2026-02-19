@@ -61,11 +61,6 @@ export default function Curriculum() {
       title: "Alberta Apprenticeship and Industry Training",
       description: "Official AIT website for apprenticeship information and resources",
       url: "https://tradesecrets.alberta.ca/"
-    },
-    {
-      title: "Steamfitter-Pipefitter Program Information",
-      description: "Official program details, curriculum guides, and exam information",
-      url: "https://tradesecrets.alberta.ca/trades-occupations/profiles/007/"
     }
   ];
 
