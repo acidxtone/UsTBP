@@ -5,48 +5,48 @@ const BASE_URL = 'https://www.tradebenchprep.org';
 
 const ROUTE_META = {
   '/': {
-    title: 'Canadian Skilled Trades Exam Prep | Red Seal & Apprenticeship Practice Tests | TradeBenchPrep',
-    description: 'Online exam prep platform for Canadian skilled trades. Practice quizzes and mock exams for Red Seal and provincial apprenticeship certification. Built for trades across Canada and expanding internationally.',
+    title: 'TradeBenchPrep | Canadian Skilled Trades Exam Prep | Electrician, Welder, Millwright & Steamfitter Practice Tests',
+    description: 'Free Canadian skilled trades exam prep for Electrician, Welder, Millwright & Steamfitter apprentices. Practice quizzes, study guides, and exam simulation.',
   },
   '/Dashboard': {
-    title: 'Dashboard | TradeBenchPrep',
-    description: 'Your trade exam prep dashboard. Track progress, bookmarks, and weak areas for Red Seal and apprenticeship exams.',
+    title: 'TradeBenchPrep | Trade Exam Prep Dashboard | Apprenticeship Knowledge Practice Progress Study & Tracking',
+    description: 'Access your trade exam prep dashboard. Track progress, take apprenticeship practice tests, and study for Electrician, Welder, Millwright & Steamfitter exams.',
   },
   '/Study': {
-    title: 'Study Guides & Practice Questions | TradeBenchPrep',
-    description: 'Study guides and practice questions for Canadian skilled trades. Prepare for Red Seal and provincial certification exams.',
+    title: 'TradeBenchPrep | Trade Study Guides & Practice Questions | Apprenticeship Exam Prep',
+    description: 'Study guides and practice questions for Canadian skilled trades exams. Prepare for Electrician, Welder, Millwright & Steamfitter certification.',
   },
   '/QuizSetup': {
-    title: 'Quiz Setup | TradeBenchPrep',
-    description: 'Choose quiz mode, number of questions, and sections. Practice full exams or focus on weak areas.',
+    title: 'TradeBenchPrep | Customize Your Trade Practice Test | Apprenticeship Exam Prep',
+    description: 'Create custom Red Seal practice tests by trade, section, difficulty, and question count. Prepare for Canadian apprenticeship certification exams.',
   },
   '/Quiz': {
-    title: 'Practice Quiz | TradeBenchPrep',
-    description: 'Take a practice quiz for your trade. Timed or untimed, full exam or by section.',
+    title: 'TradeBenchPrep | Take a Apprenticeship Practice Exam | Skilled Trades Quiz',
+    description: 'Take timed or untimed Apprenticeship practice exams for Electrician, Welder, Millwright & Steamfitter trades. Get instant results and improve your score.',
   },
   '/Settings': {
-    title: 'Settings | TradeBenchPrep',
-    description: 'Manage your TradeBenchPrep account and preferences.',
+    title: 'TradeBenchPrep | Account Settings | Trade Exam Prep Preferences',
+    description: 'Manage your trade selection, exam year, and practice preferences for Apprenticeship certification exam preparation.',
   },
   '/Curriculum': {
-    title: 'Curriculum | TradeBenchPrep',
-    description: 'View the trade curriculum and exam breakdown for Canadian skilled trades certification.',
+    title: 'TradeBenchPrep | Trade Exam Curriculum & Breakdown | Apprenticeship Exam Knowledge Guide',
+    description: 'View the Apprenticeship exam structure and curriculum breakdown for Canadian skilled trades. Prepare smarter with weighted exam sections.',
   },
   '/TradeSelection': {
-    title: 'Choose Your Trade | TradeBenchPrep',
-    description: 'Select your trade to start preparing for Red Seal or provincial apprenticeship exams.',
+    title: 'TradeBenchPrep | Choose Your Trade | Electrician, Welder, Millwright, Steamfitter Exam Prep',
+    description: 'Select your skilled trade to begin Apprenticeship exam preparation. Practice tests and study guides for Canadian apprentices.',
   },
   '/YearSelection': {
-    title: 'Select Exam Year | TradeBenchPrep',
-    description: 'Choose the exam year for your trade practice materials.',
+    title: 'TradeBenchPrep | Select Your Apprenticeship Year | Trade Exam Practice',
+    description: 'Choose your apprenticeship year to access targeted Apprenticeship practice exams and study materials for your trade.',
   },
   '/Privacy': {
-    title: 'Privacy Policy | TradeBenchPrep',
-    description: 'TradeBenchPrep privacy policy. How we collect, use, and protect your information.',
+    title: 'TradeBenchPrep | Privacy Policy',
+    description: 'Learn how TradeBenchPrep collects, stores, and protects your information while you prepare for Canadian skilled trades exams.',
   },
   '/Terms': {
-    title: 'Terms of Use | TradeBenchPrep',
-    description: 'TradeBenchPrep terms of use and service agreement.',
+    title: 'TradeBenchPrep | Terms of Use',
+    description: "Read the terms and conditions for using TradeBenchPrep's Apprenticeship exam practice platform.",
   },
   '/auth': {
     title: 'Sign In | TradeBenchPrep',
