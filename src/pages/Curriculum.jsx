@@ -143,9 +143,9 @@ export default function Curriculum() {
           <InContentAd position="middle" />
         </section>
 
-        {/* Official Resources */}
+        {/* Helpful Resource Links */}
         <div className="mb-8">
-          <h2 className="text-2xl font-bold text-slate-900 mb-4">Official Resources</h2>
+          <h2 className="text-2xl font-bold text-slate-900 mb-4">Helpful Resource Links</h2>
           <p className="text-slate-600 mb-6">
             Access official Alberta AIT resources and program information
           </p>
