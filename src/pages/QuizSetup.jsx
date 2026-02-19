@@ -131,7 +131,9 @@ export default function QuizSetup() {
     const params = new URLSearchParams();
     params.set('mode', mode);
     
-    if (config.questionCount) {
+    if (mode === 'weak_areas' || mode === 'bookmarked') {
+      params.set('questions', String(getAvailableQuestions()));
+    } else if (config.questionCount) {
       params.set('questions', config.questionCount);
     } else if (config.showQuestionCount) {
       params.set('questions', questionCount);
@@ -365,7 +367,7 @@ export default function QuizSetup() {
                   <div className="flex justify-between">
                     <span className="text-slate-500">Questions</span>
                     <span className="font-medium">
-                      {config.questionCount || questionCount}
+                      {(mode === 'weak_areas' || mode === 'bookmarked') ? getAvailableQuestions() : (config.questionCount || questionCount)}
                     </span>
                   </div>
                   <div className="flex justify-between">
