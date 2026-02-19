@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import { useAuth } from '@/lib/AuthContext';
 import { TRADES } from '@/lib/trade-config';
 import AnonymousSession from '@/lib/AnonymousSession';
-import { BannerAd } from '@/components/ads/AdSense';
+import { BannerAd, InContentAd } from '@/components/ads/AdSense';
 
 export default function TradeSelection() {
   const { user, updateMe, checkAppState } = useAuth();
@@ -79,6 +79,9 @@ export default function TradeSelection() {
               </motion.div>
             ))}
           </div>
+          <section aria-label="Advertisement" className="my-6 flex justify-center">
+            <InContentAd position="middle" />
+          </section>
           <div className="text-center">
             <Button onClick={handleContinue} disabled={!selectedTrade || saving} size="lg" className="bg-white text-slate-900 hover:bg-slate-100 px-12 py-6 text-lg font-semibold">
               {saving ? 'Saving...' : 'Continue'}

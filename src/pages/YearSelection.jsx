@@ -8,7 +8,7 @@ import { GraduationCap, CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import { useAuth } from '@/lib/AuthContext';
 import { getYearsForTrade } from '@/lib/trade-config';
-import { BannerAd } from '@/components/ads/AdSense';
+import { BannerAd, InContentAd } from '@/components/ads/AdSense';
 
 const YEAR_LABELS = { 1: "First Year", 2: "Second Year", 3: "Third Year", 4: "Fourth Year" };
 const YEAR_DESC = { 1: "Foundation and basics", 2: "Building on fundamentals", 3: "Advanced techniques", 4: "Mastery and specialization" };
@@ -120,6 +120,10 @@ export default function YearSelection() {
               </motion.div>
             ))}
           </div>
+
+          <section aria-label="Advertisement" className="my-6 flex justify-center">
+            <InContentAd position="middle" />
+          </section>
 
           <div className="text-center">
             <Button

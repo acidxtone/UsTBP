@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { BannerAd } from '@/components/ads/AdSense';
+import { BannerAd, InContentAd } from '@/components/ads/AdSense';
 
 /**
  * Terms of Service Page
@@ -55,6 +55,10 @@ const Terms = () => {
               <p className="text-gray-600 mb-4"><strong>a) Browser-Based Storage:</strong> The App stores certain data (such as progress and preferences) in your browser. You are responsible for the security of your device and browser. We are not liable for unauthorized access to data stored on your device.</p>
               <p className="text-gray-600 mb-4"><strong>b) Backend Storage:</strong> Certain usage data may be temporarily stored on our servers for up to seven (7) days and is then permanently deleted. See our Privacy Policy for further details.</p>
               <p className="text-gray-600"><strong>c) User Deletion:</strong> You may delete your stored information at any time through the Settings page within the App. We are not liable for any loss of data resulting from your use of this feature.</p>
+            </section>
+
+            <section className="my-8" aria-label="Advertisement">
+              <InContentAd position="middle" />
             </section>
 
             <section className="mb-8">

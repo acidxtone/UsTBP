@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { BannerAd } from '@/components/ads/AdSense';
+import { BannerAd, InContentAd } from '@/components/ads/AdSense';
 
 /**
  * Privacy Policy Page
@@ -65,6 +65,10 @@ const Privacy = () => {
               <p className="text-gray-600">
                 We are not responsible for the privacy practices of third-party advertising networks. We encourage you to review the privacy policies of any third parties whose ads are displayed in the App. You may be able to opt out of interest-based advertising through industry tools such as the Digital Advertising Alliance of Canada (DAAC) at youradchoices.ca or by adjusting your browser or device settings.
               </p>
+            </section>
+
+            <section className="my-8" aria-label="Advertisement">
+              <InContentAd position="middle" />
             </section>
 
             <section className="mb-8">

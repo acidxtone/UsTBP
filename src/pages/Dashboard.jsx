@@ -21,7 +21,7 @@ import {
   FileText as FileIcon
 } from "lucide-react";
 import { motion } from "framer-motion";
-import { BannerAd } from '@/components/ads/AdSense';
+import { BannerAd, InContentAd } from '@/components/ads/AdSense';
 import SectionProgress from '@/components/dashboard/SectionProgress';
 import { getTradeLabel } from '@/lib/trade-config';
 
@@ -217,6 +217,10 @@ export default function Dashboard() {
               </CardContent>
             </Card>
           </motion.div>
+
+          <section aria-label="Advertisement" className="py-2">
+            <InContentAd position="middle" />
+          </section>
 
           {/* Study Materials */}
           <motion.div

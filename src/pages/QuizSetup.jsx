@@ -25,7 +25,7 @@ import {
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import YearIndicator from '@/components/YearIndicator';
-import { BannerAd } from '@/components/ads/AdSense';
+import { BannerAd, InContentAd } from '@/components/ads/AdSense';
 import { getSectionsForTradeYear } from '@/lib/trade-config';
 
 const modeConfig = {
@@ -351,6 +351,10 @@ export default function QuizSetup() {
               </CardContent>
             </Card>
           </motion.div>
+
+          <section aria-label="Advertisement" className="py-4">
+            <InContentAd position="middle" />
+          </section>
 
           {/* Summary & Start */}
           <motion.div
