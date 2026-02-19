@@ -2,6 +2,8 @@ import { Toaster } from "@/components/ui/toaster"
 import { QueryClientProvider } from '@tanstack/react-query'
 import { queryClientInstance } from '@/lib/query-client'
 import NavigationTracker from '@/lib/NavigationTracker'
+import SEO from '@/components/SEO'
+import { HelmetProvider } from 'react-helmet-async'
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import PageNotFound from '@/lib/PageNotFound';
 import { AuthProvider, useAuth } from '@/lib/AuthContext';
@@ -152,11 +154,13 @@ function App() {
   }, []);
 
   return (
-    <AdProvider>
-      <AuthProvider>
-        <QueryClientProvider client={queryClientInstance}>
-          <Router>
-            <NavigationTracker />
+    <HelmetProvider>
+      <AdProvider>
+        <AuthProvider>
+          <QueryClientProvider client={queryClientInstance}>
+            <Router>
+              <SEO />
+              <NavigationTracker />
             <SideAd position="left" />
             <SideAd position="right" />
             <StickyHeaderAd />
@@ -164,11 +168,12 @@ function App() {
               <AuthenticatedApp />
             </div>
             <StickyFooterAd />
-          </Router>
-          <Toaster />
-        </QueryClientProvider>
-      </AuthProvider>
-    </AdProvider>
+            </Router>
+            <Toaster />
+          </QueryClientProvider>
+        </AuthProvider>
+      </AdProvider>
+    </HelmetProvider>
   )
 }
 

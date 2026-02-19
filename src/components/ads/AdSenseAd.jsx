@@ -15,6 +15,7 @@ const AdSenseAd = ({
 
   const publisherId = import.meta.env.VITE_ADSENSE_PUBLISHER_ID || 'ca-pub-5932083189692902';
   const adsEnabled = import.meta.env.VITE_ADSENSE_ENABLED !== 'false';
+  const PLACEHOLDER_SLOT = '0000000000';
 
   useEffect(() => {
     if (!adsEnabled || !publisherId) return;
@@ -53,6 +54,7 @@ const AdSenseAd = ({
   }, [slot, format]);
 
   if (!adsEnabled || !publisherId) return null;
+  if (slot === PLACEHOLDER_SLOT) return null;
 
   const adStyle = {
     display: responsive ? 'block' : 'inline-block',

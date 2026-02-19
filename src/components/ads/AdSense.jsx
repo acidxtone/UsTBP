@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const PUBLISHER_ID = import.meta.env.VITE_ADSENSE_PUBLISHER_ID || 'ca-pub-5932083189692902';
 const ADSENSE_ENABLED = import.meta.env.VITE_ADSENSE_ENABLED !== 'false';
+const PLACEHOLDER_SLOT = '0000000000';
 
 /**
  * Google AdSense Component
@@ -15,6 +16,7 @@ const AdSense = ({
   fullWidthResponsive = true 
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const insRef = useRef(null);
 
   useEffect(() => {
     if (!ADSENSE_ENABLED || !PUBLISHER_ID) return;
@@ -30,7 +32,17 @@ const AdSense = ({
     }
   }, []);
 
+  useEffect(() => {
+    if (!isLoaded || !insRef.current || !window.adsbygoogle) return;
+    try {
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    } catch (e) {
+      console.error('AdSense push error:', e);
+    }
+  }, [isLoaded, slot]);
+
   if (!ADSENSE_ENABLED || !PUBLISHER_ID) return null;
+  if (slot === PLACEHOLDER_SLOT) return null;
   if (!isLoaded) {
     return (
       <div 
@@ -45,6 +57,7 @@ const AdSense = ({
   return (
     <div className={`adsense-container ${className}`} style={style}>
       <ins
+        ref={insRef}
         className="adsbygoogle"
         style={{ display: 'block' }}
         data-ad-client={PUBLISHER_ID}
@@ -63,11 +76,12 @@ const AdSense = ({
  */
 export const BannerAd = ({ position = 'top' }) => {
   const adSlots = {
-    top: import.meta.env.VITE_ADSENSE_SLOT_TOP || '0000000000',
-    bottom: import.meta.env.VITE_ADSENSE_SLOT_BOTTOM || '0000000000',
-    sidebar: import.meta.env.VITE_ADSENSE_SLOT_SIDEBAR || '0000000000'
+    top: import.meta.env.VITE_ADSENSE_SLOT_TOP || PLACEHOLDER_SLOT,
+    bottom: import.meta.env.VITE_ADSENSE_SLOT_BOTTOM || PLACEHOLDER_SLOT,
+    sidebar: import.meta.env.VITE_ADSENSE_SLOT_SIDEBAR || PLACEHOLDER_SLOT
   };
   const slot = adSlots[position] || adSlots.top;
+  if (slot === PLACEHOLDER_SLOT) return null;
 
   return (
     <div className={`w-full flex justify-center my-4 ${position === 'sidebar' ? 'my-6' : ''}`}>
@@ -85,8 +99,9 @@ export const BannerAd = ({ position = 'top' }) => {
  * For placement within study materials and quiz pages. Pass slot or use position for default slot.
  */
 export const InContentAd = ({ slot, position }) => {
-  const defaultSlots = { middle: import.meta.env.VITE_ADSENSE_SLOT_INCONTENT || '0000000000' };
+  const defaultSlots = { middle: import.meta.env.VITE_ADSENSE_SLOT_INCONTENT || PLACEHOLDER_SLOT };
   const adSlot = slot || (position && defaultSlots[position]) || defaultSlots.middle;
+  if (adSlot === PLACEHOLDER_SLOT) return null;
 
   return (
     <div className="my-6 flex justify-center">
@@ -104,7 +119,8 @@ export const InContentAd = ({ slot, position }) => {
  * Adapts to different screen sizes
  */
 export const ResponsiveAd = ({ slot }) => {
-  const adSlot = slot || import.meta.env.VITE_ADSENSE_SLOT_RESPONSIVE || '0000000000';
+  const adSlot = slot || import.meta.env.VITE_ADSENSE_SLOT_RESPONSIVE || PLACEHOLDER_SLOT;
+  if (adSlot === PLACEHOLDER_SLOT) return null;
   return (
     <div className="w-full flex justify-center my-4">
       <AdSense 

@@ -92,6 +92,7 @@ export const SideAd = ({ position = 'left' }) => {
     : 'fixed right-0 top-0 h-full w-32';
 
   const slot = import.meta.env.VITE_ADSENSE_SLOT_SIDE || '0000000000';
+  if (slot === '0000000000') return null;
   return (
     <div className={`${positionClasses} bg-gray-50 border-r border-gray-200 z-30 hidden lg:block`}>
       <div className="h-full flex items-center justify-center p-4">
@@ -113,7 +114,8 @@ export const StickyHeaderAd = () => {
   const { adsEnabled, headerAdClosed, closeHeaderAd, isQuizMode } = useAds();
   const isMobile = useIsMobile();
 
-  if (!adsEnabled || headerAdClosed || isQuizMode) return null;
+  const headerSlot = import.meta.env.VITE_ADSENSE_SLOT_HEADER || '0000000000';
+  if (!adsEnabled || headerAdClosed || isQuizMode || headerSlot === '0000000000') return null;
 
   const height = isMobile ? 40 : 60;
   return (
@@ -129,7 +131,7 @@ export const StickyHeaderAd = () => {
           </svg>
         </button>
         <AdSenseAd
-          slot={import.meta.env.VITE_ADSENSE_SLOT_HEADER || '0000000000'}
+          slot={headerSlot}
           format="horizontal"
           height={height}
           className="w-full"
@@ -145,7 +147,8 @@ export const StickyFooterAd = () => {
   const { adsEnabled, footerAdClosed, closeFooterAd, isQuizMode } = useAds();
   const isMobile = useIsMobile();
 
-  if (!adsEnabled || footerAdClosed || isQuizMode) return null;
+  const footerSlot = import.meta.env.VITE_ADSENSE_SLOT_FOOTER || '0000000000';
+  if (!adsEnabled || footerAdClosed || isQuizMode || footerSlot === '0000000000') return null;
 
   const height = isMobile ? 50 : 90;
   return (
@@ -162,7 +165,7 @@ export const StickyFooterAd = () => {
           </svg>
         </button>
         <AdSenseAd
-          slot={import.meta.env.VITE_ADSENSE_SLOT_FOOTER || '0000000000'}
+          slot={footerSlot}
           format="horizontal"
           height={height}
           className="w-full"
@@ -181,7 +184,7 @@ export const InContentAd = ({ slot, className = "" }) => {
   const { adsEnabled, isQuizMode } = useAds();
   const adSlot = slot || import.meta.env.VITE_ADSENSE_SLOT_INCONTENT || '0000000000';
 
-  if (!adsEnabled || isQuizMode) return null;
+  if (!adsEnabled || isQuizMode || adSlot === '0000000000') return null;
 
   return (
     <div className={`my-6 ${className}`}>
