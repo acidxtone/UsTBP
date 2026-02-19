@@ -19,7 +19,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import { ArrowLeft, User, RotateCcw, LogOut, Calendar, Briefcase } from "lucide-react";
+import { ArrowLeft, User, RotateCcw, LogOut, Calendar, Briefcase, GraduationCap } from "lucide-react";
 import { toast } from "sonner";
 import YearIndicator from '@/components/YearIndicator';
 import { useNavigate } from 'react-router-dom';
@@ -232,6 +232,28 @@ export default function Settings() {
               <Button variant="outline" size="sm" onClick={() => setShowChangeYear(true)}>
                 Change
               </Button>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Curriculum */}
+        <Card className="border-0 shadow-sm">
+          <CardHeader>
+            <CardTitle className="text-lg flex items-center gap-2">
+              <GraduationCap className="h-5 w-5" />
+              Curriculum
+            </CardTitle>
+            <CardDescription>View exam sections and weighting for your trade and year</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="flex items-center justify-between p-3 rounded-lg bg-slate-50">
+              <div>
+                <p className="font-medium">View Curriculum</p>
+                <p className="text-sm text-slate-500">See section breakdown for {getTradeLabel(user?.selected_trade)} Year {user?.selected_year ?? '—'}</p>
+              </div>
+              <Link to={createPageUrl('Curriculum')}>
+                <Button variant="outline" size="sm">Open</Button>
+              </Link>
             </div>
           </CardContent>
         </Card>

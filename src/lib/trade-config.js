@@ -101,7 +101,7 @@ export const SECTION_MAPPINGS = {
     },
     3: {
       1: { name: "TOOLS, EQUIPMENT, CODES AND STANDARDS", target: 16, color: "blue" },
-      2: { name: "ELECTICAL THEORY, CIRCUITS, ELECTRONICS", target: 27, color: "purple" },
+      2: { name: "ELECTRICAL THEORY, CIRCUITS, ELECTRONICS", target: 27, color: "purple" },
       3: { name: "ELECTRICAL SYSTEMS", target: 57, color: "orange" }
     },
     4: {
