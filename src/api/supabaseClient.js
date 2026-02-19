@@ -1,9 +1,15 @@
 /**
  * Supabase API client — auth, questions, user progress, quiz attempts
  * Replaces the localClient.js with Supabase integration
+ * When no Supabase session (anonymous users), progress falls back to localStorage so dashboard works like local mode.
  */
 
 import { supabase } from '@/lib/supabase';
+
+const PROGRESS_STORAGE_PREFIX = 'tradebench_user_progress';
+function progressStorageKey(year) {
+  return year != null ? `${PROGRESS_STORAGE_PREFIX}_y${year}` : PROGRESS_STORAGE_PREFIX;
+}
 import { getTradeDbValue } from '@/lib/trade-config';
 
 let questionsCache = null;
@@ -292,11 +298,33 @@ const entities = {
   UserProgress: {
     async get(userId, year) {
       try {
-        const { data: user } = await supabase.auth.getUser();
-        if (!user?.user) return null;
         if (year == null) return null;
         const yearNum = typeof year === 'string' ? parseInt(year, 10) : Number(year);
         if (Number.isNaN(yearNum)) return null;
+
+        const { data: user } = await supabase.auth.getUser();
+
+        if (!user?.user) {
+          const key = progressStorageKey(yearNum);
+          try {
+            const raw = typeof localStorage !== 'undefined' ? localStorage.getItem(key) : null;
+            if (!raw) return null;
+            const data = JSON.parse(raw);
+            const sectionStats = data.section_stats && typeof data.section_stats === 'object' ? data.section_stats : {};
+            return {
+              ...data,
+              section_stats: sectionStats,
+              total_questions_answered: data.total_questions_answered ?? 0,
+              total_correct: data.total_correct ?? 0,
+              quizzes_completed: data.quizzes_completed ?? 0,
+              bookmarked_questions: data.bookmarked_questions ?? data.bookmarks ?? [],
+              weak_questions: data.weak_questions ?? data.weak_areas ?? [],
+              year: data.year ?? yearNum
+            };
+          } catch (_) {
+            return null;
+          }
+        }
 
         const { data, error } = await supabase
           .from('user_progress')
@@ -392,19 +420,31 @@ const entities = {
 
     async create(payload) {
       try {
-        const { data: user } = await supabase.auth.getUser();
-        
-        if (!user.user) {
-          throw new Error('User not authenticated');
-        }
-
-        // Extract year from payload or _year (normalize to number for DB consistency)
         const yearRaw = payload.year ?? payload._year;
         const year = yearRaw != null ? (typeof yearRaw === 'number' ? yearRaw : parseInt(String(yearRaw), 10)) : null;
-        delete payload._year;
         if (year == null || Number.isNaN(year)) {
           throw new Error('Year is required for user progress');
         }
+
+        const { data: user } = await supabase.auth.getUser();
+
+        if (!user?.user) {
+          const id = `local-${Date.now()}`;
+          const { _year: _y, ...rest } = payload;
+          const record = {
+            id,
+            created_by: 'anonymous@local.session',
+            year,
+            ...rest
+          };
+          const key = progressStorageKey(year);
+          if (typeof localStorage !== 'undefined') {
+            localStorage.setItem(key, JSON.stringify(record));
+          }
+          return { ...record, bookmarked_questions: record.bookmarked_questions ?? [], weak_questions: record.weak_questions ?? [] };
+        }
+
+        delete payload._year;
 
         // Separate fields that go into JSONB vs direct columns
         const {
@@ -486,16 +526,32 @@ const entities = {
 
     async update(id, payload) {
       try {
-        const { data: user } = await supabase.auth.getUser();
-        
-        if (!user.user) {
-          throw new Error('User not authenticated');
-        }
-
-        // Extract year from payload or _year (normalize to number)
         const yearRaw = payload.year ?? payload._year;
         const year = yearRaw != null ? (typeof yearRaw === 'number' ? yearRaw : parseInt(String(yearRaw), 10)) : undefined;
         delete payload._year;
+
+        const { data: user } = await supabase.auth.getUser();
+
+        if (!user?.user) {
+          if (year == null || Number.isNaN(year)) return null;
+          const key = progressStorageKey(year);
+          try {
+            const raw = typeof localStorage !== 'undefined' ? localStorage.getItem(key) : null;
+            if (!raw) return null;
+            const record = JSON.parse(raw);
+            if (record.id !== id) return record;
+            const updated = { ...record, ...payload };
+            delete updated._year;
+            localStorage.setItem(key, JSON.stringify(updated));
+            return {
+              ...updated,
+              bookmarked_questions: updated.bookmarked_questions ?? [],
+              weak_questions: updated.weak_questions ?? []
+            };
+          } catch (_) {
+            return null;
+          }
+        }
 
         // Get existing data to merge
         const { data: existing } = await supabase

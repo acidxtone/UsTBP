@@ -353,17 +353,19 @@ export default function Quiz() {
     
     setBookmarkedQuestions(newBookmarkedQuestions);
     
-    // Save to database
+    const year = user?.selected_year != null ? Number(user.selected_year) : null;
+    if (year == null || Number.isNaN(year)) return;
+
     try {
       const existing = progress;
-      const progressData = {
-        bookmarked_questions: newBookmarkedQuestions,
-      };
-      
+      const progressData = { bookmarked_questions: newBookmarkedQuestions };
+
       if (existing?.id) {
-        await api.entities.UserProgress.update(existing.id, { ...progressData, _year: user?.selected_year });
+        await api.entities.UserProgress.update(existing.id, { ...progressData, _year: year });
+      } else {
+        await api.entities.UserProgress.create({ ...progressData, year });
       }
-      console.log('🎯 Quiz: Bookmarks saved to database');
+      queryClient.invalidateQueries({ queryKey: ['userProgress'] });
     } catch (error) {
       console.error('🎯 Quiz: Error saving bookmarks:', error);
     }
