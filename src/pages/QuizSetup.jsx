@@ -94,12 +94,15 @@ export default function QuizSetup() {
   const [showExplanations, setShowExplanations] = useState(true);
 
   const { data: progress } = useQuery({
-    queryKey: ['userProgress', user?.selected_year],
+    queryKey: ['userProgress', user?.id, user?.selected_year],
     queryFn: async () => {
-      const results = await api.entities.UserProgress.filter({ created_by: user?.email, year: user?.selected_year });
-      return results[0] || null;
+      if (!user?.id || !user?.selected_year) return null;
+      const year = user.selected_year != null ? Number(user.selected_year) : null;
+      if (year == null || Number.isNaN(year)) return null;
+      const result = await api.entities.UserProgress.get(user.id, year);
+      return result;
     },
-    enabled: !!user?.email && !!user?.selected_year
+    enabled: !!user?.id && !!user?.selected_year
   });
 
   // ← FIXED: Proper query configuration matching Study.jsx

@@ -177,7 +177,10 @@ export default function Quiz() {
 
   const updateProgressMutation = useMutation({
     mutationFn: async (results) => {
-      const existing = queryClient.getQueryData(['userProgress', user?.selected_year]) ?? progress;
+      const year = user?.selected_year != null ? Number(user.selected_year) : null;
+      const existing = year != null && !Number.isNaN(year)
+        ? await api.entities.UserProgress.get(user?.id ?? null, year)
+        : null;
       const sectionScores = {};
       
       results.question_results.forEach(r => {
@@ -227,7 +230,6 @@ export default function Quiz() {
         last_study_date: today
       };
 
-      const year = user?.selected_year != null ? Number(user.selected_year) : null;
       if (year == null || Number.isNaN(year)) {
         console.error('🎯 Quiz: Cannot save progress — no selected year');
         return;
