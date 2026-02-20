@@ -8,7 +8,6 @@ import { motion } from "framer-motion";
 import { useAuth } from '@/lib/AuthContext';
 import { TRADES } from '@/lib/trade-config';
 import AnonymousSession from '@/lib/AnonymousSession';
-import { BannerAd, InContentAd } from '@/components/ads/AdSense';
 
 export default function TradeSelection() {
   const { user, updateMe, checkAppState } = useAuth();
@@ -40,9 +39,6 @@ export default function TradeSelection() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex flex-col p-4">
-      <section aria-label="Advertisement" className="flex-shrink-0 py-2">
-        <BannerAd position="top" />
-      </section>
       <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="w-full max-w-4xl mx-auto flex-1 flex items-center justify-center">
         <div className="w-full text-center mb-8">
           <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-white/10 mb-4">
@@ -79,9 +75,6 @@ export default function TradeSelection() {
               </motion.div>
             ))}
           </div>
-          <section aria-label="Advertisement" className="my-6 flex justify-center">
-            <InContentAd position="middle" />
-          </section>
           <div className="text-center">
             <Button onClick={handleContinue} disabled={!selectedTrade || saving} size="lg" className="bg-white text-slate-900 hover:bg-slate-100 px-12 py-6 text-lg font-semibold">
               {saving ? 'Saving...' : 'Continue'}
@@ -89,9 +82,6 @@ export default function TradeSelection() {
           </div>
         </div>
       </motion.div>
-      <section aria-label="Advertisement" className="flex-shrink-0 py-2">
-        <BannerAd position="bottom" />
-      </section>
     </div>
   );
 }

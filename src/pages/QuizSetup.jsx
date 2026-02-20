@@ -127,6 +127,8 @@ export default function QuizSetup() {
     return questions.length;
   };
 
+  const hasQuestions = getAvailableQuestions() > 0;
+
   const handleStart = () => {
     const params = new URLSearchParams();
     params.set('mode', mode);
@@ -177,9 +179,11 @@ export default function QuizSetup() {
       </header>
 
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <section aria-label="Advertisement" className="pt-2 pb-4">
-          <BannerAd position="top" />
-        </section>
+        {hasQuestions && (
+          <section aria-label="Advertisement" className="pt-2 pb-4">
+            <BannerAd position="top" />
+          </section>
+        )}
         {/* Mode Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -352,9 +356,11 @@ export default function QuizSetup() {
             </Card>
           </motion.div>
 
-          <section aria-label="Advertisement" className="py-4">
-            <InContentAd position="middle" />
-          </section>
+          {hasQuestions && (
+            <section aria-label="Advertisement" className="py-4">
+              <InContentAd position="middle" />
+            </section>
+          )}
 
           {/* Summary & Start */}
           <motion.div
@@ -409,9 +415,11 @@ export default function QuizSetup() {
             </Card>
           </motion.div>
         </div>
-        <section aria-label="Advertisement" className="pt-6 pb-4">
-          <BannerAd position="bottom" />
-        </section>
+        {hasQuestions && (
+          <section aria-label="Advertisement" className="pt-6 pb-4">
+            <BannerAd position="bottom" />
+          </section>
+        )}
       </main>
     </div>
   );

@@ -160,6 +160,8 @@ export default function Study() {
     return sectionMatch && searchMatch;
   });
 
+  const showAds = (studyGuides?.length ?? 0) > 0 || (questions?.length ?? 0) > 0;
+
   if (!user) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 flex items-center justify-center">
@@ -173,8 +175,8 @@ export default function Study() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100">
-      <BannerAd position="top" />
-      
+      {showAds && <BannerAd position="top" />}
+
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -239,7 +241,7 @@ export default function Study() {
             </CardContent>
           </Card>
 
-          <InContentAd position="middle" />
+          {showAds && <InContentAd position="middle" />}
 
           {/* Study Guides */}
           <div className="space-y-6">
@@ -421,8 +423,8 @@ export default function Study() {
           </div>
         </motion.div>
       </main>
-      
-      <BannerAd position="bottom" />
+
+      {showAds && <BannerAd position="bottom" />}
     </div>
   );
 }

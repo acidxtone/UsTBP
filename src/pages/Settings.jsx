@@ -24,7 +24,6 @@ import { toast } from "sonner";
 import YearIndicator from '@/components/YearIndicator';
 import { useNavigate } from 'react-router-dom';
 import { getTradeLabel, getYearsForTrade } from '@/lib/trade-config';
-import { BannerAd, InContentAd } from '@/components/ads/AdSense';
 
 export default function Settings() {
   const queryClient = useQueryClient();
@@ -123,9 +122,6 @@ export default function Settings() {
       </header>
 
       <main className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
-        <section aria-label="Advertisement" className="pb-4">
-          <BannerAd position="top" />
-        </section>
         <h1 className="text-2xl font-bold text-slate-900">Settings</h1>
 
         {/* Profile */}
@@ -151,10 +147,6 @@ export default function Settings() {
             </div>
           </CardContent>
         </Card>
-
-        <section aria-label="Advertisement" className="py-4">
-          <InContentAd position="middle" />
-        </section>
 
         {/* Study Stats */}
         <Card className="border-0 shadow-sm">
@@ -380,9 +372,6 @@ export default function Settings() {
             </Link>
           </CardContent>
         </Card>
-        <section aria-label="Advertisement" className="pt-6 pb-4">
-          <BannerAd position="bottom" />
-        </section>
       </main>
 
       {/* Change Year Dialog */}

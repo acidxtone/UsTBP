@@ -31,6 +31,9 @@ import ConnectionTest from '@/components/ConnectionTest';
 
 const PAGES_WITHOUT_YEAR_HEADER = ['YearSelection', 'TradeSelection', 'Privacy', 'Terms', 'debug', 'test', 'connection'];
 
+/** Routes where global ads are allowed (content-rich pages per AdSense policy). */
+const ROUTES_WITH_ADS = ['/', '/Dashboard', '/Study', '/Quiz', '/QuizSetup', '/Curriculum', '/Settings', '/Privacy', '/Terms'];
+
 const LayoutWrapper = ({ children, currentPageName }) => {
   const showYearHeader = !PAGES_WITHOUT_YEAR_HEADER.includes(currentPageName);
   return (
@@ -147,6 +150,26 @@ const AuthenticatedApp = () => {
   );
 };
 
+/** Renders global ads only on content-rich routes (AdSense policy compliance). */
+const GlobalAdsWrapper = () => {
+  const location = useLocation();
+  const showAds = ROUTES_WITH_ADS.includes(location.pathname);
+  if (!showAds) return null;
+  return (
+    <>
+      <SideAd position="left" />
+      <SideAd position="right" />
+      <StickyHeaderAd />
+    </>
+  );
+};
+
+const StickyFooterAdWrapper = () => {
+  const location = useLocation();
+  const showAds = ROUTES_WITH_ADS.includes(location.pathname);
+  if (!showAds) return null;
+  return <StickyFooterAd />;
+};
 
 function App() {
   useEffect(() => {
@@ -161,13 +184,11 @@ function App() {
             <Router>
               <SEO />
               <NavigationTracker />
-            <SideAd position="left" />
-            <SideAd position="right" />
-            <StickyHeaderAd />
+              <GlobalAdsWrapper />
             <div className="pt-12 md:pt-16 lg:mx-32 min-h-screen">
               <AuthenticatedApp />
             </div>
-            <StickyFooterAd />
+            <StickyFooterAdWrapper />
             </Router>
             <Toaster />
           </QueryClientProvider>
