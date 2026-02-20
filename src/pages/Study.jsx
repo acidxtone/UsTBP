@@ -5,6 +5,7 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { Link, useNavigate } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { getAvailableSections, getSectionDisplayName } from '@/lib/dynamicSections';
+import { getTradeLabel } from '@/lib/trade-config';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -189,7 +190,8 @@ export default function Study() {
             <div>
               <h1 className="text-3xl font-bold text-slate-900">Study Materials</h1>
               <p className="text-slate-600 mt-2">
-                Comprehensive study guides and practice questions for Year {user?.selected_year}
+                Comprehensive study guides and practice questions for {getTradeLabel(user?.selected_trade)}
+                {user?.selected_year != null ? ` Year ${user.selected_year}` : ''}
               </p>
             </div>
             <div className="flex items-center gap-3">
