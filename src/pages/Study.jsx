@@ -5,7 +5,7 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { Link, useNavigate } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { getAvailableSections, getSectionDisplayName } from '@/lib/dynamicSections';
-import { getTradeLabel } from '@/lib/trade-config';
+import { getTradeLabel, getSectionsForTradeYear } from '@/lib/trade-config';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -193,6 +193,13 @@ export default function Study() {
                 Comprehensive study guides and practice questions for {getTradeLabel(user?.selected_trade)}
                 {user?.selected_year != null ? ` Year ${user.selected_year}` : ''}
               </p>
+              {user?.selected_trade && user?.selected_year != null && (() => {
+                const sectionInfo = getSectionsForTradeYear(user.selected_trade, Number(user.selected_year));
+                const names = sectionInfo && typeof sectionInfo === 'object' ? Object.values(sectionInfo).map(s => s?.name).filter(Boolean) : [];
+                if (names.length === 0) return null;
+                const intro = names.length <= 3 ? names.join(', ') : names.slice(0, 3).join(', ') + ' and more.';
+                return <p className="text-sm text-slate-500 mt-1">Topics include: {intro}</p>;
+              })()}
             </div>
             <div className="flex items-center gap-3">
               {user?.selected_year && <YearIndicator year={user.selected_year} />}
@@ -253,7 +260,11 @@ export default function Study() {
                 <CardContent className="p-12 text-center">
                   <BookOpen className="h-12 w-12 text-slate-400 mx-auto mb-4" />
                   <h3 className="text-lg font-medium text-slate-900 mb-2">No study guides found</h3>
-                  <p className="text-slate-600">Try adjusting your search or filters</p>
+                  <p className="text-slate-600 mb-2">Try adjusting your search or filters.</p>
+                  <p className="text-slate-500 text-sm mb-4">Review the curriculum to see which topics are covered this year, and use the section filters above to narrow results.</p>
+                  <Button variant="outline" size="sm" asChild>
+                    <Link to={createPageUrl('Curriculum')}>View curriculum</Link>
+                  </Button>
                 </CardContent>
               </Card>
             ) : (
@@ -329,7 +340,11 @@ export default function Study() {
                 <CardContent className="p-12 text-center">
                   <Search className="h-12 w-12 text-slate-400 mx-auto mb-4" />
                   <h3 className="text-lg font-medium text-slate-900 mb-2">No questions found</h3>
-                  <p className="text-slate-600">Try adjusting your search or filters</p>
+                  <p className="text-slate-600 mb-2">Try adjusting your search or filters.</p>
+                  <p className="text-slate-500 text-sm mb-4">Check the curriculum for this year’s sections, or start a quiz from the Dashboard to practice by topic.</p>
+                  <Button variant="outline" size="sm" asChild>
+                    <Link to={createPageUrl('Dashboard')}>Go to Dashboard</Link>
+                  </Button>
                 </CardContent>
               </Card>
             ) : (

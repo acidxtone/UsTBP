@@ -64,6 +64,34 @@ export default function LandingPage() {
         </div>
       </section>
 
+      <section className="py-16 px-6 border-t border-slate-100">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-serif font-bold text-slate-900 text-center mb-2">
+            How It Works
+          </h2>
+          <p className="text-slate-600 text-center mb-10 max-w-xl mx-auto">
+            TradeBenchPrep supports Steamfitter/Pipefitter, Electrician, Millwright, and Welder apprentices preparing for Red Seal and provincial exams.
+          </p>
+          <div className="grid md:grid-cols-3 gap-8 text-center">
+            <div>
+              <div className="w-10 h-10 rounded-full bg-blue-100 text-blue-600 font-bold flex items-center justify-center mx-auto mb-3">1</div>
+              <h3 className="font-semibold text-slate-900 mb-1">Pick your trade & year</h3>
+              <p className="text-sm text-slate-600">Select your trade and apprenticeship year to see the right materials.</p>
+            </div>
+            <div>
+              <div className="w-10 h-10 rounded-full bg-blue-100 text-blue-600 font-bold flex items-center justify-center mx-auto mb-3">2</div>
+              <h3 className="font-semibold text-slate-900 mb-1">Study & take quizzes</h3>
+              <p className="text-sm text-slate-600">Use study guides and practice exams by section and difficulty.</p>
+            </div>
+            <div>
+              <div className="w-10 h-10 rounded-full bg-blue-100 text-blue-600 font-bold flex items-center justify-center mx-auto mb-3">3</div>
+              <h3 className="font-semibold text-slate-900 mb-1">Track your progress</h3>
+              <p className="text-sm text-slate-600">Monitor accuracy and focus on weak areas before exam day.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="pb-24 px-6">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-serif font-bold text-slate-900 text-center mb-4">

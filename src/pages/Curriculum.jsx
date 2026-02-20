@@ -114,6 +114,11 @@ export default function Curriculum() {
           <p className="text-sm text-slate-500 mt-1">
             100 Questions • 3 Hours • Pass mark 70%
           </p>
+          {sections.length > 0 && (
+            <p className="text-sm text-slate-500 mt-1">
+              This year covers {sections.length} exam sections: {sections.slice(0, 3).map(s => s.name).join(', ')}{sections.length > 3 ? ' and more.' : '.'}
+            </p>
+          )}
         </div>
 
         {/* Curriculum Sections */}

@@ -430,7 +430,8 @@ export default function Quiz() {
         <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 flex items-center justify-center p-4">
           <div className="text-center max-w-md">
             <p className="text-slate-700 font-medium mb-2">No questions to review</p>
-            <p className="text-slate-500 text-sm mb-6">The questions for this review could not be loaded. They may be from a different year.</p>
+            <p className="text-slate-500 text-sm mb-2">The questions for this review could not be loaded. They may be from a different year.</p>
+            <p className="text-slate-500 text-sm mb-6">Tip: Complete quizzes from the Dashboard to build a list of questions to review, or use Study for practice questions by section.</p>
             <Button onClick={() => navigate(createPageUrl('Dashboard'))} className="bg-slate-900 hover:bg-slate-800">
               Back to Dashboard
             </Button>

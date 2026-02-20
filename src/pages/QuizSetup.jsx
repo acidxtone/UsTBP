@@ -26,7 +26,7 @@ import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import YearIndicator from '@/components/YearIndicator';
 import { BannerAd, InContentAd } from '@/components/ads/AdSense';
-import { getSectionsForTradeYear } from '@/lib/trade-config';
+import { getSectionsForTradeYear, getTradeLabel } from '@/lib/trade-config';
 
 const modeConfig = {
   full_exam: {
@@ -214,6 +214,11 @@ export default function QuizSetup() {
             <div>
               <h1 className="text-2xl font-bold text-slate-900">{config.title}</h1>
               <p className="text-slate-600">{config.description}</p>
+              {user?.selected_trade && user?.selected_year != null && (
+                <p className="text-sm text-slate-500 mt-1">
+                  Customize your {getTradeLabel(user.selected_trade)} Year {user.selected_year} practice quiz.
+                </p>
+              )}
             </div>
           </div>
         </motion.div>

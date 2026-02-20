@@ -166,7 +166,7 @@ export default function Dashboard() {
               Welcome back, {user?.full_name || user?.first_name || user?.email?.split('@')[0]}!
             </h1>
             <p className="text-lg text-slate-600">
-              Ready to continue your {getTradeLabel(selectedTrade)} journey?
+              Your {getTradeLabel(selectedTrade)} Year {selectedYear} dashboard — track progress and practice for your exam.
             </p>
           </motion.div>
 
