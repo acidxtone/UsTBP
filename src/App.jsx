@@ -71,16 +71,16 @@ const AuthenticatedApp = () => {
   if (!isAuthenticated) {
     return (
       <Routes>
+        <Route path="/trades/*" element={<TradesOutlet />}>
+          <Route index element={<TradesHub />} />
+          <Route path=":trade/year-:year" element={<TradeYearPage />} />
+          <Route path=":trade" element={<TradeHubPage />} />
+        </Route>
         <Route path="/auth" element={<AuthPage />} />
         <Route path="/Privacy" element={<Privacy />} />
         <Route path="/Terms" element={<Terms />} />
         <Route path="/privacy-policy" element={<Privacy />} />
         <Route path="/terms-of-service" element={<Terms />} />
-        <Route path="/trades" element={<TradesOutlet />}>
-          <Route index element={<TradesHub />} />
-          <Route path=":trade/year-:year" element={<TradeYearPage />} />
-          <Route path=":trade" element={<TradeHubPage />} />
-        </Route>
         <Route path="*" element={<LandingPage />} />
       </Routes>
     );
@@ -88,6 +88,11 @@ const AuthenticatedApp = () => {
 
   return (
     <Routes>
+      <Route path="/trades/*" element={<TradesOutlet />}>
+        <Route index element={<TradesHub />} />
+        <Route path=":trade/year-:year" element={<TradeYearPage />} />
+        <Route path=":trade" element={<TradeHubPage />} />
+      </Route>
       <Route path="/auth" element={<Navigate to="/" replace />} />
       {/* Root always shows landing; Get Started sends users to TradeSelection */}
       <Route path="/" element={<LandingPage />} />
@@ -152,11 +157,6 @@ const AuthenticatedApp = () => {
           <YearSelection />
         </LayoutWrapper>
       } />
-      <Route path="/trades" element={<TradesOutlet />}>
-        <Route index element={<TradesHub />} />
-        <Route path=":trade/year-:year" element={<TradeYearPage />} />
-        <Route path=":trade" element={<TradeHubPage />} />
-      </Route>
       {import.meta.env.DEV && (
         <>
           <Route path="/debug" element={
