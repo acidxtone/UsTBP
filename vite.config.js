@@ -1,10 +1,27 @@
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 import path from 'path'
+import fs from 'fs'
+
+/** Copy index.html to 404.html after build so hosts that serve 404.html for unknown paths (e.g. GitHub Pages) still load the SPA. */
+function copyIndexTo404() {
+  return {
+    name: 'copy-index-to-404',
+    closeBundle() {
+      const outDir = path.resolve(__dirname, 'dist')
+      const indexPath = path.join(outDir, 'index.html')
+      const notFoundPath = path.join(outDir, '404.html')
+      if (fs.existsSync(indexPath)) {
+        fs.copyFileSync(indexPath, notFoundPath)
+      }
+    },
+  }
+}
 
 export default defineConfig({
   plugins: [
     react(),
+    copyIndexTo404(),
   ],
   resolve: {
     alias: {
