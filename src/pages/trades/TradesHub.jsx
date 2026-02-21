@@ -1,0 +1,72 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Card, CardContent } from '@/components/ui/card';
+import TradesLayout, { GetStartedButton, TradesAdTop, TradesAdMiddle, TradesAdBottom } from './TradesLayout';
+import { getHubContent } from './tradesContent';
+
+export default function TradesHub() {
+  const content = getHubContent();
+
+  return (
+    <TradesLayout>
+      <div className="max-w-4xl mx-auto">
+        <h1 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-6 leading-tight">
+          {content.h1}
+        </h1>
+        {content.intro.map((p, i) => (
+          <p key={i} className="text-lg text-slate-600 mb-4 leading-relaxed">
+            {p}
+          </p>
+        ))}
+        <div className="my-8">
+          <GetStartedButton />
+        </div>
+      </div>
+
+      <TradesAdTop />
+
+      <section className="py-12 px-6 border-t border-slate-100">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-serif font-bold text-slate-900 text-center mb-8">
+            Choose Your Trade
+          </h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            {content.chooseYourTrade.map((trade) => (
+              <Card key={trade.link} className="border-slate-200 hover:border-blue-200 transition-colors duration-300 hover:shadow-lg">
+                <CardContent className="pt-6 pb-6 px-6">
+                  <h3 className="text-xl font-semibold text-slate-900 mb-2">{trade.title}</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                    {trade.description}
+                  </p>
+                  <Link
+                    to={trade.link}
+                    className="inline-flex items-center text-blue-600 font-medium hover:underline"
+                  >
+                    {trade.title.includes('—') ? `${trade.title.split('—')[0].trim()} Exam Prep` : `${trade.title} Exam Prep`}
+                    <span className="ml-1">→</span>
+                  </Link>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12 px-6 border-t border-slate-100">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-serif font-bold text-slate-900 text-center mb-6">
+            How It Works
+          </h2>
+          <p className="text-slate-600 leading-relaxed mb-8">
+            {content.howItWorks}
+          </p>
+          <div className="flex justify-center">
+            <GetStartedButton />
+          </div>
+        </div>
+      </section>
+
+      <TradesAdBottom />
+    </TradesLayout>
+  );
+}

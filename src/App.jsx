@@ -28,11 +28,15 @@ import Terms from '@/pages/Terms';
 import DebugQuestions from '@/components/DebugQuestions';
 import SimpleDebug from '@/components/SimpleDebug';
 import ConnectionTest from '@/components/ConnectionTest';
+import TradesHub from '@/pages/trades/TradesHub';
+import TradeHubPage from '@/pages/trades/TradeHubPage';
+import TradeYearPage from '@/pages/trades/TradeYearPage';
 
 const PAGES_WITHOUT_YEAR_HEADER = ['YearSelection', 'TradeSelection', 'Privacy', 'Terms', 'debug', 'test', 'connection'];
 
 /** Routes where global ads are allowed (content-rich pages per AdSense policy). */
 const ROUTES_WITH_ADS = ['/', '/Dashboard', '/Study', '/Quiz', '/QuizSetup', '/Curriculum', '/Settings', '/Privacy', '/Terms'];
+const TRADES_ROUTE_PREFIX = '/trades';
 
 const LayoutWrapper = ({ children, currentPageName }) => {
   const showYearHeader = !PAGES_WITHOUT_YEAR_HEADER.includes(currentPageName);
@@ -65,6 +69,9 @@ const AuthenticatedApp = () => {
         <Route path="/auth" element={<AuthPage />} />
         <Route path="/Privacy" element={<Privacy />} />
         <Route path="/Terms" element={<Terms />} />
+        <Route path="/trades" element={<TradesHub />} />
+        <Route path="/trades/:trade" element={<TradeHubPage />} />
+        <Route path="/trades/:trade/year-:year" element={<TradeYearPage />} />
         <Route path="*" element={<LandingPage />} />
       </Routes>
     );
@@ -126,6 +133,9 @@ const AuthenticatedApp = () => {
           <YearSelection />
         </LayoutWrapper>
       } />
+      <Route path="/trades" element={<TradesHub />} />
+      <Route path="/trades/:trade" element={<TradeHubPage />} />
+      <Route path="/trades/:trade/year-:year" element={<TradeYearPage />} />
       {import.meta.env.DEV && (
         <>
           <Route path="/debug" element={
@@ -153,7 +163,7 @@ const AuthenticatedApp = () => {
 /** Renders global ads only on content-rich routes (AdSense policy compliance). */
 const GlobalAdsWrapper = () => {
   const location = useLocation();
-  const showAds = ROUTES_WITH_ADS.includes(location.pathname);
+  const showAds = ROUTES_WITH_ADS.includes(location.pathname) || location.pathname.startsWith(TRADES_ROUTE_PREFIX);
   if (!showAds) return null;
   return (
     <>
@@ -166,7 +176,7 @@ const GlobalAdsWrapper = () => {
 
 const StickyFooterAdWrapper = () => {
   const location = useLocation();
-  const showAds = ROUTES_WITH_ADS.includes(location.pathname);
+  const showAds = ROUTES_WITH_ADS.includes(location.pathname) || location.pathname.startsWith(TRADES_ROUTE_PREFIX);
   if (!showAds) return null;
   return <StickyFooterAd />;
 };

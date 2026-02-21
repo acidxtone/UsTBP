@@ -72,6 +72,12 @@ export default function LandingPage() {
           <p className="text-slate-600 text-center mb-10 max-w-xl mx-auto">
             TradeBenchPrep supports Steamfitter/Pipefitter, Electrician, Millwright, and Welder apprentices preparing for Red Seal and provincial exams.
           </p>
+          <div className="text-center mb-10">
+            <Link to="/trades" className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:underline">
+              Explore exam prep by trade and year
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div>
               <div className="w-10 h-10 rounded-full bg-blue-100 text-blue-600 font-bold flex items-center justify-center mx-auto mb-3">1</div>

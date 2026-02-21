@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 import { useAuth } from '@/lib/AuthContext';
 import { getTradeLabel } from '@/lib/trade-config';
+import { getHubContent, getTradeHubContent, getTradeYearContent } from '@/pages/trades/tradesContent';
 
 const BASE_URL = 'https://www.tradebenchprep.org';
 
@@ -82,10 +83,36 @@ export default function SEO() {
   const trade = user?.selected_trade || getStoredTrade() || 'SF';
   const year = user?.selected_year != null ? user.selected_year : getStoredYear();
   const hasTradeAndYear = trade && year != null && !Number.isNaN(Number(year));
+  let title;
+  let description;
 
-  const baseMeta = ROUTE_META[pathname] || ROUTE_META['/'];
-  let title = baseMeta.title;
-  let description = baseMeta.description;
+  // Static /trades pages: derive meta from content
+  if (pathname === '/trades') {
+    const hub = getHubContent();
+    title = hub.title;
+    description = hub.metaDescription;
+  } else if (pathname.match(/^\/trades\/[^/]+\/year-\d+$/)) {
+    const match = pathname.match(/^\/trades\/([^/]+)\/year-(\d+)$/);
+    if (match) {
+      const [, tradeSlug, yearStr] = match;
+      const yearContent = getTradeYearContent(tradeSlug, parseInt(yearStr, 10));
+      if (yearContent) {
+        title = yearContent.title;
+        description = yearContent.metaDescription;
+      }
+    }
+  } else if (pathname.startsWith('/trades/') && !pathname.includes('/year-')) {
+    const tradeSlug = pathname.replace('/trades/', '').split('/')[0];
+    const tradeMeta = getTradeHubContent(tradeSlug);
+    if (tradeMeta) {
+      title = tradeMeta.title;
+      description = tradeMeta.metaDescription;
+    }
+  }
+
+  const baseMeta = ROUTE_META[pathname] || (pathname.startsWith('/trades') ? { title, description } : ROUTE_META['/']);
+  if (!title) title = baseMeta.title;
+  if (!description) description = baseMeta.description;
 
   if (ROUTES_WITH_DYNAMIC_META.includes(pathname) && hasTradeAndYear) {
     const tradeLabel = getTradeLabel(trade);
