@@ -1,14 +1,20 @@
 # Deployment and static /trades pages
 
-## HashRouter: no path rewrites required
+## Clean URLs (BrowserRouter)
 
-The app uses **HashRouter** (URLs like `https://www.tradebenchprep.org/#/trades/millwright/year-2`). The server only ever receives requests to `/`, so **no SPA fallback or path rewrites are required**. Any host that can serve static files from the `dist/` directory will work.
+The app uses **BrowserRouter**. Every page has a clean URL (e.g. `https://www.tradebenchprep.org/trades/electrician/year-1`) so Google can crawl and index each page and AdSense can read the content.
 
-- **Static pages (e.g. trades):** Use hash URLs: `/#/trades`, `/#/trades/electrician`, `/#/trades/millwright/year-2`. The sitemap and internal links use these.
-- **Direct visit to path URL:** If someone visits `https://www.tradebenchprep.org/trades/millwright/year-2` (no hash) and the server serves `index.html` at that path, the app will redirect to `/#/trades/millwright/year-2` and show the correct page. If the server redirects that path to `/`, the user will see the landing page (no way to recover the path).
+## Vercel
+
+`vercel.json` in the repo configures rewrites so that:
+
+- `/sitemap.xml` and `/robots.txt` are served as static files.
+- Every other path `(.*)` is rewritten to `/`, so the SPA loads and React Router shows the correct page.
+
+Redeploy to Vercel after pulling. No other host config is required.
 
 ## Deploy steps
 
 1. Build: `npm run build`
-2. Publish the `dist/` directory.
-3. Ensure the host serves `index.html` for the root path `/` (standard for static sites).
+2. Publish the `dist/` directory (or let Vercel build from the repo).
+3. Ensure the host rewrites all paths to `/` (or `/index.html`) so the same app is served; `vercel.json` does this on Vercel.
