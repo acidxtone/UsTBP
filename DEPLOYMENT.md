@@ -1,24 +1,14 @@
 # Deployment and static /trades pages
 
-## SPA fallback (required for `/trades/*` URLs)
+## HashRouter: no path rewrites required
 
-For URLs like `/trades`, `/trades/electrician`, `/trades/millwright/year-2` to show the correct pages (not the landing page), the host must serve the **same** `index.html` for those paths so the React app loads and React Router can match the route.
+The app uses **HashRouter** (URLs like `https://www.tradebenchprep.org/#/trades/millwright/year-2`). The server only ever receives requests to `/`, so **no SPA fallback or path rewrites are required**. Any host that can serve static files from the `dist/` directory will work.
 
-### Per-host setup
+- **Static pages (e.g. trades):** Use hash URLs: `/#/trades`, `/#/trades/electrician`, `/#/trades/millwright/year-2`. The sitemap and internal links use these.
+- **Direct visit to path URL:** If someone visits `https://www.tradebenchprep.org/trades/millwright/year-2` (no hash) and the server serves `index.html` at that path, the app will redirect to `/#/trades/millwright/year-2` and show the correct page. If the server redirects that path to `/`, the user will see the landing page (no way to recover the path).
 
-- **Vercel**  
-  `vercel.json` in the repo has rewrites: `/(.*)` → `/index.html`. Ensure the project is deployed from this repo so Vercel uses it. No extra config in the dashboard needed.
+## Deploy steps
 
-- **Netlify**  
-  `netlify.toml` has redirects: `/*` → `/index.html` (200). The build also outputs `public/_redirects` into `dist/`. Ensure **Publish directory** is `dist` and the latest commit is deployed.
-
-- **GitHub Pages**  
-  The build copies `index.html` to `404.html`. When a visitor opens `/trades/millwright/year-2`, GitHub Pages serves `404.html` (the SPA), and the app reads the URL and shows the right page. **Redeploy** after pulling the commit that adds the 404.html build step.
-
-- **Other static hosts**  
-  Configure “rewrite all routes to `index.html`” or “SPA fallback” (or equivalent) so that paths like `/trades/*` return the same HTML as `/`. If the host serves a custom 404 file, set it to the same content as `index.html`.
-
-## After changing config
-
-1. Deploy from the **latest commit** (so the build includes the trades routes and 404.html if applicable).
-2. Hard refresh or open the URL in an incognito window to avoid cached HTML/JS.
+1. Build: `npm run build`
+2. Publish the `dist/` directory.
+3. Ensure the host serves `index.html` for the root path `/` (standard for static sites).

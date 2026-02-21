@@ -135,7 +135,8 @@ export default function SEO() {
     }
   }
 
-  const canonical = `${BASE_URL}${pathname === '/' ? '' : pathname}`;
+  // HashRouter: canonical uses hash so shares and crawlers get the correct URL
+  const canonical = pathname === '/' || pathname === '' ? `${BASE_URL}/` : `${BASE_URL}/#${pathname}`;
 
   const jsonLd =
     ROUTES_WITH_DYNAMIC_META.includes(pathname) && hasTradeAndYear
