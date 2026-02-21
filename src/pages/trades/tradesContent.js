@@ -3,6 +3,8 @@
  * Use getHubContent(), getTradeHubContent(trade), getTradeYearContent(trade, year).
  */
 
+import { YEAR_CONTENT_NEW } from './tradesYearContentNew';
+
 export const TRADES = {
   electrician: { name: 'Electrician', slug: 'electrician', years: [1, 2, 3, 4] },
   millwright: { name: 'Millwright', slug: 'millwright', years: [1, 2, 3, 4] },
@@ -560,5 +562,5 @@ addYearContent('welder_3', {
 
 export function getTradeYearContent(tradeSlug, year) {
   const key = `${tradeSlug}_${year}`;
-  return YEAR_CONTENT[key] || null;
+  return YEAR_CONTENT_NEW[key] ?? YEAR_CONTENT[key] ?? null;
 }
