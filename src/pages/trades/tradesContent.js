@@ -54,7 +54,7 @@ const TRADE_HUB_CONTENT = {
     h1: 'Electrician Apprenticeship Exam Prep — All Years',
     intro: 'The electrical trade apprenticeship in Alberta spans four years and covers one of the most comprehensive technical curriculums of any skilled trade. From foundational electrical theory in Year 1 to advanced power systems, motor controls, and the Canadian Electrical Code in Year 4, each year builds directly on the last. TradeBenchPrep gives you structured practice for every stage.',
     chooseYearIntro: 'Select the year that matches your current period of apprenticeship to access practice questions, quizzes, and full exams aligned to the Alberta ATIS electrician curriculum for that year.',
-    about: 'The Alberta electrician apprenticeship is regulated through ATIS and requires apprentices to complete both on-the-job hours and technical training for each period before writing a period exam. Passing each exam is required to advance. The four-year program culminates in eligibility to challenge the Interprovincial (IP) Red Seal exam for journeyman certification recognized across Canada.',
+    about: 'The Alberta electrician apprenticeship is regulated through ATIS and requires apprentices to complete both on-the-job hours and technical training for each period before writing a period exam. Passing each exam is required to advance. The four-year program culminates in eligibility to challenge the Interprovincial exam for journeyman certification recognized across Canada.',
   },
   millwright: {
     title: 'Millwright Industrial Mechanic Apprenticeship Exam Prep | Alberta ATIS | TradeBenchPrep',

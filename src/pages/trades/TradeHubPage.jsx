@@ -58,16 +58,8 @@ export default function TradeHubPage() {
       </section>
 
       <section className="py-12 px-6 border-t border-slate-100">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-serif font-bold text-slate-900 mb-4">
-            About the Alberta {config.name} Apprenticeship
-          </h2>
-          <p className="text-slate-600 leading-relaxed mb-8">
-            {content.about}
-          </p>
-          <div className="flex justify-center">
-            <GetStartedButton />
-          </div>
+        <div className="max-w-4xl mx-auto flex justify-center">
+          <GetStartedButton />
         </div>
       </section>
 

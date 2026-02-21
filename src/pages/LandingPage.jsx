@@ -70,13 +70,15 @@ export default function LandingPage() {
             How It Works
           </h2>
           <p className="text-slate-600 text-center mb-10 max-w-xl mx-auto">
-            TradeBenchPrep supports Steamfitter/Pipefitter, Electrician, Millwright, and Welder apprentices preparing for Red Seal and provincial exams.
+            TradeBenchPrep supports Steamfitter/Pipefitter, Electrician, Millwright, and Welder apprentices preparing for provincial and interprovincial certification exams.
           </p>
           <div className="text-center mb-10">
-            <Link to="/trades" className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:underline">
-              Explore exam prep by trade and year
-              <ArrowRight className="w-4 h-4" />
-            </Link>
+            <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-6">
+              <Link to="/trades" className="inline-flex items-center gap-2">
+                Explore exam prep by trade and year
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+            </Button>
           </div>
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div>
@@ -161,7 +163,7 @@ export default function LandingPage() {
             <div>
               <h3 className="text-xl font-semibold text-slate-900 mb-4">Comprehensive Trade Exam Preparation</h3>
               <p className="text-slate-600 mb-4 leading-relaxed">
-                TradeBenchPrep helps Steamfitter/Pipefitter, Electrician, Millwright, and Welder apprentices prepare for Red Seal and provincial certification exams. Practice by year and topic, track your progress, and close gaps before exam day.
+                TradeBenchPrep helps Steamfitter/Pipefitter, Electrician, Millwright, and Welder apprentices prepare for provincial and interprovincial certification exams. Practice by year and topic, track your progress, and close gaps before exam day.
               </p>
               <p className="text-slate-600 leading-relaxed">
                 With hundreds of practice questions organized by year and topic, you can focus on specific areas where you need improvement. Questions are designed to match the format and difficulty of Canadian trade certification exams.
@@ -173,7 +175,7 @@ export default function LandingPage() {
                 Study guides and practice materials are aligned with Canadian apprenticeship curriculum—safety and legislation, codes and standards, trade theory and calculations, and trade-specific systems. Content supports all four trades at every level.
               </p>
               <p className="text-slate-600 leading-relaxed">
-                Whether you're in Year 1 or preparing for Red Seal certification, TradeBenchPrep adapts to your trade and skill level and provides targeted practice to help you succeed.
+                Whether you're in Year 1 or preparing for journeyman certification, TradeBenchPrep adapts to your trade and skill level and provides targeted practice to help you succeed.
               </p>
             </div>
           </div>
@@ -208,7 +210,7 @@ export default function LandingPage() {
                   <li>• Advanced trade theory & systems</li>
                   <li>• Troubleshooting & maintenance</li>
                   <li>• Project planning & documentation</li>
-                  <li>• Red Seal / certification-level practice</li>
+                  <li>• Interprovincial / certification-level practice</li>
                   <li>• Trade-specific advanced topics</li>
                 </ul>
               </div>

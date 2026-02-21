@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import TradesLayout, { GetStartedButton, TradesAdTop, TradesAdMiddle, TradesAdBottom } from './TradesLayout';
 import { getHubContent } from './tradesContent';
@@ -38,13 +39,9 @@ export default function TradesHub() {
                   <p className="text-slate-600 text-sm leading-relaxed mb-4">
                     {trade.description}
                   </p>
-                  <Link
-                    to={trade.link}
-                    className="inline-flex items-center text-blue-600 font-medium hover:underline"
-                  >
-                    {trade.title.includes('—') ? `${trade.title.split('—')[0].trim()} Exam Prep` : `${trade.title} Exam Prep`}
-                    <span className="ml-1">→</span>
-                  </Link>
+                  <Button asChild className="bg-blue-600 hover:bg-blue-700 mt-2">
+                    <Link to={trade.link}>Learn more</Link>
+                  </Button>
                 </CardContent>
               </Card>
             ))}

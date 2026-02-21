@@ -23,7 +23,7 @@ const ROUTE_META = {
   },
   '/QuizSetup': {
     title: 'TradeBenchPrep | Customize Your Trade Practice Test | Apprenticeship Exam Prep',
-    description: 'Create custom Red Seal practice tests by trade, section, difficulty, and question count. Prepare for Canadian apprenticeship certification exams.',
+    description: 'Create custom practice tests by trade, section, difficulty, and question count. Prepare for Canadian apprenticeship certification exams.',
   },
   '/Quiz': {
     title: 'TradeBenchPrep | Take a Apprenticeship Practice Exam | Skilled Trades Quiz',
@@ -122,13 +122,13 @@ export default function SEO() {
       description = `Your ${tradeLabel} Year ${yearNum} exam prep dashboard. Track progress, take practice tests, and study with targeted materials for Canadian apprenticeship certification.`;
     } else if (pathname === '/Study') {
       title = `TradeBenchPrep | ${tradeLabel} Year ${yearNum} Study Guides & Practice Questions`;
-      description = `Study guides and practice questions for ${tradeLabel} Year ${yearNum}. Prepare for Canadian Red Seal and apprenticeship exams with targeted materials.`;
+      description = `Study guides and practice questions for ${tradeLabel} Year ${yearNum}. Prepare for Canadian provincial and interprovincial apprenticeship exams with targeted materials.`;
     } else if (pathname === '/Quiz') {
       title = `TradeBenchPrep | ${tradeLabel} Year ${yearNum} Practice Quiz | Take an Exam`;
       description = `Take a ${tradeLabel} Year ${yearNum} practice exam. Timed or untimed quizzes with instant results for Canadian trade certification prep.`;
     } else if (pathname === '/QuizSetup') {
       title = `TradeBenchPrep | Customize Your ${tradeLabel} Year ${yearNum} Practice Test`;
-      description = `Create a custom practice test for ${tradeLabel} Year ${yearNum}. Choose sections, difficulty, and question count for Red Seal exam prep.`;
+      description = `Create a custom practice test for ${tradeLabel} Year ${yearNum}. Choose sections, difficulty, and question count for certification exam prep.`;
     } else if (pathname === '/Curriculum') {
       title = `TradeBenchPrep | ${tradeLabel} Year ${yearNum} Curriculum & Exam Breakdown`;
       description = `View the ${tradeLabel} Year ${yearNum} exam curriculum and section weighting. Plan your study for Canadian apprenticeship certification.`;
