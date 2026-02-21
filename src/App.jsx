@@ -4,7 +4,7 @@ import { queryClientInstance } from '@/lib/query-client'
 import NavigationTracker from '@/lib/NavigationTracker'
 import SEO from '@/components/SEO'
 import { HelmetProvider } from 'react-helmet-async'
-import { HashRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes, useLocation, Outlet } from 'react-router-dom';
 import PageNotFound from '@/lib/PageNotFound';
 import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import { AdProvider, SideAd, StickyHeaderAd, StickyFooterAd } from '@/components/ads/AdProvider';
@@ -38,6 +38,11 @@ const PAGES_WITHOUT_YEAR_HEADER = ['YearSelection', 'TradeSelection', 'Privacy',
 const ROUTES_WITH_ADS = ['/', '/Dashboard', '/Study', '/Quiz', '/QuizSetup', '/Curriculum', '/Settings', '/Privacy', '/Terms'];
 const TRADES_ROUTE_PREFIX = '/trades';
 
+/** Renders nested /trades/* routes (hub, trade hub, year page) so path always matches. */
+function TradesOutlet() {
+  return <Outlet />;
+}
+
 const LayoutWrapper = ({ children, currentPageName }) => {
   const showYearHeader = !PAGES_WITHOUT_YEAR_HEADER.includes(currentPageName);
   return (
@@ -69,9 +74,11 @@ const AuthenticatedApp = () => {
         <Route path="/auth" element={<AuthPage />} />
         <Route path="/Privacy" element={<Privacy />} />
         <Route path="/Terms" element={<Terms />} />
-        <Route path="/trades" element={<TradesHub />} />
-        <Route path="/trades/:trade" element={<TradeHubPage />} />
-        <Route path="/trades/:trade/year-:year" element={<TradeYearPage />} />
+        <Route path="/trades" element={<TradesOutlet />}>
+          <Route index element={<TradesHub />} />
+          <Route path=":trade/year-:year" element={<TradeYearPage />} />
+          <Route path=":trade" element={<TradeHubPage />} />
+        </Route>
         <Route path="*" element={<LandingPage />} />
       </Routes>
     );
@@ -133,9 +140,11 @@ const AuthenticatedApp = () => {
           <YearSelection />
         </LayoutWrapper>
       } />
-      <Route path="/trades" element={<TradesHub />} />
-      <Route path="/trades/:trade" element={<TradeHubPage />} />
-      <Route path="/trades/:trade/year-:year" element={<TradeYearPage />} />
+      <Route path="/trades" element={<TradesOutlet />}>
+        <Route index element={<TradesHub />} />
+        <Route path=":trade/year-:year" element={<TradeYearPage />} />
+        <Route path=":trade" element={<TradeHubPage />} />
+      </Route>
       {import.meta.env.DEV && (
         <>
           <Route path="/debug" element={
