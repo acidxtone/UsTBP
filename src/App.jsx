@@ -74,6 +74,8 @@ const AuthenticatedApp = () => {
         <Route path="/auth" element={<AuthPage />} />
         <Route path="/Privacy" element={<Privacy />} />
         <Route path="/Terms" element={<Terms />} />
+        <Route path="/privacy-policy" element={<Privacy />} />
+        <Route path="/terms-of-service" element={<Terms />} />
         <Route path="/trades" element={<TradesOutlet />}>
           <Route index element={<TradesHub />} />
           <Route path=":trade/year-:year" element={<TradeYearPage />} />
@@ -126,6 +128,16 @@ const AuthenticatedApp = () => {
         </LayoutWrapper>
       } />
       <Route path="/Terms" element={
+        <LayoutWrapper currentPageName="Terms">
+          <Terms />
+        </LayoutWrapper>
+      } />
+      <Route path="/privacy-policy" element={
+        <LayoutWrapper currentPageName="Privacy">
+          <Privacy />
+        </LayoutWrapper>
+      } />
+      <Route path="/terms-of-service" element={
         <LayoutWrapper currentPageName="Terms">
           <Terms />
         </LayoutWrapper>

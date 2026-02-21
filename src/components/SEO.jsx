@@ -53,6 +53,14 @@ const ROUTE_META = {
     title: 'TradeBenchPrep | Terms of Use',
     description: "Read the terms and conditions for using TradeBenchPrep's Apprenticeship exam practice platform.",
   },
+  '/privacy-policy': {
+    title: 'TradeBenchPrep | Privacy Policy',
+    description: 'Learn how TradeBenchPrep collects, stores, and protects your information while you prepare for Canadian skilled trades exams.',
+  },
+  '/terms-of-service': {
+    title: 'TradeBenchPrep | Terms of Use',
+    description: "Read the terms and conditions for using TradeBenchPrep's Apprenticeship exam practice platform.",
+  },
   '/auth': {
     title: 'Sign In | TradeBenchPrep',
     description: 'Sign in to TradeBenchPrep to access your study progress and practice quizzes.',

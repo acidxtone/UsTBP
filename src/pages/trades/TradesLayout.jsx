@@ -36,6 +36,9 @@ export default function TradesLayout({ children, breadcrumb }) {
             {breadcrumb}
           </div>
           <div className="flex items-center gap-3">
+            <Link to="/" className="text-sm text-slate-600 hover:text-blue-600 transition-colors">
+              Home
+            </Link>
             <Link to="/trades" className="text-sm text-slate-600 hover:text-blue-600 transition-colors">
               Trades
             </Link>
@@ -61,8 +64,8 @@ export default function TradesLayout({ children, breadcrumb }) {
           </div>
           <div className="flex items-center gap-6 text-sm text-slate-500">
             <Link to="/" className="hover:text-blue-600 transition-colors">Home</Link>
-            <Link to="/Privacy" className="hover:text-blue-600 transition-colors">Privacy Policy</Link>
-            <Link to="/Terms" className="hover:text-blue-600 transition-colors">Terms of Service</Link>
+            <Link to="/privacy-policy" className="hover:text-blue-600 transition-colors">Privacy Policy</Link>
+            <Link to="/terms-of-service" className="hover:text-blue-600 transition-colors">Terms of Service</Link>
             <span>&copy; {new Date().getFullYear()} TradeBenchPrep. All rights reserved.</span>
           </div>
         </div>
