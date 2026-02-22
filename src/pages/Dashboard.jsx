@@ -21,7 +21,6 @@ import {
   FileText as FileIcon
 } from "lucide-react";
 import { motion } from "framer-motion";
-import { BannerAd, InContentAd } from '@/components/ads/AdSense';
 import SectionProgress from '@/components/dashboard/SectionProgress';
 import { getTradeLabel } from '@/lib/trade-config';
 
@@ -146,8 +145,6 @@ export default function Dashboard() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100">
-      <BannerAd position="top" />
-      
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -217,10 +214,6 @@ export default function Dashboard() {
               </CardContent>
             </Card>
           </motion.div>
-
-          <section aria-label="Advertisement" className="py-2">
-            <InContentAd position="middle" />
-          </section>
 
           {/* Study Materials */}
           <motion.div
@@ -417,8 +410,6 @@ export default function Dashboard() {
           </motion.div>
         </motion.div>
       </main>
-      
-      <BannerAd position="bottom" />
     </div>
   );
 }

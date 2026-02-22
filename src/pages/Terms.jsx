@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { BannerAd } from '@/components/ads/AdSense';
 
 /**
  * Terms of Service Page
@@ -165,6 +166,9 @@ const Terms = () => {
               </div>
             </section>
 
+            <section className="mt-8 pt-8 border-t border-gray-200" aria-label="Advertisement">
+              <BannerAd position="bottom" />
+            </section>
             <div className="mt-12 pt-8 border-t border-gray-200 flex flex-wrap items-center justify-between gap-4">
               <p className="text-sm text-gray-500">
                 <strong>Effective Date:</strong> February 17, 2026

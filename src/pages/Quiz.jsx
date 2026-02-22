@@ -23,7 +23,6 @@ import QuizTimer from '@/components/quiz/QuizTimer';
 import ProgressBar from '@/components/quiz/ProgressBar';
 import ResultsCard from '@/components/quiz/ResultsCard';
 import YearIndicator from '@/components/YearIndicator';
-import { BannerAd } from '@/components/ads/AdSense';
 
 export default function Quiz() {
   const navigate = useNavigate();
@@ -499,11 +498,6 @@ export default function Quiz() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100">
-      <section aria-label="Advertisement" className="border-b border-slate-200 bg-white">
-        <div className="max-w-4xl mx-auto px-4 py-2">
-          <BannerAd position="top" />
-        </div>
-      </section>
       {/* Header */}
       <header className="bg-white/80 backdrop-blur-sm border-b border-slate-200 sticky top-0 z-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-3">

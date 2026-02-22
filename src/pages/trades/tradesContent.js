@@ -3,7 +3,7 @@
  * Use getHubContent(), getTradeHubContent(trade), getTradeYearContent(trade, year).
  */
 
-import { YEAR_CONTENT_NEW } from './tradesYearContentNew';
+import { YEAR_CONTENT_NEW } from './tradesYearContentNew.js';
 
 export const TRADES = {
   electrician: { name: 'Electrician', slug: 'electrician', years: [1, 2, 3, 4] },
