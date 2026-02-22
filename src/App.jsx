@@ -71,7 +71,7 @@ const AuthenticatedApp = () => {
   if (!isAuthenticated) {
     return (
       <Routes>
-        <Route path="/trades/*" element={<TradesOutlet />}>
+        <Route path="/trades" element={<TradesOutlet />}>
           <Route index element={<TradesHub />} />
           <Route path=":trade/year-:year" element={<TradeYearPage />} />
           <Route path=":trade" element={<TradeHubPage />} />
@@ -88,7 +88,7 @@ const AuthenticatedApp = () => {
 
   return (
     <Routes>
-      <Route path="/trades/*" element={<TradesOutlet />}>
+      <Route path="/trades" element={<TradesOutlet />}>
         <Route index element={<TradesHub />} />
         <Route path=":trade/year-:year" element={<TradeYearPage />} />
         <Route path=":trade" element={<TradeHubPage />} />
