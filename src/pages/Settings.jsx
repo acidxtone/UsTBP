@@ -123,6 +123,9 @@ export default function Settings() {
 
       <main className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
         <h1 className="text-2xl font-bold text-slate-900">Settings</h1>
+        <p className="text-slate-600 leading-relaxed">
+          Manage your profile, trade, and study year. Your progress is saved separately for each year, so you can switch years and return to your previous progress later. Use the options below to view stats, change your year, or sign out.
+        </p>
 
         {/* Profile */}
         <Card className="border-0 shadow-sm">

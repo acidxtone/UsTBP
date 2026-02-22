@@ -75,11 +75,22 @@ export default function Curriculum() {
             </Link>
           </div>
         </header>
-        <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center">
-          <p className="text-slate-600 mb-4">Select your trade and year to view the curriculum.</p>
-          <Link to={createPageUrl('TradeSelection')}>
-            <span className="text-blue-600 hover:text-blue-700 font-medium">Choose trade and year</span>
-          </Link>
+        <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <h1 className="text-2xl font-bold text-slate-900 mb-4 text-center">Curriculum by Trade and Year</h1>
+          <p className="text-slate-600 mb-4 max-w-2xl mx-auto text-center">
+            The apprenticeship exam is split into sections — each with a name and a percentage of the total exam. Knowing the breakdown helps you focus your study time on the areas that carry the most weight.
+          </p>
+          <p className="text-slate-600 mb-4 max-w-2xl mx-auto text-center">
+            TradeBenchPrep shows the exact section names and weightings for your trade and year. Once you select your trade and year below, you’ll see the full curriculum and can use it to plan study sessions and quizzes.
+          </p>
+          <p className="text-slate-600 mb-8 max-w-2xl mx-auto text-center">
+            Choose your trade and year to view the curriculum and see how the exam is structured for your period.
+          </p>
+          <div className="text-center">
+            <Link to={createPageUrl('TradeSelection')}>
+              <span className="text-blue-600 hover:text-blue-700 font-medium">Choose trade and year</span>
+            </Link>
+          </div>
         </main>
       </div>
     );
@@ -137,6 +148,7 @@ export default function Curriculum() {
                       </Badge>
                     </div>
                     <CardTitle className="text-xl">{section.name}</CardTitle>
+                    <p className="text-sm text-slate-500 mt-1">Topics and skills covered in this section of the exam.</p>
                   </div>
                 </div>
               </CardHeader>

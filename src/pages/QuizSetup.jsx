@@ -179,6 +179,9 @@ export default function QuizSetup() {
       </header>
 
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <p className="text-slate-600 mb-6 leading-relaxed">
+          Choose your practice mode and options below. You can run a full timed exam, focus on specific sections or weak areas, or do a short quiz. Options are based on your current trade and year — customize question count, timing, and whether to see explanations during or after the quiz.
+        </p>
         {hasQuestions && (
           <section aria-label="Advertisement" className="pt-2 pb-4">
             <BannerAd position="top" />

@@ -29,13 +29,6 @@ export default function LandingPage() {
         </div>
       </nav>
 
-      {/* Top Banner Ad */}
-      <section className="pt-8 pb-4 px-6" aria-label="Advertisement">
-        <div className="max-w-6xl mx-auto">
-          <BannerAd position="top" />
-        </div>
-      </section>
-
       <section className="pt-32 pb-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl md:text-6xl font-serif font-bold text-slate-900 mb-6 leading-tight">
@@ -61,6 +54,13 @@ export default function LandingPage() {
               No credit card required
             </span>
           </div>
+        </div>
+      </section>
+
+      {/* Top Banner Ad — below hero so users see content before ads (AdSense policy) */}
+      <section className="pt-4 pb-4 px-6" aria-label="Advertisement">
+        <div className="max-w-6xl mx-auto">
+          <BannerAd position="top" />
         </div>
       </section>
 
