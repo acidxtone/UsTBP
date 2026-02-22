@@ -37,7 +37,7 @@ const PAGES_WITHOUT_YEAR_HEADER = ['YearSelection', 'TradeSelection', 'Privacy',
 
 /** Routes where global ads are allowed (content-rich pages per AdSense policy).
  * Excluded: /Dashboard, /Study, /Quiz (loading/redirect); /QuizSetup, /Curriculum, /Settings (low word count). */
-const ROUTES_WITH_ADS = ['/', '/Privacy', '/Terms'];
+const ROUTES_WITH_ADS = ['/'];
 const TRADES_ROUTE_PREFIX = '/trades';
 
 const LayoutWrapper = ({ children, currentPageName }) => {

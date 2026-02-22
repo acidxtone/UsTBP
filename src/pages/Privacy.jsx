@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { BannerAd, InContentAd } from '@/components/ads/AdSense';
 
 /**
  * Privacy Policy Page
@@ -10,9 +9,6 @@ const Privacy = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-4xl mx-auto px-4 py-8">
-        <section aria-label="Advertisement" className="mb-6">
-          <BannerAd position="top" />
-        </section>
         <div className="bg-white rounded-lg shadow-sm p-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Privacy Policy</h1>
           <p className="text-gray-500 text-sm mb-8">Effective Date: February 17, 2026</p>
@@ -65,10 +61,6 @@ const Privacy = () => {
               <p className="text-gray-600">
                 We are not responsible for the privacy practices of third-party advertising networks. We encourage you to review the privacy policies of any third parties whose ads are displayed in the App. You may be able to opt out of interest-based advertising through industry tools such as the Digital Advertising Alliance of Canada (DAAC) at youradchoices.ca or by adjusting your browser or device settings.
               </p>
-            </section>
-
-            <section className="my-8" aria-label="Advertisement">
-              <InContentAd position="middle" />
             </section>
 
             <section className="mb-8">
@@ -143,9 +135,6 @@ const Privacy = () => {
             </div>
           </div>
         </div>
-        <section aria-label="Advertisement" className="mt-8">
-          <BannerAd position="bottom" />
-        </section>
       </div>
     </div>
   );
