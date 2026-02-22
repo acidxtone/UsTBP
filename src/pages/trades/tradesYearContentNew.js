@@ -11,14 +11,14 @@ function add(key, data) {
 
 // --- Electrician Year 1 ---
 add('electrician_1', {
-  title: 'Electrician Year 1 Exam Prep | Alberta Apprenticeship | TradeBenchPrep',
-  metaDescription: "Preparing for your Year 1 electrician apprenticeship exam in Alberta? Learn what's on the ATIS exam, what topics to study, and how to pass your first period electrical exam.",
+  title: 'Electrician Year 1 Exam Prep | Apprenticeship | TradeBenchPrep',
+  metaDescription: "Preparing for your Year 1 electrician apprenticeship exam? Learn what's on the period exam, what topics to study, and how to pass your first period electrical exam.",
   h1: 'Electrician Apprenticeship — Year 1 Exam Prep',
-  intro: "If you are preparing for your first period electrician exam in Alberta, you are in the right place. Year 1 of the electrical apprenticeship is where the foundation gets built — and the exam reflects that. It covers a broad range of introductory topics, from basic electrical theory to workplace safety to the Canadian Electrical Code. TradeBenchPrep is built on the curriculum so every practice question you see is relevant to what actually appears on your exam.",
+  intro: "If you are preparing for your first period electrician exam, you are in the right place. Year 1 of the electrical apprenticeship is where the foundation gets built — and the exam reflects that. It covers a broad range of introductory topics, from basic electrical theory to workplace safety to the Canadian Electrical Code. TradeBenchPrep is built on the curriculum so every practice question you see is relevant to what actually appears on your exam.",
   needsToKnowHeading: 'What a Year 1 Electrician Apprentice Needs to Know',
   needsToKnow: [
     { title: "Electrical Theory — Ohm's Law and Basic Circuits", body: "Year 1 exam questions on electrical theory test your ability to apply Ohm's Law (V = IR) to calculate voltage, current, and resistance in series and parallel circuits. You need to be able to work through circuit problems mathematically, not just identify the formula. Know how total resistance is calculated differently in series versus parallel circuits and how current behaves in each. Power calculations (P = VI, P = I²R) also appear consistently." },
-    { title: "Workplace Safety — WHMIS, PPE, and Lockout/Tagout", body: "Safety content is heavily weighted in Year 1 and covers WHMIS 2015 labelling and SDS requirements, correct PPE selection for electrical work, and the lockout/tagout procedure step by step. Know the Alberta Occupational Health and Safety Act requirements as they apply to electrical trades. Electrical safety specifically — approach distances, arc flash awareness, and working on energized equipment — is always present on the Year 1 exam." },
+    { title: "Workplace Safety — WHMIS, PPE, and Lockout/Tagout", body: "Safety content is heavily weighted in Year 1 and covers WHMIS 2015 labelling and SDS requirements, correct PPE selection for electrical work, and the lockout/tagout procedure step by step. Know the Occupational Health and Safety Act requirements as they apply to electrical trades. Electrical safety specifically — approach distances, arc flash awareness, and working on energized equipment — is always present on the Year 1 exam." },
     { title: 'Tools and Measuring Instruments', body: 'Know the correct name, use, and safe handling of common electrician hand tools — wire strippers, fish tape, conduit benders, knockout punches — and measuring instruments including multimeters, clamp meters, and voltage testers. Questions often describe a task and ask which tool is appropriate, or describe a tool and ask what it measures.' },
     { title: 'Trade Science — Magnetism and Electromagnetism', body: "Year 1 trade science covers the relationship between electricity and magnetism. Know how a magnetic field is produced by current flow, the right-hand rule for conductor and coil polarity, and how electromagnetic induction is the basis for generators and transformers. These concepts appear in introductory form in Year 1 and build into much more detailed content in Years 2 and 3." },
     { title: 'Canadian Electrical Code — Introduction and Navigation', body: "You are not expected to have the CEC memorized in Year 1, but you are expected to be able to navigate it. Know the structure of the code — how rules are numbered, where to find definitions (Section 0), and which sections cover general rules versus specific applications. Practice looking up specific requirements quickly because exam time pressure rewards familiarity with the code layout." },
@@ -36,10 +36,10 @@ add('electrician_1', {
 
 // Electrician Year 2
 add('electrician_2', {
-  title: 'Electrician Year 2 Exam Prep | Alberta Apprenticeship | TradeBenchPrep',
-  metaDescription: 'Study for your Year 2 electrician apprenticeship exam in Alberta. AC theory, transformers, motors, and motor controls — built on the Alberta ATIS curriculum.',
+  title: 'Electrician Year 2 Exam Prep | Apprenticeship | TradeBenchPrep',
+  metaDescription: 'Study for your Year 2 electrician apprenticeship exam. AC theory, transformers, motors, and motor controls — built on the curriculum.',
   h1: 'Electrician Apprenticeship — Year 2 Exam Prep',
-  intro: "Year 2 of the Alberta electrician apprenticeship is where the curriculum shifts from DC foundations to AC systems — and the exam difficulty increases accordingly. Alternating current theory, transformers, electric motors, and motor controls are the core of second period content. If you felt comfortable in Year 1, Year 2 will require you to work harder, particularly on the mathematics. TradeBenchPrep gives you structured practice built on the  second period curriculum.",
+  intro: "Year 2 of the electrician apprenticeship is where the curriculum shifts from DC foundations to AC systems — and the exam difficulty increases accordingly. Alternating current theory, transformers, electric motors, and motor controls are the core of second period content. If you felt comfortable in Year 1, Year 2 will require you to work harder, particularly on the mathematics. TradeBenchPrep gives you structured practice built on the  second period curriculum.",
   needsToKnowHeading: 'What a Year 2 Electrician Apprentice Needs to Know',
   needsToKnow: [
     { title: 'Alternating Current Theory', body: "AC theory is the biggest conceptual jump in Year 2. You need to understand sine waves, frequency, peak versus RMS values, and phase relationships. Capacitors and inductors behave differently in AC circuits than resistors do — know how each affects current, voltage, and phase angle. Power factor, apparent power (VA), true power (W), and reactive power (VAR) form a triangle of relationships that appears consistently on the exam. Calculate power factor and know what it means in practical terms." },
@@ -61,10 +61,10 @@ add('electrician_2', {
 
 // Electrician Year 3
 add('electrician_3', {
-  title: 'Electrician Year 3 Exam Prep | Alberta Apprenticeship | TradeBenchPrep',
-  metaDescription: 'Prepare for your Year 3 electrician apprenticeship exam in Alberta. Commercial wiring, three-phase systems, advanced motor controls, and CEC load calculations. ATIS aligned.',
+  title: 'Electrician Year 3 Exam Prep | Apprenticeship | TradeBenchPrep',
+  metaDescription: 'Prepare for your Year 3 electrician apprenticeship exam. Commercial wiring, three-phase systems, advanced motor controls, and CEC load calculations. curriculum aligned.',
   h1: 'Electrician Apprenticeship — Year 3 Exam Prep',
-  intro: "Year 3 of the Alberta electrician apprenticeship moves firmly into commercial and industrial territory. Three-phase power systems, commercial wiring methods, distribution equipment, advanced motor controls, and complex CEC applications define the third period curriculum. The exam is more demanding than previous years and rewards apprentices who have built genuine understanding rather than surface familiarity. TradeBenchPrep is built on the  Year 3 curriculum to give you exactly the practice you need.",
+  intro: "Year 3 of the electrician apprenticeship moves firmly into commercial and industrial territory. Three-phase power systems, commercial wiring methods, distribution equipment, advanced motor controls, and complex CEC applications define the third period curriculum. The exam is more demanding than previous years and rewards apprentices who have built genuine understanding rather than surface familiarity. TradeBenchPrep is built on the  Year 3 curriculum to give you exactly the practice you need.",
   needsToKnowHeading: 'What a Year 3 Electrician Apprentice Needs to Know',
   needsToKnow: [
     { title: 'Three-Phase Power Systems', body: "Three-phase is the dominant power system in commercial and industrial environments and is heavily tested in Year 3. You need to know wye and delta configurations inside out — how line voltage and phase voltage relate in each (in a wye system, line voltage = phase voltage × √3), how line current and phase current relate in a delta system, and how to calculate three-phase power (P = √3 × VL × IL × PF). Balanced three-phase load calculations appear consistently. Know how to calculate current draw for three-phase motors and other three-phase loads." },
@@ -86,10 +86,10 @@ add('electrician_3', {
 
 // Electrician Year 4
 add('electrician_4', {
-  title: 'Electrician Year 4 Exam Prep | Alberta Apprenticeship | TradeBenchPrep',
-  metaDescription: 'Study for your Year 4 electrician apprenticeship exam in Alberta. Industrial power systems, PLCs, power quality, and full CEC mastery. Built on the Alberta ATIS curriculum.',
+  title: 'Electrician Year 4 Exam Prep | Apprenticeship | TradeBenchPrep',
+  metaDescription: 'Study for your Year 4 electrician apprenticeship exam. Industrial power systems, PLCs, power quality, and full CEC mastery. Built on the curriculum.',
   h1: 'Electrician Apprenticeship — Year 4 Exam Prep',
-  intro: "Year 4 is the final period of the Alberta electrician apprenticeship — the most technically advanced and the broadest in scope. Industrial power systems, programmable logic controllers, power quality, advanced protection systems, and mastery of the Canadian Electrical Code across all occupancy types define the fourth period curriculum. Passing Year 4 qualifies you to challenge the Interprovincial exam for your journeyman electrician certificate. TradeBenchPrep gives you the focused, ATIS-aligned practice you need to finish your apprenticeship strong.",
+  intro: "Year 4 is the final period of the electrician apprenticeship — the most technically advanced and the broadest in scope. Industrial power systems, programmable logic controllers, power quality, advanced protection systems, and mastery of the Canadian Electrical Code across all occupancy types define the fourth period curriculum. Passing Year 4 qualifies you to challenge the Interprovincial exam for your journeyman electrician certificate. TradeBenchPrep gives you the focused, curriculum-aligned practice you need to finish your apprenticeship strong.",
   needsToKnowHeading: 'What a Year 4 Electrician Apprentice Needs to Know',
   needsToKnow: [
     { title: 'Industrial Power Systems', body: "Industrial power distribution from the utility service entrance through high-voltage switchgear, unit substations, and to the point of use. Know the components of a typical industrial distribution system — primary metering, transformers, switchgear, motor control centres, and branch circuit panels — and how they relate to each other. Understand transformer connections, impedance, and how to size industrial power systems. High-voltage safety — approach distances, PPE requirements, and permit-required work procedures — is consistently tested." },
@@ -111,13 +111,13 @@ add('electrician_4', {
 
 // --- Millwright Year 1 ---
 add('millwright_1', {
-  title: 'Millwright Year 1 Exam Prep | Alberta Apprenticeship | TradeBenchPrep',
-  metaDescription: "Preparing for your Year 1 millwright apprenticeship exam in Alberta? Learn what the ATIS exam covers — tools, bearings, fasteners, rigging, and safety. Start practicing free.",
+  title: 'Millwright Year 1 Exam Prep | Apprenticeship | TradeBenchPrep',
+  metaDescription: "Preparing for your Year 1 millwright apprenticeship exam? Learn what the period exam covers — tools, bearings, fasteners, rigging, and safety. Start practicing free.",
   h1: 'Millwright Industrial Mechanic — Year 1 Exam Prep',
-  intro: "Year 1 of the Alberta millwright apprenticeship covers the mechanical fundamentals that everything else in the trade builds on. Bearings, fasteners, seals, hand tools, rigging, and workplace safety form the core of first period content. The Year 1 exam is broad — it covers a lot of ground — and the apprentices who do best are the ones who have studied systematically rather than relying purely on what they have picked up on the job. TradeBenchPrep is built on the  millwright curriculum to give you exactly that structured preparation.",
+  intro: "Year 1 of the millwright apprenticeship covers the mechanical fundamentals that everything else in the trade builds on. Bearings, fasteners, seals, hand tools, rigging, and workplace safety form the core of first period content. The Year 1 exam is broad — it covers a lot of ground — and the apprentices who do best are the ones who have studied systematically rather than relying purely on what they have picked up on the job. TradeBenchPrep is built on the  millwright curriculum to give you exactly that structured preparation.",
   needsToKnowHeading: 'What a Year 1 Millwright Apprentice Needs to Know',
   needsToKnow: [
-    { title: "Workplace Safety — The Foundation of Every Year", body: "WHMIS 2015 — labelling requirements, SDS sections and what each contains, and how to respond to hazardous material incidents. Lockout/tagout — know the complete procedure step by step, not just the concept. Alberta OHS regulations specific to industrial mechanical work including machine guarding requirements and working around mobile equipment. Safety content is heavily weighted in Year 1 and a question on any safety topic can appear." },
+    { title: "Workplace Safety — The Foundation of Every Year", body: "WHMIS 2015 — labelling requirements, SDS sections and what each contains, and how to respond to hazardous material incidents. Lockout/tagout — know the complete procedure step by step, not just the concept. OHS regulations specific to industrial mechanical work including machine guarding requirements and working around mobile equipment. Safety content is heavily weighted in Year 1 and a question on any safety topic can appear." },
     { title: "Trade Mathematics", body: "Millwright trade math goes beyond basic arithmetic. Know how to convert between imperial and metric units for length, torque, pressure, and force. Understand ratio and proportion as they apply to mechanical advantage, gear ratios, and lever systems. Basic trigonometry — right triangle relationships (SOH-CAH-TOA) — appears in rigging calculations and alignment work. If your math is rusty, sharpen it before your exam — it shows up throughout all four years." },
     { title: "Hand Tools and Measuring Instruments", body: "Know the purpose, correct use, and safe handling of all common millwright hand tools. Torque wrenches — how they work, how to set them, and why torque specifications matter. Precision measuring tools — micrometer, vernier caliper, dial indicator, and feeler gauge — their purpose, how to read them, and their accuracy limits. These are tools a millwright uses daily and the exam assumes you know them well." },
     { title: "Bearings — Types, Installation, and Failure", body: "Bearings are one of the most consistently tested topics across all four years of the millwright apprenticeship. In Year 1 you need to know: rolling element bearing types (ball, cylindrical roller, tapered roller, needle, spherical roller) and their load capacity characteristics. Bearing designation systems — what the numbers and letters in a bearing number tell you about its dimensions and internal clearance. Correct installation procedures — heating methods, pressing methods, and the damage caused by incorrect installation. Bearing lubrication — grease versus oil lubrication, over-lubrication consequences, and lubrication intervals. Basic bearing failure modes — fatigue spalling, brinelling, fretting, and contamination — and what caused them." },
@@ -136,10 +136,10 @@ add('millwright_1', {
 
 // Millwright Year 2
 add('millwright_2', {
-  title: 'Millwright Year 2 Exam Prep | Alberta Apprenticeship | TradeBenchPrep',
-  metaDescription: 'Study for your Year 2 millwright apprenticeship exam in Alberta. Hydraulics, pneumatics, power transmission drives, and lubrication. Built on the Alberta ATIS curriculum.',
+  title: 'Millwright Year 2 Exam Prep | Apprenticeship | TradeBenchPrep',
+  metaDescription: 'Study for your Year 2 millwright apprenticeship exam. Hydraulics, pneumatics, power transmission drives, and lubrication. Built on the curriculum.',
   h1: 'Millwright Industrial Mechanic — Year 2 Exam Prep',
-  intro: "Year 2 of the Alberta millwright apprenticeship introduces fluid power systems and expands your power transmission knowledge. Hydraulics, pneumatics, belt and chain drives, couplings, pumps, and lubrication are the major topics. This is where the trade starts to feel most like industrial work — and the exam reflects that complexity. TradeBenchPrep gives you structured practice built on the  second period millwright curriculum.",
+  intro: "Year 2 of the millwright apprenticeship introduces fluid power systems and expands your power transmission knowledge. Hydraulics, pneumatics, belt and chain drives, couplings, pumps, and lubrication are the major topics. This is where the trade starts to feel most like industrial work — and the exam reflects that complexity. TradeBenchPrep gives you structured practice built on the  second period millwright curriculum.",
   needsToKnowHeading: 'What a Year 2 Millwright Apprentice Needs to Know',
   needsToKnow: [
     { title: "Hydraulics — Systems, Components, and Circuits", body: "Pascal's Law is the foundation: pressure applied to a confined fluid transmits equally in all directions. From there, know every major hydraulic system component — gear pumps, vane pumps, and piston pumps (fixed and variable displacement), directional control valves (2-way, 3-way, 4-way and their spool configurations), pressure control valves (relief, reducing, sequence, counterbalance), flow control valves, hydraulic cylinders (single and double acting), and hydraulic motors. Be able to read a hydraulic schematic using ISO symbols — identify each component from its symbol and trace circuit operation. Know how to calculate hydraulic force (F = P × A), flow rate, and cylinder speed. Hydraulic fluid properties — viscosity, cleanliness requirements, and the consequences of contaminated hydraulic fluid." },
@@ -161,10 +161,10 @@ add('millwright_2', {
 
 // Millwright Year 3
 add('millwright_3', {
-  title: 'Millwright Year 3 Exam Prep | Alberta Apprenticeship | TradeBenchPrep',
-  metaDescription: 'Prepare for your Year 3 millwright apprenticeship exam in Alberta. Precision shaft alignment, vibration analysis, gearboxes, and compressors. ATIS curriculum aligned.',
+  title: 'Millwright Year 3 Exam Prep | Apprenticeship | TradeBenchPrep',
+  metaDescription: 'Prepare for your Year 3 millwright apprenticeship exam. Precision shaft alignment, vibration analysis, gearboxes, and compressors. curriculum aligned.',
   h1: 'Millwright Industrial Mechanic — Year 3 Exam Prep',
-  intro: "Year 3 of the Alberta millwright apprenticeship is where precision maintenance becomes the focus. Shaft alignment, vibration analysis, advanced hydraulics, gearboxes, and compressors define the third period curriculum. These are the skills that distinguish a journeyman millwright from an apprentice, and the exam tests them in depth. TradeBenchPrep gives you practice built on the  Year 3 millwright curriculum.",
+  intro: "Year 3 of the millwright apprenticeship is where precision maintenance becomes the focus. Shaft alignment, vibration analysis, advanced hydraulics, gearboxes, and compressors define the third period curriculum. These are the skills that distinguish a journeyman millwright from an apprentice, and the exam tests them in depth. TradeBenchPrep gives you practice built on the  Year 3 millwright curriculum.",
   needsToKnowHeading: 'What a Year 3 Millwright Apprentice Needs to Know',
   needsToKnow: [
     { title: "Precision Shaft Alignment", body: "Shaft misalignment is one of the leading causes of premature bearing and seal failure in rotating equipment. In Year 3 you need to know both concepts and mathematics of alignment. Understand the two types of misalignment — angular (shafts at an angle to each other) and parallel/offset (shaft centrelines parallel but not collinear). Dial indicator alignment — rim and face method and reverse dial indicator method: know how to set up the indicators, take readings at 12, 3, 6, and 9 o'clock positions, calculate misalignment from the readings, and determine the correct shim thickness and lateral movement required to correct both angular and offset misalignment simultaneously. Laser alignment systems — understand how they work and what they measure even if you are more familiar with dial indicators on the job. Soft foot — what it is, how to detect it (with a dial indicator), and why it must be corrected before performing precision alignment. Thermal growth — why machines that run hot need to be aligned cold with a calculated offset to be in alignment at operating temperature." },
@@ -184,10 +184,10 @@ add('millwright_3', {
 
 // Millwright Year 4
 add('millwright_4', {
-  title: 'Millwright Year 4 Exam Prep | Alberta Apprenticeship | TradeBenchPrep',
-  metaDescription: 'Study for your Year 4 millwright apprenticeship exam in Alberta. Predictive maintenance, advanced troubleshooting, and full ATIS curriculum coverage. Journeyman prep.',
+  title: 'Millwright Year 4 Exam Prep | Apprenticeship | TradeBenchPrep',
+  metaDescription: 'Study for your Year 4 millwright apprenticeship exam. Predictive maintenance, advanced troubleshooting, and full curriculum coverage. Journeyman prep.',
   h1: 'Millwright Industrial Mechanic — Year 4 Exam Prep',
-  intro: "Year 4 is the final period of the Alberta millwright apprenticeship. Predictive maintenance technologies, advanced troubleshooting, field balancing, and the integration of everything from the previous three years define the fourth period. Completing Year 4 qualifies you to challenge the Interprovincial exam for your journeyman industrial mechanic certificate. TradeBenchPrep gives you the comprehensive, ATIS-aligned practice you need to finish your apprenticeship at the highest level.",
+  intro: "Year 4 is the final period of the millwright apprenticeship. Predictive maintenance technologies, advanced troubleshooting, field balancing, and the integration of everything from the previous three years define the fourth period. Completing Year 4 qualifies you to challenge the Interprovincial exam for your journeyman industrial mechanic certificate. TradeBenchPrep gives you the comprehensive, curriculum-aligned practice you need to finish your apprenticeship at the highest level.",
   needsToKnowHeading: 'What a Year 4 Millwright Apprentice Needs to Know',
   needsToKnow: [
     { title: "Predictive Maintenance Technologies", body: "Condition monitoring is the systematic collection of machine data to detect developing faults before they cause failure. Know the four primary predictive maintenance technologies: Vibration analysis — already introduced in Year 3, Year 4 deepens this knowledge into trend analysis and alarm level setting. Thermography (infrared) — how thermal cameras detect hot spots from electrical faults, bearing failures, refractory degradation, and steam trap failures. Know what a thermal image tells you and its limitations. Ultrasonic testing — how ultrasound detects air and gas leaks, steam trap condition, bearing early-stage defects (before they appear in vibration), and electrical discharge (arcing, tracking, corona). Oil analysis — what a complete oil analysis report includes (viscosity, contamination particle count, water content, wear metals, and additive depletion), what each parameter indicates about machine condition, and when to act on results. Understand how to build a complete predictive maintenance program using these technologies together rather than in isolation." },
@@ -204,10 +204,10 @@ add('millwright_4', {
 
 // --- Steamfitter / Pipefitter Year 1 ---
 add('steamfitter-pipefitter_1', {
-  title: 'Steamfitter Pipefitter Year 1 Exam Prep | Alberta Apprenticeship | TradeBenchPrep',
-  metaDescription: "Preparing for your Year 1 steamfitter/pipefitter apprenticeship exam in Alberta? Learn what the ATIS exam covers — pipe materials, joining methods, blueprints, and safety.",
+  title: 'Steamfitter Pipefitter Year 1 Exam Prep | Apprenticeship | TradeBenchPrep',
+  metaDescription: "Preparing for your Year 1 steamfitter/pipefitter apprenticeship exam? Learn what the period exam covers — pipe materials, joining methods, blueprints, and safety.",
   h1: 'Steamfitter / Pipefitter — Year 1 Exam Prep',
-  intro: "Year 1 of the Alberta steamfitter/pipefitter apprenticeship builds the foundation — pipe materials, joining methods, tools, safety, and basic blueprint reading. The first period exam is broad, covering a lot of introductory content, and the apprentices who do best are those who study systematically rather than assuming job experience covers the gaps. TradeBenchPrep is built on the  first period curriculum to give you exactly that preparation.",
+  intro: "Year 1 of the steamfitter/pipefitter apprenticeship builds the foundation — pipe materials, joining methods, tools, safety, and basic blueprint reading. The first period exam is broad, covering a lot of introductory content, and the apprentices who do best are those who study systematically rather than assuming job experience covers the gaps. TradeBenchPrep is built on the  first period curriculum to give you exactly that preparation.",
   needsToKnowHeading: 'What a Year 1 Steamfitter/Pipefitter Apprentice Needs to Know',
   needsToKnow: [
     { title: "Workplace Safety — Critical in Every Period", body: "WHMIS 2015, PPE selection for piping environments (face shields for chemical exposure, respiratory protection for soldering and brazing fumes, fall protection for elevated work), and lockout/tagout procedures step by step. Confined space awareness — the definition of a confined space, permit-required confined spaces, and the roles of entrants, attendants, and supervisors. Hot work safety — fire watch requirements, fire extinguisher placement, and safe work permits. Safety knowledge is heavily weighted in Year 1 and present in every subsequent exam." },
@@ -229,10 +229,10 @@ add('steamfitter-pipefitter_1', {
 
 // Steamfitter Year 2
 add('steamfitter-pipefitter_2', {
-  title: 'Steamfitter Pipefitter Year 2 Exam Prep | Alberta Apprenticeship | TradeBenchPrep',
-  metaDescription: 'Study for your Year 2 steamfitter/pipefitter apprenticeship exam in Alberta. Steam systems, hydronic heating, valves, and piping codes. Built on the Alberta ATIS curriculum.',
+  title: 'Steamfitter Pipefitter Year 2 Exam Prep | Apprenticeship | TradeBenchPrep',
+  metaDescription: 'Study for your Year 2 steamfitter/pipefitter apprenticeship exam. Steam systems, hydronic heating, valves, and piping codes. Built on the curriculum.',
   h1: 'Steamfitter / Pipefitter — Year 2 Exam Prep',
-  intro: "Year 2 of the Alberta steamfitter/pipefitter apprenticeship moves from foundational skills to applied system knowledge. Steam systems, hydronic heating, valves, and intermediate piping code application are the core of second period content. This is where the steamfitter designation becomes most apparent — steam systems are central to the Year 2 curriculum and the exam reflects that depth. TradeBenchPrep gives you targeted practice built on the  Year 2 curriculum.",
+  intro: "Year 2 of the steamfitter/pipefitter apprenticeship moves from foundational skills to applied system knowledge. Steam systems, hydronic heating, valves, and intermediate piping code application are the core of second period content. This is where the steamfitter designation becomes most apparent — steam systems are central to the Year 2 curriculum and the exam reflects that depth. TradeBenchPrep gives you targeted practice built on the  Year 2 curriculum.",
   needsToKnowHeading: 'What a Year 2 Steamfitter/Pipefitter Apprentice Needs to Know',
   needsToKnow: [
     { title: "Steam Systems — The Heart of the Steamfitter Trade", body: "Steam generation — know how a boiler generates steam, the difference between fire-tube and water-tube boilers, and the controls and safety devices that protect a boiler (pressure relief valve, low water cutoff, high limit controls). Steam properties — saturated steam versus superheated steam, steam tables and how to use them to find temperature, pressure, enthalpy, and specific volume. Steam distribution — steam mains, drip legs, and the importance of proper steam pipe pitch for condensate drainage. Steam traps — the most important single component in a steam distribution system. Know the three types: mechanical (float and thermostatic), thermodynamic (disc), and thermostatic (bimetallic). Know how each works, its advantages and disadvantages, and how to test whether a trap is working, failed open, or failed closed. Condensate return systems — why returning condensate is important (energy efficiency, water treatment costs), flash steam, and condensate pump and receiver systems." },
@@ -252,10 +252,10 @@ add('steamfitter-pipefitter_2', {
 
 // Steamfitter Year 3
 add('steamfitter-pipefitter_3', {
-  title: 'Steamfitter Pipefitter Year 3 Exam Prep | Alberta Apprenticeship | TradeBenchPrep',
-  metaDescription: 'Prepare for your Year 3 steamfitter/pipefitter apprenticeship exam in Alberta. Process piping, refrigeration systems, pressure testing, and advanced codes. ATIS aligned.',
+  title: 'Steamfitter Pipefitter Year 3 Exam Prep | Apprenticeship | TradeBenchPrep',
+  metaDescription: 'Prepare for your Year 3 steamfitter/pipefitter apprenticeship exam. Process piping, refrigeration systems, pressure testing, and advanced codes. curriculum aligned.',
   h1: 'Steamfitter / Pipefitter — Year 3 Exam Prep',
-  intro: "Year 3 of the Alberta steamfitter/pipefitter apprenticeship advances into industrial process piping and refrigeration systems. The technical depth increases significantly and the piping codes become more complex. This is where the industrial character of the pipefitter trade becomes most apparent. TradeBenchPrep provides practice built on the  Year 3 curriculum to prepare you for the most demanding exam in the program to this point.",
+  intro: "Year 3 of the steamfitter/pipefitter apprenticeship advances into industrial process piping and refrigeration systems. The technical depth increases significantly and the piping codes become more complex. This is where the industrial character of the pipefitter trade becomes most apparent. TradeBenchPrep provides practice built on the  Year 3 curriculum to prepare you for the most demanding exam in the program to this point.",
   needsToKnowHeading: 'What a Year 3 Steamfitter/Pipefitter Apprentice Needs to Know',
   needsToKnow: [
     { title: "Refrigeration Systems — Cycle, Components, and Application", body: "The vapour compression refrigeration cycle is the foundation of all mechanical refrigeration. Know the four components and what happens to the refrigerant at each: compressor (low-pressure vapour → high-pressure vapour), condenser (high-pressure vapour → high-pressure liquid, heat rejected), expansion device (high-pressure liquid → low-pressure liquid/vapour mixture), evaporator (low-pressure mixture → low-pressure vapour, heat absorbed). Refrigerants — HFCs (R-134a, R-410A), HFOs, and the phase-out of HCFCs. Know why refrigerant choice matters (environmental impact, operating pressure, toxicity) and the regulatory requirements around refrigerant handling in Canada. Compressor types in refrigeration — reciprocating, rotary, scroll, and screw compressors — their operating principles and typical applications. Expansion devices — thermostatic expansion valve (TXV) and electronic expansion valve (EEV) — how each regulates refrigerant flow based on superheat. Superheat and subcooling — what they are, how to measure them, and what abnormal readings indicate about system performance." },
@@ -275,10 +275,10 @@ add('steamfitter-pipefitter_3', {
 
 // Steamfitter Year 4
 add('steamfitter-pipefitter_4', {
-  title: 'Steamfitter Pipefitter Year 4 Exam Prep | Alberta Apprenticeship | TradeBenchPrep',
-  metaDescription: 'Study for your Year 4 steamfitter/pipefitter apprenticeship exam in Alberta. Advanced industrial systems, commissioning, and comprehensive code mastery. Journeyman prep.',
+  title: 'Steamfitter Pipefitter Year 4 Exam Prep | Apprenticeship | TradeBenchPrep',
+  metaDescription: 'Study for your Year 4 steamfitter/pipefitter apprenticeship exam. Advanced industrial systems, commissioning, and comprehensive code mastery. Journeyman prep.',
   h1: 'Steamfitter / Pipefitter — Year 4 Exam Prep',
-  intro: "Year 4 is the final period of the Alberta steamfitter/pipefitter apprenticeship. Advanced industrial piping systems, system commissioning, project coordination, and comprehensive mastery of applicable codes define the fourth period curriculum. Completing Year 4 qualifies you to challenge the Interprovincial exam for your journeyman steamfitter/pipefitter certificate. TradeBenchPrep gives you the ATIS-aligned practice to finish at your best.",
+  intro: "Year 4 is the final period of the steamfitter/pipefitter apprenticeship. Advanced industrial piping systems, system commissioning, project coordination, and comprehensive mastery of applicable codes define the fourth period curriculum. Completing Year 4 qualifies you to challenge the Interprovincial exam for your journeyman steamfitter/pipefitter certificate. TradeBenchPrep gives you the curriculum-aligned practice to finish at your best.",
   needsToKnowHeading: 'What a Year 4 Steamfitter/Pipefitter Apprentice Needs to Know',
   needsToKnow: [
     { title: "Advanced Industrial Piping Systems", body: "High-pressure steam systems — supercritical steam, alloy piping, and the additional code requirements that apply at elevated pressures and temperatures. Cryogenic piping — materials that remain ductile at very low temperatures (stainless steel, aluminum, copper), insulation systems, and the design considerations unique to cryogenic service. Specialty system piping — oxygen service (cleanliness requirements and the hazard of oil contamination in oxygen piping), chlorine service, and other specialty fluid services with specific material and installation requirements." },
@@ -295,10 +295,10 @@ add('steamfitter-pipefitter_4', {
 
 // --- Welder Year 1 ---
 add('welder_1', {
-  title: 'Welder Year 1 Exam Prep | Alberta Apprenticeship | TradeBenchPrep',
-  metaDescription: "Preparing for your Year 1 welder apprenticeship exam in Alberta? Learn what the ATIS exam covers — SMAW, electrode classification, joint design, weld symbols, and safety.",
+  title: 'Welder Year 1 Exam Prep | Apprenticeship | TradeBenchPrep',
+  metaDescription: "Preparing for your Year 1 welder apprenticeship exam? Learn what the period exam covers — SMAW, electrode classification, joint design, weld symbols, and safety.",
   h1: 'Welder — Year 1 Exam Prep',
-  intro: "Year 1 of the Alberta welder apprenticeship establishes the foundational knowledge that every subsequent year builds on. SMAW process theory, electrode classification, joint design, weld symbols, basic metallurgy, and workplace safety form the core of first period content. The Year 1 exam is broad and rewards apprentices who have studied systematically. TradeBenchPrep is built on the  welding curriculum to give you the structured practice you need.",
+  intro: "Year 1 of the welder apprenticeship establishes the foundational knowledge that every subsequent year builds on. SMAW process theory, electrode classification, joint design, weld symbols, basic metallurgy, and workplace safety form the core of first period content. The Year 1 exam is broad and rewards apprentices who have studied systematically. TradeBenchPrep is built on the  welding curriculum to give you the structured practice you need.",
   needsToKnowHeading: 'What a Year 1 Welder Apprentice Needs to Know',
   needsToKnow: [
     { title: "Workplace Safety — Welding-Specific Hazards", body: "Welding safety goes beyond general workplace safety. Fume and gas hazards — welding fumes are a complex mixture of metallic oxides and gases (ozone, nitrogen oxides, carbon monoxide) that require engineering controls (local exhaust ventilation) and respiratory protection when ventilation is insufficient. Know the specific hazards of welding on coated materials — galvanizing (zinc fumes causing metal fume fever), lead paint, and cadmium-plated materials. Arc flash and UV radiation — know the correct lens shade for different welding processes and currents. Electrical safety in welding — proper grounding, cable condition inspection, and working in wet environments. Fire prevention — hot work permits, fire watch requirements, and the minimum distances for combustibles. Confined space welding — additional ventilation and monitoring requirements." },
@@ -320,10 +320,10 @@ add('welder_1', {
 
 // Welder Year 2
 add('welder_2', {
-  title: 'Welder Year 2 Exam Prep | Alberta Apprenticeship | TradeBenchPrep',
-  metaDescription: 'Study for your Year 2 welder apprenticeship exam in Alberta. GMAW, FCAW, GTAW, intermediate metallurgy, distortion control, and weld defects. ATIS curriculum aligned.',
+  title: 'Welder Year 2 Exam Prep | Apprenticeship | TradeBenchPrep',
+  metaDescription: 'Study for your Year 2 welder apprenticeship exam. GMAW, FCAW, GTAW, intermediate metallurgy, distortion control, and weld defects. curriculum aligned.',
   h1: 'Welder — Year 2 Exam Prep',
-  intro: "Year 2 of the Alberta welder apprenticeship significantly expands your process knowledge. GMAW (MIG), FCAW, and GTAW (TIG) join SMAW as processes you must understand in depth. Intermediate metallurgy, weld distortion, weld defects, and more detailed code awareness define the second period curriculum. TradeBenchPrep gives you practice built on the  Year 2 welding curriculum.",
+  intro: "Year 2 of the welder apprenticeship significantly expands your process knowledge. GMAW (MIG), FCAW, and GTAW (TIG) join SMAW as processes you must understand in depth. Intermediate metallurgy, weld distortion, weld defects, and more detailed code awareness define the second period curriculum. TradeBenchPrep gives you practice built on the  Year 2 welding curriculum.",
   needsToKnowHeading: 'What a Year 2 Welder Apprentice Needs to Know',
   needsToKnow: [
     { title: "GMAW — Gas Metal Arc Welding (MIG)", body: "GMAW process fundamentals — the wire electrode is fed continuously through the welding gun and the arc is shielded by externally supplied shielding gas. Know the four metal transfer modes: Short circuit transfer — low voltage and wire feed speed, wire touches the puddle and shorts, creating a small weld with low heat input. Used for thin materials and out-of-position welding. Globular transfer — higher voltage, molten drops larger than the wire diameter fall into the puddle irregularly, high spatter. Spray transfer — high voltage and wire feed speed, very fine droplets transfer axially across the arc in a continuous stream, very smooth bead, high deposition rate, flat and horizontal only. Pulse transfer — rapidly alternates between high and low current, achieves spray-like droplet transfer at lower average heat input, all-position capable. Shielding gas selection — 100% CO₂ (deep penetration, high spatter), 75%Ar/25%CO₂ (C25, the most common all-purpose mix for carbon steel), and argon-rich mixes for stainless and aluminum. Wire classification — AWS ER70S-6 is the most common carbon steel GMAW wire — know what each designation element means." },
@@ -344,10 +344,10 @@ add('welder_2', {
 
 // Welder Year 3
 add('welder_3', {
-  title: 'Welder Year 3 Exam Prep | Alberta Apprenticeship | TradeBenchPrep',
-  metaDescription: 'Prepare for your Year 3 welder apprenticeship exam in Alberta. Advanced metallurgy, pressure codes, SAW, NDE, and welding procedure specifications. ATIS curriculum aligned.',
+  title: 'Welder Year 3 Exam Prep | Apprenticeship | TradeBenchPrep',
+  metaDescription: 'Prepare for your Year 3 welder apprenticeship exam. Advanced metallurgy, pressure codes, SAW, NDE, and welding procedure specifications. curriculum aligned.',
   h1: 'Welder — Year 3 Exam Prep',
-  intro: "Year 3 is the final period of the Alberta welder apprenticeship and the most technically advanced. Advanced metallurgy including stainless steel and aluminum, submerged arc welding, pressure vessel and pressure piping codes, non-destructive examination, and welding procedure specifications define the third period curriculum. Completing Year 3 qualifies you to challenge the Interprovincial exam for your journeyman welder certificate. TradeBenchPrep gives you the comprehensive, ATIS-aligned practice to finish your apprenticeship at the highest level.",
+  intro: "Year 3 is the final period of the welder apprenticeship and the most technically advanced. Advanced metallurgy including stainless steel and aluminum, submerged arc welding, pressure vessel and pressure piping codes, non-destructive examination, and welding procedure specifications define the third period curriculum. Completing Year 3 qualifies you to challenge the Interprovincial exam for your journeyman welder certificate. TradeBenchPrep gives you the comprehensive, curriculum-aligned practice to finish your apprenticeship at the highest level.",
   needsToKnowHeading: 'What a Year 3 Welder Apprentice Needs to Know',
   needsToKnow: [
     { title: "Advanced Metallurgy — Stainless Steel", body: "Austenitic stainless steels (300 series — 304, 316, 321, 347) — austenitic structure gives them excellent corrosion resistance, good toughness, and non-magnetic properties. The key welding challenge is sensitization — when austenitic stainless is heated in the range of 425–870°C (the sensitization range), chromium carbides precipitate at grain boundaries, depleting chromium from the surrounding metal and creating zones that are susceptible to intergranular corrosion. Prevention methods: use low carbon grades (304L, 316L), use stabilized grades that contain titanium or niobium to preferentially combine with carbon (321, 347), use solution annealing after welding if possible, or minimize time in the sensitization range by limiting heat input and interpass temperature. Ferritic stainless steels (400 series — 430) — magnetic, less corrosion resistant than austenitic, susceptible to grain growth in the HAZ and sensitization. Duplex stainless steels — mixed austenitic-ferritic microstructure, higher strength than austenitic grades, excellent corrosion resistance, require controlled heat input to maintain the correct phase balance." },

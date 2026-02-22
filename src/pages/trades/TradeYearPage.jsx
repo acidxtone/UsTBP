@@ -144,7 +144,7 @@ export default function TradeYearPage({ trade: tradeProp, year: yearProp }) {
           <section className="py-10 px-6 border-t border-slate-100">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-2xl font-serif font-bold text-slate-900 mb-6">
-                What to Expect on Your Year {yearNum} {config.name} Exam in Alberta
+                What to Expect on Your Year {yearNum} {config.name} Exam
               </h2>
               {content.whatToExpect.map((p, i) => (
                 <p key={i} className="text-slate-600 mb-4 leading-relaxed">{p}</p>
