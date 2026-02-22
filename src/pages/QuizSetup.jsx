@@ -25,7 +25,6 @@ import {
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import YearIndicator from '@/components/YearIndicator';
-import { BannerAd, InContentAd } from '@/components/ads/AdSense';
 import { getSectionsForTradeYear, getTradeLabel } from '@/lib/trade-config';
 
 const modeConfig = {
@@ -182,11 +181,6 @@ export default function QuizSetup() {
         <p className="text-slate-600 mb-6 leading-relaxed">
           Choose your practice mode and options below. You can run a full timed exam, focus on specific sections or weak areas, or do a short quiz. Options are based on your current trade and year — customize question count, timing, and whether to see explanations during or after the quiz.
         </p>
-        {hasQuestions && (
-          <section aria-label="Advertisement" className="pt-2 pb-4">
-            <BannerAd position="top" />
-          </section>
-        )}
         {/* Mode Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -364,12 +358,6 @@ export default function QuizSetup() {
             </Card>
           </motion.div>
 
-          {hasQuestions && (
-            <section aria-label="Advertisement" className="py-4">
-              <InContentAd position="middle" />
-            </section>
-          )}
-
           {/* Summary & Start */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -423,11 +411,6 @@ export default function QuizSetup() {
             </Card>
           </motion.div>
         </div>
-        {hasQuestions && (
-          <section aria-label="Advertisement" className="pt-6 pb-4">
-            <BannerAd position="bottom" />
-          </section>
-        )}
       </main>
     </div>
   );

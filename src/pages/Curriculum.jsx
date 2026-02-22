@@ -4,7 +4,6 @@ import { createPageUrl } from '@/utils';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, ExternalLink, GraduationCap } from "lucide-react";
-import { BannerAd, InContentAd } from '@/components/ads/AdSense';
 import { useAuth } from '@/lib/AuthContext';
 import { getSectionsForTradeYear, getTradeLabel } from '@/lib/trade-config';
 
@@ -111,9 +110,6 @@ export default function Curriculum() {
       </header>
 
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <section aria-label="Advertisement" className="mb-6">
-          <BannerAd position="top" />
-        </section>
         {/* Page Header */}
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-slate-900 mb-2">
@@ -155,10 +151,6 @@ export default function Curriculum() {
             </Card>
           ))}
         </div>
-
-        <section aria-label="Advertisement" className="my-6">
-          <InContentAd position="middle" />
-        </section>
 
         {/* Helpful Resource Links */}
         <div className="mb-8">
@@ -214,9 +206,6 @@ export default function Curriculum() {
             </div>
           </CardContent>
         </Card>
-        <section aria-label="Advertisement" className="mt-8 pt-6">
-          <BannerAd position="bottom" />
-        </section>
       </main>
     </div>
   );
