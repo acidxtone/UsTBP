@@ -35,8 +35,10 @@ import { VALID_TRADE_SLUGS } from '@/pages/trades/tradesContent';
 
 const PAGES_WITHOUT_YEAR_HEADER = ['YearSelection', 'TradeSelection', 'Privacy', 'Terms', 'debug', 'test', 'connection'];
 
-/** Routes where global ads are allowed (content-rich pages per AdSense policy). */
-const ROUTES_WITH_ADS = ['/', '/Dashboard', '/Study', '/Quiz', '/QuizSetup', '/Curriculum', '/Settings', '/Privacy', '/Terms'];
+/** Routes where global ads are allowed (content-rich pages per AdSense policy).
+ * Excluded: /Dashboard, /Study, /Quiz — they have loading/redirect states that trigger
+ * "ads without publisher-content"; they use in-page ads when content is present. */
+const ROUTES_WITH_ADS = ['/', '/QuizSetup', '/Curriculum', '/Settings', '/Privacy', '/Terms'];
 const TRADES_ROUTE_PREFIX = '/trades';
 
 const LayoutWrapper = ({ children, currentPageName }) => {
@@ -201,10 +203,15 @@ const AuthenticatedApp = () => {
   );
 };
 
-/** Renders global ads only on content-rich routes (AdSense policy compliance). */
+/** Renders global ads only on content-rich routes. Never show during auth loading
+ * (spinner-only screen) to avoid AdSense "ads without publisher-content". */
 const GlobalAdsWrapper = () => {
   const location = useLocation();
-  const showAds = ROUTES_WITH_ADS.includes(location.pathname) || location.pathname.startsWith(TRADES_ROUTE_PREFIX);
+  const { isLoadingAuth } = useAuth();
+  const isTrades = location.pathname.startsWith(TRADES_ROUTE_PREFIX);
+  const showAds =
+    (ROUTES_WITH_ADS.includes(location.pathname) || isTrades) &&
+    (isTrades || !isLoadingAuth);
   if (!showAds) return null;
   return (
     <>
@@ -217,7 +224,11 @@ const GlobalAdsWrapper = () => {
 
 const StickyFooterAdWrapper = () => {
   const location = useLocation();
-  const showAds = ROUTES_WITH_ADS.includes(location.pathname) || location.pathname.startsWith(TRADES_ROUTE_PREFIX);
+  const { isLoadingAuth } = useAuth();
+  const isTrades = location.pathname.startsWith(TRADES_ROUTE_PREFIX);
+  const showAds =
+    (ROUTES_WITH_ADS.includes(location.pathname) || isTrades) &&
+    (isTrades || !isLoadingAuth);
   if (!showAds) return null;
   return <StickyFooterAd />;
 };
