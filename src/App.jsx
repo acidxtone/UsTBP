@@ -2,36 +2,48 @@ import { Toaster } from "@/components/ui/toaster"
 import { QueryClientProvider } from '@tanstack/react-query'
 import { queryClientInstance } from '@/lib/query-client'
 import NavigationTracker from '@/lib/NavigationTracker'
+import PerformanceMonitor from '@/lib/PerformanceMonitor'
 import SEO from '@/components/SEO'
 import { HelmetProvider } from 'react-helmet-async'
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import PageNotFound from '@/lib/PageNotFound';
 import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import { AdProvider, SideAd, StickyHeaderAd, StickyFooterAd } from '@/components/ads/AdProvider';
-import React, { useEffect } from 'react';
+import React, { useEffect, lazy, Suspense } from 'react';
 import { Navigate } from 'react-router-dom';
 import { initPeriodicCleanup } from '@/lib/SessionCleanup';
-import Dashboard from '@/pages/Dashboard';
-import LandingPage from '@/pages/LandingPage';
-import AuthPage from '@/pages/AuthPage';
 import YearHeader from '@/components/YearHeader';
-// Import all pages directly
-import Study from '@/pages/Study';
-import Quiz from '@/pages/Quiz';
-import QuizSetup from '@/pages/QuizSetup';
-import Settings from '@/pages/Settings';
-import Curriculum from '@/pages/Curriculum';
-import YearSelection from '@/pages/YearSelection';
-import TradeSelection from '@/pages/TradeSelection';
-import Privacy from '@/pages/Privacy';
-import Terms from '@/pages/Terms';
-import DebugQuestions from '@/components/DebugQuestions';
-import SimpleDebug from '@/components/SimpleDebug';
-import ConnectionTest from '@/components/ConnectionTest';
-import TradesHub from '@/pages/trades/TradesHub';
-import TradeHubPage from '@/pages/trades/TradeHubPage';
-import TradeYearPage from '@/pages/trades/TradeYearPage';
 import { VALID_TRADE_SLUGS } from '@/pages/trades/tradesContent';
+
+const Dashboard = lazy(() => import('@/pages/Dashboard'));
+const LandingPage = lazy(() => import('@/pages/LandingPage'));
+const AuthPage = lazy(() => import('@/pages/AuthPage'));
+const Study = lazy(() => import('@/pages/Study'));
+const Quiz = lazy(() => import('@/pages/Quiz'));
+const QuizSetup = lazy(() => import('@/pages/QuizSetup'));
+const Settings = lazy(() => import('@/pages/Settings'));
+const Curriculum = lazy(() => import('@/pages/Curriculum'));
+const YearSelection = lazy(() => import('@/pages/YearSelection'));
+const TradeSelection = lazy(() => import('@/pages/TradeSelection'));
+const Privacy = lazy(() => import('@/pages/Privacy'));
+const Terms = lazy(() => import('@/pages/Terms'));
+const DebugQuestions = lazy(() => import('@/components/DebugQuestions'));
+const SimpleDebug = lazy(() => import('@/components/SimpleDebug'));
+const ConnectionTest = lazy(() => import('@/components/ConnectionTest'));
+const TradesHub = lazy(() => import('@/pages/trades/TradesHub'));
+const TradeHubPage = lazy(() => import('@/pages/trades/TradeHubPage'));
+const TradeYearPage = lazy(() => import('@/pages/trades/TradeYearPage'));
+
+function RouteLoadingFallback() {
+  return (
+    <div className="fixed inset-0 flex items-center justify-center bg-white">
+      <div className="flex flex-col items-center gap-4">
+        <div className="w-10 h-10 border-4 border-slate-200 border-t-blue-600 rounded-full animate-spin" />
+        <p className="text-slate-500 text-sm">Loading...</p>
+      </div>
+    </div>
+  );
+}
 
 const PAGES_WITHOUT_YEAR_HEADER = ['YearSelection', 'TradeSelection', 'Privacy', 'Terms', 'debug', 'test', 'connection'];
 
@@ -250,13 +262,16 @@ function App() {
         <AuthProvider>
           <QueryClientProvider client={queryClientInstance}>
             <Router>
-              <SEO />
-              <NavigationTracker />
-              <GlobalAdsWrapper />
-            <div className="pt-12 md:pt-16 lg:mx-32 min-h-screen">
-              <TradesOrRest />
-            </div>
-            <StickyFooterAdWrapper />
+              <Suspense fallback={<RouteLoadingFallback />}>
+                <SEO />
+                <NavigationTracker />
+                <PerformanceMonitor />
+                <GlobalAdsWrapper />
+                <div className="pt-12 md:pt-16 lg:mx-32 min-h-screen">
+                  <TradesOrRest />
+                </div>
+                <StickyFooterAdWrapper />
+              </Suspense>
             </Router>
             <Toaster />
           </QueryClientProvider>

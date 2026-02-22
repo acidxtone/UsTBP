@@ -35,19 +35,23 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: true,
-    // Optimize for Netlify deployment
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ['react', 'react-dom'],
-          router: ['react-router-dom'],
-          ui: ['@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu'],
+          'react-vendor': ['react', 'react-dom'],
+          'react-router': ['react-router-dom'],
+          'radix-dialog': ['@radix-ui/react-dialog'],
+          'radix-dropdown': ['@radix-ui/react-dropdown-menu'],
+          'radix-forms': ['@radix-ui/react-label', '@radix-ui/react-select'],
+          'supabase': ['@supabase/supabase-js'],
+          'analytics': ['react-helmet-async'],
+          'charts': ['recharts'],
+          'utils': ['date-fns', 'lodash', 'clsx'],
+          'quiz-engine': ['@tanstack/react-query'],
         },
       },
     },
-    // Netlify-specific optimizations
-    chunkSizeWarningLimit: 1000,
-    // Fix for Netlify deployment
+    chunkSizeWarningLimit: 300,
     assetsDir: 'assets',
   },
   // Define global constants for build

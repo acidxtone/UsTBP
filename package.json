@@ -9,8 +9,8 @@
   },
   "scripts": {
     "dev": "node --import tsx server/index.ts",
-    "build": "node ./node_modules/vite/bin/vite.js build && node scripts/prerender.mjs",
-    "build:vite": "node ./node_modules/vite/bin/vite.js build",
+    "build": "npx vite build && node scripts/prerender.mjs",
+    "build:vite": "npx vite build",
     "prerender": "node scripts/prerender.mjs",
     "lint": "eslint . --quiet",
     "lint:fix": "eslint . --fix",

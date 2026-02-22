@@ -1,13 +1,15 @@
 {
   "rewrites": [
-    { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
-    { "source": "/robots.txt", "destination": "/robots.txt" },
-    { "source": "/trades", "destination": "/trades/index.html" },
-    { "source": "/trades/:trade", "destination": "/trades/:trade/index.html" },
-    { "source": "/trades/:trade/year-:num", "destination": "/trades/:trade/year-:num/index.html" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    {"source": "/sitemap.xml", "destination": "/sitemap.xml"},
+    {"source": "/robots.txt", "destination": "/robots.txt"},
+    {"source": "/trades", "destination": "/trades/index.html"},
+    {"source": "/trades/:trade", "destination": "/trades/:trade/index.html"},
+    {"source": "/trades/:trade/year-:num", "destination": "/trades/:trade/year-:num/index.html"},
+    {"source": "/(.*)", "destination": "/index.html"}
   ],
   "headers": [
-    { "source": "/sitemap.xml", "headers": [{ "key": "Content-Type", "value": "application/xml" }] }
+    {"source": "/sitemap.xml", "headers": [{"key": "Content-Type", "value": "application/xml"}]},
+    {"source": "/assets/(.*)", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]},
+    {"source": "/(.*).html", "headers": [{"key": "Cache-Control", "value": "no-cache, must-revalidate"}]}
   ]
 }

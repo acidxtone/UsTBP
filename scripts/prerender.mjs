@@ -22,6 +22,35 @@ function escapeHtml(s) {
     .replace(/"/g, '&quot;');
 }
 
+/** Optimized image tag for prerendered HTML: dimensions + loading/decoding. Use for any <img> you add. */
+function optimizedImage(src, alt, width = 400, height = 300, priority = false) {
+  const loading = priority ? 'eager' : 'lazy';
+  const fetchpriority = priority ? 'high' : 'low';
+  return `<img src="${escapeHtml(src)}" alt="${escapeHtml(alt)}" width="${width}" height="${height}" loading="${loading}" decoding="async" fetchpriority="${fetchpriority}" />`;
+}
+
+/** Minimal critical above-the-fold CSS; additive only, does not replace main stylesheet. */
+function criticalCSS() {
+  return `
+  <style>
+    body { margin: 0; font-family: system-ui, -apple-system, sans-serif; }
+    .min-h-screen { min-height: 100vh; }
+    .pt-12 { padding-top: 3rem; }
+    .pt-24 { padding-top: 6rem; }
+    .max-w-4xl { max-width: 56rem; }
+    .mx-auto { margin-left: auto; margin-right: auto; }
+    .text-center { text-align: center; }
+    .font-bold { font-weight: 700; }
+    .text-slate-900 { color: rgb(15 23 42); }
+    .bg-blue-600 { background-color: rgb(37 99 235); }
+    .text-white { color: white; }
+    .rounded-md { border-radius: 0.375rem; }
+    .px-8 { padding-left: 2rem; padding-right: 2rem; }
+    .py-6 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+    .hover\\:bg-blue-700:hover { background-color: rgb(29 78 216); }
+  </style>`;
+}
+
 let cachedAssetTags = null;
 /** Extract asset script/link tags from built index.html (hashed filenames). Call once at start before overwriting index.html. */
 function getAssetTags() {
@@ -43,6 +72,13 @@ function getAssetTags() {
 function baseHeadFragment() {
   return `    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="//pagead2.googlesyndication.com" />
     <meta name="keywords" content="Canadian skilled trades exam prep, apprenticeship exam Canada, trade certification study Canada, skilled trades mock exams, provincial apprenticeship exam prep, interprovincial certification" />
     <meta name="author" content="TradeBenchPrep" />
     <meta name="robots" content="index, follow" />
@@ -72,6 +108,7 @@ function buildHead(title, description, canonical) {
     <title>${safeTitle}</title>
     <meta name="description" content="${safeDesc}" />
     <link rel="canonical" href="${safeCanon}" />
+    ${criticalCSS()}
     <meta property="og:title" content="${safeTitle}" />
     <meta property="og:description" content="${safeDesc}" />
     <meta property="og:type" content="website" />
