@@ -48,6 +48,12 @@ const LayoutWrapper = ({ children, currentPageName }) => {
   );
 };
 
+/**
+ * Trades routes are at top level so /trades/* always matches on first load,
+ * regardless of auth loading or authenticated vs unauthenticated branch.
+ * This prevents the "duplicate landing page" issue when opening or refreshing
+ * /trades/electrician/year-1 etc. directly.
+ */
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isAuthenticated } = useAuth();
   const location = useLocation();
@@ -66,9 +72,6 @@ const AuthenticatedApp = () => {
   if (!isAuthenticated) {
     return (
       <Routes>
-        <Route path="/trades/:trade/year-:year" element={<TradeYearPage />} />
-        <Route path="/trades/:trade" element={<TradeHubPage />} />
-        <Route path="/trades" element={<TradesHub />} />
         <Route path="/auth" element={<AuthPage />} />
         <Route path="/Privacy" element={<Privacy />} />
         <Route path="/Terms" element={<Terms />} />
@@ -81,9 +84,6 @@ const AuthenticatedApp = () => {
 
   return (
     <Routes>
-      <Route path="/trades/:trade/year-:year" element={<TradeYearPage />} />
-      <Route path="/trades/:trade" element={<TradeHubPage />} />
-      <Route path="/trades" element={<TradesHub />} />
       <Route path="/auth" element={<Navigate to="/" replace />} />
       {/* Root always shows landing; Get Started sends users to TradeSelection */}
       <Route path="/" element={<LandingPage />} />
@@ -208,7 +208,13 @@ function App() {
               <NavigationTracker />
               <GlobalAdsWrapper />
             <div className="pt-12 md:pt-16 lg:mx-32 min-h-screen">
-              <AuthenticatedApp />
+              <Routes>
+                {/* Trades routes at top level so direct load/refresh of /trades/... always matches */}
+                <Route path="/trades/:trade/year-:year" element={<TradeYearPage />} />
+                <Route path="/trades/:trade" element={<TradeHubPage />} />
+                <Route path="/trades" element={<TradesHub />} />
+                <Route path="*" element={<AuthenticatedApp />} />
+              </Routes>
             </div>
             <StickyFooterAdWrapper />
             </Router>
