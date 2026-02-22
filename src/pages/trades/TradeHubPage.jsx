@@ -3,8 +3,10 @@ import { Link, useParams, Navigate } from 'react-router-dom';
 import TradesLayout, { GetStartedButton, TradesAdTop, TradesAdBottom } from './TradesLayout';
 import { TRADES, VALID_TRADE_SLUGS, getTradeHubContent } from './tradesContent';
 
-export default function TradeHubPage() {
-  const { trade } = useParams();
+/** Optional trade prop when rendered by pathname (bypasses Route params). */
+export default function TradeHubPage({ trade: tradeProp }) {
+  const params = useParams();
+  const trade = tradeProp ?? params.trade;
   if (!trade || !VALID_TRADE_SLUGS.includes(trade)) {
     return <Navigate to="/trades" replace />;
   }

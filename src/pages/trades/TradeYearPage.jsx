@@ -17,9 +17,12 @@ function Paragraphs({ content }) {
   );
 }
 
-export default function TradeYearPage() {
-  const { trade, year } = useParams();
-  const yearNum = year ? parseInt(year.replace('year-', ''), 10) : null;
+/** Optional props when rendered by pathname (bypasses Route params). */
+export default function TradeYearPage({ trade: tradeProp, year: yearProp }) {
+  const params = useParams();
+  const trade = tradeProp ?? params.trade;
+  const year = yearProp ?? params.year;
+  const yearNum = year ? parseInt(String(year).replace(/^year-/, ''), 10) : null;
   if (!trade || !VALID_TRADE_SLUGS.includes(trade) || !yearNum) {
     return <Navigate to="/trades" replace />;
   }

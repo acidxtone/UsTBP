@@ -31,6 +31,7 @@ import ConnectionTest from '@/components/ConnectionTest';
 import TradesHub from '@/pages/trades/TradesHub';
 import TradeHubPage from '@/pages/trades/TradeHubPage';
 import TradeYearPage from '@/pages/trades/TradeYearPage';
+import { VALID_TRADE_SLUGS } from '@/pages/trades/tradesContent';
 
 const PAGES_WITHOUT_YEAR_HEADER = ['YearSelection', 'TradeSelection', 'Privacy', 'Terms', 'debug', 'test', 'connection'];
 
@@ -49,11 +50,39 @@ const LayoutWrapper = ({ children, currentPageName }) => {
 };
 
 /**
- * Trades routes are at top level so /trades/* always matches on first load,
- * regardless of auth loading or authenticated vs unauthenticated branch.
- * This prevents the "duplicate landing page" issue when opening or refreshing
- * /trades/electrician/year-1 etc. directly.
+ * Renders /trades/* by reading pathname directly so we never depend on Route
+ * matching (which can fail on direct load/refresh). Everything else goes to
+ * AuthenticatedApp via Routes.
  */
+function TradesOrRest() {
+  const { pathname } = useLocation();
+  const path = pathname.replace(/\/$/, '') || '/'; // normalize trailing slash
+
+  if (path === '/trades') {
+    return <TradesHub />;
+  }
+  const yearMatch = path.match(/^\/trades\/([^/]+)\/year-(\d+)$/);
+  if (yearMatch) {
+    const [, trade, yearStr] = yearMatch;
+    if (VALID_TRADE_SLUGS.includes(trade)) {
+      return <TradeYearPage trade={trade} year={yearStr} />;
+    }
+  }
+  const tradeMatch = path.match(/^\/trades\/([^/]+)$/);
+  if (tradeMatch) {
+    const [, trade] = tradeMatch;
+    if (VALID_TRADE_SLUGS.includes(trade)) {
+      return <TradeHubPage trade={trade} />;
+    }
+  }
+
+  return (
+    <Routes>
+      <Route path="*" element={<AuthenticatedApp />} />
+    </Routes>
+  );
+}
+
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isAuthenticated } = useAuth();
   const location = useLocation();
@@ -208,13 +237,7 @@ function App() {
               <NavigationTracker />
               <GlobalAdsWrapper />
             <div className="pt-12 md:pt-16 lg:mx-32 min-h-screen">
-              <Routes>
-                {/* Trades routes at top level so direct load/refresh of /trades/... always matches */}
-                <Route path="/trades/:trade/year-:year" element={<TradeYearPage />} />
-                <Route path="/trades/:trade" element={<TradeHubPage />} />
-                <Route path="/trades" element={<TradesHub />} />
-                <Route path="*" element={<AuthenticatedApp />} />
-              </Routes>
+              <TradesOrRest />
             </div>
             <StickyFooterAdWrapper />
             </Router>
