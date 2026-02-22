@@ -203,15 +203,22 @@ const AuthenticatedApp = () => {
   );
 };
 
+/** True for /trades (hub) or /trades/:trade/year-N (year pages). Not for /trades/:trade (trade hub — low content). */
+function isTradesRouteWithAds(pathname) {
+  const path = pathname.replace(/\/$/, '') || '/';
+  if (path === '/trades') return true;
+  return /^\/trades\/[^/]+\/year-\d+$/.test(path);
+}
+
 /** Renders global ads only on content-rich routes. Never show during auth loading
  * (spinner-only screen) to avoid AdSense "ads without publisher-content". */
 const GlobalAdsWrapper = () => {
   const location = useLocation();
   const { isLoadingAuth } = useAuth();
-  const isTrades = location.pathname.startsWith(TRADES_ROUTE_PREFIX);
+  const tradesWithAds = isTradesRouteWithAds(location.pathname);
   const showAds =
-    (ROUTES_WITH_ADS.includes(location.pathname) || isTrades) &&
-    (isTrades || !isLoadingAuth);
+    (ROUTES_WITH_ADS.includes(location.pathname) || tradesWithAds) &&
+    (tradesWithAds || !isLoadingAuth);
   if (!showAds) return null;
   return (
     <>
@@ -225,10 +232,10 @@ const GlobalAdsWrapper = () => {
 const StickyFooterAdWrapper = () => {
   const location = useLocation();
   const { isLoadingAuth } = useAuth();
-  const isTrades = location.pathname.startsWith(TRADES_ROUTE_PREFIX);
+  const tradesWithAds = isTradesRouteWithAds(location.pathname);
   const showAds =
-    (ROUTES_WITH_ADS.includes(location.pathname) || isTrades) &&
-    (isTrades || !isLoadingAuth);
+    (ROUTES_WITH_ADS.includes(location.pathname) || tradesWithAds) &&
+    (tradesWithAds || !isLoadingAuth);
   if (!showAds) return null;
   return <StickyFooterAd />;
 };
