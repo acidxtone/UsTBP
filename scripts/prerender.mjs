@@ -79,7 +79,7 @@ function baseHeadFragment() {
     <link rel="dns-prefetch" href="//fonts.googleapis.com" />
     <link rel="dns-prefetch" href="//www.googletagmanager.com" />
     <link rel="dns-prefetch" href="//pagead2.googlesyndication.com" />
-    <meta name="keywords" content="Canadian skilled trades exam prep, apprenticeship exam Canada, trade certification study Canada, skilled trades mock exams, provincial apprenticeship exam prep, interprovincial certification" />
+    <meta name="keywords" content="Red Seal practice test Canada, free trades practice test, Canadian trades exam prep, apprenticeship exam prep Canada, electrician practice test, millwright exam prep, welder practice test, steamfitter pipefitter exam prep, interprovincial certification" />
     <meta name="author" content="TradeBenchPrep" />
     <meta name="robots" content="index, follow" />
     <meta name="geo.region" content="CA" />
@@ -413,8 +413,8 @@ function main() {
   routes.push({
     path: '',
     file: path.join(DIST, 'index.html'),
-    title: 'TradeBenchPrep | Canadian Skilled Trades Exam Prep | Electrician, Welder, Millwright & Steamfitter Practice Tests',
-    description: 'Free Canadian skilled trades exam prep for Electrician, Welder, Millwright & Steamfitter apprentices. Practice quizzes, study guides, and exam simulation.',
+    title: 'Free Red Seal Practice Test Canada | Canadian Trades Exam Prep | TradeBenchPrep',
+    description: 'Free Canadian skilled trades exam prep. Red Seal and apprenticeship practice tests for Electrician, Welder, Millwright & Steamfitter. No signup required.',
     canonical: BASE_URL + '/',
     body: renderLandingBody(),
   });

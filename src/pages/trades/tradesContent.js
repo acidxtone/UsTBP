@@ -16,8 +16,8 @@ export const VALID_TRADE_SLUGS = Object.keys(TRADES);
 
 export function getHubContent() {
   return {
-    title: 'Trades Exam Prep | Canadian Apprenticeship Practice Tests | TradeBenchPrep',
-    metaDescription: 'Practice tests and study guides for apprenticeship exams. Choose your trade — Electrician, Millwright, Steamfitter/Pipefitter, or Welder. Curriculum-aligned by trade and year.',
+    title: 'Canadian Skilled Trades Exam Prep | Red Seal Practice Tests by Trade | TradeBenchPrep',
+    metaDescription: 'Free Red Seal practice tests by trade. Electrician, Millwright, Welder, Steamfitter/Pipefitter — year 1–4 exam prep. Canadian apprenticeship practice questions.',
     h1: 'Apprenticeship Exam Prep by Trade',
     intro: [
       'TradeBenchPrep is built specifically for apprentices working toward their journeyman certification. Every question, every quiz, and every practice exam on this platform is aligned to the apprenticeship curriculum — organized by trade and by year so you study exactly what you need, nothing more.',
@@ -51,32 +51,32 @@ export function getHubContent() {
 
 const TRADE_HUB_CONTENT = {
   electrician: {
-    title: 'Electrician Apprenticeship Exam Prep | TradeBenchPrep',
-    metaDescription: 'Study for your electrician apprenticeship exams year by year. Practice questions and full exams built on the curriculum for Years 1 through 4.',
+    title: 'Free Electrician Practice Test Canada | Red Seal Electrician Exam Prep | TradeBenchPrep',
+    metaDescription: 'Free electrician practice test Canada. Red Seal & 309A exam prep, year 1–4. Canadian Electrical Code practice. No signup.',
     h1: 'Electrician Apprenticeship Exam Prep — All Years',
     intro: 'The electrical trade apprenticeship spans four years and covers one of the most comprehensive technical curriculums of any skilled trade. From foundational electrical theory in Year 1 to advanced power systems, motor controls, and the Canadian Electrical Code in Year 4, each year builds directly on the last. TradeBenchPrep gives you structured practice for every stage.',
     chooseYearIntro: 'Select the year that matches your current period of apprenticeship to access practice questions, quizzes, and full exams aligned to the electrician curriculum for that year.',
     about: 'The electrician apprenticeship requires apprentices to complete both on-the-job hours and technical training for each period before writing a period exam. Passing each exam is required to advance. The four-year program culminates in eligibility to challenge the Interprovincial exam for journeyman certification recognized across Canada.',
   },
   millwright: {
-    title: 'Millwright Industrial Mechanic Apprenticeship Exam Prep | TradeBenchPrep',
-    metaDescription: 'Study for your millwright apprenticeship exams year by year. Practice questions and full exams built on the industrial mechanic curriculum for Years 1 through 4.',
+    title: 'Free Millwright Practice Test Canada | Red Seal 433A Exam Prep | TradeBenchPrep',
+    metaDescription: 'Free millwright practice test Canada. Red Seal industrial mechanic (433A) exam prep, year 1–4. Start free.',
     h1: 'Millwright Industrial Mechanic Apprenticeship Exam Prep — All Years',
     intro: 'The Millwright — Industrial Mechanic apprenticeship is one of the most technically diverse trades, covering mechanical systems, hydraulics, pneumatics, precision alignment, and advanced troubleshooting across four years of training. TradeBenchPrep provides structured exam prep for every period of the millwright curriculum.',
     chooseYearIntro: null,
     about: 'The millwright apprenticeship requires completion of on-the-job hours and technical training for each period. Millwrights work across oil and gas, manufacturing, forestry, mining, and utilities — anywhere that industrial machinery needs to be installed, maintained, and repaired. The four-year program builds from foundational mechanical knowledge to advanced systems troubleshooting and precision maintenance.',
   },
   'steamfitter-pipefitter': {
-    title: 'Steamfitter Pipefitter Apprenticeship Exam Prep | TradeBenchPrep',
-    metaDescription: 'Study for your steamfitter/pipefitter apprenticeship exams year by year. Practice questions and full exams built on the curriculum for Years 1 through 4.',
+    title: 'Free Steamfitter Pipefitter Practice Test Canada | Red Seal 307A Exam Prep | TradeBenchPrep',
+    metaDescription: 'Free steamfitter and pipefitter practice test Canada. Red Seal 307A exam prep, year 1–4. No signup.',
     h1: 'Steamfitter / Pipefitter Apprenticeship Exam Prep — All Years',
     intro: 'The Steamfitter/Pipefitter apprenticeship is one of the most technically demanding trades, working with high-pressure piping systems in industrial, commercial, and institutional settings. The four-year program builds from piping fundamentals to advanced system design and code application. TradeBenchPrep gives you structured exam prep for every year.',
     chooseYearIntro: null,
     about: 'Steamfitters and pipefitters work across oil and gas, petrochemical, power generation, and industrial facilities. The trade requires deep knowledge of piping materials, joining methods, system codes, blueprint reading, and the behaviour of fluids and gases under pressure. The four-year apprenticeship is rigorous and the period exams reflect that technical depth.',
   },
   welder: {
-    title: 'Welder Apprenticeship Exam Prep | TradeBenchPrep',
-    metaDescription: 'Study for your welder apprenticeship exams year by year. Practice questions and full exams built on the welding curriculum for Years 1 through 3.',
+    title: 'Free Welder Practice Test Canada | Red Seal 456A Exam Prep | TradeBenchPrep',
+    metaDescription: 'Free welder practice test Canada. Red Seal 456A exam prep, year 1–3. Practice questions and study guides.',
     h1: 'Welder Apprenticeship Exam Prep — All Years',
     intro: 'The Welder apprenticeship spans three years and covers welding processes, metallurgy, joint design, welding codes, and quality assurance across a rigorous curriculum. TradeBenchPrep provides structured exam prep for every period of the program.',
     chooseYearIntro: null,
@@ -99,8 +99,8 @@ function addYearContent(key, data) {
 
 // --- Electrician Year 1 ---
 addYearContent('electrician_1', {
-  title: 'Electrician Year 1 Exam Prep | Apprenticeship Practice Test | TradeBenchPrep',
-  metaDescription: "Prepare for your Year 1 electrical apprenticeship exam. Practice questions, quizzes and full exams built on the curriculum. Start free today.",
+  title: 'Electrician Year 1 Exam Prep | Red Seal Practice Questions | TradeBenchPrep',
+  metaDescription: 'Electrician year 1 exam prep Canada. Red Seal practice questions, free. Start free today.',
   h1: 'Electrician Year 1 Apprenticeship Exam Prep',
   intro: "Starting your electrical apprenticeship is a significant milestone. Year 1 lays the foundation for everything that follows — from understanding basic electrical theory to working safely with tools, materials, and the Canadian Electrical Code. TradeBenchPrep gives you a structured way to study, quiz yourself, and walk into your exam confident.",
   whatsCovered: [
@@ -132,8 +132,8 @@ addYearContent('electrician_1', {
 
 // Electrician Year 2
 addYearContent('electrician_2', {
-  title: 'Electrician Year 2 Exam Prep | Apprenticeship Practice Test | TradeBenchPrep',
-  metaDescription: "Study for your Year 2 electrician apprenticeship exam. Practice questions and full exams aligned to the curriculum covering AC theory, motors, and more.",
+  title: 'Electrician Year 2 Exam Prep | Red Seal Practice Questions | TradeBenchPrep',
+  metaDescription: 'Electrician year 2 exam prep Canada. Red Seal practice test, AC theory, motors. Free.',
   h1: 'Electrician Year 2 Apprenticeship Exam Prep',
   intro: "Year 2 of the electrician apprenticeship moves from foundational knowledge into more complex electrical systems. Alternating current theory, transformers, electric motors, and more advanced applications of the Canadian Electrical Code become the focus. TradeBenchPrep organizes all of this into structured practice so you can build on your Year 1 knowledge and pass your second period exam with confidence.",
   whatsCovered: [
@@ -164,8 +164,8 @@ addYearContent('electrician_2', {
 
 // Electrician Year 3
 addYearContent('electrician_3', {
-  title: 'Electrician Year 3 Exam Prep | Apprenticeship Practice Test | TradeBenchPrep',
-  metaDescription: "Prepare for your Year 3 electrician apprenticeship exam. Practice tests covering commercial wiring, three-phase systems, and advanced CEC applications.",
+  title: 'Electrician Year 3 Exam Prep | Red Seal Practice Questions | TradeBenchPrep',
+  metaDescription: 'Electrician year 3 exam prep Canada. Red Seal practice test, commercial wiring, CEC. Free.',
   h1: 'Electrician Year 3 Apprenticeship Exam Prep',
   intro: "Year 3 of the electrician apprenticeship moves into commercial and industrial electrical work. Three-phase power systems, distribution equipment, advanced motor controls, and deeper Canadian Electrical Code applications define this period. TradeBenchPrep provides comprehensive practice aligned to the Year 3 curriculum so you are fully prepared for your third period exam.",
   whatsCovered: [
@@ -196,8 +196,8 @@ addYearContent('electrician_3', {
 
 // Electrician Year 4
 addYearContent('electrician_4', {
-  title: 'Electrician Year 4 Exam Prep | Apprenticeship Practice Test | TradeBenchPrep',
-  metaDescription: "Study for your Year 4 electrician apprenticeship exam. Advanced industrial systems, power quality, and CEC mastery. Built on the curriculum.",
+  title: 'Electrician Year 4 Exam Prep | Red Seal Practice Questions | TradeBenchPrep',
+  metaDescription: 'Electrician year 4 exam prep Canada. Red Seal practice test, industrial systems, CEC. Free.',
   h1: 'Electrician Year 4 Apprenticeship Exam Prep',
   intro: "Year 4 is the final period of the electrician apprenticeship and the most technically advanced. Industrial power systems, power quality, programmable logic controllers, advanced protection systems, and mastery of the Canadian Electrical Code define this period. Passing your Year 4 exam makes you eligible to challenge the Interprovincial exam for journeyman certification. TradeBenchPrep gives you the focused practice you need to finish strong.",
   whatsCovered: [
@@ -228,8 +228,8 @@ addYearContent('electrician_4', {
 
 // --- Millwright Year 1 ---
 addYearContent('millwright_1', {
-  title: 'Millwright Year 1 Exam Prep | Apprenticeship Practice Test | TradeBenchPrep',
-  metaDescription: "Prepare for your Year 1 millwright apprenticeship exam. Practice questions and quizzes built on the industrial mechanic curriculum. Start free today.",
+  title: 'Millwright Year 1 Exam Prep | Red Seal Practice Questions | TradeBenchPrep',
+  metaDescription: 'Millwright year 1 exam prep Canada. Red Seal 433A practice questions. Free.',
   h1: 'Millwright Year 1 Apprenticeship Exam Prep',
   intro: "Year 1 of the millwright apprenticeship establishes the mechanical foundations that every subsequent year builds upon. Trade mathematics, hand and power tools, fasteners, bearings, seals, and workplace safety form the core of first period content. TradeBenchPrep organizes all of this into focused practice so you can approach your Year 1 exam with confidence.",
   whatsCovered: [
@@ -260,8 +260,8 @@ addYearContent('millwright_1', {
 
 // Millwright Years 2, 3, 4 (abbreviated structure - same pattern)
 addYearContent('millwright_2', {
-  title: 'Millwright Year 2 Exam Prep | Apprenticeship Practice Test | TradeBenchPrep',
-  metaDescription: "Study for your Year 2 millwright apprenticeship exam. Practice tests covering hydraulics, pneumatics, lubrication, and power transmission. aligned.",
+  title: 'Millwright Year 2 Exam Prep | Red Seal Practice Questions | TradeBenchPrep',
+  metaDescription: 'Millwright year 2 exam prep Canada. Red Seal practice test, hydraulics, pneumatics. Free.',
   h1: 'Millwright Year 2 Apprenticeship Exam Prep',
   intro: "Year 2 of the millwright apprenticeship introduces fluid power systems and advances your understanding of power transmission and lubrication. Hydraulics, pneumatics, drives, couplings, and more complex mechanical systems become the focus. TradeBenchPrep provides structured practice for all of this second period content.",
   whatsCovered: [
@@ -291,8 +291,8 @@ addYearContent('millwright_2', {
 });
 
 addYearContent('millwright_3', {
-  title: 'Millwright Year 3 Exam Prep | Apprenticeship Practice Test | TradeBenchPrep',
-  metaDescription: "Prepare for your Year 3 millwright apprenticeship exam. Practice tests covering precision alignment, vibration analysis, and advanced mechanical systems.",
+  title: 'Millwright Year 3 Exam Prep | Red Seal Practice Questions | TradeBenchPrep',
+  metaDescription: 'Millwright year 3 exam prep Canada. Red Seal practice test, alignment, mechanical systems. Free.',
   h1: 'Millwright Year 3 Apprenticeship Exam Prep',
   intro: "Year 3 of the millwright apprenticeship moves into precision maintenance and advanced mechanical systems. Shaft alignment, vibration analysis, advanced hydraulics, and complex troubleshooting define this period. TradeBenchPrep provides exam prep specifically aligned to third period millwright content.",
   whatsCovered: [
@@ -321,8 +321,8 @@ addYearContent('millwright_3', {
 });
 
 addYearContent('millwright_4', {
-  title: 'Millwright Year 4 Exam Prep | Apprenticeship Practice Test | TradeBenchPrep',
-  metaDescription: "Study for your Year 4 millwright apprenticeship exam. Advanced systems, predictive maintenance, and industrial troubleshooting. curriculum aligned.",
+  title: 'Millwright Year 4 Exam Prep | Red Seal Practice Questions | TradeBenchPrep',
+  metaDescription: 'Millwright year 4 exam prep Canada. Red Seal practice test, industrial troubleshooting. Free.',
   h1: 'Millwright Year 4 Apprenticeship Exam Prep',
   intro: "Year 4 is the final period of the millwright apprenticeship. Advanced predictive maintenance technologies, complex system troubleshooting, and the full integration of everything learned in the previous three years define this period. Passing your Year 4 exam qualifies you to challenge the Interprovincial exam for journeyman certification. TradeBenchPrep gives you the focused practice to finish your apprenticeship strong.",
   whatsCovered: [
@@ -350,8 +350,8 @@ addYearContent('millwright_4', {
 
 // --- Steamfitter/Pipefitter Year 1 ---
 addYearContent('steamfitter-pipefitter_1', {
-  title: 'Steamfitter Pipefitter Year 1 Exam Prep | Apprenticeship Practice Test | TradeBenchPrep',
-  metaDescription: "Prepare for your Year 1 steamfitter/pipefitter apprenticeship exam. Practice questions and quizzes built on the curriculum. Start free today.",
+  title: 'Steamfitter Pipefitter Year 1 Exam Prep | Red Seal 307A Practice Questions | TradeBenchPrep',
+  metaDescription: 'Steamfitter pipefitter year 1 exam prep Canada. Red Seal 307A practice questions. Free.',
   h1: 'Steamfitter / Pipefitter Year 1 Apprenticeship Exam Prep',
   intro: "Year 1 of the steamfitter/pipefitter apprenticeship builds the foundational knowledge every pipefitter needs — pipe materials, joining methods, tools, safety, and basic blueprint reading. TradeBenchPrep provides structured practice for all first period content so you are fully prepared for your Year 1 exam.",
   whatsCovered: [
@@ -381,8 +381,8 @@ addYearContent('steamfitter-pipefitter_1', {
 });
 
 addYearContent('steamfitter-pipefitter_2', {
-  title: 'Steamfitter Pipefitter Year 2 Exam Prep | Apprenticeship Practice Test | TradeBenchPrep',
-  metaDescription: "Study for your Year 2 steamfitter/pipefitter apprenticeship exam. Practice tests covering steam systems, hydronic heating, and intermediate piping codes.",
+  title: 'Steamfitter Pipefitter Year 2 Exam Prep | Red Seal 307A Practice Questions | TradeBenchPrep',
+  metaDescription: 'Steamfitter pipefitter year 2 exam prep Canada. Red Seal practice test, piping codes. Free.',
   h1: 'Steamfitter / Pipefitter Year 2 Apprenticeship Exam Prep',
   intro: "Year 2 of the steamfitter/pipefitter apprenticeship moves from foundational skills into applied system knowledge. Steam systems, hydronic heating, more complex blueprint reading, and intermediate piping code application define this period. TradeBenchPrep gives you targeted practice for all second period content.",
   whatsCovered: [
@@ -412,8 +412,8 @@ addYearContent('steamfitter-pipefitter_2', {
 });
 
 addYearContent('steamfitter-pipefitter_3', {
-  title: 'Steamfitter Pipefitter Year 3 Exam Prep | Apprenticeship Practice Test | TradeBenchPrep',
-  metaDescription: "Prepare for your Year 3 steamfitter/pipefitter apprenticeship exam. Advanced piping systems, process piping, and code mastery. curriculum aligned.",
+  title: 'Steamfitter Pipefitter Year 3 Exam Prep | Red Seal 307A Practice Questions | TradeBenchPrep',
+  metaDescription: 'Steamfitter pipefitter year 3 exam prep Canada. Red Seal practice test, process piping. Free.',
   h1: 'Steamfitter / Pipefitter Year 3 Apprenticeship Exam Prep',
   intro: "Year 3 of the steamfitter/pipefitter apprenticeship advances into industrial process piping, refrigeration systems, and more complex code requirements. This is where the technical depth of the trade becomes most apparent. TradeBenchPrep provides practice specifically aligned to third period content.",
   whatsCovered: [
@@ -440,8 +440,8 @@ addYearContent('steamfitter-pipefitter_3', {
 });
 
 addYearContent('steamfitter-pipefitter_4', {
-  title: 'Steamfitter Pipefitter Year 4 Exam Prep | Apprenticeship Practice Test | TradeBenchPrep',
-  metaDescription: "Study for your Year 4 steamfitter/pipefitter apprenticeship exam. Advanced industrial piping, system commissioning, and full curriculum coverage.",
+  title: 'Steamfitter Pipefitter Year 4 Exam Prep | Red Seal 307A Practice Questions | TradeBenchPrep',
+  metaDescription: 'Steamfitter pipefitter year 4 exam prep Canada. Red Seal practice test. Free.',
   h1: 'Steamfitter / Pipefitter Year 4 Apprenticeship Exam Prep',
   intro: "Year 4 is the final period of the steamfitter/pipefitter apprenticeship. Advanced industrial systems, system commissioning, project coordination, and comprehensive code mastery define this period. Completing Year 4 qualifies you to challenge the Interprovincial exam for journeyman certification. TradeBenchPrep gives you everything you need to finish your apprenticeship strong.",
   whatsCovered: [
@@ -467,8 +467,8 @@ addYearContent('steamfitter-pipefitter_4', {
 
 // --- Welder Year 1 ---
 addYearContent('welder_1', {
-  title: 'Welder Year 1 Exam Prep | Apprenticeship Practice Test | TradeBenchPrep',
-  metaDescription: "Prepare for your Year 1 welder apprenticeship exam. Practice questions and quizzes built on the welding curriculum. Start free today.",
+  title: 'Welder Year 1 Exam Prep | Red Seal 456A Practice Questions | TradeBenchPrep',
+  metaDescription: 'Welder year 1 exam prep Canada. Red Seal 456A practice questions. Free.',
   h1: 'Welder Year 1 Apprenticeship Exam Prep',
   intro: "Year 1 of the welder apprenticeship introduces the foundational knowledge every welder needs — basic metallurgy, SMAW process fundamentals, safety, blueprint reading, and joint design. TradeBenchPrep provides structured practice for all first period content so you go into your Year 1 exam fully prepared.",
   whatsCovered: [
@@ -498,8 +498,8 @@ addYearContent('welder_1', {
 });
 
 addYearContent('welder_2', {
-  title: 'Welder Year 2 Exam Prep | Apprenticeship Practice Test | TradeBenchPrep',
-  metaDescription: "Study for your Year 2 welder apprenticeship exam. Practice tests covering GMAW, FCAW, GTAW, intermediate metallurgy, and welding codes. aligned.",
+  title: 'Welder Year 2 Exam Prep | Red Seal 456A Practice Questions | TradeBenchPrep',
+  metaDescription: 'Welder year 2 exam prep Canada. Red Seal practice test, welding codes. Free.',
   h1: 'Welder Year 2 Apprenticeship Exam Prep',
   intro: "Year 2 of the welder apprenticeship expands your process knowledge significantly — GMAW, FCAW, and GTAW join SMAW as processes you must understand thoroughly. Intermediate metallurgy, distortion control, and more detailed code application define this period. TradeBenchPrep provides targeted practice for all second period welding content.",
   whatsCovered: [
@@ -529,8 +529,8 @@ addYearContent('welder_2', {
 });
 
 addYearContent('welder_3', {
-  title: 'Welder Year 3 Exam Prep | Apprenticeship Practice Test | TradeBenchPrep',
-  metaDescription: "Prepare for your Year 3 welder apprenticeship exam. Advanced welding processes, metallurgy, pressure vessel codes, and curriculum coverage.",
+  title: 'Welder Year 3 Exam Prep | Red Seal 456A Practice Questions | TradeBenchPrep',
+  metaDescription: 'Welder year 3 exam prep Canada. Red Seal practice test, pressure vessel codes. Free.',
   h1: 'Welder Year 3 Apprenticeship Exam Prep',
   intro: "Year 3 is the final period of the welder apprenticeship and the most technically advanced. Advanced metallurgy, pressure vessel and pressure piping codes, SAW and specialty processes, and comprehensive quality assurance define this period. Completing Year 3 qualifies you to challenge the Interprovincial exam for journeyman certification. TradeBenchPrep gives you the focused practice to finish your apprenticeship at the highest level.",
   whatsCovered: [
