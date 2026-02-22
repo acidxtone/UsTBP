@@ -4,7 +4,7 @@ import { queryClientInstance } from '@/lib/query-client'
 import NavigationTracker from '@/lib/NavigationTracker'
 import SEO from '@/components/SEO'
 import { HelmetProvider } from 'react-helmet-async'
-import { BrowserRouter as Router, Route, Routes, useLocation, Outlet } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import PageNotFound from '@/lib/PageNotFound';
 import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import { AdProvider, SideAd, StickyHeaderAd, StickyFooterAd } from '@/components/ads/AdProvider';
@@ -38,11 +38,6 @@ const PAGES_WITHOUT_YEAR_HEADER = ['YearSelection', 'TradeSelection', 'Privacy',
 const ROUTES_WITH_ADS = ['/', '/Dashboard', '/Study', '/Quiz', '/QuizSetup', '/Curriculum', '/Settings', '/Privacy', '/Terms'];
 const TRADES_ROUTE_PREFIX = '/trades';
 
-/** Renders nested /trades/* routes (hub, trade hub, year page) so path always matches. */
-function TradesOutlet() {
-  return <Outlet />;
-}
-
 const LayoutWrapper = ({ children, currentPageName }) => {
   const showYearHeader = !PAGES_WITHOUT_YEAR_HEADER.includes(currentPageName);
   return (
@@ -71,11 +66,9 @@ const AuthenticatedApp = () => {
   if (!isAuthenticated) {
     return (
       <Routes>
-        <Route path="/trades" element={<TradesOutlet />}>
-          <Route index element={<TradesHub />} />
-          <Route path=":trade/year-:year" element={<TradeYearPage />} />
-          <Route path=":trade" element={<TradeHubPage />} />
-        </Route>
+        <Route path="/trades/:trade/year-:year" element={<TradeYearPage />} />
+        <Route path="/trades/:trade" element={<TradeHubPage />} />
+        <Route path="/trades" element={<TradesHub />} />
         <Route path="/auth" element={<AuthPage />} />
         <Route path="/Privacy" element={<Privacy />} />
         <Route path="/Terms" element={<Terms />} />
@@ -88,11 +81,9 @@ const AuthenticatedApp = () => {
 
   return (
     <Routes>
-      <Route path="/trades" element={<TradesOutlet />}>
-        <Route index element={<TradesHub />} />
-        <Route path=":trade/year-:year" element={<TradeYearPage />} />
-        <Route path=":trade" element={<TradeHubPage />} />
-      </Route>
+      <Route path="/trades/:trade/year-:year" element={<TradeYearPage />} />
+      <Route path="/trades/:trade" element={<TradeHubPage />} />
+      <Route path="/trades" element={<TradesHub />} />
       <Route path="/auth" element={<Navigate to="/" replace />} />
       {/* Root always shows landing; Get Started sends users to TradeSelection */}
       <Route path="/" element={<LandingPage />} />
