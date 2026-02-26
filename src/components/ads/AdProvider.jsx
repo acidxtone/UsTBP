@@ -109,7 +109,7 @@ export const SideAd = ({ position = 'left' }) => {
   );
 };
 
-// Fixed Top Ad – fixed to viewport top (does not follow scroll)
+// Static Top Ad – positioned in content flow (does not follow scroll)
 export const StickyHeaderAd = () => {
   const { adsEnabled, headerAdClosed, closeHeaderAd, isQuizMode } = useAds();
   const isMobile = useIsMobile();
@@ -119,8 +119,8 @@ export const StickyHeaderAd = () => {
 
   const height = isMobile ? 40 : 60;
   return (
-    <div className="fixed top-0 left-0 right-0 z-40 bg-white border-b border-gray-200 shadow-sm">
-      <div className="relative">
+    <div className="w-full bg-white border-b border-gray-200 shadow-sm">
+      <div className="relative max-w-6xl mx-auto">
         <button
           onClick={closeHeaderAd}
           className="absolute top-1 right-1 md:top-2 md:right-2 z-10 bg-white rounded-full p-1 shadow-md hover:bg-gray-100 transition-colors"
@@ -142,7 +142,7 @@ export const StickyHeaderAd = () => {
   );
 };
 
-// Fixed Bottom Ad – fixed to viewport bottom (does not follow scroll)
+// Static Bottom Ad – positioned in content flow (does not follow scroll)
 export const StickyFooterAd = () => {
   const { adsEnabled, footerAdClosed, closeFooterAd, isQuizMode } = useAds();
   const isMobile = useIsMobile();
@@ -152,9 +152,8 @@ export const StickyFooterAd = () => {
 
   const height = isMobile ? 50 : 90;
   return (
-    <>
-    <div className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 shadow-lg">
-      <div className="relative">
+    <div className="w-full bg-white border-t border-gray-200 shadow-lg">
+      <div className="relative max-w-6xl mx-auto">
         <button
           onClick={closeFooterAd}
           className="absolute top-1 right-1 md:top-2 md:right-2 z-10 bg-white rounded-full p-1 shadow-md hover:bg-gray-100 transition-colors"
@@ -173,9 +172,6 @@ export const StickyFooterAd = () => {
         />
       </div>
     </div>
-    {/* Spacer so content isn't hidden behind sticky footer – smaller on mobile */}
-    <div className="h-12 md:h-20" />
-    </>
   );
 };
 
