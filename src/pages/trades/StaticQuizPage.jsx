@@ -1,5 +1,14 @@
 /**
  * Static quiz page: loads questions from CSV in repo (no Supabase/auth).
+ *
+ * Mirrors the original app’s quiz data flow:
+ * - Original: Quiz.jsx uses api.entities.Question.filter({ trade, year }) with trade from
+ *   user.selected_trade (code E/M/W/SF); Supabase returns questions with same shape (option_a..d,
+ *   correct_answer, section, etc.). See api/supabaseClient.js Question.filter + transform.
+ * - Here: trade/year come from the URL; we fetch /questions.csv and filter via
+ *   getQuestionsFromCSV() which uses the same trade mapping (getTradeDbValue) and outputs
+ *   the same question shape so QuestionCard and ResultsCard work unchanged.
+ *
  * Route: /trades/:trade/year-:year/full-exam | /trades/:trade/year-:year/section-:sectionNum
  * Data: /questions.csv (single CSV in repo; parsed and filtered in browser)
  */

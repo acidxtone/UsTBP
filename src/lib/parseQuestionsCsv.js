@@ -1,16 +1,32 @@
 /**
  * Parse questions CSV in the browser and filter by trade/year/section or build full exam.
+ *
+ * Aligned with the original app:
+ * - Question shape matches api.entities.Question.filter() return (see api/supabaseClient.js
+ *   Question.transform): id, year, section, section_name, difficulty, question_text,
+ *   option_a..d, correct_answer, explanation, reference. Same as Supabase questions table / CSV.
+ * - Trade filtering: original uses getTradeDbValue(tradeCode) for DB/CSV trade column (electrician,
+ *   millwright, welder, steamfitter_pipefitter). We map URL slug -> trade code -> getTradeDbValue().
+ *
  * CSV columns: id, year, section, section_name, difficulty, question_text,
  * option_a, option_b, option_c, option_d, correct_answer, explanation, reference, created_at, trade, country
  */
 
-// URL slug -> CSV trade column value
-const TRADE_SLUG_TO_CSV = {
-  electrician: 'electrician',
-  millwright: 'millwright',
-  welder: 'welder',
-  'steamfitter-pipefitter': 'steamfitter_pipefitter',
+import { getTradeDbValue } from '@/lib/trade-config';
+
+// URL slug (from /trades/:trade/...) -> trade code (E, M, W, SF) -> same as original app
+const TRADE_SLUG_TO_CODE = {
+  electrician: 'E',
+  millwright: 'M',
+  welder: 'W',
+  'steamfitter-pipefitter': 'SF',
 };
+
+/** CSV/DB trade value for a slug — same as original app’s getTradeDbValue(tradeCode) */
+function getTradeCsvValue(slug) {
+  const code = TRADE_SLUG_TO_CODE[slug];
+  return code ? getTradeDbValue(code) : null;
+}
 
 // Full exam section distribution (target counts out of 100) per trade code and year
 const FULL_EXAM_DISTRIBUTION = {
@@ -37,13 +53,6 @@ const FULL_EXAM_DISTRIBUTION = {
     3: { 1: 38, 2: 37, 3: 13, 4: 12 },
     4: { 1: 19, 2: 20, 3: 11, 4: 17, 5: 13, 6: 20 },
   },
-};
-
-const TRADE_SLUG_TO_CODE = {
-  electrician: 'E',
-  millwright: 'M',
-  welder: 'W',
-  'steamfitter-pipefitter': 'SF',
 };
 
 function parseCSVLine(line) {
@@ -150,7 +159,7 @@ function normalizeTrade(trade) {
 }
 
 export function getQuestionsFromCSV(rows, { tradeSlug, yearNum, isFullExam, sectionNum }) {
-  const csvTrade = TRADE_SLUG_TO_CSV[tradeSlug];
+  const csvTrade = getTradeCsvValue(tradeSlug);
   if (!csvTrade) return [];
 
   const questions = rows
@@ -164,7 +173,7 @@ export function getQuestionsFromCSV(rows, { tradeSlug, yearNum, isFullExam, sect
     .filter((q) => q.id && q.question_text);
 
   if (isFullExam) {
-    const code = TRADE_SLUG_TO_CODE[tradeSlug];
+    const code = TRADE_SLUG_TO_CODE[tradeSlug] ?? null;
     const dist = code && FULL_EXAM_DISTRIBUTION[code] && FULL_EXAM_DISTRIBUTION[code][yearNum];
     if (dist && questions.length >= 100) {
       const bySection = {};
