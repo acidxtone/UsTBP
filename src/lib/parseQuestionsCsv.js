@@ -66,9 +66,10 @@ function parseCSVLine(line) {
 }
 
 export function parseCSV(csvText) {
-  const lines = csvText.split(/\r?\n/).filter((l) => l.trim());
+  const raw = (csvText || '').replace(/^\uFEFF/, '');
+  const lines = raw.split(/\r?\n/).filter((l) => l.trim());
   if (lines.length < 2) return [];
-  const header = parseCSVLine(lines[0]);
+  const header = parseCSVLine(lines[0]).map((h) => h.trim());
   const rows = [];
   for (let i = 1; i < lines.length; i++) {
     const values = parseCSVLine(lines[i]);
@@ -117,14 +118,20 @@ function shuffle(arr) {
  * @param {{ tradeSlug: string, yearNum: number, isFullExam: boolean, sectionNum?: number }} opts
  * @returns {Object[]} Questions in quiz shape
  */
+/** Normalize CSV trade value for matching: lowercase, spaces and slashes to underscore */
+function normalizeTrade(trade) {
+  return (trade || '').trim().toLowerCase().replace(/\s+/g, '_').replace(/\//g, '_');
+}
+
 export function getQuestionsFromCSV(rows, { tradeSlug, yearNum, isFullExam, sectionNum }) {
   const csvTrade = TRADE_SLUG_TO_CSV[tradeSlug];
   if (!csvTrade) return [];
 
   const questions = rows
     .filter((r) => {
-      const t = (r.trade || '').trim().toLowerCase().replace(/\s+/g, '_');
-      return t === csvTrade || (r.trade || '').trim().toLowerCase() === csvTrade;
+      const norm = normalizeTrade(r.trade);
+      // Match exact (electrician, welder, steamfitter_pipefitter) or prefix (millwright_...)
+      return norm === csvTrade || norm.startsWith(csvTrade + '_');
     })
     .filter((r) => parseInt(r.year, 10) === yearNum)
     .map(rowToQuestion)
