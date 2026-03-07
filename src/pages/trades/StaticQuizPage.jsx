@@ -1,7 +1,7 @@
 /**
- * Static quiz page: loads questions from JSON (no Supabase/auth).
+ * Static quiz page: loads questions from CSV in repo (no Supabase/auth).
  * Route: /trades/:trade/year-:year/full-exam | /trades/:trade/year-:year/section-:sectionNum
- * Data: /data/:trade/year-:year/full-exam.json or section-:sectionNum.json
+ * Data: /questions.csv (single CSV in repo; parsed and filtered in browser)
  */
 import React, { useState, useEffect, useCallback } from 'react';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
@@ -23,6 +23,7 @@ import ProgressBar from '@/components/quiz/ProgressBar';
 import ResultsCard from '@/components/quiz/ResultsCard';
 import TradesLayout from './TradesLayout';
 import { TRADES, VALID_TRADE_SLUGS } from './tradesContent';
+import { parseCSV, getQuestionsFromCSV } from '@/lib/parseQuestionsCsv';
 
 export default function StaticQuizPage({ trade: tradeProp, year: yearProp, quizType: quizTypeProp }) {
   const trade = tradeProp;
@@ -47,24 +48,26 @@ export default function StaticQuizPage({ trade: tradeProp, year: yearProp, quizT
   const [quizStarted, setQuizStarted] = useState(false);
   const navigate = useNavigate();
 
-  const dataPath = trade && yearNum
-    ? `/data/${trade}/year-${yearNum}/${isFullExam ? 'full-exam' : `section-${sectionNum}`}.json`
-    : null;
-
   useEffect(() => {
-    if (!dataPath) {
+    if (!trade || !yearNum) {
       setLoading(false);
       return;
     }
     setLoading(true);
     setLoadError(null);
-    fetch(dataPath)
+    fetch('/questions.csv')
       .then((r) => {
         if (!r.ok) throw new Error(`Failed to load questions: ${r.status}`);
-        return r.json();
+        return r.text();
       })
-      .then((data) => {
-        const list = Array.isArray(data) ? data : [];
+      .then((csvText) => {
+        const rows = parseCSV(csvText);
+        const list = getQuestionsFromCSV(rows, {
+          tradeSlug: trade,
+          yearNum,
+          isFullExam,
+          sectionNum: sectionNum ?? 0,
+        });
         setQuizQuestions(list);
         setCurrentIndex(0);
         setAnswers([]);
@@ -77,7 +80,7 @@ export default function StaticQuizPage({ trade: tradeProp, year: yearProp, quizT
         setQuizQuestions([]);
       })
       .finally(() => setLoading(false));
-  }, [dataPath]);
+  }, [trade, yearNum, isFullExam, sectionNum]);
 
   if (!trade || !VALID_TRADE_SLUGS.includes(trade) || !yearNum) {
     return <Navigate to="/trades" replace />;

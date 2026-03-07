@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { BookOpen, ArrowRight } from 'lucide-react';
 import { BannerAd, InContentAd } from '@/components/ads/AdSense';
-import AnonymousSession from '@/lib/AnonymousSession';
 
 /**
  * Shared layout for all /trades static pages. Matches LandingPage nav and footer styling.
@@ -11,8 +10,7 @@ import AnonymousSession from '@/lib/AnonymousSession';
  */
 export function getGetStartedHandler() {
   return () => {
-    AnonymousSession.init(null);
-    window.location.href = '/TradeSelection';
+    window.location.href = '/trades';
   };
 }
 

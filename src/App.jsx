@@ -15,16 +15,11 @@ import { initPeriodicCleanup } from '@/lib/SessionCleanup';
 import YearHeader from '@/components/YearHeader';
 import { VALID_TRADE_SLUGS } from '@/pages/trades/tradesContent';
 
-const Dashboard = lazy(() => import('@/pages/Dashboard'));
 const LandingPage = lazy(() => import('@/pages/LandingPage'));
 const AuthPage = lazy(() => import('@/pages/AuthPage'));
 const Study = lazy(() => import('@/pages/Study'));
-const Quiz = lazy(() => import('@/pages/Quiz'));
-const QuizSetup = lazy(() => import('@/pages/QuizSetup'));
 const Settings = lazy(() => import('@/pages/Settings'));
 const Curriculum = lazy(() => import('@/pages/Curriculum'));
-const YearSelection = lazy(() => import('@/pages/YearSelection'));
-const TradeSelection = lazy(() => import('@/pages/TradeSelection'));
 const Privacy = lazy(() => import('@/pages/Privacy'));
 const Terms = lazy(() => import('@/pages/Terms'));
 const DebugQuestions = lazy(() => import('@/components/DebugQuestions'));
@@ -135,27 +130,16 @@ const AuthenticatedApp = () => {
   return (
     <Routes>
       <Route path="/auth" element={<Navigate to="/" replace />} />
-      {/* Root always shows landing; Get Started sends users to TradeSelection */}
       <Route path="/" element={<LandingPage />} />
-      <Route path="/Dashboard" element={
-        <LayoutWrapper currentPageName="Dashboard">
-          <Dashboard />
-        </LayoutWrapper>
-      } />
-      {/* Add explicit routes for all pages */}
+      {/* Static quiz is the only path: redirect old app routes to /trades */}
+      <Route path="/Dashboard" element={<Navigate to="/trades" replace />} />
+      <Route path="/Quiz" element={<Navigate to="/trades" replace />} />
+      <Route path="/QuizSetup" element={<Navigate to="/trades" replace />} />
+      <Route path="/TradeSelection" element={<Navigate to="/trades" replace />} />
+      <Route path="/YearSelection" element={<Navigate to="/trades" replace />} />
       <Route path="/Study" element={
         <LayoutWrapper currentPageName="Study">
           <Study />
-        </LayoutWrapper>
-      } />
-      <Route path="/Quiz" element={
-        <LayoutWrapper currentPageName="Quiz">
-          <Quiz key={location.search || 'default'} />
-        </LayoutWrapper>
-      } />
-      <Route path="/QuizSetup" element={
-        <LayoutWrapper currentPageName="QuizSetup">
-          <QuizSetup />
         </LayoutWrapper>
       } />
       <Route path="/Settings" element={
@@ -186,16 +170,6 @@ const AuthenticatedApp = () => {
       <Route path="/terms-of-service" element={
         <LayoutWrapper currentPageName="Terms">
           <Terms />
-        </LayoutWrapper>
-      } />
-      <Route path="/TradeSelection" element={
-        <LayoutWrapper currentPageName="TradeSelection">
-          <TradeSelection />
-        </LayoutWrapper>
-      } />
-      <Route path="/YearSelection" element={
-        <LayoutWrapper currentPageName="YearSelection">
-          <YearSelection />
         </LayoutWrapper>
       } />
       {import.meta.env.DEV && (

@@ -1,16 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { BookOpen, Target, Zap, CheckCircle, ArrowRight } from "lucide-react";
 import { BannerAd, InContentAd } from '@/components/ads/AdSense';
-import AnonymousSession from '@/lib/AnonymousSession';
 
 export default function LandingPage() {
-  const handleGetStarted = () => {
-    AnonymousSession.init(null);
-    window.location.href = '/TradeSelection';
-  };
+  const navigate = useNavigate();
+  const handleGetStarted = () => navigate('/trades');
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
