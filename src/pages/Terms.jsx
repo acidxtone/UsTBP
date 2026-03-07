@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { BannerAd } from '@/components/ads/AdSense';
+import { BannerAd, InContentAd } from '@/components/ads/AdSense';
 
 /**
  * Terms of Service Page
@@ -11,6 +11,7 @@ const Terms = () => {
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-4xl mx-auto px-4 py-8">
         <div className="bg-white rounded-lg shadow-sm p-8">
+          <BannerAd position="top" />
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Terms of Service</h1>
           <p className="text-gray-500 text-sm mb-8">Effective Date: February 17, 2026</p>
 
@@ -53,6 +54,8 @@ const Terms = () => {
               <p className="text-gray-600 mb-4"><strong>b) Backend Storage:</strong> Certain usage data may be temporarily stored on our servers for up to seven (7) days and is then permanently deleted. See our Privacy Policy for further details.</p>
               <p className="text-gray-600"><strong>c) User Deletion:</strong> You may delete your stored information at any time through the Settings page within the App. We are not liable for any loss of data resulting from your use of this feature.</p>
             </section>
+
+            <InContentAd position="middle" />
 
             <section className="mb-8">
               <h2 className="text-xl font-semibold text-gray-800 mb-4">6. Accuracy of Content</h2>

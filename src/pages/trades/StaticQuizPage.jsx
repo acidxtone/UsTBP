@@ -33,6 +33,8 @@ import ResultsCard from '@/components/quiz/ResultsCard';
 import TradesLayout from './TradesLayout';
 import { TRADES, VALID_TRADE_SLUGS } from './tradesContent';
 import { parseCSV, getQuestionsFromCSV } from '@/lib/parseQuestionsCsv';
+import { useAds } from '@/components/ads/AdProvider';
+import { BannerAd, InContentAd } from '@/components/ads/AdSense';
 
 export default function StaticQuizPage({ trade: tradeProp, year: yearProp, quizType: quizTypeProp }) {
   const trade = tradeProp;
@@ -56,6 +58,14 @@ export default function StaticQuizPage({ trade: tradeProp, year: yearProp, quizT
   const [startTime, setStartTime] = useState(Date.now());
   const [quizStarted, setQuizStarted] = useState(false);
   const navigate = useNavigate();
+  const { setQuizMode } = useAds();
+
+  // Hide global sticky/side ads during active Q&A; show on intro and results
+  useEffect(() => {
+    const inQuestionFlow = quizStarted && !quizComplete && quizQuestions.length > 0;
+    setQuizMode(inQuestionFlow);
+    return () => setQuizMode(false);
+  }, [quizStarted, quizComplete, quizQuestions.length, setQuizMode]);
 
   useEffect(() => {
     if (!trade || !yearNum) {
@@ -226,6 +236,12 @@ export default function StaticQuizPage({ trade: tradeProp, year: yearProp, quizT
               Start quiz
             </Button>
           </div>
+          <div className="mt-8">
+            <InContentAd position="middle" />
+          </div>
+          <div className="mt-6">
+            <BannerAd position="bottom" />
+          </div>
         </div>
       </TradesLayout>
     );
@@ -266,6 +282,12 @@ export default function StaticQuizPage({ trade: tradeProp, year: yearProp, quizT
                 : undefined
             }
           />
+          <div className="mt-8">
+            <InContentAd position="middle" />
+          </div>
+          <div className="mt-6">
+            <BannerAd position="bottom" />
+          </div>
         </div>
       </TradesLayout>
     );

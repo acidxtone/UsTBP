@@ -1,11 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { createPageUrl } from '@/utils';
+import { Helmet } from 'react-helmet-async';
 import { Button } from "@/components/ui/button";
 import { AlertTriangle } from "lucide-react";
 
+const TITLE_404 = 'Page Not Found | TradeBenchPrep';
+const DESCRIPTION_404 = 'The page you requested could not be found. Return to TradeBenchPrep to browse trades and practice exams.';
+
 export default function PageNotFound() {
   return (
+    <>
+      <Helmet>
+        <title>{TITLE_404}</title>
+        <meta name="description" content={DESCRIPTION_404} />
+        <meta property="og:title" content={TITLE_404} />
+        <meta property="og:description" content={DESCRIPTION_404} />
+        <meta name="robots" content="noindex, follow" />
+      </Helmet>
     <div className="min-h-screen bg-slate-50 flex flex-col items-center justify-center p-4">
       <div className="text-center max-w-md flex-1 flex flex-col justify-center">
         <div className="mb-6 flex justify-center">
@@ -19,11 +30,12 @@ export default function PageNotFound() {
           Sorry, we couldn't find the page you're looking for. It might have been moved or deleted.
         </p>
         <Button asChild className="bg-slate-900 hover:bg-slate-800">
-          <Link to={createPageUrl('Dashboard')}>
-            Return to Dashboard
+          <Link to="/trades">
+            Return to Trades
           </Link>
         </Button>
       </div>
     </div>
+    </>
   );
 }

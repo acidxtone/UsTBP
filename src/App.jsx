@@ -92,6 +92,11 @@ function TradesOrRest() {
     }
   }
 
+  // Any other /trades/* (invalid slug, bad year, typo) → hub
+  if (path.startsWith('/trades')) {
+    return <Navigate to="/trades" replace />;
+  }
+
   return (
     <Routes>
       <Route path="*" element={<AuthenticatedApp />} />
@@ -196,11 +201,15 @@ const AuthenticatedApp = () => {
   );
 };
 
-/** True for /trades (hub) or /trades/:trade/year-N (year pages). Not for /trades/:trade (trade hub — low content). */
+/** True for any content-rich /trades route: hub, trade hub, year page, or quiz (intro/results; quiz Q&A hides via setQuizMode). */
 function isTradesRouteWithAds(pathname) {
   const path = pathname.replace(/\/$/, '') || '/';
+  if (path !== '/trades' && !path.startsWith('/trades/')) return false;
   if (path === '/trades') return true;
-  return /^\/trades\/[^/]+\/year-\d+$/.test(path);
+  if (/^\/trades\/[^/]+$/.test(path)) return true; // trade hub
+  if (/^\/trades\/[^/]+\/year-\d+$/.test(path)) return true; // year page
+  if (/^\/trades\/[^/]+\/year-\d+\/(full-exam|section-\d+)$/.test(path)) return true; // quiz URL
+  return false;
 }
 
 /** Renders global ads only on content-rich routes. Never show during auth loading

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { BannerAd } from '@/components/ads/AdSense';
+import { BannerAd, InContentAd } from '@/components/ads/AdSense';
 
 /**
  * Privacy Policy Page
@@ -11,6 +11,7 @@ const Privacy = () => {
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-4xl mx-auto px-4 py-8">
         <div className="bg-white rounded-lg shadow-sm p-8">
+          <BannerAd position="top" />
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Privacy Policy</h1>
           <p className="text-gray-500 text-sm mb-8">Effective Date: February 17, 2026</p>
 
@@ -46,6 +47,8 @@ const Privacy = () => {
               <p className="text-gray-600 mb-4"><strong>Backend Data:</strong> Any data temporarily stored on our backend servers is automatically and permanently deleted within seven (7) days of collection. We do not retain personally identifiable backend data beyond this period.</p>
               <p className="text-gray-600"><strong>Browser Data:</strong> Data stored locally in your browser persists until you clear your browser storage or use the deletion feature within the App. We have no control over browser-stored data after it is saved to your device.</p>
             </section>
+
+            <InContentAd position="middle" />
 
             <section className="mb-8">
               <h2 className="text-xl font-semibold text-gray-800 mb-4">4. Your Right to Delete Your Information</h2>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useParams, Navigate } from 'react-router-dom';
-import TradesLayout, { GetStartedButton } from './TradesLayout';
+import TradesLayout, { GetStartedButton, TradesAdTop, TradesAdMiddle, TradesAdBottom } from './TradesLayout';
 import { TRADES, VALID_TRADE_SLUGS, getTradeHubContent } from './tradesContent';
 
 /** Optional trade prop when rendered by pathname (bypasses Route params). */
@@ -32,6 +32,8 @@ export default function TradeHubPage({ trade: tradeProp }) {
         </div>
       </div>
 
+      <TradesAdTop />
+
       <section className="py-12 px-6 border-t border-slate-100">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-serif font-bold text-slate-900 mb-4">
@@ -57,11 +59,15 @@ export default function TradeHubPage({ trade: tradeProp }) {
         </div>
       </section>
 
+      <TradesAdMiddle />
+
       <section className="py-12 px-6 border-t border-slate-100">
         <div className="max-w-4xl mx-auto flex justify-center">
           <GetStartedButton />
         </div>
       </section>
+
+      <TradesAdBottom />
     </TradesLayout>
   );
 }
