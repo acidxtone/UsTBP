@@ -26,7 +26,7 @@ export default function TradesHub() {
 
       <TradesAdTop />
 
-      <section className="py-12 px-6 border-t border-slate-100">
+      <section id="choose-trade" className="py-12 px-6 border-t border-slate-100 scroll-mt-24">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-serif font-bold text-slate-900 text-center mb-8">
             Choose Your Trade

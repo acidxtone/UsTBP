@@ -1,21 +1,29 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { BookOpen, ArrowRight } from 'lucide-react';
 import { BannerAd, InContentAd } from '@/components/ads/AdSense';
 
 /**
- * Shared layout for all /trades static pages. Matches LandingPage nav and footer styling.
- * Renders: nav (Home + Get Started), optional breadcrumb, children, footer.
+ * Get Started: on /trades hub scroll to "Choose Your Trade"; otherwise navigate to /trades.
  */
-export function getGetStartedHandler() {
+export function useGetStartedHandler() {
+  const location = useLocation();
+  const navigate = useNavigate();
   return () => {
-    window.location.href = '/trades';
+    const path = (location.pathname || '').replace(/\/$/, '') || '/';
+    if (path === '/trades') {
+      const el = document.getElementById('choose-trade');
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      else navigate('/trades');
+    } else {
+      navigate('/trades');
+    }
   };
 }
 
 export default function TradesLayout({ children, breadcrumb }) {
-  const handleGetStarted = getGetStartedHandler();
+  const handleGetStarted = useGetStartedHandler();
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
@@ -73,7 +81,7 @@ export default function TradesLayout({ children, breadcrumb }) {
 }
 
 export function GetStartedButton({ className = '' }) {
-  const handleGetStarted = getGetStartedHandler();
+  const handleGetStarted = useGetStartedHandler();
   return (
     <Button
       size="lg"
