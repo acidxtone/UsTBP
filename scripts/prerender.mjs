@@ -100,15 +100,29 @@ function baseHeadFragment() {
     <\/script>`;
 }
 
+/** Organization JSON-LD for homepage only — helps logo appear in Google Search. */
+function organizationSchemaScript() {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'TradeBenchPrep',
+    url: BASE_URL,
+    logo: BASE_URL + '/favicon.png',
+  };
+  return `    <script type="application/ld+json">${JSON.stringify(schema)}<\/script>`;
+}
+
 function buildHead(title, description, canonical) {
   const safeTitle = escapeHtml(title);
   const safeDesc = escapeHtml(description);
   const safeCanon = escapeHtml(canonical);
+  const isHomepage = canonical === BASE_URL + '/';
   return `  <head>
     <title>${safeTitle}</title>
     <meta name="description" content="${safeDesc}" />
     <link rel="canonical" href="${safeCanon}" />
     ${criticalCSS()}
+    ${isHomepage ? organizationSchemaScript() + '\n' : ''}
     <meta property="og:title" content="${safeTitle}" />
     <meta property="og:description" content="${safeDesc}" />
     <meta property="og:type" content="website" />
