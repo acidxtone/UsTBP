@@ -33,6 +33,7 @@ const ConnectionTest = lazy(() => import('@/components/ConnectionTest'));
 const TradesHub = lazy(() => import('@/pages/trades/TradesHub'));
 const TradeHubPage = lazy(() => import('@/pages/trades/TradeHubPage'));
 const TradeYearPage = lazy(() => import('@/pages/trades/TradeYearPage'));
+const StaticQuizPage = lazy(() => import('@/pages/trades/StaticQuizPage'));
 
 function RouteLoadingFallback() {
   return (
@@ -73,6 +74,13 @@ function TradesOrRest() {
 
   if (path === '/trades') {
     return <TradesHub />;
+  }
+  const quizMatch = path.match(/^\/trades\/([^/]+)\/year-(\d+)\/(full-exam|section-\d+)$/);
+  if (quizMatch) {
+    const [, trade, yearStr, quizType] = quizMatch;
+    if (VALID_TRADE_SLUGS.includes(trade)) {
+      return <StaticQuizPage trade={trade} year={yearStr} quizType={quizType} />;
+    }
   }
   const yearMatch = path.match(/^\/trades\/([^/]+)\/year-(\d+)$/);
   if (yearMatch) {

@@ -17,7 +17,8 @@ const sectionColors = {
   2: "bg-purple-50 text-purple-700",
   3: "bg-orange-50 text-orange-700",
   4: "bg-teal-50 text-teal-700",
-  5: "bg-pink-50 text-pink-700"
+  5: "bg-pink-50 text-pink-700",
+  6: "bg-green-50 text-green-700",
 };
 
 export default function QuestionCard({ 

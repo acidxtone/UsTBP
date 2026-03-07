@@ -2,6 +2,14 @@ import React from 'react';
 import { Link, useParams, Navigate } from 'react-router-dom';
 import TradesLayout, { GetStartedButton, TradesAdTop, TradesAdMiddle, TradesAdBottom } from './TradesLayout';
 import { TRADES, VALID_TRADE_SLUGS, getTradeYearContent } from './tradesContent';
+import { getSectionsForTradeYear } from '@/lib/trade-config';
+
+const TRADE_SLUG_TO_CODE = {
+  electrician: 'E',
+  millwright: 'M',
+  welder: 'W',
+  'steamfitter-pipefitter': 'SF',
+};
 
 /** Renders paragraph array or single string as paragraphs */
 function Paragraphs({ content }) {
@@ -44,6 +52,12 @@ export default function TradeYearPage({ trade: tradeProp, year: yearProp }) {
   );
 
   const isNewFormat = Array.isArray(content.needsToKnow);
+  const tradeCode = TRADE_SLUG_TO_CODE[trade];
+  const sectionInfo = tradeCode ? getSectionsForTradeYear(tradeCode, yearNum) : {};
+  const sections = Object.entries(sectionInfo).map(([numStr, info]) => ({
+    num: parseInt(numStr, 10),
+    name: info?.name || `Section ${numStr}`,
+  }));
 
   return (
     <TradesLayout breadcrumb={breadcrumb}>
@@ -57,6 +71,33 @@ export default function TradeYearPage({ trade: tradeProp, year: yearProp }) {
         <div className="my-8">
           <GetStartedButton />
         </div>
+
+        <section className="py-8 border-t border-slate-100">
+          <h2 className="text-2xl font-serif font-bold text-slate-900 mb-4">
+            Practice Quizzes
+          </h2>
+          <p className="text-slate-600 mb-6 leading-relaxed">
+            Take a full practice exam or focus on a specific section. Each quiz runs in your browser with no sign-in required.
+          </p>
+          <div className="space-y-3">
+            <Link
+              to={`/trades/${trade}/year-${yearNum}/full-exam`}
+              className="block p-4 rounded-xl border-2 border-slate-200 hover:border-slate-400 hover:bg-slate-50 transition-colors"
+            >
+              <span className="font-semibold text-slate-900">Full practice exam</span>
+              <span className="text-slate-500 text-sm block mt-1">100 questions, all sections</span>
+            </Link>
+            {sections.map(({ num, name }) => (
+              <Link
+                key={num}
+                to={`/trades/${trade}/year-${yearNum}/section-${num}`}
+                className="block p-4 rounded-xl border-2 border-slate-200 hover:border-slate-400 hover:bg-slate-50 transition-colors"
+              >
+                <span className="font-semibold text-slate-900">Section {num}: {name}</span>
+              </Link>
+            ))}
+          </div>
+        </section>
       </div>
 
       <TradesAdTop />

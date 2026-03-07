@@ -29,7 +29,8 @@ export default function ResultsCard({
   results,
   onRetry,
   onHome,
-  onReviewWrong
+  onReviewWrong,
+  homeLabel = 'Dashboard'
 }) {
   const { 
     score_percentage, 
@@ -203,7 +204,7 @@ export default function ResultsCard({
               className="h-12"
             >
               <Home className="mr-2 h-4 w-4" />
-              Dashboard
+              {homeLabel}
             </Button>
             {question_results.some(r => !r.correct) && (
               <Button 
