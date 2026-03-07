@@ -65,9 +65,35 @@ function parseCSVLine(line) {
   return out;
 }
 
+/** Split CSV text into rows, respecting quoted fields that contain newlines */
+function splitCSVRows(text) {
+  const rows = [];
+  let current = '';
+  let inQuotes = false;
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i];
+    if (c === '"') {
+      inQuotes = !inQuotes;
+      current += c;
+    } else if (c === '\n' || c === '\r') {
+      if (!inQuotes) {
+        if (current.trim()) rows.push(current);
+        current = '';
+        if (c === '\r' && text[i + 1] === '\n') i++;
+      } else {
+        current += c;
+      }
+    } else {
+      current += c;
+    }
+  }
+  if (current.trim()) rows.push(current);
+  return rows;
+}
+
 export function parseCSV(csvText) {
   const raw = (csvText || '').replace(/^\uFEFF/, '');
-  const lines = raw.split(/\r?\n/).filter((l) => l.trim());
+  const lines = splitCSVRows(raw);
   if (lines.length < 2) return [];
   const header = parseCSVLine(lines[0]).map((h) => h.trim());
   const rows = [];
