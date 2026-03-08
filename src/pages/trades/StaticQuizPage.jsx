@@ -1,5 +1,5 @@
 /**
- * Static quiz page: loads questions from CSV in repo (no Supabase/auth).
+ * Static quiz page: loads questions from JSON files in public/data (no Supabase/auth).
  *
  * Mirrors the original app’s quiz data flow:
  * - Original: Quiz.jsx uses api.entities.Question.filter({ trade, year }) with trade from
@@ -10,7 +10,7 @@
  *   the same question shape so QuestionCard and ResultsCard work unchanged.
  *
  * Route: /trades/:trade/year-:year/full-exam | /trades/:trade/year-:year/section-:sectionNum
- * Data: /questions.csv (single CSV in repo; parsed and filtered in browser)
+ * Data: /data/{trade}/year-{n}/full-exam.json or section-{num}.json
  */
 import React, { useState, useEffect, useCallback } from 'react';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
@@ -32,7 +32,6 @@ import ProgressBar from '@/components/quiz/ProgressBar';
 import ResultsCard from '@/components/quiz/ResultsCard';
 import TradesLayout from './TradesLayout';
 import { TRADES, VALID_TRADE_SLUGS } from './tradesContent';
-import { parseCSV, getQuestionsFromCSV } from '@/lib/parseQuestionsCsv';
 import { useAds } from '@/components/ads/AdProvider';
 import { BannerAd, InContentAd } from '@/components/ads/AdSense';
 
@@ -72,22 +71,23 @@ export default function StaticQuizPage({ trade: tradeProp, year: yearProp, quizT
       setLoading(false);
       return;
     }
+    if (!isFullExam && (sectionNum == null || Number.isNaN(sectionNum))) {
+      setLoading(false);
+      return;
+    }
     setLoading(true);
     setLoadError(null);
-    fetch('/questions.csv')
+    const dataPath = isFullExam
+      ? `/data/${trade}/year-${yearNum}/full-exam.json`
+      : `/data/${trade}/year-${yearNum}/section-${sectionNum}.json`;
+    fetch(dataPath)
       .then((r) => {
         if (!r.ok) throw new Error(`Failed to load questions: ${r.status}`);
-        return r.text();
+        return r.json();
       })
-      .then((csvText) => {
-        const rows = parseCSV(csvText);
-        const list = getQuestionsFromCSV(rows, {
-          tradeSlug: trade,
-          yearNum,
-          isFullExam,
-          sectionNum: sectionNum ?? 0,
-        });
-        setQuizQuestions(list);
+      .then((list) => {
+        const questions = Array.isArray(list) ? list : [];
+        setQuizQuestions(questions);
         setCurrentIndex(0);
         setAnswers([]);
         setQuizComplete(false);
