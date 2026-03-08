@@ -7,7 +7,9 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { getHubContent, getTradeHubContent, getTradeYearContent, TRADES, VALID_TRADE_SLUGS } from '../src/pages/trades/tradesContent.js';
+import { getSectionsForTradeYear } from '../src/lib/trade-config.js';
 
+const TRADE_SLUG_TO_CODE = { electrician: 'E', millwright: 'M', welder: 'W', 'steamfitter-pipefitter': 'SF' };
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DIST = path.resolve(__dirname, '..', 'dist');
 const BASE_URL = 'https://www.tradebenchprep.org';
@@ -319,12 +321,31 @@ function renderTradeYearBody(tradeSlug, yearNum) {
   const isNewFormat = Array.isArray(content.needsToKnow);
   let sections = '';
 
+  const tradeCode = TRADE_SLUG_TO_CODE[tradeSlug];
+  const sectionInfo = tradeCode ? getSectionsForTradeYear(tradeCode, yearNum) : {};
+  const sectionEntries = Object.entries(sectionInfo).map(([numStr, info]) => ({ num: parseInt(numStr, 10), name: info?.name || `Section ${numStr}` }));
+  const practiceQuizzesHtml = `
+<section class="py-8 border-t border-slate-100">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-2xl font-serif font-bold text-slate-900 mb-4">Practice Quizzes</h2>
+    <p class="text-slate-600 mb-6 leading-relaxed">Take a full practice exam or focus on a specific section. Each quiz runs in your browser with no sign-in required.</p>
+    <div class="space-y-3">
+      <a href="/trades/${tradeSlug}/year-${yearNum}/full-exam" class="block p-4 rounded-xl border-2 border-slate-200 hover:border-slate-400 hover:bg-slate-50 transition-colors">
+        <span class="font-semibold text-slate-900">Full practice exam</span>
+        <span class="text-slate-500 text-sm block mt-1">100 questions, all sections</span>
+      </a>
+      ${sectionEntries.map(({ num, name }) => `<a href="/trades/${tradeSlug}/year-${yearNum}/section-${num}" class="block p-4 rounded-xl border-2 border-slate-200 hover:border-slate-400 hover:bg-slate-50 transition-colors"><span class="font-semibold text-slate-900">Section ${num}: ${escapeHtml(name)}</span></a>`).join('')}
+    </div>
+  </div>
+</section>`;
+
   sections += `
 <div class="max-w-4xl mx-auto">
   <h1 class="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-6 leading-tight">${escapeHtml(content.h1)}</h1>
   <p class="text-lg text-slate-600 mb-6 leading-relaxed">${escapeHtml(content.intro)}</p>
   <div class="my-8"><a href="/TradeSelection" class="inline-flex items-center justify-center rounded-md text-lg font-medium bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 w-full sm:w-auto">Get Started Free →</a></div>
 </div>
+${practiceQuizzesHtml}
 <section class="py-4 px-6" aria-label="Advertisement"><div class="max-w-6xl mx-auto"><!-- Ad --></div></section>`;
 
   if (isNewFormat) {
