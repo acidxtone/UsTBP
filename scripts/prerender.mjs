@@ -53,6 +53,12 @@ function criticalCSS() {
   </style>`;
 }
 
+/** Ensure asset URL is root-relative so it works when HTML is served from nested paths (e.g. /trades/.../section-1/). */
+function rootRelativeAssetUrl(url) {
+  if (!url || url.startsWith('/') || url.startsWith('http://') || url.startsWith('https://')) return url;
+  return '/' + url.replace(/^\.\//, '');
+}
+
 let cachedAssetTags = null;
 /** Extract asset script/link tags from built index.html (hashed filenames). Call once at start before overwriting index.html. */
 function getAssetTags() {
@@ -63,9 +69,13 @@ function getAssetTags() {
   const preloads = html.match(/<link rel="modulepreload"[^>]*href="([^"]+)"[^>]*>/g) || [];
   const cssMatch = html.match(/<link rel="stylesheet"[^>]*href="([^"]+)"[^>]*>/);
   let out = '';
-  if (cssMatch) out += `    <link rel="stylesheet" crossorigin href="${cssMatch[1]}">\n`;
-  preloads.forEach((tag) => { out += '    ' + tag.trim() + '\n'; });
-  if (scriptMatch) out += `    <script type="module" crossorigin src="${scriptMatch[1]}"><\/script>\n`;
+  if (cssMatch) out += `    <link rel="stylesheet" crossorigin href="${rootRelativeAssetUrl(cssMatch[1])}">\n`;
+  preloads.forEach((tag) => {
+    const hrefMatch = tag.match(/href="([^"]+)"/);
+    const fixed = hrefMatch ? tag.replace(hrefMatch[0], `href="${rootRelativeAssetUrl(hrefMatch[1])}"`) : tag;
+    out += '    ' + fixed.trim() + '\n';
+  });
+  if (scriptMatch) out += `    <script type="module" crossorigin src="${rootRelativeAssetUrl(scriptMatch[1])}"><\/script>\n`;
   cachedAssetTags = out;
   return out;
 }

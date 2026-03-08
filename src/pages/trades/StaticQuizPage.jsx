@@ -86,7 +86,23 @@ export default function StaticQuizPage({ trade: tradeProp, year: yearProp, quizT
         return r.json();
       })
       .then((list) => {
-        const questions = Array.isArray(list) ? list : [];
+        const raw = Array.isArray(list)
+          ? list
+          : (list && Array.isArray(list.questions) ? list.questions : list && Array.isArray(list.data) ? list.data : []);
+        const questions = raw.map((q) => ({
+          id: q.id ?? q.question_id ?? '',
+          section: q.section ?? 0,
+          section_name: q.section_name ?? '',
+          difficulty: q.difficulty ?? 'medium',
+          question_text: q.question_text ?? q.questionText ?? '',
+          option_a: q.option_a ?? q.optionA ?? '',
+          option_b: q.option_b ?? q.optionB ?? '',
+          option_c: q.option_c ?? q.optionC ?? '',
+          option_d: q.option_d ?? q.optionD ?? '',
+          correct_answer: (q.correct_answer ?? q.correctAnswer ?? 'A').toString().trim().toUpperCase().slice(0, 1),
+          explanation: q.explanation ?? '',
+          reference: q.reference ?? '',
+        }));
         setQuizQuestions(questions);
         setCurrentIndex(0);
         setAnswers([]);
