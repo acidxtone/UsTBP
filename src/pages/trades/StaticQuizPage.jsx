@@ -1,5 +1,5 @@
 /**
- * Static quiz page: loads questions from JSON files in public/data (no Supabase/auth).
+ * Static quiz page: loads questions from CSV in repo (no Supabase/auth).
  *
  * Mirrors the original app’s quiz data flow:
  * - Original: Quiz.jsx uses api.entities.Question.filter({ trade, year }) with trade from
@@ -10,7 +10,7 @@
  *   the same question shape so QuestionCard and ResultsCard work unchanged.
  *
  * Route: /trades/:trade/year-:year/full-exam | /trades/:trade/year-:year/section-:sectionNum
- * Data: /data/{trade}/year-{n}/full-exam.json or section-{num}.json
+ * Data: /questions.csv (single CSV in repo; parsed and filtered in browser)
  */
 import React, { useState, useEffect, useCallback } from 'react';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
@@ -32,6 +32,7 @@ import ProgressBar from '@/components/quiz/ProgressBar';
 import ResultsCard from '@/components/quiz/ResultsCard';
 import TradesLayout from './TradesLayout';
 import { TRADES, VALID_TRADE_SLUGS } from './tradesContent';
+import { parseCSV, getQuestionsFromCSV } from '@/lib/parseQuestionsCsv';
 import { useAds } from '@/components/ads/AdProvider';
 import { BannerAd, InContentAd } from '@/components/ads/AdSense';
 
@@ -71,39 +72,22 @@ export default function StaticQuizPage({ trade: tradeProp, year: yearProp, quizT
       setLoading(false);
       return;
     }
-    if (!isFullExam && (sectionNum == null || Number.isNaN(sectionNum))) {
-      setLoading(false);
-      return;
-    }
     setLoading(true);
     setLoadError(null);
-    const dataPath = isFullExam
-      ? `/data/${trade}/year-${yearNum}/full-exam.json`
-      : `/data/${trade}/year-${yearNum}/section-${sectionNum}.json`;
-    fetch(dataPath)
+    fetch('/questions.csv')
       .then((r) => {
         if (!r.ok) throw new Error(`Failed to load questions: ${r.status}`);
-        return r.json();
+        return r.text();
       })
-      .then((list) => {
-        const raw = Array.isArray(list)
-          ? list
-          : (list && Array.isArray(list.questions) ? list.questions : list && Array.isArray(list.data) ? list.data : []);
-        const questions = raw.map((q) => ({
-          id: q.id ?? q.question_id ?? '',
-          section: q.section ?? 0,
-          section_name: q.section_name ?? '',
-          difficulty: q.difficulty ?? 'medium',
-          question_text: q.question_text ?? q.questionText ?? '',
-          option_a: q.option_a ?? q.optionA ?? '',
-          option_b: q.option_b ?? q.optionB ?? '',
-          option_c: q.option_c ?? q.optionC ?? '',
-          option_d: q.option_d ?? q.optionD ?? '',
-          correct_answer: (q.correct_answer ?? q.correctAnswer ?? 'A').toString().trim().toUpperCase().slice(0, 1),
-          explanation: q.explanation ?? '',
-          reference: q.reference ?? '',
-        }));
-        setQuizQuestions(questions);
+      .then((csvText) => {
+        const rows = parseCSV(csvText);
+        const list = getQuestionsFromCSV(rows, {
+          tradeSlug: trade,
+          yearNum,
+          isFullExam,
+          sectionNum: sectionNum ?? 0,
+        });
+        setQuizQuestions(list);
         setCurrentIndex(0);
         setAnswers([]);
         setQuizComplete(false);
