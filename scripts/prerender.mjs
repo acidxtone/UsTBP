@@ -466,15 +466,10 @@ function main() {
 
   const routes = [];
 
-  // Landing
-  routes.push({
-    path: '',
-    file: path.join(DIST, 'index.html'),
-    title: 'Free Red Seal Practice Test Canada | Canadian Trades Exam Prep | TradeBenchPrep',
-    description: 'Free Canadian skilled trades exam prep. Red Seal and apprenticeship practice tests for Electrician, Welder, Millwright & Steamfitter. No signup required.',
-    canonical: BASE_URL + '/',
-    body: renderLandingBody(),
-  });
+  // Do NOT prerender the root index.html. Keep Vite's version (empty #root) so that when
+  // Vercel/Cloudflare serve index.html for quiz URLs (full-exam, section-N) via catch-all,
+  // the SPA mounts and renders the quiz. If we overwrote index with landing HTML, those
+  // URLs would show the landing page and hydration would mismatch.
 
   // /trades
   const hub = getHubContent();

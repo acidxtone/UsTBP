@@ -5,6 +5,8 @@
     {"source": "/trades", "destination": "/trades/index.html"},
     {"source": "/trades/:trade", "destination": "/trades/:trade/index.html"},
     {"source": "/trades/:trade/year-:num", "destination": "/trades/:trade/year-:num/index.html"},
+    {"source": "/trades/:trade/year-:num/full-exam", "destination": "/index.html"},
+    {"source": "/trades/:trade/year-:num/section-:section", "destination": "/index.html"},
     {"source": "/(.*)", "destination": "/index.html"}
   ],
   "headers": [
