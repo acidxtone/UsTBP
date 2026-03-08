@@ -153,8 +153,7 @@ function tradesLayoutShell(breadcrumbHtml, mainContent) {
     </div>
     <div class="flex items-center gap-3">
       <a href="/" class="text-sm text-slate-600 hover:text-blue-600 transition-colors">Home</a>
-      <a href="/trades" class="text-sm text-slate-600 hover:text-blue-600 transition-colors">Trades</a>
-      <a href="/TradeSelection" class="inline-flex items-center justify-center rounded-md text-sm font-medium bg-blue-600 hover:bg-blue-700 text-white h-10 px-4 py-2">Get Started <span class="ml-2">→</span></a>
+      <a href="/trades" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Trades</a>
     </div>
   </div>
 </nav>
@@ -188,16 +187,13 @@ function renderLandingBody() {
       <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center"><span class="text-white text-lg">📖</span></div>
       <span class="text-xl font-bold text-slate-900">TradeBenchPrep</span>
     </div>
-    <a href="/TradeSelection" class="inline-flex items-center justify-center rounded-md text-sm font-medium bg-blue-600 hover:bg-blue-700 text-white h-10 px-4 py-2">Get Started →</a>
+    <a href="/trades" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Trades</a>
   </div>
 </nav>
 <section class="pt-32 pb-20 px-6">
   <div class="max-w-4xl mx-auto text-center">
     <h1 class="text-5xl md:text-6xl font-serif font-bold text-slate-900 mb-6 leading-tight">Master Your Trade,<br /><span class="text-blue-600">Ace Your Exams</span></h1>
     <p class="text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">The ultimate quiz and study platform for apprenticeship training. Practice questions, track your progress, and prepare with confidence.</p>
-    <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-      <a href="/TradeSelection" class="inline-flex items-center justify-center rounded-md text-lg font-medium bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 w-full sm:w-auto">Get Started Free →</a>
-    </div>
     <div class="flex items-center justify-center gap-6 text-sm text-slate-500">
       <span class="flex items-center gap-1.5">✓ Free forever</span>
       <span class="flex items-center gap-1.5">✓ No credit card required</span>
@@ -264,7 +260,6 @@ function renderTradesHubBody() {
 <div class="max-w-4xl mx-auto">
   <h1 class="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-6 leading-tight">${escapeHtml(hub.h1)}</h1>
   ${introHtml}
-  <div class="my-8"><a href="/TradeSelection" class="inline-flex items-center justify-center rounded-md text-lg font-medium bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 w-full sm:w-auto">Get Started Free →</a></div>
 </div>
 <section class="py-4 px-6" aria-label="Advertisement"><div class="max-w-6xl mx-auto"><!-- Ad --></div></section>
 <section class="py-12 px-6 border-t border-slate-100">
@@ -276,8 +271,7 @@ function renderTradesHubBody() {
 <section class="py-12 px-6 border-t border-slate-100">
   <div class="max-w-4xl mx-auto">
     <h2 class="text-2xl font-serif font-bold text-slate-900 text-center mb-6">How It Works</h2>
-    <p class="text-slate-600 leading-relaxed mb-8">${escapeHtml(hub.howItWorks)}</p>
-    <div class="flex justify-center"><a href="/TradeSelection" class="inline-flex items-center justify-center rounded-md text-lg font-medium bg-blue-600 hover:bg-blue-700 text-white px-8 py-6">Get Started Free →</a></div>
+    <p class="text-slate-600 leading-relaxed">${escapeHtml(hub.howItWorks)}</p>
   </div>
 </section>
 <section class="py-8 px-6" aria-label="Advertisement"><div class="max-w-6xl mx-auto"><!-- Ad --></div></section>`;
@@ -295,7 +289,6 @@ function renderTradeHubBody(tradeSlug) {
 <div class="max-w-4xl mx-auto">
   <h1 class="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-6 leading-tight">${escapeHtml(content.h1)}</h1>
   <p class="text-lg text-slate-600 mb-8 leading-relaxed">${escapeHtml(content.intro)}</p>
-  <div class="my-8"><a href="/TradeSelection" class="inline-flex items-center justify-center rounded-md text-lg font-medium bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 w-full sm:w-auto">Get Started Free →</a></div>
 </div>
 <section class="py-12 px-6 border-t border-slate-100">
   <div class="max-w-4xl mx-auto">
@@ -303,9 +296,6 @@ function renderTradeHubBody(tradeSlug) {
     ${chooseYearIntro}
     <ul class="space-y-3">${yearsList}</ul>
   </div>
-</section>
-<section class="py-12 px-6 border-t border-slate-100">
-  <div class="max-w-4xl mx-auto flex justify-center"><a href="/TradeSelection" class="inline-flex items-center justify-center rounded-md text-lg font-medium bg-blue-600 hover:bg-blue-700 text-white px-8 py-6">Get Started Free →</a></div>
 </section>`;
   const breadcrumb = `<span class="text-slate-900 font-medium text-sm">${escapeHtml(config.name)}</span>`;
   return tradesLayoutShell(breadcrumb, main);
@@ -343,7 +333,6 @@ function renderTradeYearBody(tradeSlug, yearNum) {
 <div class="max-w-4xl mx-auto">
   <h1 class="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-6 leading-tight">${escapeHtml(content.h1)}</h1>
   <p class="text-lg text-slate-600 mb-6 leading-relaxed">${escapeHtml(content.intro)}</p>
-  <div class="my-8"><a href="/TradeSelection" class="inline-flex items-center justify-center rounded-md text-lg font-medium bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 w-full sm:w-auto">Get Started Free →</a></div>
 </div>
 ${practiceQuizzesHtml}
 <section class="py-4 px-6" aria-label="Advertisement"><div class="max-w-6xl mx-auto"><!-- Ad --></div></section>`;
@@ -363,7 +352,6 @@ ${practiceQuizzesHtml}
 <section class="py-10 px-6 border-t border-slate-100">
   <div class="max-w-4xl mx-auto">
     <h2 class="text-2xl font-serif font-bold text-slate-900 mb-6">${escapeHtml(content.catchOffGuardHeading)}</h2>${catchHtml}
-    <div class="mt-8"><a href="/TradeSelection" class="inline-flex items-center justify-center rounded-md text-lg font-medium bg-blue-600 hover:bg-blue-700 text-white px-8 py-6">Get Started Free →</a></div>
   </div>
 </section>`;
     }
@@ -373,7 +361,6 @@ ${practiceQuizzesHtml}
   <div class="max-w-4xl mx-auto">
     <h2 class="text-2xl font-serif font-bold text-slate-900 mb-6">${escapeHtml(content.howToUseHeading)}</h2>
     ${(Array.isArray(content.howToUse) ? content.howToUse : [content.howToUse]).map((p) => `<p class="text-slate-600 mb-4 leading-relaxed">${escapeHtml(p)}</p>`).join('')}
-    <div class="mt-8"><a href="/TradeSelection" class="inline-flex items-center justify-center rounded-md text-lg font-medium bg-blue-600 hover:bg-blue-700 text-white px-8 py-6">Get Started Free →</a></div>
   </div>
 </section>`;
   } else {
@@ -388,7 +375,6 @@ ${practiceQuizzesHtml}
   <div class="max-w-4xl mx-auto">
     <h2 class="text-2xl font-serif font-bold text-slate-900 mb-6">How TradeBenchPrep Helps You Pass</h2>
     ${(content.howHelps || []).map((p) => `<p class="text-slate-600 mb-4 leading-relaxed">${escapeHtml(p)}</p>`).join('')}
-    <div class="mt-8"><a href="/TradeSelection" class="inline-flex items-center justify-center rounded-md text-lg font-medium bg-blue-600 hover:bg-blue-700 text-white px-8 py-6">Get Started Free →</a></div>
   </div>
 </section>
 <section class="py-6 px-6" aria-label="Advertisement"><div class="max-w-5xl mx-auto"><!-- Ad --></div></section>
@@ -407,8 +393,7 @@ ${practiceQuizzesHtml}
 <section class="py-10 px-6 border-t border-slate-100">
   <div class="max-w-4xl mx-auto">
     <h2 class="text-2xl font-serif font-bold text-slate-900 mb-6">${escapeHtml(content.readyHeading || 'Ready to Start Practicing?')}</h2>
-    <p class="text-slate-600 mb-8 leading-relaxed">${escapeHtml(content.readyToStart)}</p>
-    <a href="/TradeSelection" class="inline-flex items-center justify-center rounded-md text-lg font-medium bg-blue-600 hover:bg-blue-700 text-white px-8 py-6">Get Started Free →</a>
+    <p class="text-slate-600 leading-relaxed">${escapeHtml(content.readyToStart)}</p>
   </div>
 </section>`;
   }
