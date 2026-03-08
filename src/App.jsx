@@ -28,7 +28,7 @@ const ConnectionTest = lazy(() => import('@/components/ConnectionTest'));
 const TradesHub = lazy(() => import('@/pages/trades/TradesHub'));
 const TradeHubPage = lazy(() => import('@/pages/trades/TradeHubPage'));
 const TradeYearPage = lazy(() => import('@/pages/trades/TradeYearPage'));
-const StaticQuizPage = lazy(() => import('@/pages/trades/StaticQuizPage'));
+import StaticQuizPage from '@/pages/trades/StaticQuizPage';
 
 function RouteLoadingFallback() {
   return (

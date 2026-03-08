@@ -437,6 +437,33 @@ function main() {
   // Read asset tags once from Vite-built index.html before we overwrite it
   getAssetTags();
 
+  // Remove any quiz-route dirs first (from a previous build or stale state) so they are never deployed
+  const tradesDir = path.join(DIST, 'trades');
+  if (fs.existsSync(tradesDir)) {
+    for (const slug of fs.readdirSync(tradesDir)) {
+      const slugPath = path.join(tradesDir, slug);
+      if (!fs.statSync(slugPath).isDirectory()) continue;
+      const yearDirs = fs.readdirSync(slugPath, { withFileTypes: true })
+        .filter((d) => d.isDirectory() && /^year-\d+$/.test(d.name));
+      for (const { name: yearName } of yearDirs) {
+        const yearDir = path.join(slugPath, yearName);
+        const fullExamDir = path.join(yearDir, 'full-exam');
+        if (fs.existsSync(fullExamDir)) {
+          fs.rmSync(fullExamDir, { recursive: true });
+          console.log('Removed quiz route:', path.relative(DIST, fullExamDir));
+        }
+        const entries = fs.readdirSync(yearDir, { withFileTypes: true });
+        for (const ent of entries) {
+          if (ent.isDirectory() && /^section-\d+$/.test(ent.name)) {
+            const sectionDir = path.join(yearDir, ent.name);
+            fs.rmSync(sectionDir, { recursive: true });
+            console.log('Removed quiz route:', path.relative(DIST, sectionDir));
+          }
+        }
+      }
+    }
+  }
+
   const routes = [];
 
   // Landing
@@ -492,33 +519,7 @@ function main() {
   }
 
   // Do NOT prerender quiz routes (full-exam, section-N). Those URLs must be served the same
-  // SPA index as / and /trades so the app JS loads and runs. Remove any existing quiz-route
-  // dirs from dist so the host 404s and serves root index.html (SPA fallback).
-  const tradesDir = path.join(DIST, 'trades');
-  if (fs.existsSync(tradesDir)) {
-    for (const slug of fs.readdirSync(tradesDir)) {
-      const slugPath = path.join(tradesDir, slug);
-      if (!fs.statSync(slugPath).isDirectory()) continue;
-      const yearDirs = fs.readdirSync(slugPath, { withFileTypes: true })
-        .filter((d) => d.isDirectory() && /^year-\d+$/.test(d.name));
-      for (const { name: yearName } of yearDirs) {
-        const yearDir = path.join(slugPath, yearName);
-        const fullExamDir = path.join(yearDir, 'full-exam');
-        if (fs.existsSync(fullExamDir)) {
-          fs.rmSync(fullExamDir, { recursive: true });
-          console.log('Removed quiz route:', path.relative(DIST, fullExamDir));
-        }
-        const entries = fs.readdirSync(yearDir, { withFileTypes: true });
-        for (const ent of entries) {
-          if (ent.isDirectory() && /^section-\d+$/.test(ent.name)) {
-            const sectionDir = path.join(yearDir, ent.name);
-            fs.rmSync(sectionDir, { recursive: true });
-            console.log('Removed quiz route:', path.relative(DIST, sectionDir));
-          }
-        }
-      }
-    }
-  }
+  // SPA index as / and /trades (host 404 → index.html). Cleanup already ran at start.
 
   for (const r of routes) {
     if (!r.body) continue;

@@ -74,7 +74,8 @@ export default function StaticQuizPage({ trade: tradeProp, year: yearProp, quizT
     }
     setLoading(true);
     setLoadError(null);
-    fetch('/questions.csv')
+    const csvUrl = `${window.location.origin}/questions.csv`;
+    fetch(csvUrl)
       .then((r) => {
         if (!r.ok) throw new Error(`Failed to load questions: ${r.status}`);
         return r.text();
