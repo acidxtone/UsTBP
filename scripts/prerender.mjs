@@ -414,16 +414,6 @@ ${practiceQuizzesHtml}
   return tradesLayoutShell(breadcrumb, sections);
 }
 
-/** Minimal shell for quiz routes (full-exam, section-N). SPA loads and replaces with StaticQuizPage. */
-function renderQuizRouteBody(tradeSlug, yearNum, quizType) {
-  const config = TRADES[tradeSlug];
-  const isFull = quizType === 'full-exam';
-  const label = isFull ? 'Full practice exam' : `Section ${quizType.replace('section-', '')}`;
-  const breadcrumb = `<span class="flex items-center gap-2 text-sm"><a href="/trades" class="text-slate-600 hover:text-blue-600">Trades</a><span class="text-slate-400">/</span><a href="/trades/${tradeSlug}" class="text-slate-600 hover:text-blue-600">${escapeHtml(config.name)}</a><span class="text-slate-400">/</span><a href="/trades/${tradeSlug}/year-${yearNum}" class="text-slate-600 hover:text-blue-600">Year ${yearNum}</a><span class="text-slate-400">/</span><span class="text-slate-900 font-medium">${escapeHtml(label)}</span></span>`;
-  const main = `<div class="max-w-4xl mx-auto py-12"><p class="text-slate-600">Loading quiz…</p></div>`;
-  return tradesLayoutShell(breadcrumb, main);
-}
-
 function writeHtml(filePath, title, description, canonical, bodyHtml) {
   const dir = path.dirname(filePath);
   if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
@@ -501,35 +491,31 @@ function main() {
     }
   }
 
-  // /trades/:trade/year-N/full-exam and /trades/:trade/year-N/section-N (so Cloudflare serves app at these URLs)
-  for (const slug of VALID_TRADE_SLUGS) {
-    const config = TRADES[slug];
-    const tradeCode = TRADE_SLUG_TO_CODE[slug];
-    for (const y of config.years) {
-      const sectionInfo = tradeCode ? getSectionsForTradeYear(tradeCode, y) : {};
-      const sectionNums = Object.keys(sectionInfo).map((n) => parseInt(n, 10)).filter((n) => !Number.isNaN(n));
-      const yearContent = getTradeYearContent(slug, y);
-      const baseTitle = yearContent?.title ? yearContent.title.replace(/\s*\|\s*.*$/, '') : `${config.name} Year ${y}`;
-      // full-exam
-      routes.push({
-        path: `trades/${slug}/year-${y}/full-exam`,
-        file: path.join(DIST, 'trades', slug, `year-${y}`, 'full-exam', 'index.html'),
-        title: `${baseTitle} — Full practice exam | TradeBenchPrep`,
-        description: `Free ${config.name} year ${y} full practice exam. No sign-in required.`,
-        canonical: BASE_URL + '/trades/' + slug + '/year-' + y + '/full-exam',
-        body: renderQuizRouteBody(slug, y, 'full-exam'),
-      });
-      // section-N
-      for (const num of sectionNums) {
-        const sectionName = sectionInfo[num]?.name || `Section ${num}`;
-        routes.push({
-          path: `trades/${slug}/year-${y}/section-${num}`,
-          file: path.join(DIST, 'trades', slug, `year-${y}`, `section-${num}`, 'index.html'),
-          title: `${baseTitle} — ${sectionName} | TradeBenchPrep`,
-          description: `Free ${config.name} year ${y} section ${num} practice quiz.`,
-          canonical: BASE_URL + '/trades/' + slug + '/year-' + y + '/section-' + num,
-          body: renderQuizRouteBody(slug, y, `section-${num}`),
-        });
+  // Do NOT prerender quiz routes (full-exam, section-N). Those URLs must be served the same
+  // SPA index as / and /trades so the app JS loads and runs. Remove any existing quiz-route
+  // dirs from dist so the host 404s and serves root index.html (SPA fallback).
+  const tradesDir = path.join(DIST, 'trades');
+  if (fs.existsSync(tradesDir)) {
+    for (const slug of fs.readdirSync(tradesDir)) {
+      const slugPath = path.join(tradesDir, slug);
+      if (!fs.statSync(slugPath).isDirectory()) continue;
+      const yearDirs = fs.readdirSync(slugPath, { withFileTypes: true })
+        .filter((d) => d.isDirectory() && /^year-\d+$/.test(d.name));
+      for (const { name: yearName } of yearDirs) {
+        const yearDir = path.join(slugPath, yearName);
+        const fullExamDir = path.join(yearDir, 'full-exam');
+        if (fs.existsSync(fullExamDir)) {
+          fs.rmSync(fullExamDir, { recursive: true });
+          console.log('Removed quiz route:', path.relative(DIST, fullExamDir));
+        }
+        const entries = fs.readdirSync(yearDir, { withFileTypes: true });
+        for (const ent of entries) {
+          if (ent.isDirectory() && /^section-\d+$/.test(ent.name)) {
+            const sectionDir = path.join(yearDir, ent.name);
+            fs.rmSync(sectionDir, { recursive: true });
+            console.log('Removed quiz route:', path.relative(DIST, sectionDir));
+          }
+        }
       }
     }
   }
