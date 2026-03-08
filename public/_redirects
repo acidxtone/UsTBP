@@ -1,3 +1,3 @@
-# SPA fallback: serve index.html for all routes so React Router can handle /trades/* etc.
-# (Static files like sitemap.xml, robots.txt are served by Netlify from netlify.toml first.)
-/*    /index.html   200
+# SPA fallback is handled by Cloudflare via wrangler "not_found_handling": "single-page-application".
+# Do not add a catch-all rule here (e.g. /* -> /index.html 200) — it causes an infinite redirect loop on Cloudflare.
+# For Netlify, use netlify.toml redirects instead.
