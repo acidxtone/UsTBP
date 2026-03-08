@@ -127,6 +127,12 @@ const AuthenticatedApp = () => {
         <Route path="/Terms" element={<Terms />} />
         <Route path="/privacy-policy" element={<Privacy />} />
         <Route path="/terms-of-service" element={<Terms />} />
+        {/* Old app routes: send to trades hub instead of showing landing page */}
+        <Route path="/TradeSelection" element={<Navigate to="/trades" replace />} />
+        <Route path="/YearSelection" element={<Navigate to="/trades" replace />} />
+        <Route path="/Dashboard" element={<Navigate to="/trades" replace />} />
+        <Route path="/Quiz" element={<Navigate to="/trades" replace />} />
+        <Route path="/QuizSetup" element={<Navigate to="/trades" replace />} />
         <Route path="*" element={<LandingPage />} />
       </Routes>
     );
