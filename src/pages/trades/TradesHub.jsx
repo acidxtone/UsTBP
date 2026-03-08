@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import TradesLayout, { GetStartedButton, TradesAdTop, TradesAdMiddle, TradesAdBottom } from './TradesLayout';
+import TradesLayout, { TradesAdTop, TradesAdBottom } from './TradesLayout';
 import { getHubContent } from './tradesContent';
 
 export default function TradesHub() {
@@ -19,9 +19,6 @@ export default function TradesHub() {
             {p}
           </p>
         ))}
-        <div className="my-8">
-          <GetStartedButton />
-        </div>
       </div>
 
       <TradesAdTop />

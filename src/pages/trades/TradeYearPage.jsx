@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useParams, Navigate } from 'react-router-dom';
-import TradesLayout, { GetStartedButton, TradesAdTop, TradesAdMiddle, TradesAdBottom } from './TradesLayout';
+import TradesLayout, { TradesAdTop, TradesAdMiddle, TradesAdBottom } from './TradesLayout';
 import { TRADES, VALID_TRADE_SLUGS, getTradeYearContent } from './tradesContent';
 import { getSectionsForTradeYear } from '@/lib/trade-config';
 
@@ -68,11 +68,8 @@ export default function TradeYearPage({ trade: tradeProp, year: yearProp }) {
         <p className="text-lg text-slate-600 mb-6 leading-relaxed">
           {content.intro}
         </p>
-        <div className="my-8">
-          <GetStartedButton />
-        </div>
 
-        <section className="py-8 border-t border-slate-100">
+        <section className="py-8 border-t border-slate-100 mt-8">
           <h2 className="text-2xl font-serif font-bold text-slate-900 mb-4">
             Practice Quizzes
           </h2>
@@ -200,8 +197,7 @@ export default function TradeYearPage({ trade: tradeProp, year: yearProp }) {
               <h2 className="text-2xl font-serif font-bold text-slate-900 mb-6">
                 {content.readyHeading || 'Ready to Start Practicing?'}
               </h2>
-              <p className="text-slate-600 mb-6 leading-relaxed">{content.readyToStart}</p>
-              <GetStartedButton />
+              <p className="text-slate-600 leading-relaxed">{content.readyToStart}</p>
             </div>
           </section>
         </>

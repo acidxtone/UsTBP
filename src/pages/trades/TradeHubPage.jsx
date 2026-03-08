@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useParams, Navigate } from 'react-router-dom';
-import TradesLayout, { GetStartedButton, TradesAdTop, TradesAdMiddle, TradesAdBottom } from './TradesLayout';
+import TradesLayout, { TradesAdTop, TradesAdMiddle, TradesAdBottom } from './TradesLayout';
 import { TRADES, VALID_TRADE_SLUGS, getTradeHubContent } from './tradesContent';
 
 /** Optional trade prop when rendered by pathname (bypasses Route params). */
@@ -27,9 +27,6 @@ export default function TradeHubPage({ trade: tradeProp }) {
         <p className="text-lg text-slate-600 mb-8 leading-relaxed">
           {content.intro}
         </p>
-        <div className="my-8">
-          <GetStartedButton />
-        </div>
       </div>
 
       <TradesAdTop />

@@ -1,14 +1,11 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { BookOpen, Target, Zap, CheckCircle, ArrowRight } from "lucide-react";
 import { BannerAd, InContentAd } from '@/components/ads/AdSense';
 
 export default function LandingPage() {
-  const navigate = useNavigate();
-  const handleGetStarted = () => navigate('/trades');
-
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
@@ -19,9 +16,11 @@ export default function LandingPage() {
             </div>
             <span className="text-xl font-bold text-slate-900">TradeBenchPrep</span>
           </div>
-          <Button className="bg-blue-600 hover:bg-blue-700" onClick={handleGetStarted}>
-            Get Started
-            <ArrowRight className="w-4 h-4 ml-2" />
+          <Button asChild className="bg-blue-600 hover:bg-blue-700">
+            <Link to="/trades" className="inline-flex items-center gap-2">
+              Get Started
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </Button>
         </div>
       </nav>
@@ -35,13 +34,7 @@ export default function LandingPage() {
           <p className="text-xl text-slate-600 mb-8 max-w-2xl mx-auto leading-relaxed">
             The ultimate quiz and study platform for apprenticeship training. Practice questions, track your progress, and prepare with confidence.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-6 w-full sm:w-auto" onClick={handleGetStarted}>
-              Get Started Free
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
-          </div>
-          <div className="flex items-center justify-center gap-6 text-sm text-slate-500">
+          <div className="flex items-center justify-center gap-6 text-sm text-slate-500 mb-2">
             <span className="flex items-center gap-1.5">
               <CheckCircle className="w-4 h-4 text-green-500" />
               Free forever

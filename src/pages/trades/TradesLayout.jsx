@@ -23,8 +23,6 @@ export function useGetStartedHandler() {
 }
 
 export default function TradesLayout({ children, breadcrumb }) {
-  const handleGetStarted = useGetStartedHandler();
-
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
@@ -48,9 +46,11 @@ export default function TradesLayout({ children, breadcrumb }) {
             <Link to="/trades" className="text-sm text-slate-600 hover:text-blue-600 transition-colors">
               Trades
             </Link>
-            <Button className="bg-blue-600 hover:bg-blue-700" onClick={handleGetStarted}>
-              Get Started
-              <ArrowRight className="w-4 h-4 ml-2" />
+            <Button asChild className="bg-blue-600 hover:bg-blue-700">
+              <Link to="/trades" className="inline-flex items-center gap-2">
+                Get Started
+                <ArrowRight className="w-4 h-4" />
+              </Link>
             </Button>
           </div>
         </div>
