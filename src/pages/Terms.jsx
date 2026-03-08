@@ -11,10 +11,11 @@ const Terms = () => {
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-4xl mx-auto px-4 py-8">
         <div className="bg-white rounded-lg shadow-sm p-8">
-          <BannerAd position="top" />
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Terms of Service</h1>
-          <p className="text-gray-500 text-sm mb-8">Effective Date: February 17, 2026</p>
-
+          <p className="text-gray-500 text-sm mb-6">Effective Date: February 17, 2026</p>
+          <div className="mb-6" aria-label="Advertisement">
+            <BannerAd position="top" />
+          </div>
           <div className="prose prose-gray max-w-none">
             <p className="text-gray-600 mb-8">
               Please read these Terms of Service ("Terms") carefully before using TradeBenchPrep (the "App"), operated by TradeBenchPrep ("we", "us", or "our"). By accessing or using the App, you agree to be bound by these Terms. If you do not agree to these Terms, do not use the App.

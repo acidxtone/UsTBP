@@ -26,16 +26,16 @@ export default function LandingPage() {
         </div>
       </nav>
 
-      <section className="pt-32 pb-20 px-6">
+      <section className="pt-28 pb-14 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl md:text-6xl font-serif font-bold text-slate-900 mb-6 leading-tight">
             Master Your Trade,<br />
             <span className="text-blue-600">Ace Your Exams</span>
           </h1>
-          <p className="text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl text-slate-600 mb-8 max-w-2xl mx-auto leading-relaxed">
             The ultimate quiz and study platform for apprenticeship training. Practice questions, track your progress, and prepare with confidence.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
             <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-6 w-full sm:w-auto" onClick={handleGetStarted}>
               Get Started Free
               <ArrowRight className="w-5 h-5 ml-2" />
@@ -55,21 +55,21 @@ export default function LandingPage() {
       </section>
 
       {/* Top Banner Ad — below hero so users see content before ads (AdSense policy) */}
-      <section className="pt-4 pb-4 px-6" aria-label="Advertisement">
+      <section className="py-3 px-6" aria-label="Advertisement">
         <div className="max-w-6xl mx-auto">
           <BannerAd position="top" />
         </div>
       </section>
 
-      <section className="py-16 px-6 border-t border-slate-100">
+      <section className="py-12 px-6 border-t border-slate-100">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-serif font-bold text-slate-900 text-center mb-2">
             How It Works
           </h2>
-          <p className="text-slate-600 text-center mb-10 max-w-xl mx-auto">
+          <p className="text-slate-600 text-center mb-8 max-w-xl mx-auto">
             TradeBenchPrep supports Steamfitter/Pipefitter, Electrician, Millwright, and Welder apprentices preparing for provincial and interprovincial certification exams.
           </p>
-          <div className="text-center mb-10">
+          <div className="text-center mb-8">
             <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-6">
               <Link to="/trades" className="inline-flex items-center gap-2">
                 Explore exam prep by trade and year
@@ -77,7 +77,7 @@ export default function LandingPage() {
               </Link>
             </Button>
           </div>
-          <div className="grid md:grid-cols-3 gap-8 text-center">
+          <div className="grid md:grid-cols-3 gap-6 text-center">
             <div>
               <div className="w-10 h-10 rounded-full bg-blue-100 text-blue-600 font-bold flex items-center justify-center mx-auto mb-3">1</div>
               <h3 className="font-semibold text-slate-900 mb-1">Pick your trade & year</h3>
@@ -97,12 +97,12 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <section className="pb-24 px-6">
+      <section className="pb-14 px-6">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-serif font-bold text-slate-900 text-center mb-4">
             Everything You Need to Succeed
           </h2>
-          <p className="text-slate-600 text-center mb-12 max-w-xl mx-auto">
+          <p className="text-slate-600 text-center mb-8 max-w-xl mx-auto">
             Built specifically for apprentices preparing for their trade qualifications.
           </p>
           <div className="grid md:grid-cols-3 gap-6">
@@ -145,18 +145,18 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <section className="py-6 px-6" aria-label="Advertisement">
+      <section className="py-4 px-6" aria-label="Advertisement">
         <div className="max-w-5xl mx-auto">
           <InContentAd position="middle" />
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-slate-50">
+      <section className="py-12 px-6 bg-slate-50">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-serif font-bold text-slate-900 text-center mb-12">
+          <h2 className="text-3xl font-serif font-bold text-slate-900 text-center mb-8">
             Why Choose TradeBenchPrep for Canadian Trade Exam Prep?
           </h2>
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <div className="grid md:grid-cols-2 gap-6 mb-8">
             <div>
               <h3 className="text-xl font-semibold text-slate-900 mb-4">Comprehensive Trade Exam Preparation</h3>
               <p className="text-slate-600 mb-4 leading-relaxed">
@@ -217,7 +217,7 @@ export default function LandingPage() {
       </section>
 
       {/* Bottom Banner Ad */}
-      <section className="py-8 px-6" aria-label="Advertisement">
+      <section className="py-6 px-6" aria-label="Advertisement">
         <div className="max-w-6xl mx-auto">
           <BannerAd position="bottom" />
         </div>

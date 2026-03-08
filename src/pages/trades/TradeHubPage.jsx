@@ -34,7 +34,7 @@ export default function TradeHubPage({ trade: tradeProp }) {
 
       <TradesAdTop />
 
-      <section className="py-12 px-6 border-t border-slate-100">
+      <section className="py-8 px-6 border-t border-slate-100">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-serif font-bold text-slate-900 mb-4">
             Choose Your Year
@@ -60,12 +60,6 @@ export default function TradeHubPage({ trade: tradeProp }) {
       </section>
 
       <TradesAdMiddle />
-
-      <section className="py-12 px-6 border-t border-slate-100">
-        <div className="max-w-4xl mx-auto flex justify-center">
-          <GetStartedButton />
-        </div>
-      </section>
 
       <TradesAdBottom />
     </TradesLayout>

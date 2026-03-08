@@ -26,9 +26,9 @@ export default function TradesHub() {
 
       <TradesAdTop />
 
-      <section id="choose-trade" className="py-12 px-6 border-t border-slate-100 scroll-mt-24">
+      <section id="choose-trade" className="py-8 px-6 border-t border-slate-100 scroll-mt-24">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-serif font-bold text-slate-900 text-center mb-8">
+          <h2 className="text-2xl font-serif font-bold text-slate-900 text-center mb-6">
             Choose Your Trade
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
@@ -49,17 +49,14 @@ export default function TradesHub() {
         </div>
       </section>
 
-      <section className="py-12 px-6 border-t border-slate-100">
+      <section className="py-8 px-6 border-t border-slate-100">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-serif font-bold text-slate-900 text-center mb-6">
+          <h2 className="text-2xl font-serif font-bold text-slate-900 text-center mb-4">
             How It Works
           </h2>
-          <p className="text-slate-600 leading-relaxed mb-8">
+          <p className="text-slate-600 leading-relaxed">
             {content.howItWorks}
           </p>
-          <div className="flex justify-center">
-            <GetStartedButton />
-          </div>
         </div>
       </section>
 

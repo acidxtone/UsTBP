@@ -96,7 +96,7 @@ export function GetStartedButton({ className = '' }) {
 
 export function TradesAdTop() {
   return (
-    <section className="py-4 px-6" aria-label="Advertisement">
+    <section className="py-3 px-6" aria-label="Advertisement">
       <div className="max-w-6xl mx-auto">
         <BannerAd position="top" />
       </div>
@@ -106,7 +106,7 @@ export function TradesAdTop() {
 
 export function TradesAdMiddle() {
   return (
-    <section className="py-6 px-6" aria-label="Advertisement">
+    <section className="py-4 px-6" aria-label="Advertisement">
       <div className="max-w-5xl mx-auto">
         <InContentAd position="middle" />
       </div>
@@ -116,7 +116,7 @@ export function TradesAdMiddle() {
 
 export function TradesAdBottom() {
   return (
-    <section className="py-8 px-6" aria-label="Advertisement">
+    <section className="py-6 px-6" aria-label="Advertisement">
       <div className="max-w-6xl mx-auto">
         <BannerAd position="bottom" />
       </div>
