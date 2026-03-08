@@ -16,12 +16,9 @@ export default function LandingPage() {
             </div>
             <span className="text-xl font-bold text-slate-900">TradeBenchPrep</span>
           </div>
-          <Button asChild className="bg-blue-600 hover:bg-blue-700">
-            <Link to="/trades" className="inline-flex items-center gap-2">
-              Get Started
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </Button>
+          <Link to="/trades" className="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">
+            Trades
+          </Link>
         </div>
       </nav>
 

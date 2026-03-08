@@ -1,26 +1,7 @@
 import React from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
-import { BookOpen, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { BookOpen } from 'lucide-react';
 import { BannerAd, InContentAd } from '@/components/ads/AdSense';
-
-/**
- * Get Started: on /trades hub scroll to "Choose Your Trade"; otherwise navigate to /trades.
- */
-export function useGetStartedHandler() {
-  const location = useLocation();
-  const navigate = useNavigate();
-  return () => {
-    const path = (location.pathname || '').replace(/\/$/, '') || '/';
-    if (path === '/trades') {
-      const el = document.getElementById('choose-trade');
-      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      else navigate('/trades');
-    } else {
-      navigate('/trades');
-    }
-  };
-}
 
 export default function TradesLayout({ children, breadcrumb }) {
   return (
@@ -43,15 +24,9 @@ export default function TradesLayout({ children, breadcrumb }) {
             <Link to="/" className="text-sm text-slate-600 hover:text-blue-600 transition-colors">
               Home
             </Link>
-            <Link to="/trades" className="text-sm text-slate-600 hover:text-blue-600 transition-colors">
+            <Link to="/trades" className="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">
               Trades
             </Link>
-            <Button asChild className="bg-blue-600 hover:bg-blue-700">
-              <Link to="/trades" className="inline-flex items-center gap-2">
-                Get Started
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </Button>
           </div>
         </div>
       </nav>
@@ -77,20 +52,6 @@ export default function TradesLayout({ children, breadcrumb }) {
         </div>
       </footer>
     </div>
-  );
-}
-
-export function GetStartedButton({ className = '' }) {
-  const handleGetStarted = useGetStartedHandler();
-  return (
-    <Button
-      size="lg"
-      className={`bg-blue-600 hover:bg-blue-700 text-lg px-8 py-6 w-full sm:w-auto ${className}`}
-      onClick={handleGetStarted}
-    >
-      Get Started Free
-      <ArrowRight className="w-5 h-5 ml-2" />
-    </Button>
   );
 }
 

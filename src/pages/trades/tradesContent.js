@@ -21,7 +21,7 @@ export function getHubContent() {
     h1: 'Apprenticeship Exam Prep by Trade',
     intro: [
       'TradeBenchPrep is built specifically for apprentices working toward their journeyman certification. Every question, every quiz, and every practice exam on this platform is aligned to the apprenticeship curriculum — organized by trade and by year so you study exactly what you need, nothing more.',
-      'Choose your trade below to explore year-by-year exam prep resources, or hit Get Started to jump straight into the platform.',
+      'Choose your trade below to explore year-by-year exam prep resources.',
     ],
     chooseYourTrade: [
       {

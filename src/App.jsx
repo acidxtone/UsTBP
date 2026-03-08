@@ -63,9 +63,16 @@ const LayoutWrapper = ({ children, currentPageName }) => {
  * matching (which can fail on direct load/refresh). Everything else goes to
  * AuthenticatedApp via Routes.
  */
+const OLD_APP_PATHS = ['/TradeSelection', '/YearSelection', '/Dashboard', '/Quiz', '/QuizSetup'];
+
 function TradesOrRest() {
   const { pathname } = useLocation();
   const path = pathname.replace(/\/$/, '') || '/'; // normalize trailing slash
+
+  // Old app URLs: always redirect to /trades so they never show the landing page
+  if (OLD_APP_PATHS.includes(path)) {
+    return <Navigate to="/trades" replace />;
+  }
 
   if (path === '/trades') {
     return <TradesHub />;
